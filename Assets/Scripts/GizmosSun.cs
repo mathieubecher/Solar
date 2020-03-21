@@ -43,7 +43,6 @@ public class GizmosSun : MonoBehaviour
     private void OnDrawGizmos()
     {
         
-        
         // Draw interface 
         Handles.BeginGUI();
         DrawIncline();
@@ -55,12 +54,15 @@ public class GizmosSun : MonoBehaviour
 
     private void OnGUI()
     {
+        
         SceneView.onSceneGUIDelegate = UpdateSceneView;
         
     }
 
     private void UpdateSceneView(SceneView sceneView)
     {
+        light =  FindObjectOfType<Light>();
+        if (light == null) return;
         mousepos = Event.current.mousePosition;
         DefineIncline();
         DefineRotation();
@@ -88,8 +90,6 @@ public class GizmosSun : MonoBehaviour
             clickIncline = false;
             clickRotate = false;
             actualCenter = mousepos;
-            EditorApplication.QueuePlayerLoopUpdate();
-            SceneView.RepaintAll();
         }
     }
 
@@ -118,11 +118,7 @@ public class GizmosSun : MonoBehaviour
             light.transform.eulerAngles = rotation;
             rotatePos = RotatePos(eulerAngles.y);
             rect = new Rect(rotatePos.x - rectSize/2, rotatePos.y - rectSize/2, rectSize, rectSize);
-            
-            // Force scene update until release click
-            EditorApplication.QueuePlayerLoopUpdate();
-            SceneView.RepaintAll();
-            
+
             // Leave condition
             if( type == EventType.MouseUp || type == EventType.MouseLeaveWindow) clickRotate = false;
             
@@ -166,10 +162,6 @@ public class GizmosSun : MonoBehaviour
             light.transform.eulerAngles = rotation;
             inclinePos = RotatePos(eulerAngles.x, radius + 10);
             rect = new Rect(inclinePos.x - rectSize/2, inclinePos.y - rectSize/2, rectSize, rectSize);
-            
-            // Force scene update until release click
-            EditorApplication.QueuePlayerLoopUpdate();
-            SceneView.RepaintAll();
             
             // Leave condition
             if(type == EventType.MouseUp || type == EventType.MouseLeaveWindow) clickIncline = false;

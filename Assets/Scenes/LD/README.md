@@ -18,13 +18,12 @@ Par défaut les scènes dans le dossier LD ont déjà **GizmosSun** activées. M
 *(Certaines de ces méthodes sont provisoires)*
 * **Rotation du soleil**  
 Le cercle rouge correspond à la rotation du soleil sur l'axe X.  
-Il est éditable en cliquant une fois sur le carré rouge et en déplaçant la souris autour du cercle. Pour arrêter l'édition, il suffit de cliquer droit hors du carré.  
+Il est éditable en maintenant le clic gauche sur le carré rouge et en déplaçant la souris autour du cercle. Pour arrêter l'édition, il suffit de relacher le clic.  
 * **Inclinaison du soleil**  
 L'arc de cercle bleu définit l'inclinaison du soleil. L'edition est restreinte entre 90° et une valeur défini dans l'inspector de l'outil. L'édition est similaire à la rotation du soleil.  
 * **Déplacement de l'outil**  
 En cas de besoin, **GizmosSun** peut être déplacé en cliquant sur le cercle blanc au milieu.   
-*Attention : Pour quitter l'edition, il faut maintenir le click droit jusquà sortir du cercle blanc... désolé.*
-     
+
 ![RotateSun](.ressources/editSun.gif)
 
 ## ProBuilder
