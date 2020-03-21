@@ -18,6 +18,13 @@ public class GizmosSun : MonoBehaviour
     
     private bool clickRotate;
     private bool clickIncline;
+    private bool move;
+
+    private bool hoverRotate;
+    private bool hoverIncline;
+    private bool hoverMove;
+    
+    private EventType type;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,51 +38,76 @@ public class GizmosSun : MonoBehaviour
     {
         
     }
+
+    private Vector2 mousepos;
     private void OnDrawGizmos()
     {
-        Rect rect = DefineRotation();
-        Rect inclineRect = DefineIncline();
-        SetPos();
+        
         
         // Draw interface 
         Handles.BeginGUI();
-        DrawIncline(inclineRect);
-        DrawRotation(rect);
+        DrawIncline();
+        DrawRotation();
         Handles.color = Color.white;
         Handles.DrawSolidDisc(actualCenter, Vector3.forward, 5);
         Handles.EndGUI();
     }
 
-    private bool move;
+    private void OnGUI()
+    {
+        SceneView.onSceneGUIDelegate = UpdateSceneView;
+        
+    }
+
+    private void UpdateSceneView(SceneView sceneView)
+    {
+        mousepos = Event.current.mousePosition;
+        DefineIncline();
+        DefineRotation();
+        SetPos();
+        if(hoverIncline || hoverRotate || hoverMove || clickIncline || clickRotate || move){
+            type = (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseUp)?Event.current.type:type;
+            HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
+        }
+        else
+        {
+            type = EventType.Ignore;
+        }
+        
+        
+    }
     private void SetPos()
     {
-        Vector2 mousePos = Event.current.mousePosition;
-        if (!move && Vector2.Distance(actualCenter, mousePos) < 5 && Event.current.button == 0) move = true;
-        else if (move && Event.current.button != 0) move = false;
-
+        hoverMove = Vector2.Distance(actualCenter, mousepos) < 5; 
+        if (!move && hoverMove && type == EventType.MouseDown) move = true;
+        else if (move  && (type == EventType.MouseUp || type == EventType.MouseLeaveWindow)) move = false;
+        
+        
         if (move)
         {
             clickIncline = false;
             clickRotate = false;
-            actualCenter = mousePos;
+            actualCenter = mousepos;
             EditorApplication.QueuePlayerLoopUpdate();
             SceneView.RepaintAll();
         }
     }
+
     
     #region ROTATION
-    Rect DefineRotation()
+    void DefineRotation()
     {
         var eulerAngles = light.transform.eulerAngles;
         float angle = eulerAngles.y * Mathf.PI / 180;
         Vector2 rotatePos = RotatePos(eulerAngles.y);
         Rect rect = new Rect(rotatePos.x - rectSize/2, rotatePos.y - rectSize/2, rectSize, rectSize);
-        Vector2 mousepos = Event.current.mousePosition;
+        
 
-        bool hover = rect.Contains(mousepos) || clickRotate;
-        if (!clickRotate && hover && Event.current.button == 0)
+        hoverRotate = rect.Contains(mousepos) || clickRotate;
+        if (!clickRotate && hoverRotate && type == EventType.MouseDown)
         {
             clickRotate = true;
+            clickIncline = false;
         }
         
         // Action on Click
@@ -92,16 +124,16 @@ public class GizmosSun : MonoBehaviour
             SceneView.RepaintAll();
             
             // Leave condition
-            if(Event.current.button != 0) clickRotate = false;
+            if( type == EventType.MouseUp || type == EventType.MouseLeaveWindow) clickRotate = false;
             
         }
-
-        return rect;
     }
     
-    void DrawRotation(Rect rect)
+    void DrawRotation()
     {
-        Vector3 eulerAngles = light.transform.eulerAngles;
+        var eulerAngles = light.transform.eulerAngles;
+        Vector2 rotatePos = RotatePos(eulerAngles.y);
+        Rect rect = new Rect(rotatePos.x - rectSize/2, rotatePos.y - rectSize/2, rectSize, rectSize);
         Handles.color = Color.red;
         Handles.DrawWireArc(actualCenter,Vector3.forward, RotateDir(eulerAngles.y+rectSize/2), -360 + rectSize, radius);
         Handles.DrawLine(actualCenter,RotatePos(eulerAngles.y, radius-rectSize/2 ));
@@ -114,17 +146,17 @@ public class GizmosSun : MonoBehaviour
     #endregion
     
     #region INCLINE
-    private Rect DefineIncline()
+    private void DefineIncline()
     {   
         var eulerAngles = light.transform.eulerAngles;
         float incline = eulerAngles.x * Mathf.PI / 180;
         Vector2 inclinePos = RotatePos(eulerAngles.x, radius + 10);
         Rect rect = new Rect(inclinePos.x - rectSize/2, inclinePos.y - rectSize/2, rectSize, rectSize);
-        Vector2 mousepos = Event.current.mousePosition;
-        bool hover = rect.Contains(mousepos) || clickIncline;
-        if (!clickRotate && hover && Event.current.button == 0)
+        hoverIncline = rect.Contains(mousepos) || clickIncline;
+        if (!clickRotate && hoverIncline  && type == EventType.MouseDown)
         {
             clickIncline = true;
+            clickRotate = false;
         }
         
         if (clickIncline)
@@ -140,14 +172,15 @@ public class GizmosSun : MonoBehaviour
             SceneView.RepaintAll();
             
             // Leave condition
-            if(Event.current.button != 0) clickIncline = false;
+            if(type == EventType.MouseUp || type == EventType.MouseLeaveWindow) clickIncline = false;
             
         }
-
-        return rect;
     }
-    void DrawIncline(Rect inclineRect)
+    void DrawIncline()
     {
+        var eulerAngles = light.transform.eulerAngles;
+        Vector2 inclinePos = RotatePos(eulerAngles.x, radius + 10);
+        Rect inclineRect = new Rect(inclinePos.x - rectSize/2, inclinePos.y - rectSize/2, rectSize, rectSize);
         Handles.color = new Color(0, 0, 1, 1);
         Handles.DrawWireArc(actualCenter,Vector3.forward, new Vector2(-Mathf.Sin(sunInclinason * Mathf.PI /360),-Mathf.Cos(sunInclinason * Mathf.PI / 360)) ,sunInclinason, radius+10);
         Handles.DrawLine(RotatePos(90 - sunInclinason/2),RotatePos(90 - sunInclinason/2,radius+15));
