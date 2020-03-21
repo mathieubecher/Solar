@@ -1,8 +1,9 @@
 # Solar
 ## Projet M1 pour le [CNAM-ENJMIN](http://www.cnam-enjmin.fr/)  
 **SOLAR** est un jeu collaboratif mêlant contemplation, puzzle et aventure.  
-Jouable à 2 : *1 Controleur alternatif optionnel (**ASTROLABE**) ou 2 manettes*
+Jouable à 2 : *1 Controleur alternatif optionnel (**ASTROLABE**) ou 2 manettes*  
 
+![banner](.ressources/banner.jpg)
 
 Vous incarnez un éclaireur de l'ombre à travers les ravages du temps d'une civilisation passée sur une planète inconnue.
 
