@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    private Light[] lights;
     // Start is called before the first frame update
     void Start()
     {
-        lights = FindObjectsOfType<Light>();
+        
     }
 
     // Update is called once per frame

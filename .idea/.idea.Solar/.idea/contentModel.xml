@@ -145,9 +145,20 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Controller.cs" t="Include" />
-          <e p="GizmosSun.cs" t="Include" />
-          <e p="Light.cs" t="Include" />
+          <e p="CameraController.cs" t="Include" />
+          <e p="Character" t="Include">
+            <e p="Controller.cs" t="Include" />
+            <e p="Infos" t="Include">
+              <e p="CameraTarget.cs" t="Include" />
+              <e p="Point.cs" t="Include" />
+            </e>
+            <e p="InputMaster.cs" t="Include" />
+          </e>
+          <e p="GameManager.cs" t="Include" />
+          <e p="LightController.cs" t="Include" />
+          <e p="Tools" t="Include">
+            <e p="GizmosSun.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
