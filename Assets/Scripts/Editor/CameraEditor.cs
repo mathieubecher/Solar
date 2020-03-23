@@ -6,7 +6,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 
 [CustomEditor(typeof(CameraController))]
-internal class CameraEditor : Editor
+public class CameraEditor : Editor
 {
     float minVal   = -90;
     float minLimit = -90;
@@ -18,7 +18,9 @@ internal class CameraEditor : Editor
         var camera = (CameraController) target;
         DrawCameraAngle(camera);
         camera.distance = EditorGUILayout.Slider("Distance", camera.distance, 5, 50);
-        EditorGUILayout.MinMaxSlider("Rotation limit", ref minVal, ref maxVal, minLimit, maxLimit);
+        EditorGUILayout.MinMaxSlider("Rotation Limit", ref minVal, ref maxVal, minLimit, maxLimit);
+        camera.RotateSpeed = EditorGUILayout.Slider("Rotate Speed", camera.RotateSpeed,0,200);
+        camera.Speed = EditorGUILayout.Slider("Dezoom Speed", camera.Speed,0,10);
 
         if (Math.Abs(camera.BottomMaxAngle - minVal) > TOLERANCE)
         {
@@ -36,7 +38,7 @@ internal class CameraEditor : Editor
         if (camera.gizmos && GUILayout.Button("Disable Gizmos")) camera.gizmos = false;
         else if (!camera.gizmos && GUILayout.Button("Enable Gizmos")) camera.gizmos = true;
         
-        if(GUI.changed){
+        if(GUI.changed && !Application.isPlaying){
             EditorUtility.SetDirty(camera);
             EditorSceneManager.MarkSceneDirty(camera.gameObject.scene);
         }

@@ -18,7 +18,7 @@ public class LightController : MonoBehaviour
         
     }
 }
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(LightController))]
 public class LightEditor : Editor
 {
@@ -29,3 +29,4 @@ public class LightEditor : Editor
         else if (!light.gizmos && GUILayout.Button("Enable Gizmos")) light.gizmos = true;
     }
 }
+#endif

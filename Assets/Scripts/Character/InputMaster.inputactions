@@ -20,6 +20,14 @@
                     "expectedControlType": "Stick",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "KeyMovement",
+                    "type": "Button",
+                    "id": "fe09534a-6f08-4526-89ed-ccb740a8b030",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -35,13 +43,24 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "839e76b1-4969-4108-8f13-8e37192bc581",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "ArrowKeys",
                     "id": "81d46aae-7da4-412c-a764-e622168267e1",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "KeyMovement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -52,7 +71,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard and mouse",
-                    "action": "Movement",
+                    "action": "KeyMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -63,7 +82,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard and mouse",
-                    "action": "Movement",
+                    "action": "KeyMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -74,7 +93,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard and mouse",
-                    "action": "Movement",
+                    "action": "KeyMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -85,7 +104,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard and mouse",
-                    "action": "Movement",
+                    "action": "KeyMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -96,7 +115,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "KeyMovement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -107,7 +126,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Movement",
+                    "action": "KeyMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -118,7 +137,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Movement",
+                    "action": "KeyMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -129,7 +148,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Movement",
+                    "action": "KeyMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -140,20 +159,9 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Movement",
+                    "action": "KeyMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "839e76b1-4969-4108-8f13-8e37192bc581",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }

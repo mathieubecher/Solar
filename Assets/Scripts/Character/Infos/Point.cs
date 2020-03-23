@@ -6,12 +6,13 @@ using UnityEngine;
 public class Point : MonoBehaviour
 {
     private bool touch;
-
-    [SerializeField] private float dist = 20;
+    private int mask;
+    
+    private float dist = 100;
     // Start is called before the first frame update
     void Start()
     {
-        
+        mask =~ LayerMask.GetMask("Character");
     }
 
     // Update is called once per frame
@@ -28,20 +29,13 @@ public class Point : MonoBehaviour
 
     public bool TestLight(LightController sun)
     {
-        int mask =~ LayerMask.GetMask("Character");
-        RaycastHit hit;
-        if (Physics.Raycast(origin: transform.position, direction: sun.transform.rotation * Vector3.back, hitInfo: out hit, maxDistance:dist, layerMask: mask))
+        
+        if (Physics.Raycast(origin: transform.position, direction: sun.transform.rotation * Vector3.back, hitInfo: out RaycastHit hit, maxDistance:dist, layerMask: mask))
         {
-            #if UNITY_EDITOR
-                Debug.DrawLine(transform.position, hit.point, Color.green,Time.deltaTime);
-            #endif
             touch = false;
         }
         else
         {
-            #if UNITY_EDITOR
-                Debug.DrawLine(transform.position, transform.position + sun.transform.rotation * Vector3.back * 1, Color.red,Time.deltaTime);
-            #endif
             touch = true;
         }
 
