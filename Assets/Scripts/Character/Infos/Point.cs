@@ -26,7 +26,7 @@ public class Point : MonoBehaviour
         Gizmos.DrawSphere(transform.position,0.1f);
     }
 
-    public bool TestLight(Light sun)
+    public bool TestLight(LightController sun)
     {
         int mask =~ LayerMask.GetMask("Character");
         RaycastHit hit;

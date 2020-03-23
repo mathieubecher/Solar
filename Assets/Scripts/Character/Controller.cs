@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
+
 public class Controller : MonoBehaviour
 {
-    private Light sun;
+    private LightController sun;
     private List<Point> points;
     // Start is called before the first frame update
     void Awake()
@@ -18,7 +21,7 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
-        sun = FindObjectOfType<Light>();
+        sun = FindObjectOfType<LightController>();
         
     }
 
