@@ -41,6 +41,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""RotateSun"",
+                    ""type"": ""Button"",
+                    ""id"": ""b9722a9d-97b2-4f5f-a6af-71b2acb74312"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -175,6 +183,72 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""KeyMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""LR"",
+                    ""id"": ""9a39256a-4bb2-4b76-8c6d-5b8d24028eb7"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateSun"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""ec1993ae-74bf-48c6-9b79-08bab23ee3f0"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RotateSun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""14f1f0c0-eff1-44f4-91b9-49ed5f6a19bd"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RotateSun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""AE"",
+                    ""id"": ""c08cc10c-a5bd-4021-b852-51cb029fde20"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateSun"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""594a6aa4-48c5-44e0-9e41-115e73d920d7"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and mouse"",
+                    ""action"": ""RotateSun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""91b816d7-ca5d-4dad-b4d8-d2e1c286591e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and mouse"",
+                    ""action"": ""RotateSun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -214,6 +288,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_KeyMovement = m_Player.FindAction("KeyMovement", throwIfNotFound: true);
+        m_Player_RotateSun = m_Player.FindAction("RotateSun", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -266,6 +341,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_KeyMovement;
+    private readonly InputAction m_Player_RotateSun;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -273,6 +349,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @KeyMovement => m_Wrapper.m_Player_KeyMovement;
+        public InputAction @RotateSun => m_Wrapper.m_Player_RotateSun;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -291,6 +368,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @KeyMovement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKeyMovement;
                 @KeyMovement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKeyMovement;
                 @KeyMovement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKeyMovement;
+                @RotateSun.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateSun;
+                @RotateSun.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateSun;
+                @RotateSun.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateSun;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -304,6 +384,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @KeyMovement.started += instance.OnKeyMovement;
                 @KeyMovement.performed += instance.OnKeyMovement;
                 @KeyMovement.canceled += instance.OnKeyMovement;
+                @RotateSun.started += instance.OnRotateSun;
+                @RotateSun.performed += instance.OnRotateSun;
+                @RotateSun.canceled += instance.OnRotateSun;
             }
         }
     }
@@ -331,5 +414,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnRotate(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnKeyMovement(InputAction.CallbackContext context);
+        void OnRotateSun(InputAction.CallbackContext context);
     }
 }

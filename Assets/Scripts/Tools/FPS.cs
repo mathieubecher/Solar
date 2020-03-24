@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class FPS : MonoBehaviour
 {
+    [SerializeField]
     private Text _text;
 
     private GameManager _manager;

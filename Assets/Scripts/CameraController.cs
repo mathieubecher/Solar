@@ -64,7 +64,7 @@ public class CameraController : MonoBehaviour
         int mask =~ LayerMask.GetMask("Character");
         if (Physics.Raycast(follow.Target, direction, out RaycastHit ray, distance, mask))
         {
-            actualDistance = ray.distance;
+            actualDistance = ray.distance -0.5f;
         }
         else actualDistance += Time.deltaTime * _speed;
 
