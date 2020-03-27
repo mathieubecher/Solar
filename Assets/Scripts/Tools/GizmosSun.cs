@@ -58,8 +58,7 @@ public class GizmosSun : MonoBehaviour
 
     private void OnGUI()
     {
-        
-        
+
     }
     
     private void UpdateSceneView(SceneView sceneView)
