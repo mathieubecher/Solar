@@ -22,7 +22,7 @@ Durant votre trajet, saurez-vous découvrir les mystères que renferme cet astro
 Saurez-vous jouer de la collaboration et explorer ce désert prisonnié du temps et de la douleur ?
 
 Découvrez le secret de ces ruines du temps...  
-### Version jouable : [Télécharger](Build.zip)
+### Version jouable : [Télécharger](https://github.com/mathieubecher/Solar/raw/V0/Build.zip)
 
 ### Version d'Unity : 2019.3.0f6
 
