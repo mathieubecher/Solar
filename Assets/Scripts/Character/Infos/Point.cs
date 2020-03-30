@@ -5,47 +5,47 @@ using UnityEngine;
 
 public class Point : MonoBehaviour
 {
-    private bool touch;
+    private bool _touch;
+    private int _mask;
+    private float _speedDamage = 0.5f;
+    private float _speedHeal=1f;
 
-    [SerializeField] private float dist = 20;
+    private Material _parentMat;
+    private float _damageValue = 0;
+    private float dist = 100;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _mask =~ LayerMask.GetMask("Character");
+        _parentMat = GetComponentInParent<MeshRenderer>().material;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        _damageValue = Mathf.Max(0, Mathf.Min(1,_damageValue + ((_touch)?_speedDamage:-_speedHeal) * Time.deltaTime));
+        _parentMat.SetFloat("_sunTouch", _damageValue);
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = (touch)?Color.red:Color.green;
+        Gizmos.color = (_touch)?Color.red:Color.green;
         Gizmos.DrawSphere(transform.position,0.1f);
     }
 
-    public bool TestLight(LightController sun)
+    public float TestLight(LightController sun)
     {
-        int mask =~ LayerMask.GetMask("Character");
-        RaycastHit hit;
-        if (Physics.Raycast(origin: transform.position, direction: sun.transform.rotation * Vector3.back, hitInfo: out hit, maxDistance:dist, layerMask: mask))
+        
+        if (Physics.Raycast(origin: transform.position, direction: sun.transform.rotation * Vector3.back, hitInfo: out RaycastHit hit, maxDistance:dist, layerMask: _mask))
         {
-            #if UNITY_EDITOR
-                Debug.DrawLine(transform.position, hit.point, Color.green,Time.deltaTime);
-            #endif
-            touch = false;
+            _touch = false;
         }
         else
         {
-            #if UNITY_EDITOR
-                Debug.DrawLine(transform.position, transform.position + sun.transform.rotation * Vector3.back * 1, Color.red,Time.deltaTime);
-            #endif
-            touch = true;
+            _touch = true;
         }
 
-        return touch;
+        return _damageValue;
 
     }
 }

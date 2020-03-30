@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -56,10 +58,9 @@ public class GizmosSun : MonoBehaviour
 
     private void OnGUI()
     {
-        
-        
-    }
 
+    }
+    
     private void UpdateSceneView(SceneView sceneView)
     {
         if (!_light.gizmos) return;
@@ -216,3 +217,4 @@ public class GizmosSun : MonoBehaviour
     }
 }
 
+#endif
