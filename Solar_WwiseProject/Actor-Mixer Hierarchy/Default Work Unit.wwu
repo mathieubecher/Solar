@@ -3,28 +3,8 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{9F4217AA-E869-4F10-A183-355E7B460309}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="crunching_leaves" ID="{99C4E35E-0C95-4BA5-B6B5-793F07422021}" ShortID="704392448">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="crunching_leaves" ID="{30390EAD-672A-4E54-8181-551EB77AA114}">
-							<Language>SFX</Language>
-							<AudioFile>crunching_leaves.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="140131244"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="crunching_leaves" ID="{30390EAD-672A-4E54-8181-551EB77AA114}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				<WorkUnit Name="Ambiances" ID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}" PersistMode="Reference"/>
+				<WorkUnit Name="Foleys" ID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
