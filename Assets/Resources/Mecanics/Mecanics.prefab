@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b9d4fceb212e43802c252f14ee295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  follow: {fileID: 276398053300333725}
+  follow: {fileID: 1928892920409596203}
   _rotateSpeed: 100
   _speed: 10
   gizmos: 1
@@ -77,7 +77,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 200
+  far clip plane: 500
   field of view: 67.380135
   orthographic: 0
   orthographic size: 5
@@ -331,9 +331,9 @@ Transform:
   - {fileID: 7260959767374876846}
   - {fileID: 7260959768602352522}
   - {fileID: 7260959767025510391}
-  - {fileID: 1957767414290540001}
-  - {fileID: 276398053300332903}
-  - {fileID: 4680584986313932973}
+  - {fileID: 7260959768706023887}
+  - {fileID: 7260959767783113790}
+  - {fileID: 7260959767040726913}
   - {fileID: 7260959766955493710}
   - {fileID: 7260959768546554378}
   - {fileID: 7260959767891080500}
@@ -653,7 +653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65e1a1c02405a334eba2ef2589a09d74, type: 3}
---- !u!114 &276398053300333725 stripped
+--- !u!114 &1928892920409596203 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1806290297459886557, guid: 65e1a1c02405a334eba2ef2589a09d74,
     type: 3}
@@ -665,7 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b09bc66a24c53e42810471a7e285f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &276398053300332903 stripped
+--- !u!4 &7260959767783113790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7426975512071695560, guid: 65e1a1c02405a334eba2ef2589a09d74,
     type: 3}
@@ -753,15 +753,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7260959767708571820}
     m_Modifications:
+    - target: {fileID: 9218727043946997128, guid: 41a2a61fb208cda4bac21420dadae965,
+        type: 3}
+      propertyPath: near clip plane
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218727043946997128, guid: 41a2a61fb208cda4bac21420dadae965,
+        type: 3}
+      propertyPath: far clip plane
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 9218727043946997129, guid: 41a2a61fb208cda4bac21420dadae965,
         type: 3}
       propertyPath: follow
       value: 
-      objectReference: {fileID: 276398053300333725}
+      objectReference: {fileID: 1928892920409596203}
     - target: {fileID: 9218727043946997129, guid: 41a2a61fb208cda4bac21420dadae965,
         type: 3}
       propertyPath: distance
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218727043946997130, guid: 41a2a61fb208cda4bac21420dadae965,
+        type: 3}
+      propertyPath: antialiasing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9218727043946997131, guid: 41a2a61fb208cda4bac21420dadae965,
         type: 3}
@@ -835,13 +850,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41a2a61fb208cda4bac21420dadae965, type: 3}
---- !u!4 &1957767414290540001 stripped
+--- !u!4 &7260959768706023887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9218727043946997134, guid: 41a2a61fb208cda4bac21420dadae965,
     type: 3}
   m_PrefabInstance: {fileID: 1957767414290539585}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &1957767414290540002 stripped
+--- !u!20 &7260959768706023881 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 9218727043946997128, guid: 41a2a61fb208cda4bac21420dadae965,
     type: 3}
@@ -854,6 +869,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7260959767708571820}
     m_Modifications:
+    - target: {fileID: 2607825316874901074, guid: f0560520f7eb1f8499d63920be4083ed,
+        type: 3}
+      propertyPath: m_ShadowResolution.m_Level
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2607825316874901076, guid: f0560520f7eb1f8499d63920be4083ed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -916,7 +936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0560520f7eb1f8499d63920be4083ed, type: 3}
---- !u!4 &4680584986313932973 stripped
+--- !u!4 &7260959767040726913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2607825316874901076, guid: f0560520f7eb1f8499d63920be4083ed,
     type: 3}
@@ -938,7 +958,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player2
       value: 
-      objectReference: {fileID: 1957767414290540002}
+      objectReference: {fileID: 7260959768706023881}
     - target: {fileID: 3464323741892079603, guid: 7a1b633a968d02f4bac1e4abd8b9c5c6,
         type: 3}
       propertyPath: m_LocalPosition.x
