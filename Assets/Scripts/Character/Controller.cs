@@ -19,6 +19,7 @@ public class Controller : MonoBehaviour
     
     // Infos
     [SerializeField] private float speed = 5f;
+    [SerializeField] private Animator animator;
     private Rigidbody _rigidbody;
     private ControllerSun _sun;
     private CameraTarget _target;
@@ -79,7 +80,7 @@ public class Controller : MonoBehaviour
         _camera.RotateMouse(new Vector3(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y")) * 0.8f);
 
         if(velocity.magnitude>0) transform.rotation = Quaternion.LookRotation(velocity);
-        
+        animator.SetFloat("velocity",velocity.magnitude);
         velocity.y = _rigidbody.velocity.y;
         _rigidbody.velocity = velocity;
 
