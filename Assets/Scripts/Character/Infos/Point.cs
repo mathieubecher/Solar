@@ -17,14 +17,14 @@ public class Point : MonoBehaviour
     void Start()
     {
         _mask =~ LayerMask.GetMask("Character");
-        _parentMat = GetComponentInParent<MeshRenderer>().material;
+        //_parentMat = GetComponentInParent<MeshRenderer>().material;
     }
 
     // Update is called once per frame
     void Update()
     {
         _damageValue = Mathf.Max(0, Mathf.Min(1,_damageValue + ((_touch)?_speedDamage:-_speedHeal) * Time.deltaTime));
-        _parentMat.SetFloat("_sunTouch", _damageValue);
+        //_parentMat.SetFloat("_sunTouch", _damageValue);
     }
 
     private void OnDrawGizmos()
