@@ -16,19 +16,19 @@ MonoBehaviour:
   m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 1.65
+    m_Value: 0.76
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.375
     min: 0
     max: 1
   scatter:
     m_OverrideState: 1
-    m_Value: 0.721
+    m_Value: 0.403
     min: 0
     max: 1
   tint:
@@ -101,6 +101,41 @@ MonoBehaviour:
   - {fileID: 396278178000043239}
   - {fileID: -2109818796249167647}
   - {fileID: -8084275807047218777}
+  - {fileID: 203252011178135129}
+--- !u!114 &203252011178135129
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ab2351199fbf34283e2a7d743c0d22, type: 3}
+  m_Name: SunDeform
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  distance:
+    m_OverrideState: 1
+    m_Value: 47
+    min: 0
+    max: 500
+  power:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 5
+  deformPower:
+    m_OverrideState: 1
+    m_Value: 4.07
+    min: 1
+    max: 20
 --- !u!114 &396278178000043239
 MonoBehaviour:
   m_ObjectHideFlags: 3

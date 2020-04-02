@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AFAD51C3-09FA-4926-9D33-69B21999A571}" SchemaVersion="97">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{AFAD51C3-09FA-4926-9D33-69B21999A571}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="RTPC_WindGain" ID="{C1A5BC66-B4DF-474B-9AEE-1068B3D47755}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="-48"/>
+						<Property Name="Max" Type="Real64" Value="0"/>
+						<Property Name="Min" Type="Real64" Value="-48"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}">
+					<PropertyList>
+						<Property Name="FilterTimeUp" Type="Real64" Value="3"/>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+						<Property Name="RTPCRamping" Type="int16" Value="2"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="1"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="9"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_Sun_Velocity" ID="{9E18518E-D263-422C-97B3-89A763C30DA6}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

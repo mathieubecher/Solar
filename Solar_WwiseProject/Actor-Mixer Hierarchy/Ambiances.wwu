@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}" SchemaVersion="97" RootDocumentID="{9F4217AA-E869-4F10-A183-355E7B460309}">
+	<AudioObjects>
+		<WorkUnit Name="Ambiances" ID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}" OwnerID="{9F4217AA-E869-4F10-A183-355E7B460309}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="3"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<BlendContainer Name="Amb" ID="{4D366EF1-8DB7-49AE-8D41-AF3BAC14D32D}" ShortID="556991171">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="3"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<BlendContainer Name="Amb_Desert" ID="{1C98A39B-366B-42AB-B0A8-04E7A062ED8D}" ShortID="376478863">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="amb_desert_stinger" ID="{2FBD1FD0-1287-43D3-BAD7-0F2AA4AA5E7C}" ShortID="1058951293">
+									<PropertyList>
+										<Property Name="InitialDelay" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="20">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{81F2C59E-3FA4-4F04-86F4-290A8EF3E1C7}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="10"/>
+															<Property Name="Min" Type="Real64" Value="-1"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-12</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="amb_desert_musicstinger_01" ID="{A89AD313-36E2-4628-B1F8-8CFDC4051E16}" ShortID="569091338">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="amb_desert_musicstinger_01" ID="{CA487C0D-FEC9-487A-B969-F513F2B3A102}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.735159817351598"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="10.9748858447489"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>amb_desert_musicstinger_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="982149342"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="amb_desert_musicstinger_01" ID="{CA487C0D-FEC9-487A-B969-F513F2B3A102}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="amb_desert_musicstinger_02" ID="{5F6184C2-A4E5-499B-B730-F66930F49420}" ShortID="892276317">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="amb_desert_musicstinger_02" ID="{91503222-E0F0-4E4A-A9A9-0E990DCEB4A5}">
+													<Language>SFX</Language>
+													<AudioFile>amb_desert_musicstinger_02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="954674153"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="amb_desert_musicstinger_02" ID="{91503222-E0F0-4E4A-A9A9-0E990DCEB4A5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="music_stinger" ID="{1874A3AE-36E7-48C5-B41F-C554DCCEFC56}" ShortID="892255403">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="music_stinger" ID="{B7CE1199-2F5B-49CF-9A3A-F517DE28AFE6}">
+													<Language>SFX</Language>
+													<AudioFile>music_stinger.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="45360505"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="music_stinger" ID="{B7CE1199-2F5B-49CF-9A3A-F517DE28AFE6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="amb_desert_musicstinger_01" ID="{A89AD313-36E2-4628-B1F8-8CFDC4051E16}"/>
+										<ItemRef Name="amb_desert_musicstinger_02" ID="{5F6184C2-A4E5-499B-B730-F66930F49420}"/>
+										<ItemRef Name="music_stinger" ID="{1874A3AE-36E7-48C5-B41F-C554DCCEFC56}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<Sound Name="amb_desert_02" ID="{137E8615-C3E5-4E00-A9FB-72C2A2A6A6E7}" ShortID="123102016">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="amb_desert_02" ID="{3D7821CA-F123-492C-830A-3FCD7668F218}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="2750.877"/>
+												<Property Name="LoopBegin" Type="Real64" Value="3.00456621004566"/>
+												<Property Name="LoopEnd" Type="Real64" Value="32.7945205479452"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>amb_desert_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="744231200"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="amb_desert_02" ID="{3D7821CA-F123-492C-830A-3FCD7668F218}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</BlendContainer>
+					</ChildrenList>
+				</BlendContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
