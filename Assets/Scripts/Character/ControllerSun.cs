@@ -40,8 +40,8 @@ public class ControllerSun : MonoBehaviour
     void Update()
     {
         
-        _rotateSpeed = (_rotateInput + ((_rotateWheel>0)? ((_directionWheel) ? 1 : -1) : 0)) * _maxRotateSpeed;
-        --_rotateWheel;
+        _rotateSpeed = _rotateInput * _maxRotateSpeed;
+        
         Vector3 sunEuler = _sun.transform.eulerAngles;
         sunEuler.y += _rotateSpeed * Time.deltaTime;
         _sun.transform.eulerAngles = sunEuler;
