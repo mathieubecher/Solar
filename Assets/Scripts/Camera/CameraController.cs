@@ -86,7 +86,7 @@ public class CameraController : MonoBehaviour
         #if UNITY_EDITOR
         Debug.DrawLine(follow.Target, follow.Target + direction * actualDistance , Color.green,Time.deltaTime);
         if(Math.Abs(actualDistance - distance) > TOLERANCE) Debug.DrawLine(follow.Target + direction * actualDistance, follow.Target + direction * distance , Color.red,Time.deltaTime);
-#endif
+        #endif
         
         transform.position = follow.Target + direction * actualDistance;
     }
@@ -103,31 +103,5 @@ public class CameraController : MonoBehaviour
         rotateFrame = new Vector3(-rotate.y,rotate.x,0)*2;
     }
 
-    #region INSPECTOR
-    void Reset()
-    {
-        follow = FindObjectOfType<Controller>();
-        if (TryGetComponent<GizmosCamera>(out GizmosCamera gizmosCamera))
-        {
-            DestroyImmediate(gizmosCamera);
-        }
-        gameObject.AddComponent<GizmosCamera>();
-    }
-    
-
-    #endregion
 }
 
-
-[ExecuteInEditMode]
-internal class GizmosCamera : MonoBehaviour
-{
-    private CameraController camera;
-    
-    void Awake()
-    {
-        camera = GetComponent<CameraController>();
-    }
-    
-
-}

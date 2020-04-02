@@ -17,7 +17,7 @@ public class CameraEditor : Editor
     {
         var camera = (CameraController) target;
         DrawCameraAngle(camera);
-        camera.distance = EditorGUILayout.Slider("Distance", camera.distance, 5, 50);
+        camera.distance = EditorGUILayout.Slider("Distance", camera.distance, 0, 50);
         EditorGUILayout.MinMaxSlider("Rotation Limit", ref minVal, ref maxVal, minLimit, maxLimit);
         camera.RotateSpeed = EditorGUILayout.Slider("Rotate Speed", camera.RotateSpeed,0,200);
         camera.Speed = EditorGUILayout.Slider("Dezoom Speed", camera.Speed,0,10);
