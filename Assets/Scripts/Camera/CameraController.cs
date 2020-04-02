@@ -53,7 +53,7 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        transform.eulerAngles += (rotateFrame+rotateMouse) * _rotateSpeed * Time.deltaTime;
+        transform.eulerAngles += (Time.deltaTime) * _rotateSpeed * (rotateFrame+rotateMouse);
         LimitCam();
         SetPos();
     }
@@ -75,7 +75,7 @@ public class CameraController : MonoBehaviour
     {
         Vector3 direction = transform.rotation * Vector3.back;
         int mask =~ LayerMask.GetMask("Character");
-        if (Physics.Raycast(follow.Target, direction, out RaycastHit ray, distance, mask))
+        if (Physics.Raycast(follow.Target, direction, out RaycastHit ray, distance+0.5f, mask))
         {
             actualDistance = Mathf.Max(0.5f,ray.distance -0.5f);
         }
