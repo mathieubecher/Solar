@@ -41,7 +41,8 @@ public class ControllerSun : MonoBehaviour
     {
         
         _rotateSpeed = _rotateInput * _maxRotateSpeed;
-        
+        AkSoundEngine.SetRTPCValue("RTPC_Sun_Velocity",Mathf.Abs(_rotateInput));
+
         Vector3 sunEuler = _sun.transform.eulerAngles;
         sunEuler.y += _rotateSpeed * Time.deltaTime;
         _sun.transform.eulerAngles = sunEuler;
@@ -59,6 +60,8 @@ public class ControllerSun : MonoBehaviour
         {
             _life -= p.TestLight(_sun)/_points.Count;
         }
+        AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun",Mathf.Abs(_life*100));
+
     }
     
     private void GetPoints(GameObject obj)
