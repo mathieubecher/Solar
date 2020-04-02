@@ -24,6 +24,7 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID RTPC_DISTANCE_SUN = 2257099397U;
+        static const AkUniqueID RTPC_SUN_VELOCITY = 582120507U;
         static const AkUniqueID RTPC_WINDGAIN = 1687410496U;
     } // namespace GAME_PARAMETERS
 
