@@ -1,12 +1,17 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 [ExecuteInEditMode]
 public class GizmosSun : MonoBehaviour
 {
+#if UNITY_EDITOR
     private LightController _light;
     [SerializeField] private Vector2 center= new Vector2(80,80);
     private Vector2 actualCenter;
@@ -56,10 +61,9 @@ public class GizmosSun : MonoBehaviour
 
     private void OnGUI()
     {
-        
-        
-    }
 
+    }
+    
     private void UpdateSceneView(SceneView sceneView)
     {
         if (!_light.gizmos) return;
@@ -214,5 +218,5 @@ public class GizmosSun : MonoBehaviour
     {
         return RotatePos(angle, radius);
     }
+#endif
 }
-
