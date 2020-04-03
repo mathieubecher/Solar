@@ -63,9 +63,12 @@ public class Controller : MonoBehaviour
         
         _controls.currentActionMap["Rotate"].performed += ctx => _camera.Rotate(ctx.ReadValue<Vector2>());
         _controls.currentActionMap["Rotate"].canceled += ctx => _camera.Rotate(ctx.ReadValue<Vector2>());
+#if UNITY_EDITOR
+#else
         Cursor.lockState = CursorLockMode.Locked;
-        mousePos = Input.mousePosition;
         Cursor.visible = false;
+#endif
+        mousePos = Input.mousePosition;
     }
 
 
