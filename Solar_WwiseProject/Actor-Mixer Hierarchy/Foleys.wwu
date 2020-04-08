@@ -416,14 +416,161 @@
 										<MediaID ID="620425443"/>
 									</MediaIDList>
 								</AudioFileSource>
+								<AudioFileSource Name="astrolabe_v3" ID="{F52112FF-528E-49A0-8534-8EDE35F23A79}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="2014.429"/>
+										<Property Name="LoopBegin" Type="Real64" Value="1.56610117106203"/>
+										<Property Name="LoopEnd" Type="Real64" Value="7.23470649675395"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>astrolabe_v3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1050526820"/>
+									</MediaIDList>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="astrolabe_v2" ID="{9E5CA262-19F4-4143-83C3-F05C9CF8158E}" Platform="Linked"/>
+								<ActiveSource Name="astrolabe_v3" ID="{F52112FF-528E-49A0-8534-8EDE35F23A79}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<RandomSequenceContainer Name="Gravel" ID="{C3740247-3B34-4544-B484-C4F3EF9786C7}" ShortID="924114544">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="amb_gravel_02" ID="{92849435-A359-479A-9A3B-F38FAC02F1C6}" ShortID="346539434">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="amb_gravel_02" ID="{3B8CCF5A-3B51-4C9B-ACB6-A3926F61AF86}">
+											<Language>SFX</Language>
+											<AudioFile>amb_gravel_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="477531595"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="amb_gravel_02" ID="{3B8CCF5A-3B51-4C9B-ACB6-A3926F61AF86}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="amb_gravel_01" ID="{3259EADC-572C-4532-A028-4FEC548A95B4}" ShortID="254214843">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="amb_gravel_01" ID="{E1F3DB81-F7D0-4EBF-9B93-8BF7FFD75D29}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.211187214611872"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>amb_gravel_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="702086558"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="amb_gravel_01" ID="{E1F3DB81-F7D0-4EBF-9B93-8BF7FFD75D29}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="amb_gravel_04" ID="{0673DDAE-7F78-4E36-BDDA-0B49BD522A5D}" ShortID="722200791">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="amb_gravel_04" ID="{BDBEABA6-0368-44F6-A149-CC1C9B327933}">
+											<Language>SFX</Language>
+											<AudioFile>amb_gravel_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="967889599"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="amb_gravel_04" ID="{BDBEABA6-0368-44F6-A149-CC1C9B327933}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="amb_gravel_03" ID="{C4C5EF50-C5DE-437C-B227-D61FE6DD9107}" ShortID="425688161">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="amb_gravel_03" ID="{664BCCBD-6409-4FB7-BF8B-226F84FFC023}">
+											<Language>SFX</Language>
+											<AudioFile>amb_gravel_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="107028547"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="amb_gravel_03" ID="{664BCCBD-6409-4FB7-BF8B-226F84FFC023}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</BlendContainer>
 				<BlendContainer Name="Sun_Feedback" ID="{7B3279BF-2B82-4069-921A-4A7EF62DBDEF}" ShortID="1057159358">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
@@ -438,7 +585,7 @@
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-6</Value>
+										<Value>6</Value>
 									</ValueList>
 									<RTPCList>
 										<RTPC Name="" ID="{5D0507E7-09FC-49EB-BBC5-0E70F0A7A9CA}" ShortID="811892463">
@@ -456,7 +603,7 @@
 														<XPos>0</XPos>
 														<YPos>0</YPos>
 														<Flags>5</Flags>
-														<SegmentShape>Log3</SegmentShape>
+														<SegmentShape>Exp3</SegmentShape>
 													</Point>
 													<Point>
 														<XPos>100</XPos>
@@ -491,9 +638,104 @@
 										<MediaID ID="191104729"/>
 									</MediaIDList>
 								</AudioFileSource>
+								<AudioFileSource Name="sun_feedback_a5" ID="{4FFF15D7-B29A-4039-B4FF-038BE0179D37}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="294.737"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0.0479452054794521"/>
+										<Property Name="LoopEnd" Type="Real64" Value="1.29452054794521"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sun_feedback_a5.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="99101634"/>
+									</MediaIDList>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="sun_feedback" ID="{B6DEFA70-B0FD-4A3E-B42D-708A3739AB04}" Platform="Linked"/>
+								<ActiveSource Name="sun_feedback_a5" ID="{4FFF15D7-B29A-4039-B4FF-038BE0179D37}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sun_feedback_01" ID="{40B678D5-F887-4497-BF12-F1219D9D9AFC}" ShortID="75689092">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+									<RTPCList>
+										<RTPC Name="" ID="{AA3D33F4-AAB8-4E82-BDDF-08749A0D1EB6}" ShortID="888307870">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{4E3528FC-048D-434B-95A7-1C9933726E3E}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log1</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>49.94965</XPos>
+														<YPos>-200</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>Exp1</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-200</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sun_feedback" ID="{F256384F-AC80-46C2-AC46-5AC30554870A}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="701.754"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0.949771689497717"/>
+										<Property Name="LoopEnd" Type="Real64" Value="9.95433789954338"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sun_feedback.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="191104729"/>
+									</MediaIDList>
+								</AudioFileSource>
+								<AudioFileSource Name="sun_feedback_a5" ID="{7CF858B3-2B3A-4DD4-BE51-A5382AA6EE3C}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="294.737"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0.0479452054794521"/>
+										<Property Name="LoopEnd" Type="Real64" Value="1.29452054794521"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>sun_feedback_a5.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="99101634"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sun_feedback" ID="{F256384F-AC80-46C2-AC46-5AC30554870A}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

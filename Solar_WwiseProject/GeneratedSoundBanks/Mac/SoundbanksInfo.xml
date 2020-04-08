@@ -18,21 +18,21 @@
 			<IncludedEvents>
 				<Event Id="2160078966" Name="Amb_Desert_Play" ObjectPath="\Events\Default Work Unit\Amb_Desert_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="45360505" Language="SFX">
-							<ShortName>music_stinger.wav</ShortName>
-							<Path>SFX\music_stinger_10C4C929.wem</Path>
-						</File>
 						<File Id="744231200" Language="SFX">
 							<ShortName>amb_desert_02.wav</ShortName>
 							<Path>SFX\amb_desert_02_D6B00BF6.wem</Path>
+						</File>
+						<File Id="881745992" Language="SFX">
+							<ShortName>amb_desert_02_calm2.wav</ShortName>
+							<Path>SFX\amb_desert_02_calm2_DD4FA9F4.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="3822072736" Name="Astro_Moving_Play" ObjectPath="\Events\Default Work Unit\Astro_Moving_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="620425443" Language="SFX">
-							<ShortName>astrolabe_v2.wav</ShortName>
-							<Path>SFX\astrolabe_v2_D30006BC.wem</Path>
+						<File Id="1050526820" Language="SFX">
+							<ShortName>astrolabe_v3.wav</ShortName>
+							<Path>SFX\astrolabe_v3_18B49136.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -81,24 +81,54 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\Music_Play" DurationType="Infinite">
+				<Event Id="1884528993" Name="Flying_Rock_Play" ObjectPath="\Events\Default Work Unit\Flying_Rock_Play" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2212149258" Name="Music_Drop" ObjectPath="\Events\Default Work Unit\Music\Music_Drop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\Music\Music_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="420047087" Language="SFX">
-							<ShortName>music_drone_layer.wav</ShortName>
-							<Path>SFX\music_drone_layer_D79FB2B7.wem</Path>
+						<File Id="89050861" Language="SFX">
+							<ShortName>music_postintro_loop.wav</ShortName>
+							<Path>SFX\music_postintro_loop_D79FB2B7.wem</Path>
 						</File>
-						<File Id="578371794" Language="SFX">
-							<ShortName>music_violin_layer.wav</ShortName>
-							<Path>SFX\music_violin_layer_D79FB2B7.wem</Path>
+						<File Id="99661362" Language="SFX">
+							<ShortName>music_drop2_loop.wav</ShortName>
+							<Path>SFX\music_drop2_loop_D79FB2B7.wem</Path>
 						</File>
-						<File Id="938495267" Language="SFX">
-							<ShortName>music_bass_layer.wav</ShortName>
-							<Path>SFX\music_bass_layer_D79FB2B7.wem</Path>
+						<File Id="537328708" Language="SFX">
+							<ShortName>music_intro_loop.wav</ShortName>
+							<Path>SFX\music_intro_loop_D79FB2B7.wem</Path>
+						</File>
+						<File Id="616412859" Language="SFX">
+							<ShortName>music_drop1_loop.wav</ShortName>
+							<Path>SFX\music_drop1_loop_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}">
+							<Media>
+								<File Id="537328708"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{DDDFEFD0-E001-4B6C-9659-E07FA3889D5D}">
+							<Media>
+								<File Id="89050861"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{969C3013-C098-4E3C-8A39-DBA065D2084D}">
+							<Media>
+								<File Id="616412859"/>
+								<File Id="99661362"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
+				<Event Id="3194768471" Name="Music_PostIntro" ObjectPath="\Events\Default Work Unit\Music\Music_PostIntro" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3227181061" Name="Music_Stop" ObjectPath="\Events\Default Work Unit\Music\Music_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2337456342" Name="Sun_Feedback_Play" ObjectPath="\Events\Default Work Unit\Sun_Feedback_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
+						<File Id="99101634" Language="SFX">
+							<ShortName>sun_feedback_a5.wav</ShortName>
+							<Path>SFX\sun_feedback_a5_DDAC7EEC.wem</Path>
+						</File>
 						<File Id="191104729" Language="SFX">
 							<ShortName>sun_feedback.wav</ShortName>
 							<Path>SFX\sun_feedback_3A0CD887.wem</Path>
@@ -108,8 +138,21 @@
 			</IncludedEvents>
 			<GameParameters>
 				<GameParameter Id="582120507" Name="RTPC_Sun_Velocity" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Sun_Velocity"/>
+				<GameParameter Id="831766718" Name="Zones" ObjectPath="\Game Parameters\Default Work Unit\Zones"/>
+				<GameParameter Id="1687410496" Name="RTPC_WindGain" ObjectPath="\Game Parameters\Default Work Unit\RTPC_WindGain"/>
 				<GameParameter Id="2257099397" Name="RTPC_Distance_Sun" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Distance_Sun"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="3826569560" Name="Music_State" ObjectPath="\States\Default Work Unit\Music_State">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Music_State\None"/>
+						<State Id="1125500713" Name="Intro" ObjectPath="\States\Default Work Unit\Music_State\Intro"/>
+						<State Id="2098910396" Name="Post_Intro" ObjectPath="\States\Default Work Unit\Music_State\Post_Intro"/>
+						<State Id="1878686274" Name="Drop" ObjectPath="\States\Default Work Unit\Music_State\Drop"/>
+						<State Id="4184794294" Name="Outro" ObjectPath="\States\Default Work Unit\Music_State\Outro"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX">
 			<ObjectPath>Init</ObjectPath>

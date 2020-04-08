@@ -28,20 +28,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Music_Play" ID="{6068AEC3-2B39-457A-A8CC-9C7517543F06}">
-					<ChildrenList>
-						<Action Name="" ID="{9F2368B6-0854-4B60-9339-71B347CB88EC}" ShortID="815138819">
-							<PropertyList>
-								<Property Name="FadeTime" Type="Real64" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Music_Playlist" ID="{2F893C6C-2DBA-4570-9067-635F0C53A081}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Astro_Moving_Play" ID="{2B830A17-DCFA-44FF-A2D1-32435C493202}">
 					<ChildrenList>
 						<Action Name="" ID="{8C288CEA-B50C-4486-80EC-04B292F875F7}" ShortID="94204549">
@@ -84,6 +70,102 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Flying_Rock_Play" ID="{2231C500-2F04-4E05-A537-E34EFF192FE0}">
+					<ChildrenList>
+						<Action Name="" ID="{B76373FA-2680-4FB2-9ECF-A8BE3E480550}" ShortID="686857253">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Flying_Rock" ID="{C6429548-FB99-4066-94AE-D6446AFF8208}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Folder Name="Music" ID="{4A30C09F-BD7D-481F-A2A8-662CF0AD138C}" ShortID="47314043">
+					<ChildrenList>
+						<Event Name="Music_Play" ID="{6068AEC3-2B39-457A-A8CC-9C7517543F06}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="19"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{9F2368B6-0854-4B60-9339-71B347CB88EC}" ShortID="815138819">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="30"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_2" ID="{43D1872C-623D-442F-8616-39C6CE0B17DA}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{E86F8FCF-43CB-4AAB-9E44-1F86A6AD4F9C}" ShortID="967112335">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Intro" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Music_PostIntro" ID="{53A45403-8DB3-436D-8EC2-E3C13FBE0341}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="17"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{7DB76D53-A867-43DE-B9C0-6D5FA9E2EB25}" ShortID="616308386">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Post_Intro" ID="{DDDFEFD0-E001-4B6C-9659-E07FA3889D5D}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Music_Stop" ID="{80E0AE40-5C5B-4ACF-B74B-64818EF8FB81}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{7BBDA076-5E65-4C5D-8BAC-BB093ED122CB}" ShortID="857570036">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="30"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_2" ID="{43D1872C-623D-442F-8616-39C6CE0B17DA}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Music_Drop" ID="{2C743A3E-ADEA-4419-8D2D-2E4053ADEDF4}">
+							<ChildrenList>
+								<Action Name="" ID="{78C8DF8E-B4FD-4668-AF2C-9B0E8B6AB7EB}" ShortID="122562198">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Drop" ID="{969C3013-C098-4E3C-8A39-DBA065D2084D}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
