@@ -13,28 +13,38 @@ MonoBehaviour:
   m_Name: ProBuilderPreferences
   m_EditorClassIdentifier: 
   m_Bool_keys:
-  - pbEnableBackfaceSelection
-  - pbIconGUI
-  - pbDefaultOpenInDockableWindow
+  - pbForceConvex
+  - pbDisableAutoUV2Generation
   - pbGenerateUV2PerObject
+  - pbMeshesAreAssets
+  - pbStripProBuilderOnBuild
+  - pbEnableBackfaceSelection
+  - pbDefaultOpenInDockableWindow
+  - pbExportAsGroup
   m_Int_keys:
-  - pbDefaultEditLevel
-  - pbDefaultSelectionMode
   - pb_GIWorkflowMode
   - pbHandleAlignment
+  - pbShadowCastingMode
+  - pbDefaultCollider
+  - pbDefaultEntity
+  - pbDefaultEditLevel
+  - pbDefaultSelectionMode
+  - pbDefaultExportFormat
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
   m_String_keys:
   - pbCurrentMaterialPalette
   m_Color_keys: []
-  m_Material_keys: []
-  m_Bool_values: 00000100
-  m_Int_values: 04000000010000000100000000000000
+  m_Material_keys:
+  - pbDefaultMaterial
+  m_Bool_values: 0000000001000101
+  m_Int_values: 0100000000000000020000000200000000000000000000000100000000000000
   m_Float_values:
   - 0
   - 0
   m_String_values:
   - Assets/Base/ProCore/ProBuilder/Data/Default Material Palette.asset
   m_Color_values: []
-  m_Material_values: []
+  m_Material_values:
+  - {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
