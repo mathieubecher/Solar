@@ -5,12 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public enum GameType
+    {
+        LOCAL, CLIENT, SERVER
+    }
     [HideInInspector]
     public bool debug;
+
+    public GameType _gameType;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (FindObjectOfType<Controller>().networkObject.IsServer) _gameType = GameType.SERVER;
+        else _gameType = GameType.CLIENT;
     }
 
     // Update is called once per frame

@@ -8,6 +8,7 @@ public class MultiMonitor : MonoBehaviour
 {
     [SerializeField] private Camera main;
     [SerializeField] private Camera player2;
+    private GameManager _manager;
     private bool multi = false;
     
     #if UNITY_STANDALONE_WIN
@@ -29,7 +30,10 @@ public class MultiMonitor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Mono();
+        _manager = FindObjectOfType<GameManager>();
+        if(_manager._gameType == GameManager.GameType.LOCAL)Mono();
+        else if (_manager._gameType == GameManager.GameType.CLIENT) OnlineClient();
+        else OnlineServer();
         //Display.displays[0].Activate(1920, 1080, 60);
         //Display.displays[1].Activate(1920, 1080, 30);
     }
@@ -72,5 +76,20 @@ public class MultiMonitor : MonoBehaviour
         #if UNITY_STANDALONE_WIN
         StartCoroutine(SetWindowPosition(-8, -50));
         #endif
+    }
+
+    void OnlineClient()
+    {
+        Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+        Screen.SetResolution (1920,1080,true);
+        player2.rect = new Rect(0,0,1,1);
+        main.enabled = false;
+    }
+    void OnlineServer()
+    {
+        Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+        Screen.SetResolution (1920,1080,true);
+        main.rect = new Rect(0,0,1,1);
+        player2.enabled = false;
     }
 }

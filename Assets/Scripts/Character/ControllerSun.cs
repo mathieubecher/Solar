@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using BeardedManStudios.Forge.Networking;
+using BeardedManStudios.Forge.Networking.Generated;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ControllerSun : MonoBehaviour
+public class ControllerSun : ControllerSunBehavior
 {
     [Header("Sun control")]
     private LightController _sun;
@@ -49,7 +51,13 @@ public class ControllerSun : MonoBehaviour
     
     void Update()
     {
-        _gotoAngle += _gotoAngleVelocity * _maxRotateSpeed * Time.deltaTime;
+
+        if (!networkObject.IsServer)
+        {
+            _gotoAngle += _gotoAngleVelocity * _maxRotateSpeed * Time.deltaTime;
+            networkObject.SendRpc(RPC_SET_ROTATE, Receivers.Server, _gotoAngle);
+        }
+        
         
         float rotateSpeed = DefineSpeed();
         _angle += rotateSpeed * Time.deltaTime;
@@ -62,9 +70,16 @@ public class ControllerSun : MonoBehaviour
         
         _angleInfo.transform.localEulerAngles = new Vector3(0,_angle,0);
         _gotoAngleInfo.transform.localEulerAngles = new Vector3(0,_gotoAngle,0);
-        
-        
-        SetLife();
+
+        if(!networkObject.IsServer) GetLife();
+        else SetLife();
+    }
+
+
+
+    public override void SetRotate(RpcArgs args)
+    {
+        _gotoAngle = args.GetNext<float>();
     }
 
     float DefineSpeed()
@@ -89,7 +104,10 @@ public class ControllerSun : MonoBehaviour
         _fxUI.color = fx.Evaluate(1-_life) * new Color(1,1,1,0.8f + _pulsate.Evaluate(_time) * 0.2f);
 
     }
-    
+    private void GetLife()
+    {
+        _life = networkObject.life;
+    }
     private void GetPoints(GameObject obj)
     {
         
@@ -104,4 +122,6 @@ public class ControllerSun : MonoBehaviour
     {
         _gotoAngleVelocity = rotate;
     }
+
+    
 }
