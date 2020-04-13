@@ -31,10 +31,6 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new ControllerNetworkObject(networker, id, frame);
 						break;
-					case ControllerSunNetworkObject.IDENTITY:
-						availableCallback = true;
-						obj = new ControllerSunNetworkObject(networker, id, frame);
-						break;
 					case CubeForgeGameNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new CubeForgeGameNetworkObject(networker, id, frame);

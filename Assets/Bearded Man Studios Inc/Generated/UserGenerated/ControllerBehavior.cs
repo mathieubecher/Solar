@@ -4,11 +4,13 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[\"float\"]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[\"rotation\"]]")]
+	[GeneratedRPC("{\"types\":[[\"Quaternion\"][\"Vector3\"][\"float\"]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[\"rotation\"][\"position\"][\"rotation\"]]")]
 	public abstract partial class ControllerBehavior : NetworkBehavior
 	{
 		public const byte RPC_SET_ROTATE = 0 + 5;
+		public const byte RPC_SET_POSITION = 1 + 5;
+		public const byte RPC_SET_SUN_ROTATE = 2 + 5;
 		
 		public ControllerNetworkObject networkObject = null;
 
@@ -22,7 +24,9 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
-			networkObject.RegisterRpc("SetRotate", SetRotate, typeof(float));
+			networkObject.RegisterRpc("SetRotate", SetRotate, typeof(Quaternion));
+			networkObject.RegisterRpc("SetPosition", SetPosition, typeof(Vector3));
+			networkObject.RegisterRpc("SetSunRotate", SetSunRotate, typeof(float));
 
 			networkObject.onDestroy += DestroyGameObject;
 
@@ -101,9 +105,19 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		/// <summary>
 		/// Arguments:
-		/// float rotation
+		/// Quaternion rotation
 		/// </summary>
 		public abstract void SetRotate(RpcArgs args);
+		/// <summary>
+		/// Arguments:
+		/// Vector3 position
+		/// </summary>
+		public abstract void SetPosition(RpcArgs args);
+		/// <summary>
+		/// Arguments:
+		/// float rotation
+		/// </summary>
+		public abstract void SetSunRotate(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}

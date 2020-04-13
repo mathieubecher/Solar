@@ -6,11 +6,9 @@ using UnityEngine.PlayerLoop;
 
 public class Solo : AbstractInput
 {
-    protected Vector2 _move;
-    protected Controller _controller;
-    protected PlayerInput _controls;
+    
 
-    public Solo(Controller controller)
+    public Solo(Controller controller) : base(controller)
     {
         _controller = controller;
         _controls = _controller.GetComponent<PlayerInput>();
@@ -26,19 +24,27 @@ public class Solo : AbstractInput
         
         _controls.currentActionMap["RotateSun"].performed += ctx => RotateSun(ctx.ReadValue<float>());
         _controls.currentActionMap["RotateSun"].canceled += ctx => RotateSun(ctx.ReadValue<float>());
+                
+        
+#if UNITY_EDITOR
+#else
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+#endif
     }
 
-    public void Update()
+    public override void InputUpdate()
     {
 
         MouseCamera();
         MovePlayer();
+        _controller._sun._gotoAngle += _gotoAngleVelocity * _controller._sun._maxRotateSpeed * Time.deltaTime;
     }
 
-    public void FixedUpdate() {}
+    public override void InputFixed() {}
 
 
-    public void MovePlayer()
+    public override void MovePlayer()
     {
         Vector3 velocity = Quaternion.Euler(0,_controller._camera.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
 
@@ -72,7 +78,7 @@ public class Solo : AbstractInput
     }
     public void RotateSun(float angle)
     {
-        _controller._sun.Rotate(angle);
+        _gotoAngleVelocity = angle;
     }
     public void VelocityCam(Vector2 velocity)
     {

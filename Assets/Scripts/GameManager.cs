@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using BeardedManStudios.Forge.Networking.Unity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,10 +15,9 @@ public class GameManager : MonoBehaviour
 
     public GameType _gameType = GameType.SOLO;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        if (FindObjectOfType<Controller>().networkObject.IsServer) _gameType = GameType.SERVER;
-        else _gameType = GameType.CLIENT;
+        _gameType = StaticClass.gameType;
     }
 
     // Update is called once per frame

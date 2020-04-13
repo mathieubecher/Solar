@@ -7,6 +7,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public static class StaticClass
+{
+	public enum ServerType
+	{
+		PLAYER, SUN
+	};
+	public static GameManager.GameType gameType = GameManager.GameType.SOLO;
+	public static ServerType serverType = ServerType.PLAYER;
+}
+
 public class MultiplayerMenu : MonoBehaviour
 {
 	public InputField ipAddress = null;
@@ -35,8 +45,14 @@ public class MultiplayerMenu : MonoBehaviour
 
 	public bool useTCP = false;
 
+	[SerializeField] private Text serverType;
+	
+	
 	private void Start()
 	{
+		Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+		Screen.SetResolution (1920,1080,true);
+		
 		ipAddress.text = "127.0.0.1";
 		portNumber.text = "15937";
 
@@ -68,8 +84,33 @@ public class MultiplayerMenu : MonoBehaviour
 		Debug.Log("Found endpoint: " + endpoint.Address + ":" + endpoint.Port);
 	}
 
+
+	public void Solo()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+	}
+
+	public void ServerType()
+	{
+		if (StaticClass.serverType == StaticClass.ServerType.PLAYER)
+		{
+			StaticClass.serverType = StaticClass.ServerType.SUN;
+			serverType.text = "Sun";
+
+		}
+		else
+		{
+			StaticClass.serverType = StaticClass.ServerType.PLAYER;
+			serverType.text = "Player";
+		}
+	}
+	
 	public void Connect()
 	{
+		// TODO
+		StaticClass.gameType = GameManager.GameType.CLIENT;
+		StaticClass.serverType = StaticClass.ServerType.SUN;
+		
 		if (connectUsingMatchmaking)
 		{
 			ConnectToMatchmaking();
@@ -135,6 +176,9 @@ public class MultiplayerMenu : MonoBehaviour
 
 	public void Host()
 	{
+		// TODO
+		StaticClass.gameType = GameManager.GameType.SERVER;
+		
 		if (useTCP)
 		{
 			server = new TCPServer(64);
@@ -209,10 +253,10 @@ public class MultiplayerMenu : MonoBehaviour
 		}
 
 		mgr.Initialize(networker, masterServerHost, masterServerPort, masterServerData);
-
+		/*
 		if (useInlineChat && networker.IsServer)
 			SceneManager.sceneLoaded += CreateInlineChat;
-
+		*/
 		if (networker is IServer)
 		{
 			if (!DontChangeSceneOnConnect)

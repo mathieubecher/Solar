@@ -32,8 +32,9 @@ public class MultiMonitor : MonoBehaviour
     {
         _manager = FindObjectOfType<GameManager>();
         if(_manager._gameType == GameManager.GameType.LOCAL)Mono();
-        else if (_manager._gameType == GameManager.GameType.CLIENT) OnlineClient();
-        else OnlineServer();
+        else if (StaticClass.serverType == StaticClass.ServerType.PLAYER) OnlinePlayer();
+        else if (StaticClass.serverType == StaticClass.ServerType.SUN) OnlineSun();
+        else Mono();
         //Display.displays[0].Activate(1920, 1080, 60);
         //Display.displays[1].Activate(1920, 1080, 30);
     }
@@ -54,7 +55,7 @@ public class MultiMonitor : MonoBehaviour
         
     }
 
-    void Mono()
+    public void Mono()
     {
         multi = false;
         Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
@@ -66,7 +67,7 @@ public class MultiMonitor : MonoBehaviour
         #endif
     }
 
-    void Dual()
+    public void Dual()
     {
         multi = true;
         Screen.fullScreenMode = FullScreenMode.Windowed;   
@@ -78,18 +79,20 @@ public class MultiMonitor : MonoBehaviour
         #endif
     }
 
-    void OnlineClient()
+    public void OnlineSun()
     {
         Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         Screen.SetResolution (1920,1080,true);
         player2.rect = new Rect(0,0,1,1);
         main.enabled = false;
+        player2.enabled = true;
     }
-    void OnlineServer()
+    public void OnlinePlayer()
     {
         Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         Screen.SetResolution (1920,1080,true);
         main.rect = new Rect(0,0,1,1);
         player2.enabled = false;
+        main.enabled = true;
     }
 }

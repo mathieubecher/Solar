@@ -12,7 +12,6 @@ namespace BeardedManStudios.Forge.Networking.Unity
 
 		public GameObject[] ChatManagerNetworkObject = null;
 		public GameObject[] ControllerNetworkObject = null;
-		public GameObject[] ControllerSunNetworkObject = null;
 		public GameObject[] CubeForgeGameNetworkObject = null;
 		public GameObject[] ExampleProximityPlayerNetworkObject = null;
 		public GameObject[] NetworkCameraNetworkObject = null;
@@ -68,29 +67,6 @@ namespace BeardedManStudios.Forge.Networking.Unity
 						{
 							var go = Instantiate(ControllerNetworkObject[obj.CreateCode]);
 							newObj = go.GetComponent<ControllerBehavior>();
-						}
-					}
-
-					if (newObj == null)
-						return;
-						
-					newObj.Initialize(obj);
-
-					if (objectInitialized != null)
-						objectInitialized(newObj, obj);
-				});
-			}
-			else if (obj is ControllerSunNetworkObject)
-			{
-				MainThreadManager.Run(() =>
-				{
-					NetworkBehavior newObj = null;
-					if (!NetworkBehavior.skipAttachIds.TryGetValue(obj.NetworkId, out newObj))
-					{
-						if (ControllerSunNetworkObject.Length > 0 && ControllerSunNetworkObject[obj.CreateCode] != null)
-						{
-							var go = Instantiate(ControllerSunNetworkObject[obj.CreateCode]);
-							newObj = go.GetComponent<ControllerSunBehavior>();
 						}
 					}
 
@@ -224,18 +200,6 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			var netBehavior = go.GetComponent<ControllerBehavior>();
 			var obj = netBehavior.CreateNetworkObject(Networker, index);
 			go.GetComponent<ControllerBehavior>().networkObject = (ControllerNetworkObject)obj;
-
-			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
-			
-			return netBehavior;
-		}
-		[Obsolete("Use InstantiateControllerSun instead, its shorter and easier to type out ;)")]
-		public ControllerSunBehavior InstantiateControllerSunNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
-		{
-			var go = Instantiate(ControllerSunNetworkObject[index]);
-			var netBehavior = go.GetComponent<ControllerSunBehavior>();
-			var obj = netBehavior.CreateNetworkObject(Networker, index);
-			go.GetComponent<ControllerSunBehavior>().networkObject = (ControllerSunNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			
@@ -387,57 +351,6 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			}
 
 			go.GetComponent<ControllerBehavior>().networkObject = (ControllerNetworkObject)obj;
-
-			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
-			
-			return netBehavior;
-		}
-		/// <summary>
-		/// Instantiate an instance of ControllerSun
-		/// </summary>
-		/// <returns>
-		/// A local instance of ControllerSunBehavior
-		/// </returns>
-		/// <param name="index">The index of the ControllerSun prefab in the NetworkManager to Instantiate</param>
-		/// <param name="position">Optional parameter which defines the position of the created GameObject</param>
-		/// <param name="rotation">Optional parameter which defines the rotation of the created GameObject</param>
-		/// <param name="sendTransform">Optional Parameter to send transform data to other connected clients on Instantiation</param>
-		public ControllerSunBehavior InstantiateControllerSun(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
-		{
-			var go = Instantiate(ControllerSunNetworkObject[index]);
-			var netBehavior = go.GetComponent<ControllerSunBehavior>();
-
-			NetworkObject obj = null;
-			if (!sendTransform && position == null && rotation == null)
-				obj = netBehavior.CreateNetworkObject(Networker, index);
-			else
-			{
-				metadata.Clear();
-
-				if (position == null && rotation == null)
-				{
-					byte transformFlags = 0x1 | 0x2;
-					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
-					ObjectMapper.Instance.MapBytes(metadata, go.transform.position, go.transform.rotation);
-				}
-				else
-				{
-					byte transformFlags = 0x0;
-					transformFlags |= (byte)(position != null ? 0x1 : 0x0);
-					transformFlags |= (byte)(rotation != null ? 0x2 : 0x0);
-					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
-
-					if (position != null)
-						ObjectMapper.Instance.MapBytes(metadata, position.Value);
-
-					if (rotation != null)
-						ObjectMapper.Instance.MapBytes(metadata, rotation.Value);
-				}
-
-				obj = netBehavior.CreateNetworkObject(Networker, index, metadata.CompressBytes());
-			}
-
-			go.GetComponent<ControllerSunBehavior>().networkObject = (ControllerSunNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			

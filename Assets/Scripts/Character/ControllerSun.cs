@@ -6,21 +6,20 @@ using BeardedManStudios.Forge.Networking.Generated;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ControllerSun : ControllerSunBehavior
+public class ControllerSun : MonoBehaviour
 {
     [Header("Sun control")]
     private LightController _sun;
     
-    [SerializeField, Range(0,100)] private float _maxRotateSpeed = 100f;
+    [SerializeField, Range(0,100)] public float _maxRotateSpeed = 100f;
     [SerializeField, Range(0,100)] private float _speedVelocity = 5;
     private float _rotateInput;
     private float _rotateWheel;
     private bool _directionWheel;
     private float _time;
-    
-    private float _gotoAngle = 0;
+    [HideInInspector]
+    public float _gotoAngle = 0;
     [SerializeField] private GameObject _gotoAngleInfo;
-    private float _gotoAngleVelocity = 0;
     private float _angle = 0;
     [SerializeField] private GameObject _angleInfo;
     private float _angleVelocity = 0;
@@ -48,42 +47,24 @@ public class ControllerSun : ControllerSunBehavior
     }
 
     // Update is called once per frame
-    
+
     void Update()
     {
 
-        if (!networkObject.IsServer)
-        {
-            _gotoAngle += _gotoAngleVelocity * _maxRotateSpeed * Time.deltaTime;
-            networkObject.SendRpc(RPC_SET_ROTATE, Receivers.Server, _gotoAngle);
-        }
-        
-        
         float rotateSpeed = DefineSpeed();
         _angle += rotateSpeed * Time.deltaTime;
-        
-        AkSoundEngine.SetRTPCValue("RTPC_Sun_Velocity",Mathf.Abs(rotateSpeed/_maxRotateSpeed));
+
+        AkSoundEngine.SetRTPCValue("RTPC_Sun_Velocity", Mathf.Abs(rotateSpeed / _maxRotateSpeed));
 
         Vector3 sunEuler = _sun.transform.eulerAngles;
         sunEuler.y = _angle;
         _sun.transform.eulerAngles = sunEuler;
-        
-        _angleInfo.transform.localEulerAngles = new Vector3(0,-_angle,0);
-        _gotoAngleInfo.transform.localEulerAngles = new Vector3(0,-_gotoAngle,0);
 
-        if(!networkObject.IsServer) GetLife();
-        else SetLife();
-        AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun",Mathf.Abs(_life*100));
-        
-        _time = (_time + Time.deltaTime * _pulsateSpeed*(1-_life))%1;
-        _fxUI.color = fx.Evaluate(1-_life) * new Color(1,1,1,0.8f + _pulsate.Evaluate(_time) * 0.2f);
-    }
+        _angleInfo.transform.localEulerAngles = new Vector3(0, -_angle, 0);
+        _gotoAngleInfo.transform.localEulerAngles = new Vector3(0, -_gotoAngle, 0);
 
+        SetLife();
 
-
-    public override void SetRotate(RpcArgs args)
-    {
-        _gotoAngle = args.GetNext<float>();
     }
 
     float DefineSpeed()
@@ -102,13 +83,11 @@ public class ControllerSun : ControllerSunBehavior
         {
             _life -= p.TestLight(_sun)/_points.Count;
         }
+        AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", Mathf.Abs(_life * 100));
 
-        networkObject.life = _life;
+        _time = (_time + Time.deltaTime * _pulsateSpeed * (1 - _life)) % 1;
+        _fxUI.color = fx.Evaluate(1 - _life) * new Color(1, 1, 1, 0.8f + _pulsate.Evaluate(_time) * 0.2f);
 
-    }
-    private void GetLife()
-    {
-        _life = networkObject.life;
     }
     private void GetPoints(GameObject obj)
     {
@@ -119,11 +98,6 @@ public class ControllerSun : ControllerSunBehavior
             GetPoints(obj.transform.GetChild(i).gameObject);
         }
     }
-
-    public void Rotate(float rotate)
-    {
-        _gotoAngleVelocity = rotate;
-    }
-
+    
     
 }

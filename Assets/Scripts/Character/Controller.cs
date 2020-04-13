@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using BeardedManStudios.Forge.Networking;
-using BeardedManStudios.Forge.Networking.Generated;
+﻿using BeardedManStudios.Forge.Networking.Generated;
+using BeardedManStudios.Forge.Networking.Unity;
 #if UNITY_EDITOR
 using UnityEditor;
-using UnityEditor.SceneManagement;
 #endif
 using UnityEngine;
 
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Utilities;
 
-public class Controller : ControllerBehavior
+public class Controller : MonoBehaviour
 {
     public AbstractInput inputs;
     
@@ -45,32 +39,17 @@ public class Controller : ControllerBehavior
         _sun = GetComponent<ControllerSun>();
     }
 
-    private Vector3 mousePos;
-
     void Start()
     {
-
-        _controls = GetComponent<PlayerInput>();
-        if(networkObject.IsServer){
-            _controls.currentActionMap["Movement"].performed += ctx => Velocity(ctx.ReadValue<Vector2>());
-            _controls.currentActionMap["Movement"].canceled += ctx => Velocity(ctx.ReadValue<Vector2>());
+        GameManager manager = FindObjectOfType<GameManager>();
+        if (manager._gameType == GameManager.GameType.SOLO) inputs = new Solo(this);
+        else
+        {
+            if(manager._gameType == GameManager.GameType.SERVER) NetworkManager.Instance.InstantiateController();
+            inputs = new Solo(this);
             
-            _controls.currentActionMap["KeyMovement"].performed += ctx => Velocity(ctx.ReadValue<Vector2>());
-            _controls.currentActionMap["KeyMovement"].canceled += ctx => Velocity(ctx.ReadValue<Vector2>());
-            
-            _controls.currentActionMap["Rotate"].performed += ctx => _camera.Rotate(ctx.ReadValue<Vector2>());
-            _controls.currentActionMap["Rotate"].canceled += ctx => _camera.Rotate(ctx.ReadValue<Vector2>());
-            return;
         }
-        _controls.currentActionMap["RotateSun"].performed += ctx => _sun.Rotate(ctx.ReadValue<float>());
-        _controls.currentActionMap["RotateSun"].canceled += ctx => _sun.Rotate(ctx.ReadValue<float>());
-        
-#if UNITY_EDITOR
-#else
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-#endif
-        mousePos = Input.mousePosition;
+
     }
 
 
@@ -78,57 +57,14 @@ public class Controller : ControllerBehavior
     // Update is called once per frame
     void Update()
     {
-        if (!networkObject.IsServer)
-        {
-            Vector3 lastpos = transform.position;
-            transform.position = networkObject.position;
-            transform.rotation = networkObject.rotation;
-            if((lastpos - transform.position).magnitude > 0.01f) animator.SetFloat("velocity",1);
-            else animator.SetFloat("velocity",0);
-            return;
-        }
-        MovePlayer();
+        inputs.InputUpdate();
+    }
+
+    void FixedUpdate()
+    {
+        inputs.InputFixed();
     }
     
-    private void Velocity(Vector2 readValue)
-    {
-        _move = new Vector2(readValue.x, readValue.y);
-    }
-
-    private void MovePlayer()
-    {
-        Vector3 camDir = Vector3.forward;
-        _camera.RotateMouse(new Vector3(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y")) * 0.8f);
-        Vector3 velocity = Quaternion.Euler(0,_camera.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * speed);
-
-        if (velocity.magnitude > 0)
-        {
-            transform.rotation = Quaternion.LookRotation(velocity);
-            isMoving = true;
-        }
-        else
-        {
-            velocity = Vector3.zero;
-        }
-        animator.SetFloat("velocity",velocity.magnitude);
-        velocity.y = _rigidbody.velocity.y;
-        _rigidbody.velocity = velocity;
-        
-    }
-
-    private void FixedUpdate()
-    {
-        if (isMoving)
-        {
-            isMoving = false;
-            networkObject.position = transform.position;
-            networkObject.rotation = transform.rotation;
-        }
-    }
-
-    public override void SetRotate(RpcArgs args)
-    {
-    }
 }
 
 
