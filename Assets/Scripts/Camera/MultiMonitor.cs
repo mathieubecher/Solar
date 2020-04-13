@@ -31,10 +31,9 @@ public class MultiMonitor : MonoBehaviour
     void Start()
     {
         _manager = FindObjectOfType<GameManager>();
-        if(_manager._gameType == GameManager.GameType.LOCAL)Mono();
+        if(_manager._gameType == GameManager.GameType.SOLO)Mono();
         else if (StaticClass.serverType == StaticClass.ServerType.PLAYER) OnlinePlayer();
         else if (StaticClass.serverType == StaticClass.ServerType.SUN) OnlineSun();
-        else Mono();
         //Display.displays[0].Activate(1920, 1080, 60);
         //Display.displays[1].Activate(1920, 1080, 30);
     }
