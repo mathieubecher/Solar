@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using BeardedManStudios.Forge.Networking;
 using BeardedManStudios.Forge.Networking.Generated;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -14,14 +15,16 @@ using UnityEngine.InputSystem.Utilities;
 
 public class Controller : ControllerBehavior
 {
+    public AbstractInput inputs;
+    
     private PlayerInput _controls;
     // External
-    private CameraController _camera;
+    [HideInInspector] public  CameraController _camera;
     
     // Infos
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private Animator animator;
-    private Rigidbody _rigidbody;
+    public float speed = 5f;
+    [SerializeField] public Animator animator;
+    [HideInInspector] public  Rigidbody _rigidbody;
     [HideInInspector] public ControllerSun _sun;
     private CameraTarget _target;
 
@@ -35,6 +38,7 @@ public class Controller : ControllerBehavior
     // Start is called before the first frame update
     void Awake()
     {
+        
         _rigidbody = GetComponent<Rigidbody>();
         _camera = FindObjectOfType<CameraController>();
         _target = FindObjectOfType<CameraTarget>();
@@ -45,7 +49,7 @@ public class Controller : ControllerBehavior
 
     void Start()
     {
-        
+
         _controls = GetComponent<PlayerInput>();
         if(networkObject.IsServer){
             _controls.currentActionMap["Movement"].performed += ctx => Velocity(ctx.ReadValue<Vector2>());
@@ -79,7 +83,7 @@ public class Controller : ControllerBehavior
             Vector3 lastpos = transform.position;
             transform.position = networkObject.position;
             transform.rotation = networkObject.rotation;
-            if((lastpos - transform.position).magnitude > 0.01f) animator.SetFloat("velocity",(lastpos - transform.position).magnitude);
+            if((lastpos - transform.position).magnitude > 0.01f) animator.SetFloat("velocity",1);
             else animator.SetFloat("velocity",0);
             return;
         }
@@ -120,6 +124,10 @@ public class Controller : ControllerBehavior
             networkObject.position = transform.position;
             networkObject.rotation = transform.rotation;
         }
+    }
+
+    public override void SetRotate(RpcArgs args)
+    {
     }
 }
 

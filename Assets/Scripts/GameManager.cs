@@ -7,12 +7,12 @@ public class GameManager : MonoBehaviour
 {
     public enum GameType
     {
-        LOCAL, CLIENT, SERVER
+        SOLO, LOCAL, CLIENT, SERVER
     }
     [HideInInspector]
     public bool debug;
 
-    public GameType _gameType;
+    public GameType _gameType = GameType.SOLO;
     // Start is called before the first frame update
     void Start()
     {

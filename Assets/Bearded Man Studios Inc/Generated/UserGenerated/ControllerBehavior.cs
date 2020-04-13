@@ -4,10 +4,11 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[]")]
-	[GeneratedRPCVariableNames("{\"types\":[]")]
+	[GeneratedRPC("{\"types\":[[\"float\"]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[\"rotation\"]]")]
 	public abstract partial class ControllerBehavior : NetworkBehavior
 	{
+		public const byte RPC_SET_ROTATE = 0 + 5;
 		
 		public ControllerNetworkObject networkObject = null;
 
@@ -21,6 +22,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
+			networkObject.RegisterRpc("SetRotate", SetRotate, typeof(float));
 
 			networkObject.onDestroy += DestroyGameObject;
 
@@ -97,6 +99,11 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.SnapInterpolations();
 		}
 
+		/// <summary>
+		/// Arguments:
+		/// float rotation
+		/// </summary>
+		public abstract void SetRotate(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}

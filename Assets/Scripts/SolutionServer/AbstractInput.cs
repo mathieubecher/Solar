@@ -1,21 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public abstract class AbstractInput
+public interface AbstractInput
 {
-    private Controller _controller;
 
-    public AbstractInput(Controller controller)
-    {
-        _controller = controller;
-    }
 
-    public abstract void Velocity(Vector2 readValue);
-    public abstract void MovePlayer();
-    public abstract void RotateSun();
-    public abstract void RotateCam();
-    
-    public void Update(){}
-    public void FixedUpdate(){}
+    void MovePlayer();
+
+    void Update();
+    void FixedUpdate();
 }
