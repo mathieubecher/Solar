@@ -8,6 +8,7 @@ public class OnlineSun: AbstractInput
 {
 
     private InputManager _manager;
+    private Vector3 _goto;
 
     public override void SetManager(InputManager manager)
     {
@@ -18,9 +19,15 @@ public class OnlineSun: AbstractInput
     {
         SetManager(manager);
         _controls = controller.GetComponent<PlayerInput>();
+        _goto = controller.transform.position;
         _controller._rigidbody.isKinematic = true;
         _controls.currentActionMap["RotateSun"].performed += ctx => RotateSun(ctx.ReadValue<float>());
         _controls.currentActionMap["RotateSun"].canceled += ctx => RotateSun(ctx.ReadValue<float>());
+        if (GameObject.FindObjectOfType<GameManager>().gameType == GameManager.GameType.CLIENT)
+        {
+            _controller.transform.position = _manager.position;
+            _controller.transform.rotation = _manager.rotation;
+        }
     }
     
     public override void InputUpdate()
@@ -33,14 +40,25 @@ public class OnlineSun: AbstractInput
 
     public override void MovePlayer()
     {
-        Vector3 lastpos = _controller.transform.position;
         // TODO
         if(isManager){
-            _controller.transform.position = _manager.position;
+            _goto = _manager.position;
             _controller.transform.rotation = _manager.rotation;
         }
 
-        _controller.animator.SetFloat("velocity", (lastpos - _controller.transform.position).magnitude > 0.01f ? 1 : 0);
+        if ((_goto - _controller.transform.position).magnitude > _controller.speed * Time.deltaTime)
+        {
+            Vector3 move = (_goto - _controller.transform.position).normalized * _controller.speed;
+            _controller.transform.position += move * Time.deltaTime;
+            _controller.animator.SetFloat("velocity", 1);
+        }
+        else
+        {
+            _controller.animator.SetFloat("velocity", (_goto - _controller.transform.position).magnitude);
+            _controller.transform.position = _goto;
+            
+        }
+
     }
 
     public void RotateSun(float angle)
