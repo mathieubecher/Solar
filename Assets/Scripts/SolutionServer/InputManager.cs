@@ -5,15 +5,18 @@ using UnityEngine;
 
 public class InputManager : ControllerBehavior
 {
-    public Quaternion rotation;
-    public Vector3 position;
-    public float sunRotation;
+    public Quaternion rotation{
+        get { return networkObject.rotation; }
+    }
+    public Vector3 position{
+        get { return networkObject.position; }
+    }
+    public float sunRotation{
+        get { return networkObject.sunrotation; }
+    }
 
     void Start()
     {
-        rotation = Quaternion.identity;
-        position = Vector3.one;
-        sunRotation = 0;
         Controller controller = FindObjectOfType<Controller>();
         
         // Configure les Inputs Controllers
@@ -38,32 +41,33 @@ public class InputManager : ControllerBehavior
 
     public void CallSetRotate(Quaternion r)
     {
-        networkObject.SendRpc(RPC_SET_ROTATE, (networkObject.IsServer)?Receivers.Others:Receivers.Server, r);
+        if (networkObject.IsServer) networkObject.rotation = r;
+        else networkObject.SendRpc(RPC_SET_ROTATE, Receivers.Server, r);
     }
     public override void SetRotate(RpcArgs args)
     {
-        rotation = args.GetNext<Quaternion>();
+        networkObject.rotation = args.GetNext<Quaternion>();
         
     }
     
     public void CallSetPosition(Vector3 p)
     {
-        networkObject.SendRpc(RPC_SET_POSITION, (networkObject.IsServer)?Receivers.Others:Receivers.Server, p);
+        if (networkObject.IsServer) networkObject.position = p;
+        else networkObject.SendRpc(RPC_SET_POSITION, Receivers.Server, p);
     }
     public override void SetPosition(RpcArgs args)
     {
-        position = args.GetNext<Vector3>();
-        Debug.Log("Set Position");
+        networkObject.position = args.GetNext<Vector3>();
     }
     
     public void CallSetSunRotate(float f)
     {
-        networkObject.SendRpc(RPC_SET_SUN_ROTATE, (networkObject.IsServer)?Receivers.Others:Receivers.Server, f);
+        if (networkObject.IsServer) networkObject.sunrotation = f;
+        else networkObject.SendRpc(RPC_SET_SUN_ROTATE, Receivers.Server, f);
     }
     public override void SetSunRotate(RpcArgs args)
     {
-        sunRotation = args.GetNext<float>();
-        Debug.Log("Set Rotation");
+        networkObject.sunrotation = args.GetNext<float>();
     }
 
 }
