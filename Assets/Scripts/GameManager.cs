@@ -13,11 +13,12 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool debug;
 
-    public GameType _gameType = GameType.SOLO;
+    public GameType gameType = GameType.SOLO;
     // Start is called before the first frame update
     void Awake()
     {
-        _gameType = StaticClass.gameType;
+        gameType = StaticClass.gameType;
+        Debug.Log(gameType);
     }
 
     // Update is called once per frame
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
             debug = !debug;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && (gameType == GameType.SOLO || gameType == GameType.LOCAL))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

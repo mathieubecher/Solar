@@ -31,7 +31,7 @@ public class MultiMonitor : MonoBehaviour
     void Start()
     {
         _manager = FindObjectOfType<GameManager>();
-        if(_manager._gameType == GameManager.GameType.SOLO)Mono();
+        if(_manager.gameType == GameManager.GameType.SOLO)Mono();
         else if (StaticClass.serverType == StaticClass.ServerType.PLAYER) OnlinePlayer();
         else if (StaticClass.serverType == StaticClass.ServerType.SUN) OnlineSun();
         //Display.displays[0].Activate(1920, 1080, 60);
@@ -40,7 +40,7 @@ public class MultiMonitor : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P)  && (_manager.gameType == GameManager.GameType.SOLO || _manager.gameType == GameManager.GameType.LOCAL))
         {
             if(!multi)
             {

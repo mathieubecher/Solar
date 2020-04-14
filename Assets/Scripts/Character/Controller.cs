@@ -42,10 +42,10 @@ public class Controller : MonoBehaviour
     void Start()
     {
         GameManager manager = FindObjectOfType<GameManager>();
-        if (manager._gameType == GameManager.GameType.SOLO) inputs = new Solo(this);
+        if (manager.gameType == GameManager.GameType.SOLO) inputs = new Solo(this);
         else
         {
-            if(manager._gameType == GameManager.GameType.SERVER) NetworkManager.Instance.InstantiateController();
+            if(manager.gameType == GameManager.GameType.SERVER) NetworkManager.Instance.InstantiateController();
             inputs = new Solo(this);
             
         }
