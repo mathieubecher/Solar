@@ -1,13 +1,9 @@
 ﻿
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
+
 [ExecuteInEditMode]
 public class GizmosSun : MonoBehaviour
 {
@@ -48,15 +44,17 @@ public class GizmosSun : MonoBehaviour
     private void OnDrawGizmos()
     {
         if (!_light.gizmos) return;
-
         // Draw interface 
         Handles.BeginGUI();
+        
         DrawIncline();
         DrawRotation();
         Handles.color = Color.white;
         Handles.DrawSolidDisc(actualCenter, Vector3.forward, 5);
+       
         Handles.EndGUI();
-        SceneView.onSceneGUIDelegate = UpdateSceneView;
+        SceneView.onSceneGUIDelegate += UpdateSceneView;
+       
     }
 
     private void OnGUI()
