@@ -33,6 +33,8 @@ public class GizmosSun : MonoBehaviour
         //Destroy(gameObject);
         _light = FindObjectOfType<LightController>();
         actualCenter = center;
+        
+        SceneView.onSceneGUIDelegate += UpdateSceneView;
     }
 
     void Update()
@@ -53,7 +55,6 @@ public class GizmosSun : MonoBehaviour
         Handles.DrawSolidDisc(actualCenter, Vector3.forward, 5);
        
         Handles.EndGUI();
-        SceneView.onSceneGUIDelegate += UpdateSceneView;
        
     }
 
