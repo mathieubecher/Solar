@@ -115,6 +115,11 @@
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -315,14 +320,15 @@
 											<CrossfadingInfo>
 												<LeftEdgePos>0</LeftEdgePos>
 												<LeftFadingMode>Automatic</LeftFadingMode>
-												<RightEdgePos>79.6730248691099</RightEdgePos>
+												<RightEdgePos>90.7613205569949</RightEdgePos>
 												<RightFadingMode>Automatic</RightFadingMode>
+												<RightFadingSegmentShape>Log1</RightFadingSegmentShape>
 											</CrossfadingInfo>
 										</BlendTrackAssoc>
 										<BlendTrackAssoc>
 											<ItemRef Name="Amb_Desert_Calm" ID="{C91756AB-4289-4E84-B23A-7A61B95214F0}"/>
 											<CrossfadingInfo>
-												<LeftEdgePos>20.9295693717277</LeftEdgePos>
+												<LeftEdgePos>8.60924082963324</LeftEdgePos>
 												<LeftFadingMode>Automatic</LeftFadingMode>
 												<RightEdgePos>100</RightEdgePos>
 												<RightFadingMode>Automatic</RightFadingMode>
