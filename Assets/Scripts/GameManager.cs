@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using BeardedManStudios.Forge.Networking.Unity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public enum GameType
+    {
+        SOLO, LOCAL, CLIENT, SERVER
+    }
     [HideInInspector]
     public bool debug;
+
+    public GameType gameType = GameType.SOLO;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        gameType = StaticClass.gameType;
+        Debug.Log(gameType);
     }
 
     // Update is called once per frame
@@ -30,7 +38,7 @@ public class GameManager : MonoBehaviour
             debug = !debug;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && (gameType == GameType.SOLO || gameType == GameType.LOCAL))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
