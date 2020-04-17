@@ -10,9 +10,11 @@ public abstract class AbstractInput
     protected PlayerInput _controls;
     protected float _gotoAngleVelocity = 0;
     public bool isManager;
+    protected Rigidbody _rigidbody;
     public AbstractInput(Controller controller)
     {
         _controller = controller;
+        _rigidbody = _controller.GetComponent<Rigidbody>();
     }
 
     public abstract void MovePlayer();

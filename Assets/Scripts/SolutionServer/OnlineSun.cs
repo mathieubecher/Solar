@@ -20,7 +20,7 @@ public class OnlineSun: AbstractInput
         SetManager(manager);
         _controls = controller.GetComponent<PlayerInput>();
         _goto = controller.transform.position;
-        _controller._rigidbody.isKinematic = true;
+        _rigidbody.isKinematic = true;
         _controls.currentActionMap["RotateSun"].performed += ctx => RotateSun(ctx.ReadValue<float>());
         _controls.currentActionMap["RotateSun"].canceled += ctx => RotateSun(ctx.ReadValue<float>());
         if (GameObject.FindObjectOfType<GameManager>().gameType == GameManager.GameType.CLIENT)
@@ -55,8 +55,8 @@ public class OnlineSun: AbstractInput
         {
             _controller.transform.position = _goto;
         }
-        
-        _controller.animator.SetFloat("velocity", _manager.velocity.magnitude);
+
+        _controller.velocity = _manager.velocity;
 
     }
 

@@ -18,13 +18,13 @@ public class Controller : MonoBehaviour
     // Infos
     public float speed = 5f;
     [SerializeField] public Animator animator;
-    [HideInInspector] public  Rigidbody _rigidbody;
     [HideInInspector] public ControllerSun _sun;
     private CameraTarget _target;
 
     private Vector2 _moveCamera;
     private Vector2 _move;
     private bool isMoving = false;
+    public Vector3 velocity;
     
     
     public Vector3 Target {  get => _target.gameObject.transform.position;}
@@ -32,8 +32,6 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
-        _rigidbody = GetComponent<Rigidbody>();
         _camera = FindObjectOfType<CameraController>();
         _target = FindObjectOfType<CameraTarget>();
         _sun = GetComponent<ControllerSun>();
@@ -58,6 +56,9 @@ public class Controller : MonoBehaviour
     void Update()
     {
         inputs.InputUpdate();
+        animator.SetFloat("velocity", velocity.magnitude);
+        if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("isWalking_Play", this.gameObject);
+        else AkSoundEngine.PostEvent("isIDLE_Play", this.gameObject);
     }
 
     void FixedUpdate()

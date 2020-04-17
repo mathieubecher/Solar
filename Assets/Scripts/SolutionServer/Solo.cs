@@ -46,19 +46,18 @@ public class Solo : AbstractInput
 
     public override void MovePlayer()
     {
-        Vector3 velocity = Quaternion.Euler(0,_controller._camera.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
+        _controller.velocity = Quaternion.Euler(0,_controller._camera.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
 
-        if (velocity.magnitude > 0)
+        if (_controller.velocity.magnitude > 0)
         {
-            _controller.transform.rotation = Quaternion.LookRotation(velocity);
+            _controller.transform.rotation = Quaternion.LookRotation(_controller.velocity);
         }
         else
         {
-            velocity = Vector3.zero;
+            _controller.velocity = Vector3.zero;
         }
-        _controller.animator.SetFloat("velocity",velocity.magnitude);
-        velocity.y = _controller._rigidbody.velocity.y;
-        _controller._rigidbody.velocity = velocity;
+        _controller.velocity.y = _rigidbody.velocity.y;
+        _rigidbody.velocity = _controller.velocity;
     }
 
 
