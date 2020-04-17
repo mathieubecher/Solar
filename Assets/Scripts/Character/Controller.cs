@@ -1,32 +1,30 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+﻿using BeardedManStudios.Forge.Networking.Generated;
+using BeardedManStudios.Forge.Networking.Unity;
 #if UNITY_EDITOR
 using UnityEditor;
-using UnityEditor.SceneManagement;
 #endif
 using UnityEngine;
 
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Utilities;
 
 public class Controller : MonoBehaviour
 {
+    public AbstractInput inputs;
+    
     private PlayerInput _controls;
     // External
-    private CameraController _camera;
+    [HideInInspector] public  CameraController _camera;
     
     // Infos
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private Animator animator;
-    private Rigidbody _rigidbody;
-    private ControllerSun _sun;
+    public float speed = 5f;
+    [SerializeField] public Animator animator;
+    [HideInInspector] public ControllerSun _sun;
     private CameraTarget _target;
 
     private Vector2 _moveCamera;
     private Vector2 _move;
-    
+    private bool isMoving = false;
+    public Vector3 velocity;
     
     
     public Vector3 Target {  get => _target.gameObject.transform.position;}
@@ -34,38 +32,22 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
         _camera = FindObjectOfType<CameraController>();
         _target = FindObjectOfType<CameraTarget>();
         _sun = GetComponent<ControllerSun>();
-
-
     }
-
-    void OnEnable()
-    {
-        //Bind input
-    }
-    private Vector3 mousePos;
 
     void Start()
     {
-        
-        _controls = GetComponent<PlayerInput>();
-        _controls.currentActionMap["Movement"].performed += ctx => Move(ctx.ReadValue<Vector2>());
-        _controls.currentActionMap["Movement"].canceled += ctx => Move(ctx.ReadValue<Vector2>());
-        
-        _controls.currentActionMap["KeyMovement"].performed += ctx => Move(ctx.ReadValue<Vector2>());
-        _controls.currentActionMap["KeyMovement"].canceled += ctx => Move(ctx.ReadValue<Vector2>());
-        
-        _controls.currentActionMap["RotateSun"].performed += ctx => _sun.Rotate(ctx.ReadValue<float>());
-        _controls.currentActionMap["RotateSun"].canceled += ctx => _sun.Rotate(ctx.ReadValue<float>());
-        
-        _controls.currentActionMap["Rotate"].performed += ctx => _camera.Rotate(ctx.ReadValue<Vector2>());
-        _controls.currentActionMap["Rotate"].canceled += ctx => _camera.Rotate(ctx.ReadValue<Vector2>());
-        Cursor.lockState = CursorLockMode.Locked;
-        mousePos = Input.mousePosition;
-        Cursor.visible = false;
+        GameManager manager = FindObjectOfType<GameManager>();
+        if (manager.gameType == GameManager.GameType.SOLO) inputs = new Solo(this);
+        else
+        {
+            if(manager.gameType == GameManager.GameType.SERVER) NetworkManager.Instance.InstantiateController();
+            inputs = new Solo(this);
+            
+        }
+
     }
 
 
@@ -73,36 +55,28 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        Vector3 velocity = Quaternion.Euler(0,_camera.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * speed);
-        Vector3 camDir = Vector3.forward;
-        
-        _camera.RotateMouse(new Vector3(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y")) * 0.8f);
-
-        if(velocity.magnitude>0) transform.rotation = Quaternion.LookRotation(velocity);
-        animator.SetFloat("velocity",velocity.magnitude);
-        velocity.y = _rigidbody.velocity.y;
-        _rigidbody.velocity = velocity;
-
+        inputs.InputUpdate();
+        animator.SetFloat("velocity", velocity.magnitude);
+        if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("isWalking_Play", this.gameObject);
+        else AkSoundEngine.PostEvent("isIDLE_Play", this.gameObject);
     }
-    private void Move(Vector2 readValue)
+
+    void FixedUpdate()
     {
-        _move = new Vector2(readValue.x, readValue.y);
+        inputs.InputFixed();
     }
-
+    
 }
+
 
 #if UNITY_EDITOR
 [CustomEditor(typeof(Controller))]
 internal class ControllerEditor : Editor
 {
-
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
         var controller = (Controller) target;
-
-
     }
 }
 #endif
