@@ -10,11 +10,11 @@ public class AmbiancePlayer : MonoBehaviour
     {
         if (nbVolume > 0)
         {
-            // Je suis dedans
+            AkSoundEngine.PostEvent("Amb_Int",gameObject);
         }
         else
         {
-            // Je suis pas dedans
+            AkSoundEngine.PostEvent("Amb_Ext",gameObject);
         }
     }
     void OnTriggerEnter(Collider other)
