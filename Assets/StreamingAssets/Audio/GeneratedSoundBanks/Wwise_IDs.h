@@ -19,6 +19,8 @@ namespace AK
         static const AkUniqueID CHA_BREATH_PLAY = 182011575U;
         static const AkUniqueID CHA_FOOTSTEPS_PLAY = 1343142182U;
         static const AkUniqueID FLYING_ROCK_PLAY = 1884528993U;
+        static const AkUniqueID ISIDLE_PLAY = 3387557844U;
+        static const AkUniqueID ISWALKING_PLAY = 2222778103U;
         static const AkUniqueID MUSIC_DROP = 2212149258U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
         static const AkUniqueID MUSIC_POSTINTRO = 3194768471U;
