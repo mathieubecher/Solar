@@ -77,7 +77,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1343142182" Name="Cha_Footsteps_Play" ObjectPath="\Events\Default Work Unit\Character\Cha_Footsteps_Play" DurationType="OneShot" DurationMin="0.666667" DurationMax="0.792805">
+				<Event Id="1343142182" Name="Cha_Footsteps_Play" ObjectPath="\Events\Default Work Unit\Character\Cha_Footsteps_Play" DurationType="OneShot" DurationMin="0.666667" DurationMax="1.332608">
 					<IncludedMemoryFiles>
 						<File Id="140851678" Language="SFX">
 							<ShortName>cha_footsteps_sand_04.wav</ShortName>
@@ -90,6 +90,10 @@
 						<File Id="352773824" Language="SFX">
 							<ShortName>cha_foleys_sand (2).wav</ShortName>
 							<Path>SFX\cha_foleys_sand (2)_1FFEEEC1.wem</Path>
+						</File>
+						<File Id="518010738" Language="SFX">
+							<ShortName>foosteps_stone-002.wav</ShortName>
+							<Path>SFX\foosteps_stone-002_10C4C929.wem</Path>
 						</File>
 						<File Id="533551184" Language="SFX">
 							<ShortName>cha_footsteps_sand_05.wav</ShortName>
@@ -107,6 +111,14 @@
 							<ShortName>cha_footsteps_sand_02.wav</ShortName>
 							<Path>SFX\cha_footsteps_sand_02_10C4C929.wem</Path>
 						</File>
+						<File Id="793530324" Language="SFX">
+							<ShortName>foosteps_stone-003.wav</ShortName>
+							<Path>SFX\foosteps_stone-003_10C4C929.wem</Path>
+						</File>
+						<File Id="898853981" Language="SFX">
+							<ShortName>foosteps_stone-001.wav</ShortName>
+							<Path>SFX\foosteps_stone-001_10C4C929.wem</Path>
+						</File>
 						<File Id="1011376572" Language="SFX">
 							<ShortName>cha_footsteps_sand_03.wav</ShortName>
 							<Path>SFX\cha_footsteps_sand_03_10C4C929.wem</Path>
@@ -116,6 +128,28 @@
 							<Path>SFX\cha_foleys_sand (4)_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{569C2DF3-2300-48E3-A79C-55536C42AD41}">
+							<Media>
+								<File Id="140851678"/>
+								<File Id="533551184"/>
+								<File Id="149248493"/>
+								<File Id="714571509"/>
+								<File Id="1011376572"/>
+								<File Id="703007086"/>
+								<File Id="1046695966"/>
+								<File Id="672561057"/>
+								<File Id="352773824"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{7F448724-BC1B-4C15-90D8-2AF4C3E0833E}">
+							<Media>
+								<File Id="518010738"/>
+								<File Id="793530324"/>
+								<File Id="898853981"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="1884528993" Name="Flying_Rock_Play" ObjectPath="\Events\Default Work Unit\Flying_Rock_Play" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2212149258" Name="Music_Drop" ObjectPath="\Events\Default Work Unit\Music\Music_Drop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -193,6 +227,14 @@
 					</States>
 				</StateGroup>
 			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="997064848" Name="Footstep_Floor" ObjectPath="\Switches\Default Work Unit\Footstep_Floor">
+					<Switches>
+						<Switch Id="803837735" Name="Sand" ObjectPath="\Switches\Default Work Unit\Footstep_Floor\Sand"/>
+						<Switch Id="1216965916" Name="Stone" ObjectPath="\Switches\Default Work Unit\Footstep_Floor\Stone"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX">
 			<ObjectPath>Init</ObjectPath>

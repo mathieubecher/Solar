@@ -56,6 +56,21 @@ namespace AK
 
     } // namespace STATES
 
+    namespace SWITCHES
+    {
+        namespace FOOTSTEP_FLOOR
+        {
+            static const AkUniqueID GROUP = 997064848U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID SAND = 803837735U;
+                static const AkUniqueID STONE = 1216965916U;
+            } // namespace SWITCH
+        } // namespace FOOTSTEP_FLOOR
+
+    } // namespace SWITCHES
+
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID AMB_RTPC = 2682991203U;
