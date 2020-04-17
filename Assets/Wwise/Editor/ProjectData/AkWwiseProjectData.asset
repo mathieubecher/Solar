@@ -40,7 +40,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 060b33ab7ff874489c7b37296ffcee5e
     GuidInternal: 
-    m_lastTime: -8586154235769638425
+    m_lastTime: -8586145634053251081
     List:
     - name: ALL
       guid: 06d566ff37812349953c2aa6c92ce502
@@ -56,7 +56,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f62c9fea2fdc9049963bd5bc5510a430
     GuidInternal: 
-    m_lastTime: -8586154235769593486
+    m_lastTime: -8586145635168296673
     List:
     - name: Amb_Desert_Play
       guid: 1a753f9378525e4fb76b3458652c59b3
@@ -94,15 +94,45 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Cha_Breath_Play
+      guid: bf7ec27f890c3b49b44e1bce9142b5d9
+      id: 182011575
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Cha_Breath_Play
+        ObjectType: 3
+      Path: Default Work Unit\Character\Cha_Breath_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Cha_Footsteps_Play
       guid: 9254843797d3d743af919b305d187288
       id: 1343142182
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
       - ElementName: Cha_Footsteps_Play
         ObjectType: 3
-      Path: Default Work Unit\Cha_Footsteps_Play
+      Path: Default Work Unit\Character\Cha_Footsteps_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Character
+      guid: 0fc541266c36eb4395be7662da7a51ba
+      id: 436743010
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Character
+        ObjectType: 3
+      Path: Default Work Unit\Character\Character
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -115,6 +145,34 @@ MonoBehaviour:
       - ElementName: Flying_Rock_Play
         ObjectType: 3
       Path: Default Work Unit\Flying_Rock_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: isIDLE_Play
+      guid: c46e1160603f744283c509fdf003434b
+      id: 3387557844
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: States
+        ObjectType: 4
+      - ElementName: isIDLE_Play
+        ObjectType: 3
+      Path: Default Work Unit\States\isIDLE_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: isWalking_Play
+      guid: a056bcd199169d4c8ee46e0608e9745c
+      id: 2222778103
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: States
+        ObjectType: 4
+      - ElementName: isWalking_Play
+        ObjectType: 3
+      Path: Default Work Unit\States\isWalking_Play
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -188,6 +246,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: States
+      guid: 9854e4e511ce5f478dc1a518a3e0a8f4
+      id: 1208172739
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: States
+        ObjectType: 4
+      - ElementName: States
+        ObjectType: 3
+      Path: Default Work Unit\States\States
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Sun_Feedback_Play
       guid: 3438ea43d4eea4409bcde7ad668d74f5
       id: 2337456342
@@ -205,8 +277,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c351adaffa0926499d3369b21999a571
     GuidInternal: 
-    m_lastTime: -8586154235769438676
+    m_lastTime: -8586145627620226677
     List:
+    - name: Amb_RTPC
+      guid: 84e709144ae8ee45b8f32e8112055082
+      id: 2682991203
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Amb_RTPC
+        ObjectType: 13
+      Path: Default Work Unit\Amb_RTPC
     - name: RTPC_Distance_Sun
       guid: 91f4c94e645e1247a19706c225eeaab1
       id: 2257099397
@@ -239,8 +320,39 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 8d677a4eefbf304cb66e086a1eaa1126
     GuidInternal: 
-    m_lastTime: -8586156981802795057
+    m_lastTime: -8586145745109537276
     List:
+    - name: GeneralStates
+      guid: ec3721c9e3581042a2b877b6a2248e1a
+      id: 874109109
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GeneralStates
+        ObjectType: 9
+      Path: Default Work Unit\GeneralStates
+      values:
+      - name: isIDLE
+        guid: 11d7547129f97e4a921071ef86a477cc
+        id: 2139983939
+        PathAndIcons:
+        - ElementName: isIDLE
+          ObjectType: 8
+      - name: isWalking
+        guid: ff0d0aa317d6254183938c42612deddf
+        id: 3629409974
+        PathAndIcons:
+        - ElementName: isWalking
+          ObjectType: 8
+      - name: None
+        guid: 986354ecaaff6b4aa2c87f0077b7fae6
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: Music_State
       guid: 2e69d1ddd53ade41bc792db63fa68d85
       id: 3826569560

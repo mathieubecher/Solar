@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID AMB_DESERT_PLAY = 2160078966U;
         static const AkUniqueID ASTRO_MOVING_PLAY = 3822072736U;
         static const AkUniqueID ASTRO_MOVING_STOP = 2165331746U;
+        static const AkUniqueID CHA_BREATH_PLAY = 182011575U;
         static const AkUniqueID CHA_FOOTSTEPS_PLAY = 1343142182U;
         static const AkUniqueID FLYING_ROCK_PLAY = 1884528993U;
         static const AkUniqueID MUSIC_DROP = 2212149258U;
@@ -27,6 +28,18 @@ namespace AK
 
     namespace STATES
     {
+        namespace GENERALSTATES
+        {
+            static const AkUniqueID GROUP = 874109109U;
+
+            namespace STATE
+            {
+                static const AkUniqueID ISIDLE = 2139983939U;
+                static const AkUniqueID ISWALKING = 3629409974U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace GENERALSTATES
+
         namespace MUSIC_STATE
         {
             static const AkUniqueID GROUP = 3826569560U;
@@ -45,10 +58,10 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID AMB_RTPC = 2682991203U;
         static const AkUniqueID RTPC_DISTANCE_SUN = 2257099397U;
         static const AkUniqueID RTPC_SUN_VELOCITY = 582120507U;
         static const AkUniqueID RTPC_WINDGAIN = 1687410496U;
-        static const AkUniqueID ZONES = 831766718U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS

@@ -12,9 +12,7 @@
 				</GameParameter>
 				<GameParameter Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}">
 					<PropertyList>
-						<Property Name="FilterTimeUp" Type="Real64" Value="0.5"/>
 						<Property Name="InitialValue" Type="Real64" Value="100"/>
-						<Property Name="RTPCRamping" Type="int16" Value="2"/>
 						<Property Name="SlewRateDown" Type="Real64" Value="1"/>
 						<Property Name="SlewRateUp" Type="Real64" Value="9"/>
 					</PropertyList>
@@ -25,7 +23,11 @@
 						<Property Name="Max" Type="Real64" Value="1"/>
 					</PropertyList>
 				</GameParameter>
-				<GameParameter Name="Zones" ID="{1409E784-E84A-45EE-B8F3-2E8112055082}"/>
+				<GameParameter Name="Amb_RTPC" ID="{1409E784-E84A-45EE-B8F3-2E8112055082}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

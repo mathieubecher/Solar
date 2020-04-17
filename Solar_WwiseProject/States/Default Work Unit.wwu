@@ -12,6 +12,27 @@
 						<State Name="Outro" ID="{C51E1648-034F-4843-8BE7-28EDB0B377C9}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="GeneralStates" ID="{C92137EC-58E3-4210-A2B8-77B6A2248E1A}">
+					<ChildrenList>
+						<State Name="None" ID="{EC546398-FFAA-4A6B-A2C8-7F0077B7FAE6}"/>
+						<State Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}"/>
+						<State Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="None" ID="{EC546398-FFAA-4A6B-A2C8-7F0077B7FAE6}"/>
+							<EndState Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}"/>
+							<EndState Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
+							<Time>2</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>

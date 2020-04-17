@@ -861,7 +861,7 @@
 						<Property Name="Tempo" Type="Real64" Value="90"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>6</Value>
+								<Value>3</Value>
 							</ValueList>
 							<RTPCList>
 								<RTPC Name="" ID="{F59FBCAC-150D-4DCF-84FB-1BCA0F61E215}" ShortID="967732174">
@@ -882,7 +882,13 @@
 												<SegmentShape>Exp3</SegmentShape>
 											</Point>
 											<Point>
-												<XPos>90</XPos>
+												<XPos>69.98993</XPos>
+												<YPos>-200</YPos>
+												<Flags>0</Flags>
+												<SegmentShape>Exp3</SegmentShape>
+											</Point>
+											<Point>
+												<XPos>99</XPos>
 												<YPos>0</YPos>
 												<Flags>0</Flags>
 												<SegmentShape>Log3</SegmentShape>
@@ -1042,9 +1048,6 @@
 						<MusicPlaylistContainer Name="PostIntro" ID="{95427C15-62F5-46BF-99A4-5CAC9FE1ED92}" ShortID="293400086">
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>3</Value>
-									</ValueList>
 									<RTPCList>
 										<RTPC Name="" ID="{D83CDB74-17CE-44AF-89BC-3EB58633D613}" ShortID="1051730673">
 											<ReferenceList>
@@ -1177,9 +1180,6 @@
 						<MusicPlaylistContainer Name="Drop1" ID="{EEEC0A75-26A8-4D5A-B229-3FFF60258064}" ShortID="36198883">
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>3</Value>
-									</ValueList>
 									<RTPCList>
 										<RTPC Name="" ID="{7899AC53-98F4-47F0-B989-4A70B84E9CAF}" ShortID="1063500713">
 											<ReferenceList>
@@ -1194,7 +1194,7 @@
 												<PointList>
 													<Point>
 														<XPos>-48</XPos>
-														<YPos>-3</YPos>
+														<YPos>-6</YPos>
 														<Flags>5</Flags>
 													</Point>
 													<Point>
@@ -1403,6 +1403,27 @@
 							</Playlist>
 						</MusicPlaylistContainer>
 					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="GeneralStates" ID="{C92137EC-58E3-4210-A2B8-77B6A2248E1A}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}"/>
+								<CustomState Name="" ID="{1D541FF1-E32B-464F-9ECC-C085BCFC4FB1}" ShortID="568270879">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64" Value="-5"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
+								<CustomState Name="" ID="{C17BCB0F-D2E0-448B-BE2C-442F5A72E4EB}" ShortID="115960528"/>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 					<TransitionList>
 						<MusicTransition Name="Root" ID="{279770E5-E8E5-42D8-BE75-EB9B2712AE1B}">
 							<PropertyList>
@@ -1441,7 +1462,6 @@
 										<Property Name="DestinationContextType" Type="int16" Value="1"/>
 										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
 									</PropertyList>
-									<ReferenceList/>
 									<TransitionInfo>
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{BB3724EE-B681-43C5-A862-20568DFA89A9}">

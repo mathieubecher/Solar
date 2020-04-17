@@ -24,7 +24,7 @@
 						</File>
 						<File Id="881745992" Language="SFX">
 							<ShortName>amb_desert_02_calm2.wav</ShortName>
-							<Path>SFX\amb_desert_02_calm2_DD4FA9F4.wem</Path>
+							<Path>SFX\amb_desert_02_calm2_D9E87D3B.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -37,7 +37,47 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2165331746" Name="Astro_Moving_Stop" ObjectPath="\Events\Default Work Unit\Astro_Moving_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1343142182" Name="Cha_Footsteps_Play" ObjectPath="\Events\Default Work Unit\Cha_Footsteps_Play" DurationType="OneShot" DurationMin="0.666667" DurationMax="0.792805">
+				<Event Id="182011575" Name="Cha_Breath_Play" ObjectPath="\Events\Default Work Unit\Character\Cha_Breath_Play" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="49281544" Language="SFX">
+							<ShortName>fast_breath_-001.wav</ShortName>
+							<Path>SFX\fast_breath_-001_10C4C929.wem</Path>
+						</File>
+						<File Id="79531810" Language="SFX">
+							<ShortName>slow_breath_-005.wav</ShortName>
+							<Path>SFX\slow_breath_-005_10C4C929.wem</Path>
+						</File>
+						<File Id="79750860" Language="SFX">
+							<ShortName>fast_breath_-003.wav</ShortName>
+							<Path>SFX\fast_breath_-003_10C4C929.wem</Path>
+						</File>
+						<File Id="120059494" Language="SFX">
+							<ShortName>slow_breath_-002.wav</ShortName>
+							<Path>SFX\slow_breath_-002_10C4C929.wem</Path>
+						</File>
+						<File Id="333094051" Language="SFX">
+							<ShortName>fast_breath_-005.wav</ShortName>
+							<Path>SFX\fast_breath_-005_10C4C929.wem</Path>
+						</File>
+						<File Id="388379351" Language="SFX">
+							<ShortName>slow_breath_-003.wav</ShortName>
+							<Path>SFX\slow_breath_-003_10C4C929.wem</Path>
+						</File>
+						<File Id="965640516" Language="SFX">
+							<ShortName>fast_breath_-004.wav</ShortName>
+							<Path>SFX\fast_breath_-004_10C4C929.wem</Path>
+						</File>
+						<File Id="1002534844" Language="SFX">
+							<ShortName>fast_breath_-002.wav</ShortName>
+							<Path>SFX\fast_breath_-002_10C4C929.wem</Path>
+						</File>
+						<File Id="1035605294" Language="SFX">
+							<ShortName>slow_breath_-004.wav</ShortName>
+							<Path>SFX\slow_breath_-004_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1343142182" Name="Cha_Footsteps_Play" ObjectPath="\Events\Default Work Unit\Character\Cha_Footsteps_Play" DurationType="OneShot" DurationMin="0.666667" DurationMax="0.792805">
 					<IncludedMemoryFiles>
 						<File Id="140851678" Language="SFX">
 							<ShortName>cha_footsteps_sand_04.wav</ShortName>
@@ -46,10 +86,6 @@
 						<File Id="149248493" Language="SFX">
 							<ShortName>cha_footsteps_sand_01.wav</ShortName>
 							<Path>SFX\cha_footsteps_sand_01_10C4C929.wem</Path>
-						</File>
-						<File Id="158995361" Language="SFX">
-							<ShortName>cha_foleys_sand (1).wav</ShortName>
-							<Path>SFX\cha_foleys_sand (1)_10C4C929.wem</Path>
 						</File>
 						<File Id="352773824" Language="SFX">
 							<ShortName>cha_foleys_sand (2).wav</ShortName>
@@ -125,6 +161,10 @@
 				<Event Id="3227181061" Name="Music_Stop" ObjectPath="\Events\Default Work Unit\Music\Music_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2337456342" Name="Sun_Feedback_Play" ObjectPath="\Events\Default Work Unit\Sun_Feedback_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
+						<File Id="20225164" Language="SFX">
+							<ShortName>sun_feedback_hifreq.wav</ShortName>
+							<Path>SFX\sun_feedback_hifreq_3F5930D3.wem</Path>
+						</File>
 						<File Id="99101634" Language="SFX">
 							<ShortName>sun_feedback_a5.wav</ShortName>
 							<Path>SFX\sun_feedback_a5_DDAC7EEC.wem</Path>
@@ -138,9 +178,9 @@
 			</IncludedEvents>
 			<GameParameters>
 				<GameParameter Id="582120507" Name="RTPC_Sun_Velocity" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Sun_Velocity"/>
-				<GameParameter Id="831766718" Name="Zones" ObjectPath="\Game Parameters\Default Work Unit\Zones"/>
 				<GameParameter Id="1687410496" Name="RTPC_WindGain" ObjectPath="\Game Parameters\Default Work Unit\RTPC_WindGain"/>
 				<GameParameter Id="2257099397" Name="RTPC_Distance_Sun" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Distance_Sun"/>
+				<GameParameter Id="2682991203" Name="Amb_RTPC" ObjectPath="\Game Parameters\Default Work Unit\Amb_RTPC"/>
 			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="3826569560" Name="Music_State" ObjectPath="\States\Default Work Unit\Music_State">

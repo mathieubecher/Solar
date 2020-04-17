@@ -15,14 +15,13 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Cha_Footsteps_Play" ID="{37845492-D397-43D7-AF91-9B305D187288}">
-					<ChildrenList>
-						<Action Name="" ID="{E19B122F-F7C2-4AFF-AE57-CD746367F125}" ShortID="898328922">
+						<Action Name="" ID="{9620204E-6311-4C41-9D17-4BA32AAF089C}" ShortID="1031728415">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Cha_Footsteps" ID="{8BF40208-A3A1-4B38-82F7-7E35C11F53AD}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+									<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -159,6 +158,64 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Drop" ID="{969C3013-C098-4E3C-8A39-DBA065D2084D}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="States" ID="{E5E45498-CE11-475F-8DC1-A518A3E0A8F4}" ShortID="559107379">
+					<ChildrenList>
+						<Event Name="isWalking_Play" ID="{D1BC56A0-1699-4C9D-8EE4-6E0608E9745C}">
+							<ChildrenList>
+								<Action Name="" ID="{DC9F9BD1-E853-4D9C-A918-B733A63E7E35}" ShortID="417625218">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="isIDLE_Play" ID="{60116EC4-3F60-4274-83C5-09FDF003434B}">
+							<ChildrenList>
+								<Action Name="" ID="{796E28DB-9E37-4D71-93F9-91D50C828C01}" ShortID="294644393">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Character" ID="{2641C50F-366C-43EB-95BE-7662DA7A51BA}" ShortID="250061720">
+					<ChildrenList>
+						<Event Name="Cha_Footsteps_Play" ID="{37845492-D397-43D7-AF91-9B305D187288}">
+							<ChildrenList>
+								<Action Name="" ID="{E19B122F-F7C2-4AFF-AE57-CD746367F125}" ShortID="898328922">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cha_Footsteps" ID="{8BF40208-A3A1-4B38-82F7-7E35C11F53AD}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}">
+							<ChildrenList>
+								<Action Name="" ID="{575A865D-B05C-41EA-AC84-6AB048CF0C27}" ShortID="404574181">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cha_Breath" ID="{012290B7-26D6-44DF-BE1B-ED21EA5B80DF}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
