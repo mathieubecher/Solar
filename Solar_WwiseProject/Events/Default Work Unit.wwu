@@ -15,28 +15,13 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Cha_Footsteps_Play" ID="{37845492-D397-43D7-AF91-9B305D187288}">
-					<ChildrenList>
-						<Action Name="" ID="{E19B122F-F7C2-4AFF-AE57-CD746367F125}" ShortID="898328922">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Cha_Footsteps" ID="{8BF40208-A3A1-4B38-82F7-7E35C11F53AD}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Music_Play" ID="{6068AEC3-2B39-457A-A8CC-9C7517543F06}">
-					<ChildrenList>
-						<Action Name="" ID="{9F2368B6-0854-4B60-9339-71B347CB88EC}" ShortID="815138819">
+						<Action Name="" ID="{9620204E-6311-4C41-9D17-4BA32AAF089C}" ShortID="1031728415">
 							<PropertyList>
-								<Property Name="FadeTime" Type="Real64" Value="2"/>
+								<Property Name="ActionType" Type="int16" Value="41"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Music_Playlist" ID="{2F893C6C-2DBA-4570-9067-635F0C53A081}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+									<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -84,6 +69,160 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Flying_Rock_Play" ID="{2231C500-2F04-4E05-A537-E34EFF192FE0}">
+					<ChildrenList>
+						<Action Name="" ID="{B76373FA-2680-4FB2-9ECF-A8BE3E480550}" ShortID="686857253">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Flying_Rock" ID="{C6429548-FB99-4066-94AE-D6446AFF8208}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Folder Name="Music" ID="{4A30C09F-BD7D-481F-A2A8-662CF0AD138C}" ShortID="47314043">
+					<ChildrenList>
+						<Event Name="Music_Play" ID="{6068AEC3-2B39-457A-A8CC-9C7517543F06}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="19"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{9F2368B6-0854-4B60-9339-71B347CB88EC}" ShortID="815138819">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="30"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_2" ID="{43D1872C-623D-442F-8616-39C6CE0B17DA}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{E86F8FCF-43CB-4AAB-9E44-1F86A6AD4F9C}" ShortID="967112335">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Intro" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Music_PostIntro" ID="{53A45403-8DB3-436D-8EC2-E3C13FBE0341}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="17"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{7DB76D53-A867-43DE-B9C0-6D5FA9E2EB25}" ShortID="616308386">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Post_Intro" ID="{DDDFEFD0-E001-4B6C-9659-E07FA3889D5D}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Music_Stop" ID="{80E0AE40-5C5B-4ACF-B74B-64818EF8FB81}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{7BBDA076-5E65-4C5D-8BAC-BB093ED122CB}" ShortID="857570036">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="30"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_2" ID="{43D1872C-623D-442F-8616-39C6CE0B17DA}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Music_Drop" ID="{2C743A3E-ADEA-4419-8D2D-2E4053ADEDF4}">
+							<ChildrenList>
+								<Action Name="" ID="{78C8DF8E-B4FD-4668-AF2C-9B0E8B6AB7EB}" ShortID="122562198">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Drop" ID="{969C3013-C098-4E3C-8A39-DBA065D2084D}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="States" ID="{E5E45498-CE11-475F-8DC1-A518A3E0A8F4}" ShortID="559107379">
+					<ChildrenList>
+						<Event Name="isWalking_Play" ID="{D1BC56A0-1699-4C9D-8EE4-6E0608E9745C}">
+							<ChildrenList>
+								<Action Name="" ID="{DC9F9BD1-E853-4D9C-A918-B733A63E7E35}" ShortID="417625218">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="isIDLE_Play" ID="{60116EC4-3F60-4274-83C5-09FDF003434B}">
+							<ChildrenList>
+								<Action Name="" ID="{796E28DB-9E37-4D71-93F9-91D50C828C01}" ShortID="294644393">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Character" ID="{2641C50F-366C-43EB-95BE-7662DA7A51BA}" ShortID="250061720">
+					<ChildrenList>
+						<Event Name="Cha_Footsteps_Play" ID="{37845492-D397-43D7-AF91-9B305D187288}">
+							<ChildrenList>
+								<Action Name="" ID="{E19B122F-F7C2-4AFF-AE57-CD746367F125}" ShortID="898328922">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cha_Footsteps_Switch" ID="{7892F25A-3C77-40BE-ACE8-E95822046D77}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}">
+							<ChildrenList>
+								<Action Name="" ID="{575A865D-B05C-41EA-AC84-6AB048CF0C27}" ShortID="404574181">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cha_Breath" ID="{012290B7-26D6-44DF-BE1B-ED21EA5B80DF}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
