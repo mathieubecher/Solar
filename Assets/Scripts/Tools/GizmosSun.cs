@@ -37,6 +37,10 @@ public class GizmosSun : MonoBehaviour
         SceneView.onSceneGUIDelegate += UpdateSceneView;
     }
 
+    void OnDisable()
+    {
+        SceneView.onSceneGUIDelegate -= UpdateSceneView;
+    }
     void Update()
     {
         

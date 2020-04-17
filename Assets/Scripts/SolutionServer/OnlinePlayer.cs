@@ -72,6 +72,7 @@ public class OnlinePlayer : AbstractInput
         _controller.animator.SetFloat("velocity",velocity.magnitude);
         velocity.y = _controller._rigidbody.velocity.y;
         _controller._rigidbody.velocity = velocity;
+        _manager.CallSetVelocity(velocity);
     }
     
     private void MouseCamera()

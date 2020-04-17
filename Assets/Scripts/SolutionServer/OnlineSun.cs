@@ -50,14 +50,13 @@ public class OnlineSun: AbstractInput
         {
             Vector3 move = (_goto - _controller.transform.position).normalized * _controller.speed;
             _controller.transform.position += move * Time.deltaTime;
-            _controller.animator.SetFloat("velocity", 1);
         }
         else
         {
-            _controller.animator.SetFloat("velocity", (_goto - _controller.transform.position).magnitude);
             _controller.transform.position = _goto;
-            
         }
+        
+        _controller.animator.SetFloat("velocity", _manager.velocity.magnitude);
 
     }
 
