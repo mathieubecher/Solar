@@ -14,6 +14,8 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID AMB_DESERT_PLAY = 2160078966U;
+        static const AkUniqueID AMB_EXT = 3402899663U;
+        static const AkUniqueID AMB_INT = 3771315829U;
         static const AkUniqueID ASTRO_MOVING_PLAY = 3822072736U;
         static const AkUniqueID ASTRO_MOVING_STOP = 2165331746U;
         static const AkUniqueID CHA_BREATH_PLAY = 182011575U;
