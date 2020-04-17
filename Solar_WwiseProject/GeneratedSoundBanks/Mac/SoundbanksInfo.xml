@@ -16,7 +16,7 @@
 			<ShortName>ALL</ShortName>
 			<Path>ALL.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2160078966" Name="Amb_Desert_Play" ObjectPath="\Events\Default Work Unit\Amb_Desert_Play" DurationType="Infinite">
+				<Event Id="2160078966" Name="Amb_Desert_Play" ObjectPath="\Events\Default Work Unit\ALL\Amb_Desert_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="744231200" Language="SFX">
 							<ShortName>amb_desert_02.wav</ShortName>
@@ -28,7 +28,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3822072736" Name="Astro_Moving_Play" ObjectPath="\Events\Default Work Unit\Astro_Moving_Play" DurationType="Infinite">
+				<Event Id="3822072736" Name="Astro_Moving_Play" ObjectPath="\Events\Default Work Unit\ALL\Astro_Moving_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="1050526820" Language="SFX">
 							<ShortName>astrolabe_v3.wav</ShortName>
@@ -36,8 +36,8 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2165331746" Name="Astro_Moving_Stop" ObjectPath="\Events\Default Work Unit\Astro_Moving_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="182011575" Name="Cha_Breath_Play" ObjectPath="\Events\Default Work Unit\Character\Cha_Breath_Play" DurationType="Infinite">
+				<Event Id="2165331746" Name="Astro_Moving_Stop" ObjectPath="\Events\Default Work Unit\ALL\Astro_Moving_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="182011575" Name="Cha_Breath_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Breath_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="49281544" Language="SFX">
 							<ShortName>fast_breath_-001.wav</ShortName>
@@ -77,7 +77,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1343142182" Name="Cha_Footsteps_Play" ObjectPath="\Events\Default Work Unit\Character\Cha_Footsteps_Play" DurationType="OneShot" DurationMin="0.666667" DurationMax="1.332608">
+				<Event Id="1343142182" Name="Cha_Footsteps_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Footsteps_Play" DurationType="OneShot" DurationMin="0.666667" DurationMax="1.332608">
 					<IncludedMemoryFiles>
 						<File Id="140851678" Language="SFX">
 							<ShortName>cha_footsteps_sand_04.wav</ShortName>
@@ -151,9 +151,11 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1884528993" Name="Flying_Rock_Play" ObjectPath="\Events\Default Work Unit\Flying_Rock_Play" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2212149258" Name="Music_Drop" ObjectPath="\Events\Default Work Unit\Music\Music_Drop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\Music\Music_Play" DurationType="Infinite">
+				<Event Id="1884528993" Name="Flying_Rock_Play" ObjectPath="\Events\Default Work Unit\ALL\Flying_Rock_Play" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3387557844" Name="isIDLE_Play" ObjectPath="\Events\Default Work Unit\ALL\States\isIDLE_Play" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2222778103" Name="isWalking_Play" ObjectPath="\Events\Default Work Unit\ALL\States\isWalking_Play" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2212149258" Name="Music_Drop" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Drop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="89050861" Language="SFX">
 							<ShortName>music_postintro_loop.wav</ShortName>
@@ -191,9 +193,9 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="3194768471" Name="Music_PostIntro" ObjectPath="\Events\Default Work Unit\Music\Music_PostIntro" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3227181061" Name="Music_Stop" ObjectPath="\Events\Default Work Unit\Music\Music_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2337456342" Name="Sun_Feedback_Play" ObjectPath="\Events\Default Work Unit\Sun_Feedback_Play" DurationType="Infinite">
+				<Event Id="3194768471" Name="Music_PostIntro" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_PostIntro" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3227181061" Name="Music_Stop" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2337456342" Name="Sun_Feedback_Play" ObjectPath="\Events\Default Work Unit\ALL\Sun_Feedback_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="20225164" Language="SFX">
 							<ShortName>sun_feedback_hifreq.wav</ShortName>
