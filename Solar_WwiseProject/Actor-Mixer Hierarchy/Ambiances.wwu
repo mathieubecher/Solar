@@ -111,107 +111,6 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="amb_desert_02" ID="{137E8615-C3E5-4E00-A9FB-72C2A2A6A6E7}" ShortID="123102016">
-									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-										<Property Name="OverrideEffect" Type="bool" Value="True"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-3</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="amb_desert_02" ID="{3D7821CA-F123-492C-830A-3FCD7668F218}">
-											<PropertyList>
-												<Property Name="CrossfadeDuration" Type="Real64" Value="2750.877"/>
-												<Property Name="LoopBegin" Type="Real64" Value="3.00456621004566"/>
-												<Property Name="LoopEnd" Type="Real64" Value="32.7945205479452"/>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="VolumeOffset" Type="Real64">
-													<ValueList>
-														<Value>9</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<Language>SFX</Language>
-											<AudioFile>amb_desert_02.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="744231200"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="amb_desert_02" ID="{3D7821CA-F123-492C-830A-3FCD7668F218}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<BlendContainer Name="Flying_Rock" ID="{C6429548-FB99-4066-94AE-D6446AFF8208}" ShortID="822678199">
-									<PropertyList>
-										<Property Name="3DSpatialization" Type="int16" Value="1"/>
-										<Property Name="Inclusion" Type="bool">
-											<ValueList>
-												<Value>False</Value>
-											</ValueList>
-										</Property>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>5</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Attenuation">
-											<ObjectRef Name="Flying_Rock" ID="{223A44E2-5777-4A2E-93DB-CC909C51BDEC}" WorkUnitID="{91CB72B5-EEFD-40A8-945B-A933AD0F8842}"/>
-										</Reference>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="amb_flying_rock" ID="{8412A793-581E-4F06-A4E6-587BDAA8208B}" ShortID="991780474">
-											<PropertyList>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="amb_flying_rock" ID="{8B46BCB9-D689-483C-9952-6C2B77998459}">
-													<PropertyList>
-														<Property Name="CrossfadeDuration" Type="Real64" Value="431.579"/>
-														<Property Name="LoopBegin" Type="Real64" Value="0.678082191780822"/>
-														<Property Name="LoopEnd" Type="Real64" Value="1.65753424657534"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>amb_flying_rock.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="580074839"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_flying_rock" ID="{8B46BCB9-D689-483C-9952-6C2B77998459}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
-								</BlendContainer>
 								<BlendContainer Name="Amb_Desert_Calm" ID="{C91756AB-4289-4E84-B23A-7A61B95214F0}" ShortID="167118869">
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -219,7 +118,7 @@
 										</Reference>
 										<Reference Name="Effect0">
 											<Custom>
-												<Effect Name="Wwise_Meter_(Custom)" ID="{0E11066C-4C0E-416C-94F4-AE06BFCA13FF}" ShortID="191199645" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+												<Effect Name="Wwise_Meter_(Custom)" ID="{BFD01ABC-FCB9-455A-8889-593A07C9BDDE}" ShortID="1049937764" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
 													<PropertyList>
 														<Property Name="AttackTime" Type="Real32" Value="1"/>
 														<Property Name="Hold" Type="Real32" Value="0.5"/>
@@ -302,7 +201,91 @@
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="Amb_States" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Ext" ID="{6B00913B-3E17-48DB-9627-3B70A525A674}"/>
+												<CustomState Name="" ID="{54B4103F-D9E5-4F83-AC6F-CBE9E617C743}" ShortID="424382449">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Grotte" ID="{EBCBB2FF-006D-4D4D-BAD1-BD5E8F22DD5D}"/>
+												<CustomState Name="" ID="{43FA721F-A9B6-4D19-8888-90980A080172}" ShortID="690232712"/>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
 								</BlendContainer>
+								<Sound Name="amb_desert_02" ID="{137E8615-C3E5-4E00-A9FB-72C2A2A6A6E7}" ShortID="123102016">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="amb_desert_02" ID="{3D7821CA-F123-492C-830A-3FCD7668F218}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="2750.877"/>
+												<Property Name="LoopBegin" Type="Real64" Value="3.00456621004566"/>
+												<Property Name="LoopEnd" Type="Real64" Value="32.7945205479452"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>9</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>amb_desert_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="744231200"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="Amb_States" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Ext" ID="{6B00913B-3E17-48DB-9627-3B70A525A674}"/>
+												<CustomState Name="" ID="{FE248D4E-3FCD-4971-B2DB-1AD2B53EF7C9}" ShortID="913508562"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Grotte" ID="{EBCBB2FF-006D-4D4D-BAD1-BD5E8F22DD5D}"/>
+												<CustomState Name="" ID="{3336C8B7-EA3F-4DA4-8B9C-1A1B642AF474}" ShortID="289166684">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+									<ActiveSourceList>
+										<ActiveSource Name="amb_desert_02" ID="{3D7821CA-F123-492C-830A-3FCD7668F218}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 							<BlendTrackList>
 								<BlendTrack Name="Amb_Blend" ID="{594EC151-B4E0-41AD-816C-8C29F097E60C}" ShortID="863984996">
@@ -314,28 +297,6 @@
 											<ObjectRef Name="Amb_RTPC" ID="{1409E784-E84A-45EE-B8F3-2E8112055082}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
 										</Reference>
 									</ReferenceList>
-									<BlendTrackAssocList>
-										<BlendTrackAssoc>
-											<ItemRef Name="amb_desert_02" ID="{137E8615-C3E5-4E00-A9FB-72C2A2A6A6E7}"/>
-											<CrossfadingInfo>
-												<LeftEdgePos>0</LeftEdgePos>
-												<LeftFadingMode>Automatic</LeftFadingMode>
-												<RightEdgePos>90.7613205569949</RightEdgePos>
-												<RightFadingMode>Automatic</RightFadingMode>
-												<RightFadingSegmentShape>Log1</RightFadingSegmentShape>
-											</CrossfadingInfo>
-										</BlendTrackAssoc>
-										<BlendTrackAssoc>
-											<ItemRef Name="Amb_Desert_Calm" ID="{C91756AB-4289-4E84-B23A-7A61B95214F0}"/>
-											<CrossfadingInfo>
-												<LeftEdgePos>8.60924082963324</LeftEdgePos>
-												<LeftFadingMode>Automatic</LeftFadingMode>
-												<RightEdgePos>100</RightEdgePos>
-												<RightFadingMode>Automatic</RightFadingMode>
-												<RightFadingSegmentShape>Log2</RightFadingSegmentShape>
-											</CrossfadingInfo>
-										</BlendTrackAssoc>
-									</BlendTrackAssocList>
 								</BlendTrack>
 							</BlendTrackList>
 						</BlendContainer>

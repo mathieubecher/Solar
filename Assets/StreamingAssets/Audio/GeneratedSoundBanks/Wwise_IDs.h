@@ -14,13 +14,10 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID AMB_DESERT_PLAY = 2160078966U;
-        static const AkUniqueID AMB_EXT = 3402899663U;
-        static const AkUniqueID AMB_INT = 3771315829U;
         static const AkUniqueID ASTRO_MOVING_PLAY = 3822072736U;
         static const AkUniqueID ASTRO_MOVING_STOP = 2165331746U;
         static const AkUniqueID CHA_BREATH_PLAY = 182011575U;
         static const AkUniqueID CHA_FOOTSTEPS_PLAY = 1343142182U;
-        static const AkUniqueID FLYING_ROCK_PLAY = 1884528993U;
         static const AkUniqueID ISIDLE_PLAY = 3387557844U;
         static const AkUniqueID ISWALKING_PLAY = 2222778103U;
         static const AkUniqueID MUSIC_DROP = 2212149258U;
@@ -32,12 +29,25 @@ namespace AK
 
     namespace STATES
     {
+        namespace AMB_STATES
+        {
+            static const AkUniqueID GROUP = 3604025392U;
+
+            namespace STATE
+            {
+                static const AkUniqueID EXT = 898834102U;
+                static const AkUniqueID GROTTE = 2126142566U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace AMB_STATES
+
         namespace GENERALSTATES
         {
             static const AkUniqueID GROUP = 874109109U;
 
             namespace STATE
             {
+                static const AkUniqueID ISHURTING = 1898407218U;
                 static const AkUniqueID ISIDLE = 2139983939U;
                 static const AkUniqueID ISWALKING = 3629409974U;
                 static const AkUniqueID NONE = 748895195U;
@@ -91,8 +101,15 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID GROTTE_MASTER = 370626559U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID GROTTE = 2126142566U;
+        static const AkUniqueID TEMPLE = 2323193050U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {
