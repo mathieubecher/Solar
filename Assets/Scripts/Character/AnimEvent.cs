@@ -45,12 +45,14 @@ public class AnimEvent : MonoBehaviour
         AkSoundEngine.PostEvent("Cha_Footsteps_Play", rightFoot);
         Vector3 position = rightFoot.transform.position;
         if (Physics.Raycast(origin: rightFoot.transform.position, direction: Vector3.down,
-            hitInfo: out RaycastHit hit, maxDistance: 5, layerMask: _mask) && hit.collider.gameObject.layer == 11)
+            hitInfo: out RaycastHit hit, maxDistance: 5, layerMask: _mask))
         {
-            position = hit.point + Vector3.up * 0.1f;
-            GameObject left = Instantiate(decalLeft, position, leftFoot.transform.rotation, footSteps.transform);
-            left.transform.Rotate(Vector3.right, 180);
-            left.transform.Rotate(Vector3.forward, 180);
+            position = hit.point + Vector3.up*0.1f;
+            GameObject right = Instantiate(decalRight, position, rightFoot.transform.rotation,footSteps.transform);
+        
+            right.transform.Rotate(Vector3.right, 180);
+            right.transform.Rotate(Vector3.forward, 180);
         }
+        
     }
 }
