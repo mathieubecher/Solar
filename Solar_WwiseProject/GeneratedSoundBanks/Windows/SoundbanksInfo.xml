@@ -16,28 +16,86 @@
 			<ShortName>ALL</ShortName>
 			<Path>ALL.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2160078966" Name="Amb_Desert_Play" ObjectPath="\Events\Default Work Unit\Amb_Desert_Play" DurationType="Infinite">
+				<Event Id="2160078966" Name="Amb_Desert_Play" ObjectPath="\Events\Default Work Unit\ALL\Amb\Amb_Desert_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="45360505" Language="SFX">
-							<ShortName>music_stinger.wav</ShortName>
-							<Path>SFX\music_stinger_10C4C929.wem</Path>
-						</File>
 						<File Id="744231200" Language="SFX">
 							<ShortName>amb_desert_02.wav</ShortName>
 							<Path>SFX\amb_desert_02_D6B00BF6.wem</Path>
 						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="3822072736" Name="Astro_Moving_Play" ObjectPath="\Events\Default Work Unit\Astro_Moving_Play" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="620425443" Language="SFX">
-							<ShortName>astrolabe_v2.wav</ShortName>
-							<Path>SFX\astrolabe_v2_D30006BC.wem</Path>
+						<File Id="881745992" Language="SFX">
+							<ShortName>amb_desert_02_calm2.wav</ShortName>
+							<Path>SFX\amb_desert_02_calm2_D9E87D3B.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2165331746" Name="Astro_Moving_Stop" ObjectPath="\Events\Default Work Unit\Astro_Moving_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1343142182" Name="Cha_Footsteps_Play" ObjectPath="\Events\Default Work Unit\Cha_Footsteps_Play" DurationType="OneShot" DurationMin="0.666667" DurationMax="0.792805">
+				<Event Id="3822072736" Name="Astro_Moving_Play" ObjectPath="\Events\Default Work Unit\ALL\Astro_Moving_Play" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="1050526820" Language="SFX">
+							<ShortName>astrolabe_v3.wav</ShortName>
+							<Path>SFX\astrolabe_v3_18B49136.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2165331746" Name="Astro_Moving_Stop" ObjectPath="\Events\Default Work Unit\ALL\Astro_Moving_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="182011575" Name="Cha_Breath_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Breath_Play" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="49281544" Language="SFX">
+							<ShortName>fast_breath_-001.wav</ShortName>
+							<Path>SFX\fast_breath_-001_8B932815.wem</Path>
+						</File>
+						<File Id="60824643" Language="SFX">
+							<ShortName>slow_breath_-003.wav</ShortName>
+							<Path>SFX\slow_breath_-003_D6BB70CB.wem</Path>
+						</File>
+						<File Id="79531810" Language="SFX">
+							<ShortName>slow_breath_-005.wav</ShortName>
+							<Path>SFX\slow_breath_-005_5164892D.wem</Path>
+						</File>
+						<File Id="79750860" Language="SFX">
+							<ShortName>fast_breath_-003.wav</ShortName>
+							<Path>SFX\fast_breath_-003_8B932815.wem</Path>
+						</File>
+						<File Id="470143034" Language="SFX">
+							<ShortName>slow_breath_-002.wav</ShortName>
+							<Path>SFX\slow_breath_-002_72D9BEA2.wem</Path>
+						</File>
+						<File Id="965640516" Language="SFX">
+							<ShortName>fast_breath_-004.wav</ShortName>
+							<Path>SFX\fast_breath_-004_8B932815.wem</Path>
+						</File>
+						<File Id="1002534844" Language="SFX">
+							<ShortName>fast_breath_-002.wav</ShortName>
+							<Path>SFX\fast_breath_-002_8B932815.wem</Path>
+						</File>
+						<File Id="1035605294" Language="SFX">
+							<ShortName>slow_breath_-004.wav</ShortName>
+							<Path>SFX\slow_breath_-004_C932B54A.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{A30A0DFF-D617-4125-8393-8C42612DEDDF}">
+							<Media>
+								<File Id="470143034"/>
+								<File Id="60824643"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{1AF9F27D-C6FE-4ABC-8F91-9E284B0C2607}">
+							<Media>
+								<File Id="965640516"/>
+								<File Id="1002534844"/>
+								<File Id="49281544"/>
+								<File Id="79750860"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{7154D711-F929-4A7E-9210-71EF86A477CC}">
+							<Media>
+								<File Id="79531810"/>
+								<File Id="1035605294"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1343142182" Name="Cha_Footsteps_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Footsteps_Play" DurationType="OneShot" DurationMin="0.666667" DurationMax="1.332608">
 					<IncludedMemoryFiles>
 						<File Id="140851678" Language="SFX">
 							<ShortName>cha_footsteps_sand_04.wav</ShortName>
@@ -47,13 +105,13 @@
 							<ShortName>cha_footsteps_sand_01.wav</ShortName>
 							<Path>SFX\cha_footsteps_sand_01_10C4C929.wem</Path>
 						</File>
-						<File Id="158995361" Language="SFX">
-							<ShortName>cha_foleys_sand (1).wav</ShortName>
-							<Path>SFX\cha_foleys_sand (1)_10C4C929.wem</Path>
-						</File>
 						<File Id="352773824" Language="SFX">
 							<ShortName>cha_foleys_sand (2).wav</ShortName>
 							<Path>SFX\cha_foleys_sand (2)_1FFEEEC1.wem</Path>
+						</File>
+						<File Id="518010738" Language="SFX">
+							<ShortName>foosteps_stone-002.wav</ShortName>
+							<Path>SFX\foosteps_stone-002_10C4C929.wem</Path>
 						</File>
 						<File Id="533551184" Language="SFX">
 							<ShortName>cha_footsteps_sand_05.wav</ShortName>
@@ -71,6 +129,14 @@
 							<ShortName>cha_footsteps_sand_02.wav</ShortName>
 							<Path>SFX\cha_footsteps_sand_02_10C4C929.wem</Path>
 						</File>
+						<File Id="793530324" Language="SFX">
+							<ShortName>foosteps_stone-003.wav</ShortName>
+							<Path>SFX\foosteps_stone-003_10C4C929.wem</Path>
+						</File>
+						<File Id="898853981" Language="SFX">
+							<ShortName>foosteps_stone-001.wav</ShortName>
+							<Path>SFX\foosteps_stone-001_10C4C929.wem</Path>
+						</File>
 						<File Id="1011376572" Language="SFX">
 							<ShortName>cha_footsteps_sand_03.wav</ShortName>
 							<Path>SFX\cha_footsteps_sand_03_10C4C929.wem</Path>
@@ -80,25 +146,45 @@
 							<Path>SFX\cha_foleys_sand (4)_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{569C2DF3-2300-48E3-A79C-55536C42AD41}">
+							<Media>
+								<File Id="140851678"/>
+								<File Id="533551184"/>
+								<File Id="149248493"/>
+								<File Id="714571509"/>
+								<File Id="1011376572"/>
+								<File Id="703007086"/>
+								<File Id="1046695966"/>
+								<File Id="672561057"/>
+								<File Id="352773824"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{7F448724-BC1B-4C15-90D8-2AF4C3E0833E}">
+							<Media>
+								<File Id="518010738"/>
+								<File Id="793530324"/>
+								<File Id="898853981"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
-				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\Music_Play" DurationType="Infinite">
+				<Event Id="3387557844" Name="isIDLE_Play" ObjectPath="\Events\Default Work Unit\ALL\States\isIDLE_Play" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2222778103" Name="isWalking_Play" ObjectPath="\Events\Default Work Unit\ALL\States\isWalking_Play" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2212149258" Name="Music_Drop" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Drop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Play" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3194768471" Name="Music_PostIntro" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_PostIntro" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3227181061" Name="Music_Stop" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2337456342" Name="Sun_Feedback_Play" ObjectPath="\Events\Default Work Unit\ALL\Sun_Feedback_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="420047087" Language="SFX">
-							<ShortName>music_drone_layer.wav</ShortName>
-							<Path>SFX\music_drone_layer_D79FB2B7.wem</Path>
+						<File Id="20225164" Language="SFX">
+							<ShortName>sun_feedback_hifreq.wav</ShortName>
+							<Path>SFX\sun_feedback_hifreq_3F5930D3.wem</Path>
 						</File>
-						<File Id="578371794" Language="SFX">
-							<ShortName>music_violin_layer.wav</ShortName>
-							<Path>SFX\music_violin_layer_D79FB2B7.wem</Path>
+						<File Id="99101634" Language="SFX">
+							<ShortName>sun_feedback_a5.wav</ShortName>
+							<Path>SFX\sun_feedback_a5_DDAC7EEC.wem</Path>
 						</File>
-						<File Id="938495267" Language="SFX">
-							<ShortName>music_bass_layer.wav</ShortName>
-							<Path>SFX\music_bass_layer_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="2337456342" Name="Sun_Feedback_Play" ObjectPath="\Events\Default Work Unit\Sun_Feedback_Play" DurationType="Infinite">
-					<IncludedMemoryFiles>
 						<File Id="191104729" Language="SFX">
 							<ShortName>sun_feedback.wav</ShortName>
 							<Path>SFX\sun_feedback_3A0CD887.wem</Path>
@@ -109,12 +195,35 @@
 			<GameParameters>
 				<GameParameter Id="582120507" Name="RTPC_Sun_Velocity" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Sun_Velocity"/>
 				<GameParameter Id="2257099397" Name="RTPC_Distance_Sun" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Distance_Sun"/>
+				<GameParameter Id="2682991203" Name="Amb_RTPC" ObjectPath="\Game Parameters\Default Work Unit\Amb_RTPC"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="874109109" Name="GeneralStates" ObjectPath="\States\Default Work Unit\GeneralStates">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\GeneralStates\None"/>
+						<State Id="3629409974" Name="isWalking" ObjectPath="\States\Default Work Unit\GeneralStates\isWalking"/>
+						<State Id="2139983939" Name="isIDLE" ObjectPath="\States\Default Work Unit\GeneralStates\isIDLE"/>
+						<State Id="1898407218" Name="isHurting" ObjectPath="\States\Default Work Unit\GeneralStates\isHurting"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="997064848" Name="Footstep_Floor" ObjectPath="\Switches\Default Work Unit\Footstep_Floor">
+					<Switches>
+						<Switch Id="803837735" Name="Sand" ObjectPath="\Switches\Default Work Unit\Footstep_Floor\Sand"/>
+						<Switch Id="1216965916" Name="Stone" ObjectPath="\Switches\Default Work Unit\Footstep_Floor\Stone"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<IncludedAuxBusses>
+				<AuxBus Id="2126142566" Name="Grotte" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Grotte_Master\Grotte"/>
+				<AuxBus Id="2323193050" Name="Temple" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Temple"/>
+			</IncludedAuxBusses>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

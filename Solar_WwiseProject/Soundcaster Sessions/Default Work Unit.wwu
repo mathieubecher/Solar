@@ -14,6 +14,10 @@
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Sun_Feedback_Play" ID="{43EA3834-EED4-40A4-9BCD-E7AD668D74F5}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Cha_Footsteps_Play" ID="{37845492-D397-43D7-AF91-9B305D187288}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 							<Position X="1" Y="0"/>
 						</Module>
@@ -26,8 +30,20 @@
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Sun_Feedback_Play" ID="{43EA3834-EED4-40A4-9BCD-E7AD668D74F5}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
-							<Position X="2" Y="1"/>
+							<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Music_PostIntro" ID="{53A45403-8DB3-436D-8EC2-E3C13FBE0341}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Music_Drop" ID="{2C743A3E-ADEA-4419-8D2D-2E4053ADEDF4}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Music_Stop" ID="{80E0AE40-5C5B-4ACF-B74B-64818EF8FB81}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="4" Y="0"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -36,16 +52,26 @@
 							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="Amb_RTPC" ID="{1409E784-E84A-45EE-B8F3-2E8112055082}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}"/>
 							<Value>100</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_WindGain" ID="{C1A5BC66-B4DF-474B-9AEE-1068B3D47755}"/>
-							<Value>-48</Value>
+							<Value>0</Value>
 						</RTPCValue>
 					</RTPCValueList>
-					<CurrentStateList ShowAll="true"/>
-					<CurrentSwitchList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Intro" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}"/>
+						<CurrentStateRef Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}"/>
+						<CurrentStateRef Name="Ext" ID="{6B00913B-3E17-48DB-9627-3B70A525A674}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Sand" ID="{569C2DF3-2300-48E3-A79C-55536C42AD41}"/>
+					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
