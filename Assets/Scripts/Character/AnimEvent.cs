@@ -45,7 +45,7 @@ public class AnimEvent : MonoBehaviour
         AkSoundEngine.PostEvent("Cha_Footsteps_Play", rightFoot);
         Vector3 position = rightFoot.transform.position;
         if (Physics.Raycast(origin: rightFoot.transform.position, direction: Vector3.down,
-            hitInfo: out RaycastHit hit, maxDistance: 5, layerMask: _mask))
+            hitInfo: out RaycastHit hit, maxDistance: 5, layerMask: _mask) && hit.collider.gameObject.layer == 11)
         {
             position = hit.point + Vector3.up*0.1f;
             GameObject right = Instantiate(decalRight, position, rightFoot.transform.rotation,footSteps.transform);
