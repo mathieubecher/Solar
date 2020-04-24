@@ -24,8 +24,36 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: cbb31e6cefe2e64c8308806bca5ec1fc
     GuidInternal: 
-    m_lastTime: -8586138720790440150
+    m_lastTime: -8586140437267152763
     List:
+    - name: Grotte
+      guid: f608b582e66eb349904b8dade0f771b7
+      id: 2126142566
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Temple
+        ObjectType: 1
+      - ElementName: Grotte_Master
+        ObjectType: 2
+      - ElementName: Grotte
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Temple\Grotte_Master\Grotte
+    - name: Grotte_Master
+      guid: f378abc2057b114c8336bb168f154956
+      id: 370626559
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Temple
+        ObjectType: 1
+      - ElementName: Grotte_Master
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Temple\Grotte_Master
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -35,6 +63,17 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
+    - name: Temple
+      guid: 54e5477b64d41749a328d76a1c7c645c
+      id: 2323193050
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Temple
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Temple
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPath: Default Work Unit
@@ -56,7 +95,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f62c9fea2fdc9049963bd5bc5510a430
     GuidInternal: 
-    m_lastTime: -8586138720790490020
+    m_lastTime: -8586140412623210437
     List:
     - name: ALL
       guid: feb41afcf094434080809b90df1849fe
@@ -96,41 +135,11 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: ALL
         ObjectType: 4
+      - ElementName: Amb
+        ObjectType: 4
       - ElementName: Amb_Desert_Play
         ObjectType: 3
-      Path: Default Work Unit\ALL\Amb_Desert_Play
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Amb_Ext
-      guid: a2ef47de38bb294ca8ac4bd37cff55e7
-      id: 3402899663
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: ALL
-        ObjectType: 4
-      - ElementName: Amb
-        ObjectType: 4
-      - ElementName: Amb_Ext
-        ObjectType: 3
-      Path: Default Work Unit\ALL\Amb\Amb_Ext
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Amb_Int
-      guid: 4d5d6cec4a34d843a55bff5ac5f7c9cc
-      id: 3771315829
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: ALL
-        ObjectType: 4
-      - ElementName: Amb
-        ObjectType: 4
-      - ElementName: Amb_Int
-        ObjectType: 3
-      Path: Default Work Unit\ALL\Amb\Amb_Int
+      Path: Default Work Unit\ALL\Amb\Amb_Desert_Play
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -207,20 +216,6 @@ MonoBehaviour:
       - ElementName: Character
         ObjectType: 3
       Path: Default Work Unit\ALL\Character\Character
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Flying_Rock_Play
-      guid: 00c53122042f054ea537e34eff192fe0
-      id: 1884528993
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: ALL
-        ObjectType: 4
-      - ElementName: Flying_Rock_Play
-        ObjectType: 3
-      Path: Default Work Unit\ALL\Flying_Rock_Play
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -414,8 +409,39 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 8d677a4eefbf304cb66e086a1eaa1126
     GuidInternal: 
-    m_lastTime: -8586138720789981375
+    m_lastTime: -8586140416414726690
     List:
+    - name: Amb_States
+      guid: af9c740311ef644c848e9ab22e6b59a7
+      id: 3604025392
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Amb_States
+        ObjectType: 9
+      Path: Default Work Unit\Amb_States
+      values:
+      - name: Ext
+        guid: 3b91006b173edb4896273b70a525a674
+        id: 898834102
+        PathAndIcons:
+        - ElementName: Ext
+          ObjectType: 8
+      - name: Grotte
+        guid: ffb2cbeb6d004d4dbad1bd5e8f22dd5d
+        id: 2126142566
+        PathAndIcons:
+        - ElementName: Grotte
+          ObjectType: 8
+      - name: None
+        guid: 1f6e675d7301c94786e852192f37b452
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: GeneralStates
       guid: ec3721c9e3581042a2b877b6a2248e1a
       id: 874109109
@@ -495,7 +521,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 98fff1535a380841a4f3af5283bc8df9
     GuidInternal: 
-    m_lastTime: -8586144806936044936
+    m_lastTime: -8586140416414691743
     List:
     - name: Footstep_Floor
       guid: 6a974b5855aa4b47916f501cb79fdea6
@@ -531,15 +557,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Solar_WwiseProject
-  - /Solar_WwiseProject/Events
-  - /Solar_WwiseProject/Events/Default Work Unit
-  - /Solar_WwiseProject/Events/Default Work Unit/ALL
-  - /Solar_WwiseProject/Events/Default Work Unit/ALL/Amb
-  - /Solar_WwiseProject/Events/Default Work Unit/ALL/Character
-  - /Solar_WwiseProject/Events/Default Work Unit/ALL/Music
-  - /Solar_WwiseProject/Events/Default Work Unit/ALL/States
   - /Solar_WwiseProject/States
   - /Solar_WwiseProject/States/Default Work Unit
-  - /Solar_WwiseProject/Switches
+  - /Solar_WwiseProject/States/Default Work Unit/Amb_States
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

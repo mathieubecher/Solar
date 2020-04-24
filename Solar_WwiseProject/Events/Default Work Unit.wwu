@@ -37,41 +37,6 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
-						<Event Name="Flying_Rock_Play" ID="{2231C500-2F04-4E05-A537-E34EFF192FE0}">
-							<ChildrenList>
-								<Action Name="" ID="{B76373FA-2680-4FB2-9ECF-A8BE3E480550}" ShortID="686857253">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Flying_Rock" ID="{C6429548-FB99-4066-94AE-D6446AFF8208}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Amb_Desert_Play" ID="{933F751A-5278-4F5E-B76B-3458652C59B3}">
-							<ChildrenList>
-								<Action Name="" ID="{8B089A0D-734A-4276-BD41-D82BF09C4EE1}" ShortID="378076006">
-									<PropertyList>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Amb_Desert" ID="{1C98A39B-366B-42AB-B0A8-04E7A062ED8D}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{9620204E-6311-4C41-9D17-4BA32AAF089C}" ShortID="1031728415">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="41"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="Astro_Moving_Stop" ID="{9F63A1DC-C7A4-4705-AC10-E5D8760BBE66}">
 							<ChildrenList>
 								<Action Name="" ID="{96092C2D-447A-466F-9479-AAE943803FB8}" ShortID="649779958">
@@ -132,7 +97,7 @@
 										<Action Name="" ID="{575A865D-B05C-41EA-AC84-6AB048CF0C27}" ShortID="404574181">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Cha_Breath" ID="{012290B7-26D6-44DF-BE1B-ED21EA5B80DF}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+													<ObjectRef Name="Cha_Breath" ID="{4B063AD4-94B7-4BAC-88D6-FBEC2E2F60DB}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -227,36 +192,25 @@
 						</Folder>
 						<Folder Name="Amb" ID="{A8C093E8-33F9-4A35-9D48-7D0C2A77EF4F}" ShortID="627350604">
 							<ChildrenList>
-								<Event Name="Amb_Ext" ID="{DE47EFA2-BB38-4C29-A8AC-4BD37CFF55E7}">
+								<Event Name="Amb_Desert_Play" ID="{933F751A-5278-4F5E-B76B-3458652C59B3}">
 									<ChildrenList>
-										<Action Name="" ID="{4A3B9964-3596-43A0-AB6F-771E0C652A65}" ShortID="638842694">
+										<Action Name="" ID="{8B089A0D-734A-4276-BD41-D82BF09C4EE1}" ShortID="378076006">
 											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="38"/>
-												<Property Name="FadeInCurve" Type="int16" Value="6"/>
 												<Property Name="FadeTime" Type="Real64" Value="1"/>
-												<Property Name="Scope" Type="int16" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Amb_RTPC" ID="{1409E784-E84A-45EE-B8F3-2E8112055082}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+													<ObjectRef Name="Amb_Desert" ID="{1C98A39B-366B-42AB-B0A8-04E7A062ED8D}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Amb_Int" ID="{EC6C5D4D-344A-43D8-A55B-FF5AC5F7C9CC}">
-									<ChildrenList>
-										<Action Name="" ID="{AE0D2B59-E075-4326-A054-784338110448}" ShortID="489088117">
+										<Action Name="" ID="{9620204E-6311-4C41-9D17-4BA32AAF089C}" ShortID="1031728415">
 											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="38"/>
-												<Property Name="FadeInCurve" Type="int16" Value="6"/>
-												<Property Name="FadeTime" Type="Real64" Value="2"/>
-												<Property Name="GameParameterValue" Type="Real64" Value="100"/>
-												<Property Name="Scope" Type="int16" Value="1"/>
+												<Property Name="ActionType" Type="int16" Value="41"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Amb_RTPC" ID="{1409E784-E84A-45EE-B8F3-2E8112055082}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+													<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

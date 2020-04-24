@@ -17,6 +17,7 @@
 						<State Name="None" ID="{EC546398-FFAA-4A6B-A2C8-7F0077B7FAE6}"/>
 						<State Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}"/>
 						<State Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
+						<State Name="isHurting" ID="{1AF9F27D-C6FE-4ABC-8F91-9E284B0C2607}"/>
 					</ChildrenList>
 					<TransitionList>
 						<Transition>
@@ -29,6 +30,27 @@
 							<StartState Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}"/>
 							<EndState Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
 							<Time>2</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+				<StateGroup Name="Amb_States" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}">
+					<ChildrenList>
+						<State Name="None" ID="{5D676E1F-0173-47C9-86E8-52192F37B452}"/>
+						<State Name="Ext" ID="{6B00913B-3E17-48DB-9627-3B70A525A674}"/>
+						<State Name="Grotte" ID="{EBCBB2FF-006D-4D4D-BAD1-BD5E8F22DD5D}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="Ext" ID="{6B00913B-3E17-48DB-9627-3B70A525A674}"/>
+							<EndState Name="Grotte" ID="{EBCBB2FF-006D-4D4D-BAD1-BD5E8F22DD5D}"/>
+							<Time>2</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="Grotte" ID="{EBCBB2FF-006D-4D4D-BAD1-BD5E8F22DD5D}"/>
+							<EndState Name="Ext" ID="{6B00913B-3E17-48DB-9627-3B70A525A674}"/>
+							<Time>1</Time>
 							<IsShared>false</IsShared>
 						</Transition>
 					</TransitionList>
