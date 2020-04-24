@@ -30,6 +30,7 @@ public class AnimEvent : MonoBehaviour
         if (Physics.Raycast(origin: leftFoot.transform.position, direction: Vector3.down,
             hitInfo: out RaycastHit hit, maxDistance: 5, layerMask: _mask))
         {
+            
             position = hit.point + Vector3.up*0.1f;
         }
     
@@ -51,7 +52,7 @@ public class AnimEvent : MonoBehaviour
         }
         GameObject right = Instantiate(decalRight, position, rightFoot.transform.rotation,footSteps.transform);
         
-        right.transform.Rotate(Vector3.up, 180);
+        right.transform.Rotate(Vector3.right, 180);
         right.transform.Rotate(Vector3.forward, 180);
     }
 }
