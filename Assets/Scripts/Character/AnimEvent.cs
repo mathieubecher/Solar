@@ -33,8 +33,11 @@ public class AnimEvent : MonoBehaviour
             position = hit.point + Vector3.up*0.1f;
         }
     
-        //GameObject left = Instantiate(decalLeft, position, leftFoot.transform.rotation,footSteps.transform);
-        //left.transform.Rotate(Vector3.left,180);
+        GameObject left = Instantiate(decalLeft, position, leftFoot.transform.rotation,footSteps.transform);
+        
+        
+        left.transform.Rotate(Vector3.right,180);
+        left.transform.Rotate(Vector3.forward, 180);
     }
 
     public void RightFootStep()
@@ -46,7 +49,9 @@ public class AnimEvent : MonoBehaviour
         {
             position = hit.point + Vector3.up*0.1f;
         }
-        //GameObject right = Instantiate(decalRight, position, rightFoot.transform.rotation,footSteps.transform);
-        //right.transform.Rotate(Vector3.left,180);
+        GameObject right = Instantiate(decalRight, position, rightFoot.transform.rotation,footSteps.transform);
+        
+        right.transform.Rotate(Vector3.up, 180);
+        right.transform.Rotate(Vector3.forward, 180);
     }
 }
