@@ -67,11 +67,11 @@ public class Controller : MonoBehaviour
     {
         
         inputs.InputUpdate();
+        animator.SetFloat("velocity", velocity.magnitude);
         if(_deatTimer <= 0){
             velocity.y = _rigidbody.velocity.y;
             _rigidbody.velocity = velocity;
             
-            animator.SetFloat("velocity", velocity.magnitude);
             if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("isWalking_Play", this.gameObject);
             else AkSoundEngine.PostEvent("isIDLE_Play", this.gameObject);
         }

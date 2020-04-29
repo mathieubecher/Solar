@@ -61,11 +61,11 @@ public class OnlinePlayer : AbstractInput
     public override void MovePlayer()
     {
         _controller.velocity = Quaternion.Euler(0,_controller.cam.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
-        isMoving = true;
+
         if (_controller.velocity.magnitude > 0)
         {
             _controller.transform.rotation = Quaternion.LookRotation(_controller.velocity);
-            
+            isMoving = true;
         }
         else
         {

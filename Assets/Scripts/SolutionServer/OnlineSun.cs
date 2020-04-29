@@ -37,7 +37,6 @@ public class OnlineSun: AbstractInput
             _controller._sun._gotoAngle += _gotoAngleVelocity * _controller._sun._maxRotateSpeed * Time.deltaTime;
             if(isManager) _manager.CallSetSunRotate(_controller._sun._gotoAngle);
         }
-        //networkObject.SendRpc(RPC_SET_ROTATE, Receivers.Server, _controller._sun._gotoAngle);
     }
 
     public override void MovePlayer()
