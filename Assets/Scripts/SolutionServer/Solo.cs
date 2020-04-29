@@ -37,7 +37,11 @@ public class Solo : AbstractInput
     {
 
         MouseCamera();
-        MovePlayer();
+        if (!_controller.IsDead())
+        {
+            MovePlayer();
+        }
+
         _controller._sun._gotoAngle += _gotoAngleVelocity * _controller._sun._maxRotateSpeed * Time.deltaTime;
     }
 
@@ -56,8 +60,6 @@ public class Solo : AbstractInput
         {
             _controller.velocity = Vector3.zero;
         }
-        _controller.velocity.y = _rigidbody.velocity.y;
-        _rigidbody.velocity = _controller.velocity;
     }
 
 

@@ -36,9 +36,11 @@ public class OnlinePlayer : AbstractInput
     public override void InputUpdate()
     {
         MouseCamera();
-        MovePlayer();
+        if (!_controller.IsDead())
+        {
+            MovePlayer();
+        }
         if(isManager) _controller._sun._gotoAngle = _manager.sunRotation;
-
     }
 
 
@@ -59,18 +61,16 @@ public class OnlinePlayer : AbstractInput
     public override void MovePlayer()
     {
         _controller.velocity = Quaternion.Euler(0,_controller.cam.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
-
+        isMoving = true;
         if (_controller.velocity.magnitude > 0)
         {
             _controller.transform.rotation = Quaternion.LookRotation(_controller.velocity);
-            isMoving = true;
+            
         }
         else
         {
             _controller.velocity = Vector3.zero;
         }
-        _controller.velocity.y = _rigidbody.velocity.y;
-        _rigidbody.velocity = _controller.velocity;
         _manager.CallSetVelocity(_controller.velocity);
     }
     
@@ -85,5 +85,10 @@ public class OnlinePlayer : AbstractInput
     public void Velocity(Vector2 readValue)
     {
         _move = new Vector2(readValue.x, readValue.y);
+    }
+    public override void Dead()
+    {
+        isMoving = true;
+        InputFixed();
     }
 }

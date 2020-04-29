@@ -20,7 +20,7 @@ public class OnlineSun: AbstractInput
         SetManager(manager);
         _controls = controller.GetComponent<PlayerInput>();
         _goto = controller.transform.position;
-        _rigidbody.isKinematic = true;
+        _controller.GetComponent<Rigidbody>().isKinematic = true;
         _controls.currentActionMap["RotateSun"].performed += ctx => RotateSun(ctx.ReadValue<float>());
         _controls.currentActionMap["RotateSun"].canceled += ctx => RotateSun(ctx.ReadValue<float>());
         if (GameObject.FindObjectOfType<GameManager>().gameType == GameManager.GameType.CLIENT)
@@ -32,9 +32,11 @@ public class OnlineSun: AbstractInput
     
     public override void InputUpdate()
     {
-        MovePlayer();
-        _controller._sun._gotoAngle += _gotoAngleVelocity * _controller._sun._maxRotateSpeed * Time.deltaTime;
-        if(isManager) _manager.CallSetSunRotate(_controller._sun._gotoAngle);
+        if(!_controller.IsDead()){
+            MovePlayer();
+            _controller._sun._gotoAngle += _gotoAngleVelocity * _controller._sun._maxRotateSpeed * Time.deltaTime;
+            if(isManager) _manager.CallSetSunRotate(_controller._sun._gotoAngle);
+        }
         //networkObject.SendRpc(RPC_SET_ROTATE, Receivers.Server, _controller._sun._gotoAngle);
     }
 

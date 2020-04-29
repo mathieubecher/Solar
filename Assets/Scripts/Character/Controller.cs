@@ -12,6 +12,7 @@ public class Controller : MonoBehaviour
 {
     public AbstractInput inputs;
     private PlayerInput _controls;
+    protected Rigidbody _rigidbody;
     // External
     [HideInInspector] public  CameraController cam;
     public  CinemachineBrain brain;
@@ -45,6 +46,7 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
+        _rigidbody = GetComponent<Rigidbody>();
         GameManager manager = FindObjectOfType<GameManager>();
         if (manager.gameType == GameManager.GameType.SOLO) inputs = new Solo(this);
         else
@@ -54,6 +56,7 @@ public class Controller : MonoBehaviour
             
         }
         
+        _puzzle.cam.Priority = 10;
 
     }
 
@@ -62,8 +65,12 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        inputs.InputUpdate();
         if(_deatTimer <= 0){
-            inputs.InputUpdate();
+            velocity.y = _rigidbody.velocity.y;
+            _rigidbody.velocity = velocity;
+            
             animator.SetFloat("velocity", velocity.magnitude);
             if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("isWalking_Play", this.gameObject);
             else AkSoundEngine.PostEvent("isIDLE_Play", this.gameObject);
@@ -89,8 +96,7 @@ public class Controller : MonoBehaviour
         {
             _puzzle = other.gameObject.GetComponentInParent<Puzzle>();
             _puzzle.Enter(_sun._gotoAngle);
-            brain.ActiveVirtualCamera.Priority = 0;
-            _puzzle.cam.Priority = 10;
+            ChangeCam();
         }
     }
 
@@ -99,21 +105,30 @@ public class Controller : MonoBehaviour
         // TODO Feedback death
         _deatTimer = DeadTimer;
         velocity = Vector3.zero;
+        
         animator.SetFloat("velocity", 0);
         
     }
     public void Dead()
     {
+        
         _sun.ResetRotate(_puzzle.beginRotate);
         transform.position = _puzzle.GetRespawnPoint();
-        brain.ActiveVirtualCamera.Priority = 0;
-        _puzzle.cam.Priority = 10;
+        inputs.Dead();
+        ChangeCam();
+        
         _sun.ResetPoints();
     }
 
     public bool IsDead()
     {
         return _deatTimer > 0;
+    }
+
+    public void ChangeCam()
+    {
+        brain.ActiveVirtualCamera.Priority = 0;
+        _puzzle.cam.Priority = 10;
     }
 }
 
