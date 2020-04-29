@@ -1,5 +1,6 @@
 ﻿using BeardedManStudios.Forge.Networking.Generated;
 using BeardedManStudios.Forge.Networking.Unity;
+using Cinemachine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -12,7 +13,8 @@ public class Controller : MonoBehaviour
     public AbstractInput inputs;
     private PlayerInput _controls;
     // External
-    [HideInInspector] public  CameraController _camera;
+    [HideInInspector] public  CameraController cam;
+    public  CinemachineBrain brain;
 
     [SerializeField] private Puzzle _puzzle;
     // Infos
@@ -36,7 +38,7 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        _camera = FindObjectOfType<CameraController>();
+        cam = FindObjectOfType<CameraController>();
         _target = FindObjectOfType<CameraTarget>();
         _sun = GetComponent<ControllerSun>();
     }
@@ -87,6 +89,8 @@ public class Controller : MonoBehaviour
         {
             _puzzle = other.gameObject.GetComponentInParent<Puzzle>();
             _puzzle.Enter(_sun._gotoAngle);
+            brain.ActiveVirtualCamera.Priority = 0;
+            _puzzle.cam.Priority = 10;
         }
     }
 
@@ -102,6 +106,8 @@ public class Controller : MonoBehaviour
     {
         _sun.ResetRotate(_puzzle.beginRotate);
         transform.position = _puzzle.GetRespawnPoint();
+        brain.ActiveVirtualCamera.Priority = 0;
+        _puzzle.cam.Priority = 10;
         _sun.ResetPoints();
     }
 
