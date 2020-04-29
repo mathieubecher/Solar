@@ -48,4 +48,9 @@ public class Point : MonoBehaviour
         return _damageValue;
 
     }
+
+    public void ResetPoint()
+    {
+        _damageValue = 0;
+    }
 }

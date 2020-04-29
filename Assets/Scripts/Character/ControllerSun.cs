@@ -32,13 +32,14 @@ public class ControllerSun : MonoBehaviour
     [SerializeField] private AnimationCurve _pulsate;
     private float _pulsateSpeed = 2;
     [SerializeField] private Image _fxUI;
-    
-    
+
+    private Controller _controller;
     
     // Start is called before the first frame update
     void Awake()
     {
         _sun = FindObjectOfType<LightController>();
+        _controller = GetComponent<Controller>();
         _points = new List<Point>();
         GetPoints(this.gameObject);
         
@@ -50,7 +51,7 @@ public class ControllerSun : MonoBehaviour
 
     void Update()
     {
-
+        if (_controller.IsDead()) return;
         float rotateSpeed = DefineSpeed();
         _angle += rotateSpeed * Time.deltaTime;
 
@@ -78,15 +79,21 @@ public class ControllerSun : MonoBehaviour
 
     private void SetLife()
     {
-        _life = 1;
+        _life = _points.Count;
         foreach (Point p in _points)
         {
-            _life -= p.TestLight(_sun)/_points.Count;
+            _life -= p.TestLight(_sun);
         }
+
+        _life /= _points.Count;
         AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", Mathf.Abs(_life * 100));
 
         _time = (_time + Time.deltaTime * _pulsateSpeed * (1 - _life)) % 1;
         _fxUI.color = fx.Evaluate(1 - _life) * new Color(1, 1, 1, 0.8f + _pulsate.Evaluate(_time) * 0.2f);
+        if (_life <= 0)
+        {
+            _controller.Dying();
+        }
 
     }
     private void GetPoints(GameObject obj)
@@ -98,6 +105,20 @@ public class ControllerSun : MonoBehaviour
             GetPoints(obj.transform.GetChild(i).gameObject);
         }
     }
-    
-    
+
+
+    public void ResetPoints()
+    {
+        _life = 1;
+        foreach (Point p in _points)
+        {
+            p.ResetPoint();
+        }
+    }
+
+    public void ResetRotate(float angle)
+    {
+        _gotoAngle = angle;
+        _angle = angle;
+    }
 }
