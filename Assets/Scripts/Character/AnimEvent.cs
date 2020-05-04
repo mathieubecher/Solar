@@ -37,7 +37,6 @@ public class AnimEvent : MonoBehaviour
             left.transform.Rotate(Vector3.forward, 180);
             AkSoundEngine.PostEvent("Cha_Footsteps_Play", leftFoot);
         }
-        else AkSoundEngine.PostEvent("Flying_Rock_Play", leftFoot);
     
         
     }
@@ -55,6 +54,5 @@ public class AnimEvent : MonoBehaviour
             right.transform.Rotate(Vector3.forward, 180);
             AkSoundEngine.PostEvent("Cha_Footsteps_Play", rightFoot);
         }
-        else AkSoundEngine.PostEvent("Flying_Rock_Play", rightFoot);
     }
 }
