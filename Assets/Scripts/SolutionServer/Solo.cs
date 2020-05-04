@@ -42,7 +42,7 @@ public class Solo : AbstractInput
             MovePlayer();
         }
 
-        _controller._sun._gotoAngle += _gotoAngleVelocity * _controller._sun._maxRotateSpeed * Time.deltaTime;
+        _controller.sun._gotoAngle += _gotoAngleVelocity * _controller.sun._maxRotateSpeed * Time.deltaTime;
     }
 
     public override void InputFixed() {}

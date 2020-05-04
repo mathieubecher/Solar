@@ -84,8 +84,11 @@ public class CameraController : MonoBehaviour
         if (actualDistance > distance) actualDistance = distance;
         
         #if UNITY_EDITOR
-        Debug.DrawLine(follow.Target, follow.Target + direction * actualDistance , Color.green,Time.deltaTime);
-        if(Math.Abs(actualDistance - distance) > TOLERANCE) Debug.DrawLine(follow.Target + direction * actualDistance, follow.Target + direction * distance , Color.red,Time.deltaTime);
+        
+        if(gizmos){
+            Debug.DrawLine(follow.Target, follow.Target + direction * actualDistance , Color.green,Time.deltaTime);
+            if(Math.Abs(actualDistance - distance) > TOLERANCE) Debug.DrawLine(follow.Target + direction * actualDistance, follow.Target + direction * distance , Color.red,Time.deltaTime);
+        }
         #endif
         
         transform.position = follow.Target + direction * actualDistance;

@@ -8,7 +8,7 @@ public class Puzzle : MonoBehaviour
     [SerializeField]
     private GameObject respawn;
 
-    public CinemachineVirtualCamera cam;
+    public CMCamera cam;
 
     public float beginRotate;
     // Start is called before the first frame update

@@ -40,7 +40,7 @@ public class OnlinePlayer : AbstractInput
         {
             MovePlayer();
         }
-        if(isManager) _controller._sun._gotoAngle = _manager.sunRotation;
+        if(isManager) _controller.sun._gotoAngle = _manager.sunRotation;
     }
 
 

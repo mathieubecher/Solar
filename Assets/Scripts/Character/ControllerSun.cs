@@ -75,8 +75,9 @@ public class ControllerSun : MonoBehaviour
         else _angleVelocity = 0;
         return _angleVelocity;
     }
-    
 
+
+    private int _testPoint;
     private void SetLife()
     {
         _life = _points.Count;
@@ -85,6 +86,11 @@ public class ControllerSun : MonoBehaviour
             _life -= p.TestLight(_sun);
         }
 
+        for (int i = 0; i < _points.Count; ++i)
+        {
+            _life -= _points[i].TestLight(_sun,_testPoint == i);
+        }
+        
         _life /= _points.Count;
         AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", Mathf.Abs(_life * 100));
 
@@ -94,6 +100,9 @@ public class ControllerSun : MonoBehaviour
         {
             _controller.Dying();
         }
+
+        ++_testPoint;
+        if (_testPoint == _points.Count) _testPoint = 0;
 
     }
     private void GetPoints(GameObject obj)

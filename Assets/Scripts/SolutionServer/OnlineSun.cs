@@ -34,8 +34,8 @@ public class OnlineSun: AbstractInput
     {
         if(!_controller.IsDead()){
             MovePlayer();
-            _controller._sun._gotoAngle += _gotoAngleVelocity * _controller._sun._maxRotateSpeed * Time.deltaTime;
-            if(isManager) _manager.CallSetSunRotate(_controller._sun._gotoAngle);
+            _controller.sun._gotoAngle += _gotoAngleVelocity * _controller.sun._maxRotateSpeed * Time.deltaTime;
+            if(isManager) _manager.CallSetSunRotate(_controller.sun._gotoAngle);
         }
     }
 
