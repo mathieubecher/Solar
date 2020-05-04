@@ -8,6 +8,7 @@ public class AmbiancePlayer : MonoBehaviour
 
     void Update()
     {
+        /*
         if (nbVolume > 0)
         {
             AkSoundEngine.PostEvent("Amb_Int",gameObject);
@@ -16,12 +17,12 @@ public class AmbiancePlayer : MonoBehaviour
         {
             AkSoundEngine.PostEvent("Amb_Ext",gameObject);
         }
+        */
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 10)
         {
-            Debug.Log("J'entre");
             ++nbVolume;
         }
     }
@@ -30,7 +31,6 @@ public class AmbiancePlayer : MonoBehaviour
     {
         if (other.gameObject.layer == 10)
         {
-            Debug.Log("Je sors");
             --nbVolume;
         }
     }

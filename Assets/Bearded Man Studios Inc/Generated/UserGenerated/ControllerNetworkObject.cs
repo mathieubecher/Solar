@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedInterpol("{\"inter\":[0,0.15,0.15,0.15,0]")]
+	[GeneratedInterpol("{\"inter\":[0,0,0.15,0.15,0]")]
 	public partial class ControllerNetworkObject : NetworkObject
 	{
 		public const int IDENTITY = 7;
@@ -49,7 +49,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		[ForgeGeneratedField]
 		private Vector3 _velocity;
 		public event FieldEvent<Vector3> velocityChanged;
-		public InterpolateVector3 velocityInterpolation = new InterpolateVector3() { LerpT = 0.15f, Enabled = true };
+		public InterpolateVector3 velocityInterpolation = new InterpolateVector3() { LerpT = 0f, Enabled = false };
 		public Vector3 velocity
 		{
 			get { return _velocity; }
