@@ -94,10 +94,11 @@ public class Controller : MonoBehaviour
 
     public void Dying()
     {
+        
         // TODO Feedback death
         _deatTimer = DeadTimer;
         velocity = Vector3.zero;
-        
+        _rigidbody.velocity = velocity;
         animator.SetFloat("velocity", 0);
         
     }
