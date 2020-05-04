@@ -27,18 +27,22 @@ public class Controller : MonoBehaviour
     private Vector2 _move;
     private bool isMoving = false;
     public Vector3 velocity;
-
+    
+    [Header("Gestion Mort")]
     [Range(0,5)]
     public float DeadTimer = 2;
     [SerializeField]
     private float _deatTimer;
-    
+    [SerializeField] bool activeDead = true;
     public Vector3 Target {  get => _target.gameObject.transform.position;}
     
     // Start is called before the first frame update
     void Awake()
     {
-        
+#if UNITY_EDITOR
+#else
+        activeDead = true;
+#endif
         cam = FindObjectOfType<CameraController>();
         _target = FindObjectOfType<CameraTarget>();
         sun = GetComponent<ControllerSun>();
@@ -94,13 +98,14 @@ public class Controller : MonoBehaviour
 
     public void Dying()
     {
-        
         // TODO Feedback death
-        _deatTimer = DeadTimer;
-        velocity = Vector3.zero;
-        _rigidbody.velocity = velocity;
-        animator.SetFloat("velocity", 0);
         
+        if(activeDead){
+            _deatTimer = DeadTimer;
+            velocity = Vector3.zero;
+            _rigidbody.velocity = velocity;
+            animator.SetFloat("velocity", 0);
+        }
     }
 
 
