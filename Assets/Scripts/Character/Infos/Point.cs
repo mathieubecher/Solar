@@ -16,7 +16,7 @@ public class Point : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _mask =~ LayerMask.GetMask("Character");
+        _mask = LayerMask.GetMask("Sand")+LayerMask.GetMask("Default");
         //_parentMat = GetComponentInParent<MeshRenderer>().material;
     }
 
@@ -47,5 +47,15 @@ public class Point : MonoBehaviour
 
         return _damageValue;
 
+    }
+
+    public float TestLight(LightController sun, bool test)
+    {
+        if (test) return _damageValue;
+        return TestLight(sun);
+    }
+    public void ResetPoint()
+    {
+        _damageValue = 0;
     }
 }

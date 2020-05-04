@@ -37,8 +37,12 @@ public class Solo : AbstractInput
     {
 
         MouseCamera();
-        MovePlayer();
-        _controller._sun._gotoAngle += _gotoAngleVelocity * _controller._sun._maxRotateSpeed * Time.deltaTime;
+        if (!_controller.IsDead())
+        {
+            MovePlayer();
+        }
+
+        _controller.sun._gotoAngle += _gotoAngleVelocity * _controller.sun._maxRotateSpeed * Time.deltaTime;
     }
 
     public override void InputFixed() {}
@@ -46,7 +50,7 @@ public class Solo : AbstractInput
 
     public override void MovePlayer()
     {
-        _controller.velocity = Quaternion.Euler(0,_controller._camera.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
+        _controller.velocity = Quaternion.Euler(0,_controller.cam.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
 
         if (_controller.velocity.magnitude > 0)
         {
@@ -56,8 +60,6 @@ public class Solo : AbstractInput
         {
             _controller.velocity = Vector3.zero;
         }
-        _controller.velocity.y = _rigidbody.velocity.y;
-        _rigidbody.velocity = _controller.velocity;
     }
 
 
@@ -66,7 +68,7 @@ public class Solo : AbstractInput
     {
         
         Vector3 camDir = Vector3.forward;
-        _controller._camera.RotateMouse(new Vector3(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y")) * 0.8f);
+        _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y")) * 0.8f);
     }
     
     
@@ -81,7 +83,7 @@ public class Solo : AbstractInput
     }
     public void VelocityCam(Vector2 velocity)
     {
-        _controller._camera.Rotate(velocity);
+        _controller.cam.Rotate(velocity);
     }
 
 }
