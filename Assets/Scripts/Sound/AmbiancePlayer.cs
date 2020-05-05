@@ -8,20 +8,21 @@ public class AmbiancePlayer : MonoBehaviour
 
     void Update()
     {
+        
         if (nbVolume > 0)
         {
-            AkSoundEngine.PostEvent("Amb_Int",gameObject);
+            AkSoundEngine.PostEvent("Amb_Int_Lvl01",gameObject);
         }
         else
         {
-            AkSoundEngine.PostEvent("Amb_Ext",gameObject);
+            AkSoundEngine.PostEvent("Amb_Ext_Lvl01_Desert_Global",gameObject);
         }
+        
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 10)
         {
-            Debug.Log("J'entre");
             ++nbVolume;
         }
     }
@@ -30,7 +31,6 @@ public class AmbiancePlayer : MonoBehaviour
     {
         if (other.gameObject.layer == 10)
         {
-            Debug.Log("Je sors");
             --nbVolume;
         }
     }

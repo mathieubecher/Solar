@@ -24,8 +24,8 @@ public class OnlinePlayer : AbstractInput
         _controls.currentActionMap["KeyMovement"].performed += ctx => Velocity(ctx.ReadValue<Vector2>());
         _controls.currentActionMap["KeyMovement"].canceled += ctx => Velocity(ctx.ReadValue<Vector2>());
         
-        _controls.currentActionMap["Rotate"].performed += ctx => _controller._camera.Rotate(ctx.ReadValue<Vector2>());
-        _controls.currentActionMap["Rotate"].canceled += ctx => _controller._camera.Rotate(ctx.ReadValue<Vector2>());
+        _controls.currentActionMap["Rotate"].performed += ctx => _controller.cam.Rotate(ctx.ReadValue<Vector2>());
+        _controls.currentActionMap["Rotate"].canceled += ctx => _controller.cam.Rotate(ctx.ReadValue<Vector2>());
 #if UNITY_EDITOR
 #else
     Cursor.lockState = CursorLockMode.Locked;
@@ -36,9 +36,11 @@ public class OnlinePlayer : AbstractInput
     public override void InputUpdate()
     {
         MouseCamera();
-        MovePlayer();
-        if(isManager) _controller._sun._gotoAngle = _manager.sunRotation;
-
+        if (!_controller.IsDead())
+        {
+            MovePlayer();
+        }
+        if(isManager) _controller.sun._gotoAngle = _manager.sunRotation;
     }
 
 
@@ -58,7 +60,7 @@ public class OnlinePlayer : AbstractInput
     }
     public override void MovePlayer()
     {
-        _controller.velocity = Quaternion.Euler(0,_controller._camera.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
+        _controller.velocity = Quaternion.Euler(0,_controller.cam.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
 
         if (_controller.velocity.magnitude > 0)
         {
@@ -69,8 +71,6 @@ public class OnlinePlayer : AbstractInput
         {
             _controller.velocity = Vector3.zero;
         }
-        _controller.velocity.y = _rigidbody.velocity.y;
-        _rigidbody.velocity = _controller.velocity;
         _manager.CallSetVelocity(_controller.velocity);
     }
     
@@ -78,12 +78,17 @@ public class OnlinePlayer : AbstractInput
     {
     
         Vector3 camDir = Vector3.forward;
-        _controller._camera.RotateMouse(new Vector3(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y")) * 0.8f);
+        _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y")) * 0.8f);
     }
     
     
     public void Velocity(Vector2 readValue)
     {
         _move = new Vector2(readValue.x, readValue.y);
+    }
+    public override void Dead()
+    {
+        isMoving = true;
+        InputFixed();
     }
 }
