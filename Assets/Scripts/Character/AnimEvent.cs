@@ -28,17 +28,18 @@ public class AnimEvent : MonoBehaviour
         
         Vector3 position = leftFoot.transform.position;
         if (Physics.Raycast(origin: leftFoot.transform.position, direction: Vector3.down,
-            hitInfo: out RaycastHit hit, maxDistance: 5, layerMask: _mask) && hit.collider.gameObject.layer == 11)
+                hitInfo: out RaycastHit hit, maxDistance: 5, layerMask: _mask) && hit.collider.gameObject.layer == 11)
         {
-            
-            position = hit.point + Vector3.up*0.1f;
-            GameObject left = Instantiate(decalLeft, position, leftFoot.transform.rotation,footSteps.transform);
-            left.transform.Rotate(Vector3.right,180);
+            AkSoundEngine.SetSwitch("FootStep_Floor","Sand",leftFoot);
+            position = hit.point + Vector3.up * 0.1f;
+            GameObject left = Instantiate(decalLeft, position, leftFoot.transform.rotation, footSteps.transform);
+            left.transform.Rotate(Vector3.right, 180);
             left.transform.Rotate(Vector3.forward, 180);
-            AkSoundEngine.PostEvent("Cha_Footsteps_Play", leftFoot);
         }
-    
-        
+        else AkSoundEngine.SetSwitch("FootStep_Floor","Stone",leftFoot);
+
+        AkSoundEngine.PostEvent("Cha_Footsteps_Play", leftFoot);
+
     }
 
     public void RightFootStep()
@@ -47,12 +48,14 @@ public class AnimEvent : MonoBehaviour
         if (Physics.Raycast(origin: rightFoot.transform.position, direction: Vector3.down,
             hitInfo: out RaycastHit hit, maxDistance: 5, layerMask: _mask) && hit.collider.gameObject.layer == 11)
         {
+            AkSoundEngine.SetSwitch("FootStep_Floor","Sand",rightFoot);
             position = hit.point + Vector3.up*0.1f;
             GameObject right = Instantiate(decalRight, position, rightFoot.transform.rotation,footSteps.transform);
-        
             right.transform.Rotate(Vector3.right, 180);
             right.transform.Rotate(Vector3.forward, 180);
-            AkSoundEngine.PostEvent("Cha_Footsteps_Play", rightFoot);
         }
+        else AkSoundEngine.SetSwitch("FootStep_Floor","Stone",rightFoot);
+        
+        AkSoundEngine.PostEvent("Cha_Footsteps_Play", rightFoot);
     }
 }
