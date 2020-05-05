@@ -60,6 +60,7 @@
 												<Action Name="" ID="{37C0E8FD-A950-40AE-B246-36BC8825955A}" ShortID="447682131">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="38"/>
+														<Property Name="Scope" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
@@ -75,6 +76,7 @@
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="38"/>
 														<Property Name="GameParameterValue" Type="Real64" Value="20"/>
+														<Property Name="Scope" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
@@ -90,6 +92,7 @@
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="38"/>
 														<Property Name="GameParameterValue" Type="Real64" Value="55"/>
+														<Property Name="Scope" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
@@ -105,6 +108,7 @@
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="38"/>
 														<Property Name="GameParameterValue" Type="Real64" Value="90"/>
+														<Property Name="Scope" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
@@ -165,18 +169,13 @@
 										<Action Name="" ID="{7B64931E-8C9B-4E9D-BE30-11EF4FDD3104}" ShortID="63820726">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Cha_Breath" ID="{4B063AD4-94B7-4BAC-88D6-FBEC2E2F60DB}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
 												</Reference>
 											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{21E6935D-88D3-40A9-BCFD-B85E886C351B}" ShortID="342737595">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="3"/>
-											</PropertyList>
-											<ReferenceList/>
 										</Action>
 										<Action Name="" ID="{6C30454D-9B1E-4117-8843-3BD3E50A492B}" ShortID="89509626">
 											<PropertyList>
@@ -185,6 +184,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Cha_Death" ID="{F38C0427-746F-44C9-9D7C-ADAB469779B9}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{D2728E26-D4EF-4D7C-BDDA-F30E76F90AF2}" ShortID="912184419">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -200,6 +210,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Cha_Respawn" ID="{49758B4A-025C-48A0-9CFE-0482015B29A6}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{C1AEF0BF-775B-4F2C-9586-92E0F6A5CE98}" ShortID="92836423">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -222,7 +242,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Music_2" ID="{43D1872C-623D-442F-8616-39C6CE0B17DA}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+													<ObjectRef Name="Music_Sw" ID="{43D1872C-623D-442F-8616-39C6CE0B17DA}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -270,7 +290,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Music_2" ID="{43D1872C-623D-442F-8616-39C6CE0B17DA}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+													<ObjectRef Name="Music_Sw" ID="{43D1872C-623D-442F-8616-39C6CE0B17DA}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
