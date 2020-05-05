@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static int mask;
     public enum GameType
     {
         SOLO, LOCAL, CLIENT, SERVER
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     {
         gameType = StaticClass.gameType;
         Debug.Log(gameType);
+        mask = LayerMask.GetMask("Sand")+LayerMask.GetMask("Default");
     }
 
     // Update is called once per frame
