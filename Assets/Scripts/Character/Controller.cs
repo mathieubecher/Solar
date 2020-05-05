@@ -27,18 +27,22 @@ public class Controller : MonoBehaviour
     private Vector2 _move;
     private bool isMoving = false;
     public Vector3 velocity;
-
+    
+    [Header("Gestion Mort")]
     [Range(0,5)]
     public float DeadTimer = 2;
     [SerializeField]
     private float _deatTimer;
-    
+    [SerializeField] bool activeDead = true;
     public Vector3 Target {  get => _target.gameObject.transform.position;}
     
     // Start is called before the first frame update
     void Awake()
     {
-        
+#if UNITY_EDITOR
+#else
+        activeDead = true;
+#endif
         cam = FindObjectOfType<CameraController>();
         _target = FindObjectOfType<CameraTarget>();
         sun = GetComponent<ControllerSun>();
@@ -71,13 +75,24 @@ public class Controller : MonoBehaviour
             velocity.y = _rigidbody.velocity.y;
             _rigidbody.velocity = velocity;
             
-            if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("isWalking_Play", this.gameObject);
-            else AkSoundEngine.PostEvent("isIDLE_Play", this.gameObject);
+            // RESPIRATION
+            // TODO A changer en fonction du systeme de dégats
+            if(sun.Life >= 1){
+                if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
+                else if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("Cha_Walk", this.gameObject);
+                else AkSoundEngine.PostEvent("Cha_IDLE", this.gameObject);
+            }
+            else AkSoundEngine.PostEvent("Cha_Hurt", this.gameObject);
         }
         else
         {
             _deatTimer -= Time.deltaTime;
-            if (_deatTimer <= 0) puzzle.Dead();
+            if (_deatTimer <= 0)
+            {
+                
+                AkSoundEngine.PostEvent("Cha_Respawn", this.gameObject);
+                puzzle.Dead();
+            }
         }
         
     }
@@ -94,19 +109,23 @@ public class Controller : MonoBehaviour
 
     public void Dying()
     {
-        
         // TODO Feedback death
-        _deatTimer = DeadTimer;
-        velocity = Vector3.zero;
-        _rigidbody.velocity = velocity;
-        animator.SetFloat("velocity", 0);
         
+        if(activeDead){
+            _deatTimer = DeadTimer;
+            velocity = Vector3.zero;
+            _rigidbody.velocity = velocity;
+            animator.SetFloat("velocity", 0);
+            AkSoundEngine.PostEvent("Cha_Death_Play", this.gameObject);
+        }
     }
 
 
     public bool IsDead()
     {
+        
         return _deatTimer > 0;
+        
     }
 
 

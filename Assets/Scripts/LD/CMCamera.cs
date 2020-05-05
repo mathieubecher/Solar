@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class CMCamera : MonoBehaviour
 {
-    [SerializeField] private CMCamera next;
     [HideInInspector] public CinemachineVirtualCamera virtualCamera;
     private bool _active; 
     private ControllerPuzzle _controller;

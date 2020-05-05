@@ -34,27 +34,26 @@
 						</Transition>
 					</TransitionList>
 				</StateGroup>
-				<StateGroup Name="Amb_States" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}">
+				<Folder Name="Ambiances" ID="{6394F9B5-0378-4CBE-96FF-1E6DB35DF03B}" ShortID="597920989">
 					<ChildrenList>
-						<State Name="None" ID="{5D676E1F-0173-47C9-86E8-52192F37B452}"/>
-						<State Name="Ext" ID="{6B00913B-3E17-48DB-9627-3B70A525A674}"/>
-						<State Name="Grotte" ID="{EBCBB2FF-006D-4D4D-BAD1-BD5E8F22DD5D}"/>
+						<Folder Name="Lvl 1" ID="{75B8FD5D-875E-4F53-96BE-39C60AEBDC8E}" ShortID="383217462">
+							<ChildrenList>
+								<StateGroup Name="Amb_Lvl01" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}">
+									<PropertyList>
+										<Property Name="DefaultTransitionTime" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ChildrenList>
+										<State Name="None" ID="{5D676E1F-0173-47C9-86E8-52192F37B452}"/>
+										<State Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
+										<State Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}"/>
+										<State Name="Ext_Lvl01_Desert_Kiosk" ID="{FC399029-B1DF-4FF4-9006-8DF9F1A6A27F}"/>
+										<State Name="Ext_Lvl01_Desert_View" ID="{9B72EE0B-9760-4D2B-B9CE-1752501D274D}"/>
+									</ChildrenList>
+								</StateGroup>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
-					<TransitionList>
-						<Transition>
-							<StartState Name="Ext" ID="{6B00913B-3E17-48DB-9627-3B70A525A674}"/>
-							<EndState Name="Grotte" ID="{EBCBB2FF-006D-4D4D-BAD1-BD5E8F22DD5D}"/>
-							<Time>2</Time>
-							<IsShared>false</IsShared>
-						</Transition>
-						<Transition>
-							<StartState Name="Grotte" ID="{EBCBB2FF-006D-4D4D-BAD1-BD5E8F22DD5D}"/>
-							<EndState Name="Ext" ID="{6B00913B-3E17-48DB-9627-3B70A525A674}"/>
-							<Time>1</Time>
-							<IsShared>false</IsShared>
-						</Transition>
-					</TransitionList>
-				</StateGroup>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</States>
