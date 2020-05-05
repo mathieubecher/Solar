@@ -861,7 +861,7 @@
 						</Entry>
 					</EntryList>
 				</MusicSwitchContainer>
-				<MusicSwitchContainer Name="Music_2" ID="{43D1872C-623D-442F-8616-39C6CE0B17DA}" ShortID="74262606">
+				<MusicSwitchContainer Name="Music_Sw" ID="{43D1872C-623D-442F-8616-39C6CE0B17DA}" ShortID="74262606">
 					<PropertyList>
 						<Property Name="Tempo" Type="Real64" Value="90"/>
 						<Property Name="Volume" Type="Real64">
@@ -901,6 +901,41 @@
 											<Point>
 												<XPos>100</XPos>
 												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+								<RTPC Name="" ID="{D821DFBD-66AE-4F2D-9E03-148F20851D4A}" ShortID="606512000">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{EAB79DF9-E961-46C1-86B2-020AAC1C7495}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>0</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>10</XPos>
+												<YPos>0</YPos>
+												<Flags>0</Flags>
+												<SegmentShape>SCurve</SegmentShape>
+											</Point>
+											<Point>
+												<XPos>50</XPos>
+												<YPos>-3</YPos>
+												<Flags>0</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>-3</YPos>
 												<Flags>37</Flags>
 											</Point>
 										</PointList>
@@ -1408,31 +1443,6 @@
 							</Playlist>
 						</MusicPlaylistContainer>
 					</ChildrenList>
-					<StateInfo>
-						<StateGroupList>
-							<StateGroupInfo>
-								<StateGroupRef Name="GeneralStates" ID="{C92137EC-58E3-4210-A2B8-77B6A2248E1A}"/>
-							</StateGroupInfo>
-						</StateGroupList>
-						<CustomStateList>
-							<CustomState>
-								<StateRef Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}"/>
-								<CustomState Name="" ID="{1D541FF1-E32B-464F-9ECC-C085BCFC4FB1}" ShortID="568270879">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64" Value="-5"/>
-									</PropertyList>
-								</CustomState>
-							</CustomState>
-							<CustomState>
-								<StateRef Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
-								<CustomState Name="" ID="{C17BCB0F-D2E0-448B-BE2C-442F5A72E4EB}" ShortID="115960528"/>
-							</CustomState>
-							<CustomState>
-								<StateRef Name="isHurting" ID="{1AF9F27D-C6FE-4ABC-8F91-9E284B0C2607}"/>
-								<CustomState Name="" ID="{F0413D88-BCE9-44E9-8291-11AD21BB63DF}" ShortID="544513824"/>
-							</CustomState>
-						</CustomStateList>
-					</StateInfo>
 					<TransitionList>
 						<MusicTransition Name="Root" ID="{279770E5-E8E5-42D8-BE75-EB9B2712AE1B}">
 							<PropertyList>
