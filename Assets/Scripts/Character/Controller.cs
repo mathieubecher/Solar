@@ -17,12 +17,13 @@ public class Controller : MonoBehaviour
     [HideInInspector] public CameraController cam;
 
     // Infos
+    [SerializeField] private GameObject MultiLocalPrefab;
     public float speed = 5f;
     [SerializeField] public Animator animator;
     [HideInInspector] public ControllerSun sun;
     [HideInInspector] public ControllerPuzzle puzzle;
     private CameraTarget _target;
-
+    
     private Vector2 _moveCamera;
     private Vector2 _move;
     private bool isMoving = false;
@@ -53,13 +54,20 @@ public class Controller : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         GameManager manager = FindObjectOfType<GameManager>();
-        if (manager.gameType == GameManager.GameType.SOLO) inputs = new Solo(this);
+        inputs = new Solo(this);
+        if (manager.gameType == GameManager.GameType.SOLO) {}
+        else if (manager.gameType == GameManager.GameType.LOCAL)
+        {
+            GetComponent<PlayerInput>().enabled = false;
+            inputs = new Local(this);
+            Instantiate(MultiLocalPrefab, Vector3.zero, Quaternion.identity);
+        }
         else
         {
             if(manager.gameType == GameManager.GameType.SERVER) NetworkManager.Instance.InstantiateController();
-            inputs = new Solo(this);
             
         }
+        
         
     }
 
