@@ -63,13 +63,128 @@
 							<GameParameterRef Name="RTPC_WindGain" ID="{C1A5BC66-B4DF-474B-9AEE-1068B3D47755}"/>
 							<Value>0</Value>
 						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}"/>
+							<Value>29</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Drop" ID="{969C3013-C098-4E3C-8A39-DBA065D2084D}"/>
+						<CurrentStateRef Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
+						<CurrentStateRef Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="isIDLE" ID="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}"/>
+						<CurrentSwitchRef Name="Sand" ID="{569C2DF3-2300-48E3-A79C-55536C42AD41}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="Breath_System" ID="{637BB05B-1284-41C7-AFDA-78E2A129D135}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Cha_IDLE" ID="{F6AAC878-EEEA-474B-8DC0-24BCCEACEF5C}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Cha_Walk" ID="{D019B1D0-938C-4FF3-899B-9578AC82146B}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Cha_Run" ID="{D9A1D3E3-0E16-4E33-B27E-DD40F1C308D2}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Cha_Hurt" ID="{8D2FD11F-A280-4DF0-A1F1-16E4AA776625}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Sun_Velocity" ID="{9E18518E-D263-422C-97B3-89A763C30DA6}"/>
+							<Value>1</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Amb_RTPC" ID="{1409E784-E84A-45EE-B8F3-2E8112055082}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_WindGain" ID="{C1A5BC66-B4DF-474B-9AEE-1068B3D47755}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}"/>
+							<Value>0</Value>
+						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Intro" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}"/>
-						<CurrentStateRef Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}"/>
-						<CurrentStateRef Name="Ext" ID="{6B00913B-3E17-48DB-9627-3B70A525A674}"/>
+						<CurrentStateRef Name="None" ID="{EC546398-FFAA-4A6B-A2C8-7F0077B7FAE6}"/>
+						<CurrentStateRef Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="isIDLE" ID="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}"/>
+						<CurrentSwitchRef Name="Sand" ID="{569C2DF3-2300-48E3-A79C-55536C42AD41}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="Amb_System" ID="{7527CA5A-4674-496A-946F-9649F423D743}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Amb_Desert_Play" ID="{933F751A-5278-4F5E-B76B-3458652C59B3}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Amb_Ext_Lvl01_Desert_View" ID="{72953AEC-8970-4ABA-AC8C-A697BB8050D8}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Amb_Ext_Lvl01_Desert_Global" ID="{E412B80B-96CA-4C46-8654-B3CA954BDC20}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Amb_Ext_Lvl01_Desert_Kiosk" ID="{043A1E23-1405-477D-80EB-DFAD75D0C9BB}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Amb_Int_Lvl01" ID="{79EF4CA6-3340-4246-B570-8094ED08D7B7}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Sun_Velocity" ID="{9E18518E-D263-422C-97B3-89A763C30DA6}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Amb_RTPC" ID="{1409E784-E84A-45EE-B8F3-2E8112055082}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_WindGain" ID="{C1A5BC66-B4DF-474B-9AEE-1068B3D47755}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}"/>
+							<Value>0</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Intro" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}"/>
+						<CurrentStateRef Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
+						<CurrentStateRef Name="Ext_Lvl01_Desert_View" ID="{9B72EE0B-9760-4D2B-B9CE-1752501D274D}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="isIDLE" ID="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}"/>
 						<CurrentSwitchRef Name="Sand" ID="{569C2DF3-2300-48E3-A79C-55536C42AD41}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
