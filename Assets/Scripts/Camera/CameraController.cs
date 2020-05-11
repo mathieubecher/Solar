@@ -74,8 +74,7 @@ public class CameraController : MonoBehaviour
     void SetPos()
     {
         Vector3 direction = transform.rotation * Vector3.back;
-        int mask =~ LayerMask.GetMask("Character");
-        if (Physics.Raycast(follow.Target, direction, out RaycastHit ray, distance+0.5f, mask))
+        if (Physics.Raycast(follow.Target, direction, out RaycastHit ray, distance+0.5f, GameManager.mask))
         {
             actualDistance = Mathf.Max(0.5f,ray.distance -0.5f);
         }

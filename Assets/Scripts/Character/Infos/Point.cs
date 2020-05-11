@@ -16,7 +16,6 @@ public class Point : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _mask = LayerMask.GetMask("Sand")+LayerMask.GetMask("Default");
         //_parentMat = GetComponentInParent<MeshRenderer>().material;
     }
 
@@ -36,7 +35,7 @@ public class Point : MonoBehaviour
     public float TestLight(LightController sun)
     {
         
-        if (Physics.Raycast(origin: transform.position, direction: sun.transform.rotation * Vector3.back, hitInfo: out RaycastHit hit, maxDistance:dist, layerMask: _mask))
+        if (Physics.Raycast(origin: transform.position, direction: sun.transform.rotation * Vector3.back, hitInfo: out RaycastHit hit, maxDistance:dist, layerMask: GameManager.mask))
         {
             _touch = false;
         }
