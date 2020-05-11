@@ -345,6 +345,7 @@
         </e>
         <e p="Graph" t="Include">
           <e p="Shaders" t="Include">
+            <e p="Depth Shader.shader" t="Include" />
             <e p="SunDeform.cs" t="Include" />
             <e p="SunDeform.shader" t="Include" />
           </e>
@@ -371,7 +372,6 @@
               <e p="CameraTarget.cs" t="Include" />
               <e p="Point.cs" t="Include" />
             </e>
-            <e p="InputMaster.cs" t="Include" />
           </e>
           <e p="Editor" t="Include">
             <e p="CameraEditor.cs" t="Include" />
@@ -386,6 +386,7 @@
           <e p="SolutionServer" t="Include">
             <e p="AbstractInput.cs" t="Include" />
             <e p="InputManager.cs" t="Include" />
+            <e p="InputMaster.cs" t="Include" />
             <e p="MultiLocal" t="Include">
               <e p="InputLocal.cs" t="Include" />
               <e p="Local.cs" t="Include" />
@@ -400,6 +401,7 @@
             <e p="AmbiancePlayer.cs" t="Include" />
             <e p="CavernAmbiance.cs" t="Include" />
           </e>
+          <e p="TerrainBlendingBaker.cs" t="Include" />
           <e p="Tools" t="Include">
             <e p="FPS.cs" t="Include" />
             <e p="GizmosSun.cs" t="Include" />
@@ -407,6 +409,13 @@
         </e>
         <e p="StreamingAssets" t="Include">
           <e p="desc.txt" t="Include" />
+        </e>
+        <e p="TerrainBlending" t="Include">
+          <e p="Shaders" t="Include">
+            <e p="DepthShader.shader" t="Include" />
+            <e p="NormalsShader.shader" t="Include" />
+            <e p="UnlitTerrain.shader" t="Include" />
+          </e>
         </e>
         <e p="Wwise" t="Include">
           <e p="Deployment" t="Include">
