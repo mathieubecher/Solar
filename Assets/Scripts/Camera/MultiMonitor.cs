@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class MultiMonitor : MonoBehaviour
 {
@@ -31,11 +32,11 @@ public class MultiMonitor : MonoBehaviour
     void Start()
     {
         _manager = FindObjectOfType<GameManager>();
-        if(_manager.gameType == GameManager.GameType.SOLO)Mono();
+        if(_manager.gameType == GameManager.GameType.SOLO) Mono();
+        else if(_manager.gameType == GameManager.GameType.LOCAL) Dual();
         else if (StaticClass.serverType == StaticClass.ServerType.PLAYER) OnlinePlayer();
         else if (StaticClass.serverType == StaticClass.ServerType.SUN) OnlineSun();
-        //Display.displays[0].Activate(1920, 1080, 60);
-        //Display.displays[1].Activate(1920, 1080, 30);
+        
     }
 
     void Update()
@@ -68,7 +69,16 @@ public class MultiMonitor : MonoBehaviour
 
     public void Dual()
     {
+        Debug.Log("dual");
         multi = true;
+        
+        /*
+        // MULTI GPU 
+        Display.displays[0].Activate(1920, 1080, 60);
+        Display.displays[1].Activate(1920, 1080, 30);
+         */
+        
+        
         Screen.fullScreenMode = FullScreenMode.Windowed;   
         Screen.SetResolution (3840,1080+100,false);
         main.rect = new Rect(0,0,0.5f,1);

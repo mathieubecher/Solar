@@ -89,6 +89,11 @@ public class MultiplayerMenu : MonoBehaviour
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
+	public void MultiLocal()
+	{
+		StaticClass.gameType = GameManager.GameType.LOCAL;
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+	}
 
 	public void ServerType()
 	{
