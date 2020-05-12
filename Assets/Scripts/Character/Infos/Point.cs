@@ -16,15 +16,14 @@ public class Point : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _mask =~ LayerMask.GetMask("Character");
-        _parentMat = GetComponentInParent<MeshRenderer>().material;
+        //_parentMat = GetComponentInParent<MeshRenderer>().material;
     }
 
     // Update is called once per frame
     void Update()
     {
         _damageValue = Mathf.Max(0, Mathf.Min(1,_damageValue + ((_touch)?_speedDamage:-_speedHeal) * Time.deltaTime));
-        _parentMat.SetFloat("_sunTouch", _damageValue);
+        //_parentMat.SetFloat("_sunTouch", _damageValue);
     }
 
     private void OnDrawGizmos()
@@ -36,7 +35,7 @@ public class Point : MonoBehaviour
     public float TestLight(LightController sun)
     {
         
-        if (Physics.Raycast(origin: transform.position, direction: sun.transform.rotation * Vector3.back, hitInfo: out RaycastHit hit, maxDistance:dist, layerMask: _mask))
+        if (Physics.Raycast(origin: transform.position, direction: sun.transform.rotation * Vector3.back, hitInfo: out RaycastHit hit, maxDistance:dist, layerMask: GameManager.mask))
         {
             _touch = false;
         }
@@ -47,5 +46,15 @@ public class Point : MonoBehaviour
 
         return _damageValue;
 
+    }
+
+    public float TestLight(LightController sun, bool test)
+    {
+        if (test) return _damageValue;
+        return TestLight(sun);
+    }
+    public void ResetPoint()
+    {
+        _damageValue = 0;
     }
 }

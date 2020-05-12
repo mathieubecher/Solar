@@ -1,14 +1,13 @@
-﻿#if UNITY_EDITOR
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
+
 [ExecuteInEditMode]
 public class GizmosSun : MonoBehaviour
 {
+#if UNITY_EDITOR
     private LightController _light;
     [SerializeField] private Vector2 center= new Vector2(80,80);
     private Vector2 actualCenter;
@@ -34,8 +33,14 @@ public class GizmosSun : MonoBehaviour
         //Destroy(gameObject);
         _light = FindObjectOfType<LightController>();
         actualCenter = center;
+        
+        SceneView.onSceneGUIDelegate += UpdateSceneView;
     }
 
+    void OnDisable()
+    {
+        SceneView.onSceneGUIDelegate -= UpdateSceneView;
+    }
     void Update()
     {
         
@@ -45,15 +50,16 @@ public class GizmosSun : MonoBehaviour
     private void OnDrawGizmos()
     {
         if (!_light.gizmos) return;
-
         // Draw interface 
         Handles.BeginGUI();
+        
         DrawIncline();
         DrawRotation();
         Handles.color = Color.white;
         Handles.DrawSolidDisc(actualCenter, Vector3.forward, 5);
+       
         Handles.EndGUI();
-        SceneView.onSceneGUIDelegate = UpdateSceneView;
+       
     }
 
     private void OnGUI()
@@ -215,6 +221,5 @@ public class GizmosSun : MonoBehaviour
     {
         return RotatePos(angle, radius);
     }
-}
-
 #endif
+}

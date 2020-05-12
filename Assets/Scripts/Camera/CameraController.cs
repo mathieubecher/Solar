@@ -53,7 +53,7 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        transform.eulerAngles += (rotateFrame+rotateMouse) * _rotateSpeed * Time.deltaTime;
+        transform.eulerAngles += (Time.deltaTime) * _rotateSpeed * (rotateFrame+rotateMouse);
         LimitCam();
         SetPos();
     }
@@ -74,8 +74,7 @@ public class CameraController : MonoBehaviour
     void SetPos()
     {
         Vector3 direction = transform.rotation * Vector3.back;
-        int mask =~ LayerMask.GetMask("Character");
-        if (Physics.Raycast(follow.Target, direction, out RaycastHit ray, distance, mask))
+        if (Physics.Raycast(follow.Target, direction, out RaycastHit ray, distance+0.5f, GameManager.mask))
         {
             actualDistance = Mathf.Max(0.5f,ray.distance -0.5f);
         }
@@ -84,9 +83,12 @@ public class CameraController : MonoBehaviour
         if (actualDistance > distance) actualDistance = distance;
         
         #if UNITY_EDITOR
-        Debug.DrawLine(follow.Target, follow.Target + direction * actualDistance , Color.green,Time.deltaTime);
-        if(Math.Abs(actualDistance - distance) > TOLERANCE) Debug.DrawLine(follow.Target + direction * actualDistance, follow.Target + direction * distance , Color.red,Time.deltaTime);
-#endif
+        
+        if(gizmos){
+            Debug.DrawLine(follow.Target, follow.Target + direction * actualDistance , Color.green,Time.deltaTime);
+            if(Math.Abs(actualDistance - distance) > TOLERANCE) Debug.DrawLine(follow.Target + direction * actualDistance, follow.Target + direction * distance , Color.red,Time.deltaTime);
+        }
+        #endif
         
         transform.position = follow.Target + direction * actualDistance;
     }
@@ -103,31 +105,5 @@ public class CameraController : MonoBehaviour
         rotateFrame = new Vector3(-rotate.y,rotate.x,0)*2;
     }
 
-    #region INSPECTOR
-    void Reset()
-    {
-        follow = FindObjectOfType<Controller>();
-        if (TryGetComponent<GizmosCamera>(out GizmosCamera gizmosCamera))
-        {
-            DestroyImmediate(gizmosCamera);
-        }
-        gameObject.AddComponent<GizmosCamera>();
-    }
-    
-
-    #endregion
 }
 
-
-[ExecuteInEditMode]
-internal class GizmosCamera : MonoBehaviour
-{
-    private CameraController camera;
-    
-    void Awake()
-    {
-        camera = GetComponent<CameraController>();
-    }
-    
-
-}

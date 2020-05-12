@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}" SchemaVersion="97">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Music_State" ID="{DDD1692E-3AD5-41DE-BC79-2DB63FA68D85}">
+					<ChildrenList>
+						<State Name="None" ID="{D596250C-411F-4B10-B71B-B7E0B18D347B}"/>
+						<State Name="Intro" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}"/>
+						<State Name="Post_Intro" ID="{DDDFEFD0-E001-4B6C-9659-E07FA3889D5D}"/>
+						<State Name="Drop" ID="{969C3013-C098-4E3C-8A39-DBA065D2084D}"/>
+						<State Name="Outro" ID="{C51E1648-034F-4843-8BE7-28EDB0B377C9}"/>
+					</ChildrenList>
+				</StateGroup>
+				<StateGroup Name="GeneralStates" ID="{C92137EC-58E3-4210-A2B8-77B6A2248E1A}">
+					<ChildrenList>
+						<State Name="None" ID="{EC546398-FFAA-4A6B-A2C8-7F0077B7FAE6}"/>
+						<State Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}"/>
+						<State Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
+						<State Name="isHurting" ID="{1AF9F27D-C6FE-4ABC-8F91-9E284B0C2607}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="None" ID="{EC546398-FFAA-4A6B-A2C8-7F0077B7FAE6}"/>
+							<EndState Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="isWalking" ID="{A30A0DFF-D617-4125-8393-8C42612DEDDF}"/>
+							<EndState Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
+							<Time>2</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+				<Folder Name="Ambiances" ID="{6394F9B5-0378-4CBE-96FF-1E6DB35DF03B}" ShortID="597920989">
+					<ChildrenList>
+						<Folder Name="Lvl 1" ID="{75B8FD5D-875E-4F53-96BE-39C60AEBDC8E}" ShortID="383217462">
+							<ChildrenList>
+								<StateGroup Name="Amb_Lvl01" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}">
+									<PropertyList>
+										<Property Name="DefaultTransitionTime" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ChildrenList>
+										<State Name="None" ID="{5D676E1F-0173-47C9-86E8-52192F37B452}"/>
+										<State Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
+										<State Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}"/>
+										<State Name="Ext_Lvl01_Desert_Kiosk" ID="{FC399029-B1DF-4FF4-9006-8DF9F1A6A27F}"/>
+										<State Name="Ext_Lvl01_Desert_View" ID="{9B72EE0B-9760-4D2B-B9CE-1752501D274D}"/>
+									</ChildrenList>
+								</StateGroup>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

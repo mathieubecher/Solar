@@ -3,17 +3,457 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Play_SoundTest" ID="{D5E1C7FC-AA60-42B8-A6B7-0ECEB973DA26}">
+				<Folder Name="ALL" ID="{FC1AB4FE-94F0-4043-8080-9B90DF1849FE}" ShortID="22426533">
 					<ChildrenList>
-						<Action Name="" ID="{1ADD632D-9177-4576-BF22-58034EBA9138}" ShortID="632151507">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="crunching_leaves" ID="{99C4E35E-0C95-4BA5-B6B5-793F07422021}" WorkUnitID="{9F4217AA-E869-4F10-A183-355E7B460309}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="Astro_Moving_Stop" ID="{9F63A1DC-C7A4-4705-AC10-E5D8760BBE66}">
+							<ChildrenList>
+								<Action Name="" ID="{96092C2D-447A-466F-9479-AAE943803FB8}" ShortID="649779958">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Obj_Astrolabe_Moving" ID="{40B22666-9847-4BD6-ABC2-5D5B26739A2E}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Astro_Moving_Play" ID="{2B830A17-DCFA-44FF-A2D1-32435C493202}">
+							<ChildrenList>
+								<Action Name="" ID="{8C288CEA-B50C-4486-80EC-04B292F875F7}" ShortID="94204549">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="6"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Obj_Astrolabe_Moving" ID="{40B22666-9847-4BD6-ABC2-5D5B26739A2E}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Sun_Feedback_Play" ID="{43EA3834-EED4-40A4-9BCD-E7AD668D74F5}">
+							<ChildrenList>
+								<Action Name="" ID="{D095B6AA-273C-4128-97FB-6CA5539E9DDD}" ShortID="246728533">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Sun_Feedback" ID="{7B3279BF-2B82-4069-921A-4A7EF62DBDEF}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Folder Name="Character" ID="{2641C50F-366C-43EB-95BE-7662DA7A51BA}" ShortID="250061720">
+							<ChildrenList>
+								<Folder Name="Breath" ID="{31AFFC18-DCDF-418D-ACEE-6F26285C46D9}" ShortID="245437584">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="2"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Event Name="Cha_IDLE" ID="{F6AAC878-EEEA-474B-8DC0-24BCCEACEF5C}">
+											<ChildrenList>
+												<Action Name="" ID="{37C0E8FD-A950-40AE-B246-36BC8825955A}" ShortID="447682131">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="38"/>
+														<Property Name="Scope" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Cha_Walk" ID="{D019B1D0-938C-4FF3-899B-9578AC82146B}">
+											<ChildrenList>
+												<Action Name="" ID="{CE616A1E-2530-4AD9-A117-EA55521D8E71}" ShortID="516535592">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="38"/>
+														<Property Name="GameParameterValue" Type="Real64" Value="20"/>
+														<Property Name="Scope" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Cha_Run" ID="{D9A1D3E3-0E16-4E33-B27E-DD40F1C308D2}">
+											<ChildrenList>
+												<Action Name="" ID="{9BE34F6B-48A2-4B4E-A294-AD068C593224}" ShortID="730185991">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="38"/>
+														<Property Name="GameParameterValue" Type="Real64" Value="55"/>
+														<Property Name="Scope" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Cha_Hurt" ID="{8D2FD11F-A280-4DF0-A1F1-16E4AA776625}">
+											<ChildrenList>
+												<Action Name="" ID="{86B3D609-E852-444E-A2C3-92079F6A4396}" ShortID="652395998">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="38"/>
+														<Property Name="GameParameterValue" Type="Real64" Value="90"/>
+														<Property Name="Scope" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}">
+											<PropertyList>
+												<Property Name="Color" Type="int16" Value="25"/>
+												<Property Name="OverrideColor" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<Action Name="" ID="{575A865D-B05C-41EA-AC84-6AB048CF0C27}" ShortID="404574181">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Cha_Breath" ID="{4B063AD4-94B7-4BAC-88D6-FBEC2E2F60DB}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{76718F4E-AF06-4780-97D9-21E8055F8D2B}" ShortID="259233065">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="23"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="isIDLE" ID="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}" WorkUnitID="{53F1FF98-385A-4108-A4F3-AF5283BC8DF9}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{2D93FC69-3E34-4550-A6FA-188F18B3A1E5}" ShortID="809047096">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="38"/>
+														<Property Name="Scope" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Footsteps" ID="{594F9C33-0A0F-470F-ADFF-37FDDB6E693E}" ShortID="970023229">
+									<ChildrenList>
+										<Event Name="Cha_Footsteps_Play" ID="{37845492-D397-43D7-AF91-9B305D187288}">
+											<ChildrenList>
+												<Action Name="" ID="{E19B122F-F7C2-4AFF-AE57-CD746367F125}" ShortID="898328922">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Cha_Footsteps_Switch" ID="{7892F25A-3C77-40BE-ACE8-E95822046D77}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+								<Event Name="Cha_Death_Play" ID="{89C594C2-D3B5-44EF-8EB0-017A6B3C6B50}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{7B64931E-8C9B-4E9D-BE30-11EF4FDD3104}" ShortID="63820726">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cha_Breath" ID="{4B063AD4-94B7-4BAC-88D6-FBEC2E2F60DB}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{6C30454D-9B1E-4117-8843-3BD3E50A492B}" ShortID="89509626">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cha_Death" ID="{F38C0427-746F-44C9-9D7C-ADAB469779B9}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{D2728E26-D4EF-4D7C-BDDA-F30E76F90AF2}" ShortID="912184419">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{02B79AF8-BFD0-4A92-9661-173CEE1BF680}" ShortID="1030054370">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+												<Property Name="Volume" Type="Real64" Value="-18"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Amb" ID="{4D366EF1-8DB7-49AE-8D41-AF3BAC14D32D}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Cha_Respawn" ID="{4CCAC55C-0D65-49D3-82EB-90C005FE93C0}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="20"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{EE23F25C-1729-4B02-9B6C-83B5A2D81474}" ShortID="974430438">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cha_Respawn" ID="{49758B4A-025C-48A0-9CFE-0482015B29A6}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{C1AEF0BF-775B-4F2C-9586-92E0F6A5CE98}" ShortID="92836423">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{82501446-E0F1-4BBF-A60C-B24BEC64ED62}" ShortID="298863983">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Amb_Desert_Play" ID="{933F751A-5278-4F5E-B76B-3458652C59B3}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Music" ID="{4A30C09F-BD7D-481F-A2A8-662CF0AD138C}" ShortID="47314043">
+							<ChildrenList>
+								<Event Name="Music_Play" ID="{6068AEC3-2B39-457A-A8CC-9C7517543F06}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="19"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{9F2368B6-0854-4B60-9339-71B347CB88EC}" ShortID="815138819">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="30"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Music_Sw" ID="{43D1872C-623D-442F-8616-39C6CE0B17DA}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{E86F8FCF-43CB-4AAB-9E44-1F86A6AD4F9C}" ShortID="967112335">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Intro" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Music_PostIntro" ID="{53A45403-8DB3-436D-8EC2-E3C13FBE0341}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="17"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{7DB76D53-A867-43DE-B9C0-6D5FA9E2EB25}" ShortID="616308386">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Post_Intro" ID="{DDDFEFD0-E001-4B6C-9659-E07FA3889D5D}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Music_Stop" ID="{80E0AE40-5C5B-4ACF-B74B-64818EF8FB81}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="10"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{7BBDA076-5E65-4C5D-8BAC-BB093ED122CB}" ShortID="857570036">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="30"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Music_Sw" ID="{43D1872C-623D-442F-8616-39C6CE0B17DA}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Music_Drop" ID="{2C743A3E-ADEA-4419-8D2D-2E4053ADEDF4}">
+									<ChildrenList>
+										<Action Name="" ID="{78C8DF8E-B4FD-4668-AF2C-9B0E8B6AB7EB}" ShortID="122562198">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Drop" ID="{969C3013-C098-4E3C-8A39-DBA065D2084D}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Amb" ID="{A8C093E8-33F9-4A35-9D48-7D0C2A77EF4F}" ShortID="627350604">
+							<ChildrenList>
+								<Event Name="Amb_Desert_Play" ID="{933F751A-5278-4F5E-B76B-3458652C59B3}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="20"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{8B089A0D-734A-4276-BD41-D82BF09C4EE1}" ShortID="378076006">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Amb_Lvl01" ID="{1C98A39B-366B-42AB-B0A8-04E7A062ED8D}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{9620204E-6311-4C41-9D17-4BA32AAF089C}" ShortID="1031728415">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{DFC34E71-D451-4A78-8E95-F7B1CF84B43A}" ShortID="736373115">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Folder Name="Level 1" ID="{3DDBEC9B-271D-4F41-A2C2-0432218ADBB2}" ShortID="315778107">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="21"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Event Name="Amb_Int_Lvl01" ID="{79EF4CA6-3340-4246-B570-8094ED08D7B7}">
+											<ChildrenList>
+												<Action Name="" ID="{A3EDB4DD-67C7-433D-A453-47A83A1F1277}" ShortID="137214369">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="22"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Amb_Ext_Lvl01_Desert_Global" ID="{E412B80B-96CA-4C46-8654-B3CA954BDC20}">
+											<ChildrenList>
+												<Action Name="" ID="{3A309003-F2B1-4BA2-BA4E-BF2839A71B2D}" ShortID="464751222">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="22"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Amb_Ext_Lvl01_Desert_Kiosk" ID="{043A1E23-1405-477D-80EB-DFAD75D0C9BB}">
+											<ChildrenList>
+												<Action Name="" ID="{110051A9-2F09-4FFF-90D6-B762E0B1158A}" ShortID="1010200404">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="22"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Ext_Lvl01_Desert_Kiosk" ID="{FC399029-B1DF-4FF4-9006-8DF9F1A6A27F}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Amb_Ext_Lvl01_Desert_View" ID="{72953AEC-8970-4ABA-AC8C-A697BB8050D8}">
+											<ChildrenList>
+												<Action Name="" ID="{FC0BAE3C-AD18-46C1-BA5D-611578292870}" ShortID="105917301">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="22"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Ext_Lvl01_Desert_View" ID="{9B72EE0B-9760-4D2B-B9CE-1752501D274D}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
-				</Event>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

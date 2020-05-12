@@ -1,70 +1,74 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+﻿using BeardedManStudios.Forge.Networking.Generated;
+using BeardedManStudios.Forge.Networking.Unity;
+using Cinemachine;
 #if UNITY_EDITOR
 using UnityEditor;
-using UnityEditor.SceneManagement;
 #endif
 using UnityEngine;
 
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Utilities;
 
 public class Controller : MonoBehaviour
 {
+    public AbstractInput inputs;
     private PlayerInput _controls;
+    protected Rigidbody _rigidbody;
     // External
-    private CameraController _camera;
-    
-    // Infos
-    [SerializeField] private float speed = 5f;
-    private Rigidbody _rigidbody;
-    private ControllerSun _sun;
-    private CameraTarget _target;
+    [HideInInspector] public CameraController cam;
 
+    // Infos
+    [SerializeField] private GameObject MultiLocalPrefab;
+    public float speed = 5f;
+    [SerializeField] public Animator animator;
+    [HideInInspector] public ControllerSun sun;
+    [HideInInspector] public ControllerPuzzle puzzle;
+    private CameraTarget _target;
+    
     private Vector2 _moveCamera;
     private Vector2 _move;
+    private bool isMoving = false;
+    public Vector3 velocity;
     
-    
-    
+    [Header("Gestion Mort")]
+    [Range(0,5)]
+    public float DeadTimer = 2;
+    [SerializeField]
+    private float _deatTimer;
+    [SerializeField] bool activeDead = true;
     public Vector3 Target {  get => _target.gameObject.transform.position;}
     
     // Start is called before the first frame update
     void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
-        _camera = FindObjectOfType<CameraController>();
+#if UNITY_EDITOR
+#else
+        activeDead = true;
+#endif
+        cam = FindObjectOfType<CameraController>();
         _target = FindObjectOfType<CameraTarget>();
-        _sun = GetComponent<ControllerSun>();
-
-
+        sun = GetComponent<ControllerSun>();
+        puzzle = GetComponent<ControllerPuzzle>();
     }
-
-    void OnEnable()
-    {
-        //Bind input
-    }
-    private Vector3 mousePos;
 
     void Start()
     {
+        _rigidbody = GetComponent<Rigidbody>();
+        GameManager manager = FindObjectOfType<GameManager>();
+        inputs = new Solo(this);
+        if (manager.gameType == GameManager.GameType.SOLO) {}
+        else if (manager.gameType == GameManager.GameType.LOCAL)
+        {
+            GetComponent<PlayerInput>().enabled = false;
+            inputs = new Local(this);
+            Instantiate(MultiLocalPrefab, Vector3.zero, Quaternion.identity);
+        }
+        else
+        {
+            if(manager.gameType == GameManager.GameType.SERVER) NetworkManager.Instance.InstantiateController();
+            
+        }
         
-        _controls = GetComponent<PlayerInput>();
-        _controls.currentActionMap["Movement"].performed += ctx => Move(ctx.ReadValue<Vector2>());
-        _controls.currentActionMap["Movement"].canceled += ctx => Move(ctx.ReadValue<Vector2>());
         
-        _controls.currentActionMap["KeyMovement"].performed += ctx => Move(ctx.ReadValue<Vector2>());
-        _controls.currentActionMap["KeyMovement"].canceled += ctx => Move(ctx.ReadValue<Vector2>());
-        
-        _controls.currentActionMap["RotateSun"].performed += ctx => _sun.Rotate(ctx.ReadValue<float>());
-        _controls.currentActionMap["RotateSun"].canceled += ctx => _sun.Rotate(ctx.ReadValue<float>());
-        
-        _controls.currentActionMap["Rotate"].performed += ctx => _camera.Rotate(ctx.ReadValue<Vector2>());
-        _controls.currentActionMap["Rotate"].canceled += ctx => _camera.Rotate(ctx.ReadValue<Vector2>());
-        Cursor.lockState = CursorLockMode.Locked;
-        mousePos = Input.mousePosition;
-        Cursor.visible = false;
     }
 
 
@@ -73,35 +77,77 @@ public class Controller : MonoBehaviour
     void Update()
     {
         
-        Vector3 velocity = Quaternion.Euler(0,_camera.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * speed);
-        Vector3 camDir = Vector3.forward;
+        inputs.InputUpdate();
+        animator.SetFloat("velocity", velocity.magnitude);
+        if(_deatTimer <= 0){
+            velocity.y = _rigidbody.velocity.y;
+            _rigidbody.velocity = velocity;
+            
+            // RESPIRATION
+            // TODO A changer en fonction du systeme de dégats
+            if(sun.Life >= 1){
+                if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
+                else if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("Cha_Walk", this.gameObject);
+                else AkSoundEngine.PostEvent("Cha_IDLE", this.gameObject);
+            }
+            else AkSoundEngine.PostEvent("Cha_Hurt", this.gameObject);
+        }
+        else
+        {
+            _deatTimer -= Time.deltaTime;
+            if (_deatTimer <= 0)
+            {
+                
+                AkSoundEngine.PostEvent("Cha_Respawn", this.gameObject);
+                puzzle.Dead();
+            }
+        }
         
-        _camera.RotateMouse(new Vector3(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y")) * 0.8f);
-
-        if(velocity.magnitude>0) transform.rotation = Quaternion.LookRotation(velocity);
-        
-        velocity.y = _rigidbody.velocity.y;
-        _rigidbody.velocity = velocity;
-
     }
-    private void Move(Vector2 readValue)
+
+    void FixedUpdate()
     {
-        _move = new Vector2(readValue.x, readValue.y);
+        if (_deatTimer <= 0)
+        {
+            inputs.InputFixed();
+        }
     }
+
+
+
+    public void Dying()
+    {
+        // TODO Feedback death
+        
+        if(activeDead){
+            _deatTimer = DeadTimer;
+            velocity = Vector3.zero;
+            _rigidbody.velocity = velocity;
+            animator.SetFloat("velocity", 0);
+            AkSoundEngine.PostEvent("Cha_Death_Play", this.gameObject);
+        }
+    }
+
+
+    public bool IsDead()
+    {
+        
+        return _deatTimer > 0;
+        
+    }
+
 
 }
+
 
 #if UNITY_EDITOR
 [CustomEditor(typeof(Controller))]
 internal class ControllerEditor : Editor
 {
-
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
         var controller = (Controller) target;
-
-
     }
 }
 #endif
