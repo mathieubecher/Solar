@@ -13,8 +13,9 @@
 				<GameParameter Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}">
 					<PropertyList>
 						<Property Name="InitialValue" Type="Real64" Value="100"/>
-						<Property Name="SlewRateDown" Type="Real64" Value="1"/>
-						<Property Name="SlewRateUp" Type="Real64" Value="9"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="95"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="40"/>
 					</PropertyList>
 				</GameParameter>
 				<GameParameter Name="RTPC_Sun_Velocity" ID="{9E18518E-D263-422C-97B3-89A763C30DA6}">
@@ -34,9 +35,10 @@
 				</GameParameter>
 				<GameParameter Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}">
 					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
 						<Property Name="RTPCRamping" Type="int16" Value="1"/>
 						<Property Name="SlewRateDown" Type="Real64" Value="15"/>
-						<Property Name="SlewRateUp" Type="Real64" Value="90"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="80"/>
 					</PropertyList>
 				</GameParameter>
 			</ChildrenList>

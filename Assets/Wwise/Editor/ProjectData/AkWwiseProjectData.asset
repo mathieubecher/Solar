@@ -24,26 +24,11 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: cbb31e6cefe2e64c8308806bca5ec1fc
     GuidInternal: 
-    m_lastTime: -8586140437267152763
+    m_lastTime: -8586129393246260416
     List:
-    - name: Grotte
-      guid: f608b582e66eb349904b8dade0f771b7
-      id: 2126142566
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Master Audio Bus
-        ObjectType: 2
-      - ElementName: Temple
-        ObjectType: 1
-      - ElementName: Grotte_Master
-        ObjectType: 2
-      - ElementName: Grotte
-        ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\Temple\Grotte_Master\Grotte
-    - name: Grotte_Master
+    - name: Int_Lvl01_Acoustic
       guid: f378abc2057b114c8336bb168f154956
-      id: 370626559
+      id: 1571012312
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -51,9 +36,24 @@ MonoBehaviour:
         ObjectType: 2
       - ElementName: Temple
         ObjectType: 1
-      - ElementName: Grotte_Master
+      - ElementName: Int_Lvl01_Acoustic
         ObjectType: 2
-      Path: Default Work Unit\Master Audio Bus\Temple\Grotte_Master
+      Path: Default Work Unit\Master Audio Bus\Temple\Int_Lvl01_Acoustic
+    - name: Int_Lvl01_Fx
+      guid: f608b582e66eb349904b8dade0f771b7
+      id: 2514557383
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Temple
+        ObjectType: 1
+      - ElementName: Int_Lvl01_Acoustic
+        ObjectType: 2
+      - ElementName: Int_Lvl01_Fx
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Temple\Int_Lvl01_Acoustic\Int_Lvl01_Fx
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -95,7 +95,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f62c9fea2fdc9049963bd5bc5510a430
     GuidInternal: 
-    m_lastTime: -8586140412623210437
+    m_lastTime: -8586127476741925939
     List:
     - name: ALL
       guid: feb41afcf094434080809b90df1849fe
@@ -143,6 +143,78 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Amb_Ext_Lvl01_Desert_Global
+      guid: 0bb812e4ca96464c8654b3ca954bdc20
+      id: 26480583
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Amb
+        ObjectType: 4
+      - ElementName: Level 1
+        ObjectType: 4
+      - ElementName: Amb_Ext_Lvl01_Desert_Global
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_Global
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Amb_Ext_Lvl01_Desert_Kiosk
+      guid: 231e3a0405147d4780ebdfad75d0c9bb
+      id: 1449773595
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Amb
+        ObjectType: 4
+      - ElementName: Level 1
+        ObjectType: 4
+      - ElementName: Amb_Ext_Lvl01_Desert_Kiosk
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_Kiosk
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Amb_Ext_Lvl01_Desert_View
+      guid: ec3a95727089ba4aac8ca697bb8050d8
+      id: 3505954145
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Amb
+        ObjectType: 4
+      - ElementName: Level 1
+        ObjectType: 4
+      - ElementName: Amb_Ext_Lvl01_Desert_View
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_View
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Amb_Int_Lvl01
+      guid: a64cef7940334642b5708094ed08d7b7
+      id: 3602364923
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Amb
+        ObjectType: 4
+      - ElementName: Level 1
+        ObjectType: 4
+      - ElementName: Amb_Int_Lvl01
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Amb\Level 1\Amb_Int_Lvl01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Astro_Moving_Play
       guid: 170a832bfadcff44a2d132435c493202
       id: 3822072736
@@ -171,6 +243,24 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Breath
+      guid: 18fcaf31dfdc8d41acee6f26285c46d9
+      id: 1326786195
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Breath
+        ObjectType: 4
+      - ElementName: Breath
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Character\Breath\Breath
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Cha_Breath_Play
       guid: bf7ec27f890c3b49b44e1bce9142b5d9
       id: 182011575
@@ -181,9 +271,27 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Character
         ObjectType: 4
+      - ElementName: Breath
+        ObjectType: 4
       - ElementName: Cha_Breath_Play
         ObjectType: 3
-      Path: Default Work Unit\ALL\Character\Cha_Breath_Play
+      Path: Default Work Unit\ALL\Character\Breath\Cha_Breath_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Cha_Death_Play
+      guid: c294c589b5d3ef448eb0017a6b3c6b50
+      id: 872937223
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Cha_Death_Play
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Character\Cha_Death_Play
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -197,9 +305,99 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Character
         ObjectType: 4
+      - ElementName: Footsteps
+        ObjectType: 4
       - ElementName: Cha_Footsteps_Play
         ObjectType: 3
-      Path: Default Work Unit\ALL\Character\Cha_Footsteps_Play
+      Path: Default Work Unit\ALL\Character\Footsteps\Cha_Footsteps_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Cha_Hurt
+      guid: 1fd12f8d80a2f04da1f116e4aa776625
+      id: 1546453947
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Breath
+        ObjectType: 4
+      - ElementName: Cha_Hurt
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Character\Breath\Cha_Hurt
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Cha_IDLE
+      guid: 78c8aaf6eaee4b478dc024bcceacef5c
+      id: 3135834134
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Breath
+        ObjectType: 4
+      - ElementName: Cha_IDLE
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Character\Breath\Cha_IDLE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Cha_Respawn
+      guid: 5cc5ca4c650dd34982eb90c005fe93c0
+      id: 1215500860
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Cha_Respawn
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Character\Cha_Respawn
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Cha_Run
+      guid: e3d3a1d9160e334eb27edd40f1c308d2
+      id: 3845266727
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Breath
+        ObjectType: 4
+      - ElementName: Cha_Run
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Character\Breath\Cha_Run
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Cha_Walk
+      guid: d0b119d08c93f34f899b9578ac82146b
+      id: 300025675
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Character
+        ObjectType: 4
+      - ElementName: Breath
+        ObjectType: 4
+      - ElementName: Cha_Walk
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Character\Breath\Cha_Walk
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -219,35 +417,39 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: isIDLE_Play
-      guid: c46e1160603f744283c509fdf003434b
-      id: 3387557844
+    - name: Footsteps
+      guid: 339c4f590f0a0f47adff37fddb6e693e
+      id: 2385628198
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: ALL
         ObjectType: 4
-      - ElementName: States
+      - ElementName: Character
         ObjectType: 4
-      - ElementName: isIDLE_Play
+      - ElementName: Footsteps
+        ObjectType: 4
+      - ElementName: Footsteps
         ObjectType: 3
-      Path: Default Work Unit\ALL\States\isIDLE_Play
+      Path: Default Work Unit\ALL\Character\Footsteps\Footsteps
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: isWalking_Play
-      guid: a056bcd199169d4c8ee46e0608e9745c
-      id: 2222778103
+    - name: Level 1
+      guid: 9becdb3d1d27414fa2c20432218adbb2
+      id: 3420765916
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: ALL
         ObjectType: 4
-      - ElementName: States
+      - ElementName: Amb
         ObjectType: 4
-      - ElementName: isWalking_Play
+      - ElementName: Level 1
+        ObjectType: 4
+      - ElementName: Level 1
         ObjectType: 3
-      Path: Default Work Unit\ALL\States\isWalking_Play
+      Path: Default Work Unit\ALL\Amb\Level 1\Level 1
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -331,22 +533,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: States
-      guid: 9854e4e511ce5f478dc1a518a3e0a8f4
-      id: 1208172739
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: ALL
-        ObjectType: 4
-      - ElementName: States
-        ObjectType: 4
-      - ElementName: States
-        ObjectType: 3
-      Path: Default Work Unit\ALL\States\States
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: Sun_Feedback_Play
       guid: 3438ea43d4eea4409bcde7ad668d74f5
       id: 2337456342
@@ -366,7 +552,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c351adaffa0926499d3369b21999a571
     GuidInternal: 
-    m_lastTime: -8586144806936084815
+    m_lastTime: -8586127477605435017
     List:
     - name: Amb_RTPC
       guid: 84e709144ae8ee45b8f32e8112055082
@@ -377,6 +563,15 @@ MonoBehaviour:
       - ElementName: Amb_RTPC
         ObjectType: 13
       Path: Default Work Unit\Amb_RTPC
+    - name: Breath_RTPC
+      guid: 0a6ff61ca4f16c4ca66d6c1a71f47297
+      id: 748151351
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Breath_RTPC
+        ObjectType: 13
+      Path: Default Work Unit\Breath_RTPC
     - name: RTPC_Distance_Sun
       guid: 91f4c94e645e1247a19706c225eeaab1
       id: 2257099397
@@ -409,36 +604,20 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 8d677a4eefbf304cb66e086a1eaa1126
     GuidInternal: 
-    m_lastTime: -8586140416414726690
+    m_lastTime: -8586129393246230641
     List:
-    - name: Amb_States
-      guid: af9c740311ef644c848e9ab22e6b59a7
-      id: 3604025392
+    - name: Ambiances
+      guid: b5f994637803be4c96ff1e6db35df03b
+      id: 1404066300
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Amb_States
+      - ElementName: Ambiances
+        ObjectType: 4
+      - ElementName: Ambiances
         ObjectType: 9
-      Path: Default Work Unit\Amb_States
-      values:
-      - name: Ext
-        guid: 3b91006b173edb4896273b70a525a674
-        id: 898834102
-        PathAndIcons:
-        - ElementName: Ext
-          ObjectType: 8
-      - name: Grotte
-        guid: ffb2cbeb6d004d4dbad1bd5e8f22dd5d
-        id: 2126142566
-        PathAndIcons:
-        - ElementName: Grotte
-          ObjectType: 8
-      - name: None
-        guid: 1f6e675d7301c94786e852192f37b452
-        id: 748895195
-        PathAndIcons:
-        - ElementName: None
-          ObjectType: 8
+      Path: Default Work Unit\Ambiances\Ambiances
+      values: []
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -452,6 +631,12 @@ MonoBehaviour:
         ObjectType: 9
       Path: Default Work Unit\GeneralStates
       values:
+      - name: isHurting
+        guid: 7df2f91afec6bc4a8f919e284b0c2607
+        id: 1898407218
+        PathAndIcons:
+        - ElementName: isHurting
+          ObjectType: 8
       - name: isIDLE
         guid: 11d7547129f97e4a921071ef86a477cc
         id: 2139983939
@@ -521,8 +706,45 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 98fff1535a380841a4f3af5283bc8df9
     GuidInternal: 
-    m_lastTime: -8586140416414691743
+    m_lastTime: -8586129393246225646
     List:
+    - name: Breath_Switch
+      guid: 154f162208a86041a24076776ff2f0b5
+      id: 1231199118
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Breath_Switch
+        ObjectType: 11
+      Path: Default Work Unit\Breath_Switch
+      values:
+      - name: isHurting
+        guid: d8299dee280bce40a6bb829669375ca5
+        id: 1898407218
+        PathAndIcons:
+        - ElementName: isHurting
+          ObjectType: 10
+      - name: isIDLE
+        guid: a37f7876f17ec94a8fb7d017d88b8c44
+        id: 2139983939
+        PathAndIcons:
+        - ElementName: isIDLE
+          ObjectType: 10
+      - name: isRunning
+        guid: 9993564d552ad9478c7c4905fc01f586
+        id: 4119476486
+        PathAndIcons:
+        - ElementName: isRunning
+          ObjectType: 10
+      - name: isWalking
+        guid: 5ff63c9f121292439770b52e013aa7be
+        id: 3629409974
+        PathAndIcons:
+        - ElementName: isWalking
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: Footstep_Floor
       guid: 6a974b5855aa4b47916f501cb79fdea6
       id: 997064848
@@ -559,6 +781,5 @@ MonoBehaviour:
   - /Solar_WwiseProject
   - /Solar_WwiseProject/States
   - /Solar_WwiseProject/States/Default Work Unit
-  - /Solar_WwiseProject/States/Default Work Unit/Amb_States
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
