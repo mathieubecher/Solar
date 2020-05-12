@@ -1,0 +1,45 @@
+Switch Group	ID	Name			Wwise Object Path	Notes
+	1231199118	Breath_Switch			\Default Work Unit\Breath_Switch	
+
+Switch	ID	Name	Switch Group			Notes
+	1898407218	isHurting	Breath_Switch			
+	2139983939	isIDLE	Breath_Switch			
+	3629409974	isWalking	Breath_Switch			
+	4119476486	isRunning	Breath_Switch			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	416592333	Amb_Lvl01			\Default Work Unit\Ambiances\Lvl 1\Amb_Lvl01	
+	874109109	GeneralStates			\Default Work Unit\GeneralStates	
+	3826569560	Music_State			\Default Work Unit\Music_State	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Amb_Lvl01			
+	2890487870	Ext_Lvl01_Desert_Global	Amb_Lvl01			
+	3003725028	Ext_Lvl01_Desert_View	Amb_Lvl01			
+	3139526458	Int_Lvl01	Amb_Lvl01			
+	3857277276	Ext_Lvl01_Desert_Kiosk	Amb_Lvl01			
+	748895195	None	GeneralStates			
+	1898407218	isHurting	GeneralStates			
+	2139983939	isIDLE	GeneralStates			
+	3629409974	isWalking	GeneralStates			
+	748895195	None	Music_State			
+	1125500713	Intro	Music_State			
+	1878686274	Drop	Music_State			
+	2098910396	Post_Intro	Music_State			
+	4184794294	Outro	Music_State			
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	1571012312	Int_Lvl01_Acoustic			\Default Work Unit\Master Audio Bus\Int_Lvl01_Acoustic	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	2323193050	Temple			\Default Work Unit\Master Audio Bus\Temple	
+	2514557383	Int_Lvl01_Fx			\Default Work Unit\Master Audio Bus\Int_Lvl01_Acoustic\Int_Lvl01_Fx	
+
+Effect plug-ins	ID	Name	Type				Notes
+	1144018367	Plate_Large	Wwise RoomVerb			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+
