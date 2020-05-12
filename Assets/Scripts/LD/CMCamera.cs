@@ -9,13 +9,14 @@ public class CMCamera : MonoBehaviour
     private bool _active; 
     private ControllerPuzzle _controller;
     private static int ID = 0;
+    [SerializeField] private bool follow;
     public int id;
     void Awake()
     {
         
         gameObject.SetActive(false);
-        virtualCamera = GetComponent<CinemachineVirtualCamera>();
-        
+        if (!follow) virtualCamera = GetComponent<CinemachineVirtualCamera>();
+        else virtualCamera = GetComponentInChildren<CinemachineVirtualCamera>();
     }
 
     void Start()
