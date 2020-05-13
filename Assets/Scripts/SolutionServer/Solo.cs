@@ -24,6 +24,9 @@ public class Solo : AbstractInput
         
         _controls.currentActionMap["RotateSun"].performed += ctx => RotateSun(ctx.ReadValue<float>());
         _controls.currentActionMap["RotateSun"].canceled += ctx => RotateSun(ctx.ReadValue<float>());
+        
+        _controls.currentActionMap["ProgressPlatform"].performed += ctx => ProgressPlatform(ctx.ReadValue<float>());
+        _controls.currentActionMap["ProgressPlatform"].canceled += ctx => ProgressPlatform(ctx.ReadValue<float>());
                 
         
 #if UNITY_EDITOR
@@ -31,6 +34,11 @@ public class Solo : AbstractInput
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 #endif
+    }
+
+    private void ProgressPlatform(float readValue)
+    {
+        _controller.puzzle.cmActual.SetPlatformProgress(readValue);
     }
 
     public override void InputUpdate()

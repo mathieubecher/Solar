@@ -23,6 +23,9 @@ public class OnlineSun: AbstractInput
         _controller.GetComponent<Rigidbody>().isKinematic = true;
         _controls.currentActionMap["RotateSun"].performed += ctx => RotateSun(ctx.ReadValue<float>());
         _controls.currentActionMap["RotateSun"].canceled += ctx => RotateSun(ctx.ReadValue<float>());
+        
+        _controls.currentActionMap["ProgressPlatform"].performed += ctx => ProgressPlatform(ctx.ReadValue<float>());
+        _controls.currentActionMap["ProgressPlatform"].canceled += ctx => ProgressPlatform(ctx.ReadValue<float>());
         if (GameObject.FindObjectOfType<GameManager>().gameType == GameManager.GameType.CLIENT)
         {
             _controller.transform.position = _manager.position;
@@ -64,5 +67,10 @@ public class OnlineSun: AbstractInput
     public void RotateSun(float angle)
     {
         _gotoAngleVelocity = angle;
+    }
+    
+    private void ProgressPlatform(float readValue)
+    {
+        _controller.puzzle.cmActual.SetPlatformProgress(readValue);
     }
 }
