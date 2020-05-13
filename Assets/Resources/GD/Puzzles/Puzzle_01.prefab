@@ -55,7 +55,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737996522}
-  m_LocalRotation: {x: 0.17834193, y: 0.33415696, z: 0.06454922, w: -0.9232371}
+  m_LocalRotation: {x: 0.2492324, y: 0.07156352, z: -0.024754876, w: -0.9654787}
   m_LocalPosition: {x: 1.52, y: 0.44, z: 8.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -77,6 +77,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 0}
+  follow: 0
+  platforms: []
   id: 1
 --- !u!114 &737996524
 MonoBehaviour:
@@ -166,6 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 0}
+  follow: 0
+  platforms: []
   id: 3
 --- !u!114 &854235517
 MonoBehaviour:
@@ -658,6 +662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 0}
+  follow: 0
+  platforms: []
   id: 2
 --- !u!114 &2147314478
 MonoBehaviour:
@@ -741,8 +747,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2160809795145075570}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 5, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
@@ -952,7 +958,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8287623543458540968}
-  m_LocalRotation: {x: -0.045793373, y: 0.7033449, z: 0.04549794, w: 0.70791173}
+  m_LocalRotation: {x: 0.014618027, y: 0.97199136, z: 0.062876195, w: -0.22597739}
   m_LocalPosition: {x: 3.11, y: 0.17, z: 4.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -974,6 +980,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 0}
+  follow: 0
+  platforms: []
   id: 0
 --- !u!114 &2655112716206352238
 MonoBehaviour:

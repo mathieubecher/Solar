@@ -15,6 +15,7 @@ public class ControllerPuzzle : MonoBehaviour
     {
         _controller = GetComponent<Controller>();
         brain = FindObjectOfType<CinemachineBrain>();
+        if(FindObjectOfType<GameManager>().gameType != GameManager.GameType.CLIENT) transform.position = _puzzle.GetRespawnPoint();
         cmActual = _puzzle.cam;
         cmActual.Enable(this);
     }

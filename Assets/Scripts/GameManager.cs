@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     public bool debug;
 
     public GameType gameType = GameType.SOLO;
+
+    public float platformProgress;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,7 +29,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        platformProgress += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
         #if UNITY_EDITOR
@@ -44,5 +47,10 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        if (!Application.isPlaying) platformProgress += Time.deltaTime;
     }
 }
