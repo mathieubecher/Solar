@@ -59,4 +59,8 @@ public class Platform : MonoBehaviour
         
     }
 #endif
+    public void ResetProgress()
+    {
+        progress = 0;
+    }
 }
