@@ -26,6 +26,14 @@ public class OnlinePlayer : AbstractInput
         
         _controls.currentActionMap["Rotate"].performed += ctx => _controller.cam.Rotate(ctx.ReadValue<Vector2>());
         _controls.currentActionMap["Rotate"].canceled += ctx => _controller.cam.Rotate(ctx.ReadValue<Vector2>());
+        
+        if (GameObject.FindObjectOfType<GameManager>().gameType == GameManager.GameType.CLIENT)
+        {
+            _controller.transform.position = _manager.position;
+            _controller.transform.rotation = _manager.rotation;
+        }
+        else _manager.CallSetPosition(_controller.transform.position);
+        
 #if UNITY_EDITOR
 #else
     Cursor.lockState = CursorLockMode.Locked;

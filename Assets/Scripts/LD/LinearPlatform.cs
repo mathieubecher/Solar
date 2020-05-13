@@ -37,8 +37,21 @@ public class LinearPlatform : Platform
     // Update is called once per frame
     protected override void Update()
     {
-        progress += _velocity * speed * Time.deltaTime;
-        progress = Mathf.Max(0, Mathf.Min(0.9999f, progress));
+        if ((StaticClass.gameType == GameManager.GameType.SERVER ||
+             StaticClass.gameType == GameManager.GameType.CLIENT))
+        {
+            if(StaticClass.serverType == StaticClass.ServerType.SUN)
+            {
+                _server.CallSetProgress(progress);
+            }
+            else progress = _server.GetProgress();
+        }
+        else
+        {
+            progress += _velocity * speed * Time.deltaTime;
+            progress = Mathf.Max(0, Mathf.Min(0.9999f, progress));
+        }
+        
         for (int i = 0; i < childs.Count; ++i)
         {
             childs[i].position = progressPos();
