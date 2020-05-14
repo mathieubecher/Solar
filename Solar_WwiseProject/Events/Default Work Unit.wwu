@@ -141,6 +141,17 @@
 														</Reference>
 													</ReferenceList>
 												</Action>
+												<Action Name="" ID="{2D93FC69-3E34-4550-A6FA-188F18B3A1E5}" ShortID="809047096">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="38"/>
+														<Property Name="Scope" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
 											</ChildrenList>
 										</Event>
 									</ChildrenList>
@@ -198,6 +209,19 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{02B79AF8-BFD0-4A92-9661-173CEE1BF680}" ShortID="1030054370">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+												<Property Name="Volume" Type="Real64" Value="-18"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Amb" ID="{4D366EF1-8DB7-49AE-8D41-AF3BAC14D32D}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Cha_Respawn" ID="{4CCAC55C-0D65-49D3-82EB-90C005FE93C0}">
@@ -220,6 +244,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{82501446-E0F1-4BBF-A60C-B24BEC64ED62}" ShortID="298863983">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Amb_Desert_Play" ID="{933F751A-5278-4F5E-B76B-3458652C59B3}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

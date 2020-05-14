@@ -24,6 +24,9 @@ public class Solo : AbstractInput
         
         _controls.currentActionMap["RotateSun"].performed += ctx => RotateSun(ctx.ReadValue<float>());
         _controls.currentActionMap["RotateSun"].canceled += ctx => RotateSun(ctx.ReadValue<float>());
+        
+        _controls.currentActionMap["ProgressPlatform"].performed += ctx => ProgressPlatform(ctx.ReadValue<float>());
+        _controls.currentActionMap["ProgressPlatform"].canceled += ctx => ProgressPlatform(ctx.ReadValue<float>());
                 
         
 #if UNITY_EDITOR
@@ -33,6 +36,11 @@ public class Solo : AbstractInput
 #endif
     }
 
+    private void ProgressPlatform(float readValue)
+    {
+        _controller.puzzle.cmActual.SetPlatformProgress(readValue);
+    }
+
     public override void InputUpdate()
     {
 
@@ -40,9 +48,9 @@ public class Solo : AbstractInput
         if (!_controller.IsDead())
         {
             MovePlayer();
+            _controller.sun._gotoAngle += _gotoAngleVelocity * _controller.sun._maxRotateSpeed * Time.deltaTime;
         }
 
-        _controller.sun._gotoAngle += _gotoAngleVelocity * _controller.sun._maxRotateSpeed * Time.deltaTime;
     }
 
     public override void InputFixed() {}
@@ -67,7 +75,6 @@ public class Solo : AbstractInput
     private void MouseCamera()
     {
         
-        Vector3 camDir = Vector3.forward;
         _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y")) * 0.8f);
     }
     
