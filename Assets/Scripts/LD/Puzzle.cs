@@ -17,6 +17,10 @@ public class Puzzle : MonoBehaviour
         return respawn.transform.position;
     }
 
+    /// <summary>
+    /// Fonction appelé quand le joueur arrive dans un nouveau spawn
+    /// </summary>
+    /// <param name="sunGotoAngle"></param>
     public void Enter(float sunGotoAngle)
     {
         //TODO Nouveau spawn

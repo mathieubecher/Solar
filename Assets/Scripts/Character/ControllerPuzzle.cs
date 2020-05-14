@@ -10,21 +10,17 @@ public class ControllerPuzzle : MonoBehaviour
     [SerializeField] private Puzzle _puzzle;
 
     private Controller _controller;
-    // Start is called before the first frame update
+    
     void Start()
     {
         _controller = GetComponent<Controller>();
         brain = FindObjectOfType<CinemachineBrain>();
+        // Place le personnage au niveau du respawn du premier puzzle
         if(FindObjectOfType<GameManager>().gameType != GameManager.GameType.CLIENT) transform.position = _puzzle.GetRespawnPoint();
         cmActual = _puzzle.cam;
         cmActual.Enable(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     private void OnTriggerEnter(Collider other)
     {
@@ -44,6 +40,9 @@ public class ControllerPuzzle : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// Réinitialise position rotation et camera du joueur en fonction du puzzle actif.
+    /// </summary>
     public void Dead()
     {
         _controller.sun.ResetRotate(_puzzle.beginRotate);
@@ -54,7 +53,11 @@ public class ControllerPuzzle : MonoBehaviour
         
         _controller.sun.ResetPoints();
     }
-
+    
+    /// <summary>
+    /// Réinitialise la position des plateformes du puzzles
+    /// </summary>
+    /// <param name="puzzle"></param>
     private void ResetPlatform(Puzzle puzzle)
     {
         foreach (Platform p in puzzle.gameObject.GetComponentsInChildren<Platform>())
@@ -63,6 +66,10 @@ public class ControllerPuzzle : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Met à jour la caméra du joueur 2
+    /// </summary>
+    /// <param name="cam"></param>
     public void ChangeCam(CMCamera cam)
     {
         cmActual.Disable();

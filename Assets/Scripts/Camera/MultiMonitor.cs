@@ -58,6 +58,8 @@ public class MultiMonitor : MonoBehaviour
     public void Mono()
     {
         multi = false;
+        main.gameObject.SetActive(true);
+        player2.gameObject.SetActive(true);
         Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         Screen.SetResolution (1920,1080,true);
         main.rect = new Rect(0,0,1,1);
@@ -77,7 +79,8 @@ public class MultiMonitor : MonoBehaviour
         Display.displays[0].Activate(1920, 1080, 60);
         Display.displays[1].Activate(1920, 1080, 30);
          */
-        
+        main.gameObject.SetActive(true);
+        player2.gameObject.SetActive(true);
         
         Screen.fullScreenMode = FullScreenMode.Windowed;   
         Screen.SetResolution (3840,1080+100,false);
@@ -90,6 +93,8 @@ public class MultiMonitor : MonoBehaviour
 
     public void OnlineSun()
     {
+        main.gameObject.SetActive(false);
+        player2.gameObject.SetActive(true);
         Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         Screen.SetResolution (1920,1080,true);
         player2.rect = new Rect(0,0,1,1);
@@ -98,6 +103,8 @@ public class MultiMonitor : MonoBehaviour
     }
     public void OnlinePlayer()
     {
+        main.gameObject.SetActive(true);
+        player2.gameObject.SetActive(false);
         Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         Screen.SetResolution (1920,1080,true);
         main.rect = new Rect(0,0,1,1);

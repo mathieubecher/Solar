@@ -8,16 +8,27 @@ public class OnlinePlayer : AbstractInput
     protected InputManager _manager;
     private bool isMoving;
     
+    /// <summary>
+    /// Active la structure serveur
+    /// </summary>
     public override void SetManager(InputManager manager)
     {
         isManager = true;
         _manager = manager;
     }
+    
+    /// <summary>
+    /// Met en place la structure serveur.
+    /// </summary>
+    /// <param name="controller"></param>
+    /// <param name="manager"></param>
     public OnlinePlayer(Controller controller, InputManager manager) : base(controller)
     {
         
         _controls = controller.GetComponent<PlayerInput>();
         SetManager(manager);
+        
+        // Abonne la classe aux evennements d'InputSystem
         _controls.currentActionMap["Movement"].performed += ctx => Velocity(ctx.ReadValue<Vector2>());
         _controls.currentActionMap["Movement"].canceled += ctx => Velocity(ctx.ReadValue<Vector2>());
         
@@ -27,6 +38,7 @@ public class OnlinePlayer : AbstractInput
         _controls.currentActionMap["Rotate"].performed += ctx => _controller.cam.Rotate(ctx.ReadValue<Vector2>());
         _controls.currentActionMap["Rotate"].canceled += ctx => _controller.cam.Rotate(ctx.ReadValue<Vector2>());
         
+        // Défini la position et rotation de départ du personnage
         if (GameObject.FindObjectOfType<GameManager>().gameType == GameManager.GameType.CLIENT)
         {
             _controller.transform.position = _manager.position;
@@ -41,6 +53,10 @@ public class OnlinePlayer : AbstractInput
 #endif
     }
     
+    
+    /// <summary>
+    /// Mise à jour des variables du personnage lors d'Update.
+    /// </summary>
     public override void InputUpdate()
     {
         MouseCamera();
@@ -53,6 +69,9 @@ public class OnlinePlayer : AbstractInput
 
 
 
+    /// <summary>
+    /// Mise à jour des variables du personnage lors de FixedUpdate.
+    /// </summary>
     public override void InputFixed()
     {
         if (isMoving)
@@ -66,6 +85,10 @@ public class OnlinePlayer : AbstractInput
             }
         }
     }
+    
+    /// <summary>
+    /// Déplacement du personnage.
+    /// </summary>
     public override void MovePlayer()
     {
         _controller.velocity = Quaternion.Euler(0,_controller.cam.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
@@ -82,20 +105,30 @@ public class OnlinePlayer : AbstractInput
         _manager.CallSetVelocity(_controller.velocity);
     }
     
+    /// <summary>
+    /// Récupère la vélocité à appliquer à la caméra.
+    /// </summary>
     private void MouseCamera()
     {
-    
         Vector3 camDir = Vector3.forward;
         _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y")) * 0.8f);
     }
     
-    
+    /// <summary>
+    /// Récupère la vélocité à appliqué au personnage.
+    /// </summary>
+    /// <param name="readValue"></param>
     public void Velocity(Vector2 readValue)
     {
         _move = new Vector2(readValue.x, readValue.y);
     }
+    
+    /// <summary>
+    /// Comportement du système à la mort du personnage.
+    /// </summary>
     public override void Dead()
     {
+        // force la mise à jour des données à l'autre joueur
         isMoving = true;
         InputFixed();
     }

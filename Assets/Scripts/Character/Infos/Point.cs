@@ -6,7 +6,6 @@ using UnityEngine;
 public class Point : MonoBehaviour
 {
     private bool _touch;
-    private int _mask;
     private float _speedDamage = 0.5f;
     private float _speedHeal=1f;
 
@@ -16,7 +15,7 @@ public class Point : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //_parentMat = GetComponentInParent<MeshRenderer>().material;
+        
     }
 
     // Update is called once per frame
@@ -26,12 +25,18 @@ public class Point : MonoBehaviour
         //_parentMat.SetFloat("_sunTouch", _damageValue);
     }
 
+    // Affiche une sphere rouge ou verte en fonction de la détection
     private void OnDrawGizmos()
     {
         Gizmos.color = (_touch)?Color.red:Color.green;
         Gizmos.DrawSphere(transform.position,0.1f);
     }
 
+    /// <summary>
+    /// Regarde si le soleil atteint le point de contact.
+    /// </summary>
+    /// <param name="sun">Directional light</param>
+    /// <returns></returns>
     public float TestLight(LightController sun)
     {
         
@@ -47,12 +52,21 @@ public class Point : MonoBehaviour
         return _damageValue;
 
     }
-
+    /// <summary>
+    /// Regarde si le soleil atteint le point de contact.
+    /// </summary>
+    /// <param name="sun">Directional light</param>
+    /// <param name="test">Est ce qu'il faut revérifier</param>
+    /// <returns></returns>
     public float TestLight(LightController sun, bool test)
     {
         if (test) return _damageValue;
         return TestLight(sun);
     }
+    
+    /// <summary>
+    /// Réinitialise le point
+    /// </summary>
     public void ResetPoint()
     {
         _damageValue = 0;
