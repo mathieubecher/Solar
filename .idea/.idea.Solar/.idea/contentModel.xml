@@ -189,6 +189,8 @@
               <e p="ExampleProximityPlayerNetworkObject.cs" t="Include" />
               <e p="NetworkCameraBehavior.cs" t="Include" />
               <e p="NetworkCameraNetworkObject.cs" t="Include" />
+              <e p="PlatformBehavior.cs" t="Include" />
+              <e p="PlatformNetworkObject.cs" t="Include" />
               <e p="TestBehavior.cs" t="Include" />
               <e p="TestNetworkObject.cs" t="Include" />
             </e>
@@ -345,7 +347,6 @@
         </e>
         <e p="Graph" t="Include">
           <e p="Shaders" t="Include">
-            <e p="Depth Shader.shader" t="Include" />
             <e p="SunDeform.cs" t="Include" />
             <e p="SunDeform.shader" t="Include" />
           </e>
@@ -364,6 +365,7 @@
             <e p="Controller.cs" t="Include" />
             <e p="ControllerPuzzle.cs" t="Include" />
             <e p="ControllerSun.cs" t="Include" />
+            <e p="FollowPlayer.cs" t="Include" />
             <e p="FootPrint" t="Include">
               <e p="FootPrint.cs" t="Include" />
               <e p="FootPrints.cs" t="Include" />
@@ -380,6 +382,9 @@
           <e p="LD" t="Include">
             <e p="CMCamera.cs" t="Include" />
             <e p="CMTransition.cs" t="Include" />
+            <e p="GizmosPoint.cs" t="Include" />
+            <e p="LinearPlatform.cs" t="Include" />
+            <e p="Platform.cs" t="Include" />
             <e p="Puzzle.cs" t="Include" />
           </e>
           <e p="LightController.cs" t="Include" />
@@ -395,11 +400,12 @@
               <e p="OnlinePlayer.cs" t="Include" />
               <e p="OnlineSun.cs" t="Include" />
             </e>
+            <e p="PlatformServer.cs" t="Include" />
             <e p="Solo.cs" t="Include" />
           </e>
           <e p="Sound" t="Include">
             <e p="AmbiancePlayer.cs" t="Include" />
-            <e p="CavernAmbiance.cs" t="Include" />
+            <e p="WwiseAbiance.cs" t="Include" />
           </e>
           <e p="TerrainBlendingBaker.cs" t="Include" />
           <e p="Tools" t="Include">
@@ -413,6 +419,7 @@
         <e p="TerrainBlending" t="Include">
           <e p="Shaders" t="Include">
             <e p="DepthShader.shader" t="Include" />
+            <e p="DepthShaderPP.shader" t="Include" />
             <e p="NormalsShader.shader" t="Include" />
             <e p="UnlitTerrain.shader" t="Include" />
           </e>

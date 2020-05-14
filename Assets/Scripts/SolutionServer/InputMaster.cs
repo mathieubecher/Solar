@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Character/InputMaster.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/SolutionServer/InputMaster.inputactions'
 
 using System;
 using System.Collections;
@@ -46,6 +46,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": ""RotateSun"",
                     ""type"": ""Button"",
                     ""id"": ""b9722a9d-97b2-4f5f-a6af-71b2acb74312"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ProgressPlatform"",
+                    ""type"": ""Button"",
+                    ""id"": ""b5259b2a-6e41-4fae-acb2-bc17b2e44fc7"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
@@ -198,7 +206,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""ec1993ae-74bf-48c6-9b79-08bab23ee3f0"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -209,7 +217,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""14f1f0c0-eff1-44f4-91b9-49ed5f6a19bd"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -247,6 +255,72 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard and mouse"",
                     ""action"": ""RotateSun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""LR"",
+                    ""id"": ""ac23ed32-0713-4eaf-9c8c-ca87283a628f"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ProgressPlatform"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""564b77c4-10fe-41a2-adac-42bcbda4b9e7"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ProgressPlatform"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""6ef15601-33ba-4661-900a-8df8e47333e8"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ProgressPlatform"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrow"",
+                    ""id"": ""a389bc08-a6e5-4bd2-9b65-ef963b6911a1"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ProgressPlatform"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""338b6663-1102-4769-9274-815a51a398f7"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and mouse"",
+                    ""action"": ""ProgressPlatform"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""51809bbf-f8a0-40eb-a630-f75b92728e4b"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and mouse"",
+                    ""action"": ""ProgressPlatform"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -289,6 +363,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_KeyMovement = m_Player.FindAction("KeyMovement", throwIfNotFound: true);
         m_Player_RotateSun = m_Player.FindAction("RotateSun", throwIfNotFound: true);
+        m_Player_ProgressPlatform = m_Player.FindAction("ProgressPlatform", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -342,6 +417,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_KeyMovement;
     private readonly InputAction m_Player_RotateSun;
+    private readonly InputAction m_Player_ProgressPlatform;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -350,6 +426,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @KeyMovement => m_Wrapper.m_Player_KeyMovement;
         public InputAction @RotateSun => m_Wrapper.m_Player_RotateSun;
+        public InputAction @ProgressPlatform => m_Wrapper.m_Player_ProgressPlatform;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -371,6 +448,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @RotateSun.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateSun;
                 @RotateSun.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateSun;
                 @RotateSun.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateSun;
+                @ProgressPlatform.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnProgressPlatform;
+                @ProgressPlatform.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnProgressPlatform;
+                @ProgressPlatform.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnProgressPlatform;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -387,6 +467,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @RotateSun.started += instance.OnRotateSun;
                 @RotateSun.performed += instance.OnRotateSun;
                 @RotateSun.canceled += instance.OnRotateSun;
+                @ProgressPlatform.started += instance.OnProgressPlatform;
+                @ProgressPlatform.performed += instance.OnProgressPlatform;
+                @ProgressPlatform.canceled += instance.OnProgressPlatform;
             }
         }
     }
@@ -415,5 +498,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnKeyMovement(InputAction.CallbackContext context);
         void OnRotateSun(InputAction.CallbackContext context);
+        void OnProgressPlatform(InputAction.CallbackContext context);
     }
 }
