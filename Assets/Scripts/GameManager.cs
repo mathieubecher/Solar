@@ -41,9 +41,5 @@ public class GameManager : MonoBehaviour
             debug = !debug;
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && (gameType == GameType.SOLO || gameType == GameType.LOCAL))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
     }
 }

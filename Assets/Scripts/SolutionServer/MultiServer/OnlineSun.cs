@@ -40,11 +40,16 @@ public class OnlineSun: AbstractInput
         
         // Défini la position et rotation de départ du personnage
         if (GameObject.FindObjectOfType<GameManager>().gameType == GameManager.GameType.CLIENT)
-        {
+        { 
             _controller.transform.position = _manager.position;
             _controller.transform.rotation = _manager.rotation;
+            _controller.sun.ResetRotate(_manager.sunRotation);
         }
-        else _manager.CallSetPosition(_controller.transform.position);
+        else
+        {
+            _manager.CallSetPosition(_controller.transform.position);
+            _manager.CallSetSunRotate(_controller.sun._gotoAngle);
+        }
     }
     
     /// <summary>
@@ -69,7 +74,7 @@ public class OnlineSun: AbstractInput
             _controller.transform.rotation = _manager.rotation;
         }
 
-        if ((_goto - _controller.transform.position).magnitude > _controller.speed * Time.deltaTime)
+        if ((_goto - _controller.transform.position).magnitude > _controller.speed * Time.deltaTime && (_goto - _controller.transform.position).magnitude < 10)
         {
             Vector3 move = (_goto - _controller.transform.position).normalized * _controller.speed;
             _controller.transform.position += move * Time.deltaTime;

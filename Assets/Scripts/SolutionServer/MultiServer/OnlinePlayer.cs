@@ -43,8 +43,14 @@ public class OnlinePlayer : AbstractInput
         {
             _controller.transform.position = _manager.position;
             _controller.transform.rotation = _manager.rotation;
+            _controller.sun.ResetRotate(_manager.sunRotation);
+
         }
-        else _manager.CallSetPosition(_controller.transform.position);
+        else
+        {
+            _manager.CallSetPosition(_controller.transform.position);
+            _manager.CallSetSunRotate(_controller.sun._gotoAngle);
+        }
         
 #if UNITY_EDITOR
 #else
