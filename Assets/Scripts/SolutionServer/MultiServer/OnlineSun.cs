@@ -26,11 +26,14 @@ public class OnlineSun: AbstractInput
         
         _controls.currentActionMap["ProgressPlatform"].performed += ctx => ProgressPlatform(ctx.ReadValue<float>());
         _controls.currentActionMap["ProgressPlatform"].canceled += ctx => ProgressPlatform(ctx.ReadValue<float>());
+        
+        
         if (GameObject.FindObjectOfType<GameManager>().gameType == GameManager.GameType.CLIENT)
         {
             _controller.transform.position = _manager.position;
             _controller.transform.rotation = _manager.rotation;
         }
+        else _manager.CallSetPosition(_controller.transform.position);
     }
     
     public override void InputUpdate()

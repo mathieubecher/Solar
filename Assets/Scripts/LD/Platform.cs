@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using BeardedManStudios.Forge.Networking.Generated;
 using UnityEngine;
 
 public class Platform : MonoBehaviour
@@ -9,9 +10,11 @@ public class Platform : MonoBehaviour
     protected float progress;
     protected float _velocity;
     [SerializeField] public float speed = 0.2f;
+    protected PlatformServer _server;
     
     protected virtual void Awake()
     {
+        _server = GetComponent<PlatformServer>();
         progress = 0;
         childs = new List<Transform>();
         for (int i = 0; i < transform.childCount; ++i)
@@ -26,13 +29,33 @@ public class Platform : MonoBehaviour
     }
     protected float GetLocalProgress()
     {
+        
         return progress + begin_progress;
     }
     
     // Update is called once per frame
     protected virtual void Update()
     {
-        progress += _velocity * speed * Time.deltaTime;
+        if ((StaticClass.gameType == GameManager.GameType.SERVER ||
+             StaticClass.gameType == GameManager.GameType.CLIENT))
+        {
+            if((StaticClass.serverType == StaticClass.ServerType.SUN &&
+                StaticClass.gameType == GameManager.GameType.SERVER) ||
+               (StaticClass.serverType == StaticClass.ServerType.PLAYER &&
+               StaticClass.gameType == GameManager.GameType.CLIENT))
+            {
+                progress += _velocity * speed * Time.deltaTime;
+                _server.CallSetProgress(progress);
+            }
+            else
+            {
+                progress = _server.GetProgress();
+            }
+        }
+        else
+        {
+            progress += _velocity * speed * Time.deltaTime;
+        }
         transform.rotation = Quaternion.Euler(new Vector3(0,GetLocalProgress() * 360,0));
     }
 #if UNITY_EDITOR
@@ -59,4 +82,8 @@ public class Platform : MonoBehaviour
         
     }
 #endif
+    public void ResetProgress()
+    {
+        progress = 0;
+    }
 }
