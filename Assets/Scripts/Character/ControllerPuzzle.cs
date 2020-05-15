@@ -9,6 +9,9 @@ public class ControllerPuzzle : MonoBehaviour
     public CinemachineBrain brain;
     [SerializeField] private Puzzle _puzzle;
 
+    private CMCamera _CMnext;
+    private float _timer_CMnext = 0;
+    
     private Controller _controller;
     
     void Start()
@@ -20,12 +23,23 @@ public class ControllerPuzzle : MonoBehaviour
         {
             transform.position = _puzzle.GetRespawnPoint();
             _controller.sun.ResetRotate(_puzzle.beginRotate);
-            
         }
         cmActual = _puzzle.cam;
         cmActual.Enable(this);
     }
 
+    void Update()
+    {
+        if (_timer_CMnext > 0)
+        {
+            _timer_CMnext -= Time.deltaTime;
+            if (_timer_CMnext <= 0)
+            {
+                Debug.Log("change Cam");
+                ChangeCam(_CMnext);
+            }
+        }
+    }
     
     private void OnTriggerEnter(Collider other)
     {
@@ -40,8 +54,8 @@ public class ControllerPuzzle : MonoBehaviour
         else if (other.gameObject.layer == 14)
         {
             CMTransition transition = other.gameObject.GetComponent<CMTransition>();
-            if (other == transition.nextCollider) ChangeCam(transition._next);
-            else ChangeCam(transition._previous);
+            if (other == transition.nextCollider) DecideChangeCam(transition._next);
+            else DecideChangeCam(transition._previous);
         }
     }
     
@@ -80,5 +94,11 @@ public class ControllerPuzzle : MonoBehaviour
         cmActual.Disable();
         cmActual = cam;
         cam.Enable(this);
+    }
+
+    public void DecideChangeCam(CMCamera cam)
+    {
+        _timer_CMnext = 1f;
+        _CMnext = cam;
     }
 }
