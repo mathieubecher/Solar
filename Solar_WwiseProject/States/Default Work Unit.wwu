@@ -6,10 +6,11 @@
 				<StateGroup Name="Music_State" ID="{DDD1692E-3AD5-41DE-BC79-2DB63FA68D85}">
 					<ChildrenList>
 						<State Name="None" ID="{D596250C-411F-4B10-B71B-B7E0B18D347B}"/>
-						<State Name="Intro" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}"/>
-						<State Name="Post_Intro" ID="{DDDFEFD0-E001-4B6C-9659-E07FA3889D5D}"/>
-						<State Name="Drop" ID="{969C3013-C098-4E3C-8A39-DBA065D2084D}"/>
-						<State Name="Outro" ID="{C51E1648-034F-4843-8BE7-28EDB0B377C9}"/>
+						<State Name="Part01" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}"/>
+						<State Name="Part02" ID="{0E37C743-B984-43CF-B535-5958B0E205F8}"/>
+						<State Name="Part03" ID="{E6CF3B42-BDA1-4BA2-9E80-9174CCFBFDAA}"/>
+						<State Name="Part04" ID="{8C02331C-F656-47FD-B344-4290DAF0CA9A}"/>
+						<State Name="Part05" ID="{17385033-E0F3-4F4B-8D00-99C647357501}"/>
 					</ChildrenList>
 				</StateGroup>
 				<StateGroup Name="GeneralStates" ID="{C92137EC-58E3-4210-A2B8-77B6A2248E1A}">
@@ -39,9 +40,6 @@
 						<Folder Name="Lvl 1" ID="{75B8FD5D-875E-4F53-96BE-39C60AEBDC8E}" ShortID="383217462">
 							<ChildrenList>
 								<StateGroup Name="Amb_Lvl01" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}">
-									<PropertyList>
-										<Property Name="DefaultTransitionTime" Type="Real64" Value="2"/>
-									</PropertyList>
 									<ChildrenList>
 										<State Name="None" ID="{5D676E1F-0173-47C9-86E8-52192F37B452}"/>
 										<State Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>

@@ -28,10 +28,11 @@ namespace AK
         static const AkUniqueID CHA_RESPAWN = 1215500860U;
         static const AkUniqueID CHA_RUN = 3845266727U;
         static const AkUniqueID CHA_WALK = 300025675U;
-        static const AkUniqueID MUSIC_DROP = 2212149258U;
+        static const AkUniqueID MUSIC_BRIDGE1 = 994844631U;
+        static const AkUniqueID MUSIC_KIOSK1 = 1689044463U;
+        static const AkUniqueID MUSIC_KIOSK2 = 1689044460U;
+        static const AkUniqueID MUSIC_KIOSK3 = 1689044461U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
-        static const AkUniqueID MUSIC_POSTINTRO = 3194768471U;
-        static const AkUniqueID MUSIC_STOP = 3227181061U;
         static const AkUniqueID SUN_FEEDBACK_PLAY = 2337456342U;
     } // namespace EVENTS
 
@@ -70,11 +71,12 @@ namespace AK
 
             namespace STATE
             {
-                static const AkUniqueID DROP = 1878686274U;
-                static const AkUniqueID INTRO = 1125500713U;
                 static const AkUniqueID NONE = 748895195U;
-                static const AkUniqueID OUTRO = 4184794294U;
-                static const AkUniqueID POST_INTRO = 2098910396U;
+                static const AkUniqueID PART01 = 2201513847U;
+                static const AkUniqueID PART02 = 2201513844U;
+                static const AkUniqueID PART03 = 2201513845U;
+                static const AkUniqueID PART04 = 2201513842U;
+                static const AkUniqueID PART05 = 2201513843U;
             } // namespace STATE
         } // namespace MUSIC_STATE
 
