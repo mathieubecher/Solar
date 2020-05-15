@@ -28,7 +28,6 @@ public class TerrainBlendingBaker : MonoBehaviour
         {
             cam = GetComponent<Camera>();
         }
- 
         //the total width of the bounding box of our cameras view
         Shader.SetGlobalFloat("TB_SCALE", GetComponent<Camera>().orthographicSize * 2);
         //find the bottom corner of the texture in world scale by subtracting the size of the camera from its x and z position

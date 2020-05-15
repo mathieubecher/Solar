@@ -15,6 +15,7 @@ public class ControllerPuzzle : MonoBehaviour
     {
         _controller = GetComponent<Controller>();
         brain = FindObjectOfType<CinemachineBrain>();
+        if(FindObjectOfType<GameManager>().gameType != GameManager.GameType.CLIENT) transform.position = _puzzle.GetRespawnPoint();
         cmActual = _puzzle.cam;
         cmActual.Enable(this);
     }
@@ -45,15 +46,23 @@ public class ControllerPuzzle : MonoBehaviour
     
     public void Dead()
     {
-        
         _controller.sun.ResetRotate(_puzzle.beginRotate);
+        ResetPlatform(_puzzle);
         transform.position = _puzzle.GetRespawnPoint();
         _controller.inputs.Dead();
         ChangeCam(_puzzle.cam);
         
         _controller.sun.ResetPoints();
     }
-    
+
+    private void ResetPlatform(Puzzle puzzle)
+    {
+        foreach (Platform p in puzzle.gameObject.GetComponentsInChildren<Platform>())
+        {
+            p.ResetProgress();
+        }
+    }
+
     public void ChangeCam(CMCamera cam)
     {
         cmActual.Disable();

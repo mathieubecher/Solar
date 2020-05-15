@@ -9,6 +9,8 @@ public class InputLocal : MonoBehaviour
     {
         PLAYER,SUN
     }
+
+    private Controller _controller;
     private PlayerInput _controls;
     [SerializeField]
     private Vector2 _move;
@@ -29,6 +31,7 @@ public class InputLocal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _controller = FindObjectOfType<Controller>();
         Local inputs = (Local)FindObjectOfType<Controller>().inputs;
         _type = (inputs.SetInput(this) == 0)? InputType.PLAYER:InputType.SUN;
         
@@ -46,6 +49,9 @@ public class InputLocal : MonoBehaviour
         
         _controls.currentActionMap["RotateSun"].performed += ctx => RotateSun(ctx.ReadValue<float>());
         _controls.currentActionMap["RotateSun"].canceled += ctx => RotateSun(ctx.ReadValue<float>());
+        
+        _controls.currentActionMap["ProgressPlatform"].performed += ctx => ProgressPlatform(ctx.ReadValue<float>());
+        _controls.currentActionMap["ProgressPlatform"].canceled += ctx => ProgressPlatform(ctx.ReadValue<float>());
     }
 
     public void Update()
@@ -70,5 +76,9 @@ public class InputLocal : MonoBehaviour
     public void VelocityCam(Vector2 velocity)
     {
         _rotateMouse = velocity;
+    }
+    private void ProgressPlatform(float readValue)
+    {
+        _controller.puzzle.cmActual.SetPlatformProgress(readValue);
     }
 }

@@ -48,7 +48,7 @@ Shader "Inresin/Depth Shader"
 			fixed4 frag (v2f i) : SV_Target
 			{
 				float invert = 1 - i.depth;
-				return fixed4(invert, invert, invert, 1);
+				return fixed4(1, 1, 1, 1);
 			}
 			ENDCG
 		}
