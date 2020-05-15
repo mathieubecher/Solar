@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Plateforme à trajectoire linéaire
+/// </summary>
 public class LinearPlatform : Platform
 {
     [SerializeField] private Transform path;
@@ -12,6 +15,8 @@ public class LinearPlatform : Platform
     // Start is called before the first frame update
     void Awake()
     {
+        _server = GetComponent<PlatformServer>();
+        // Récupération de la liste des points de la trajectoire
         pathPoints = new List<Vector3>();
         pathPoints.Add(path.GetChild(0).position);
         for (int i = 1; i < path.childCount; ++i)
@@ -20,6 +25,7 @@ public class LinearPlatform : Platform
             maxDist += (pathPoints[i] - pathPoints[i - 1]).magnitude;
         }
 
+        // Récupération de la liste des plateformes
         childs = new List<Transform>();
         for (int i = 0; i < transform.childCount; ++i)
         {
@@ -37,26 +43,20 @@ public class LinearPlatform : Platform
     // Update is called once per frame
     protected override void Update()
     {
-        if ((StaticClass.gameType == GameManager.GameType.SERVER ||
-             StaticClass.gameType == GameManager.GameType.CLIENT))
-        {
-            if(StaticClass.serverType == StaticClass.ServerType.SUN)
-            {
-                _server.CallSetProgress(progress);
-            }
-            else progress = _server.GetProgress();
-        }
-        else
-        {
-            progress += _velocity * speed * Time.deltaTime;
-            progress = Mathf.Max(0, Mathf.Min(0.9999f, progress));
-        }
+        // Récupere la valeur de progress en fonction du type de la partie
+        InputVelocity();
         
+        // Met à jour la position de la plateforme avec progress
         for (int i = 0; i < childs.Count; ++i)
         {
             childs[i].position = progressPos();
         }
     }
+    
+    /// <summary>
+    /// Cherche la position de la plateforme en fonction de progress.
+    /// </summary>
+    /// <returns>Position actuel de la plateforme</returns>
     Vector3 progressPos()
     {
         float total = (GetLocalProgress()+begin_progress)%1 * maxDist;
@@ -74,7 +74,10 @@ public class LinearPlatform : Platform
 #if UNITY_EDITOR
     protected override void OnDrawGizmos()
     {
+        // Progression de la plateforme dans le temps pour tester
         if (!Application.isPlaying) progress += Time.deltaTime * speed;
+        
+        // Dessin de la trajectoire
         Gizmos.color = Color.white;
         pathPoints = new List<Vector3>();
         pathPoints.Add(path.GetChild(0).position);
@@ -86,6 +89,7 @@ public class LinearPlatform : Platform
             Gizmos.DrawLine(pathPoints[i - 1], pathPoints[i]);
         }
 
+        // Dessin de la position de chaque plateforme
         Gizmos.color = Color.black;
         for (int i = 0; i < transform.childCount; ++i)
         {

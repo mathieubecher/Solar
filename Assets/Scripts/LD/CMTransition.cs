@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Transition entre les caméras
+/// </summary>
 public class CMTransition : MonoBehaviour
 {
     public CMCamera _previous;

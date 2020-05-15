@@ -13,6 +13,7 @@ public class Controller : MonoBehaviour
     public AbstractInput inputs;
     private PlayerInput _controls;
     protected Rigidbody _rigidbody;
+    
     // External
     [HideInInspector] public CameraController cam;
 
@@ -40,6 +41,7 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        // Active la mort quelque soit la valeur défini d'activeDead en dehors de l'editor.
 #if UNITY_EDITOR
 #else
         activeDead = true;
@@ -54,52 +56,49 @@ public class Controller : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         GameManager manager = FindObjectOfType<GameManager>();
+
+        // Met en place les différents gestionnaires d'input en fonction des paramètres choisis par le joueur
         inputs = new Solo(this);
-        if (manager.gameType == GameManager.GameType.SOLO) {}
+        if (manager.gameType == GameManager.GameType.SOLO)
+        {
+        }
         else if (manager.gameType == GameManager.GameType.LOCAL)
         {
             GetComponent<PlayerInput>().enabled = false;
             inputs = new Local(this);
             Instantiate(MultiLocalPrefab, Vector3.zero, Quaternion.identity);
         }
-        else
-        {
-            if(manager.gameType == GameManager.GameType.SERVER) NetworkManager.Instance.InstantiateController();
-            
-        }
-        
-        
+        else if (manager.gameType == GameManager.GameType.SERVER) NetworkManager.Instance.InstantiateController();
     }
-
-
 
     // Update is called once per frame
     void Update()
     {
-        
+        // Met à jour les variable par le gestionnaires d'input
         inputs.InputUpdate();
-        animator.SetFloat("velocity", velocity.magnitude);
+
+        // Si le joueur n'est pas mort
         if(_deatTimer <= 0){
-            velocity.y = _rigidbody.velocity.y;
-            _rigidbody.velocity = velocity;
-            
+            // Retours visuels et sonores lié aux déplacements du personnage
+            animator.SetFloat("velocity", velocity.magnitude);
             // RESPIRATION
-            // TODO A changer en fonction du systeme de dégats
             if(sun.Life >= 1){
                 if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
                 else if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("Cha_Walk", this.gameObject);
                 else AkSoundEngine.PostEvent("Cha_IDLE", this.gameObject);
             }
             else AkSoundEngine.PostEvent("Cha_Hurt", this.gameObject);
+            
+            velocity.y = _rigidbody.velocity.y;
+            _rigidbody.velocity = velocity;
         }
         else
         {
+            // A la mort du personnage, laisse un temps défini avant le respawn
             _deatTimer -= Time.deltaTime;
             if (_deatTimer <= 0)
             {
-                
-                AkSoundEngine.PostEvent("Cha_Respawn", this.gameObject);
-                puzzle.Dead();
+                Respawn();
             }
         }
         
@@ -114,40 +113,42 @@ public class Controller : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    ///  Active la mort du joueur
+    /// </summary>
     public void Dying()
     {
         // TODO Feedback death
-        
+        // si la mort est activé
         if(activeDead){
+            
+            animator.SetFloat("velocity", 0);
+            AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", 0);
+            AkSoundEngine.SetRTPCValue("RTPC_Sun_Velocity", 0);
+            AkSoundEngine.PostEvent("Cha_Death_Play", this.gameObject);
+            
             _deatTimer = DeadTimer;
             velocity = Vector3.zero;
             _rigidbody.velocity = velocity;
-            animator.SetFloat("velocity", 0);
-            AkSoundEngine.PostEvent("Cha_Death_Play", this.gameObject);
         }
     }
-
-
+    
+    /// <summary>
+    ///  Active le respawn
+    /// </summary>
+    public void Respawn()
+    {
+        AkSoundEngine.PostEvent("Cha_Respawn", this.gameObject);
+        puzzle.Dead();
+    }
+    
+    /// <summary>
+    ///  Active la mort du joueur
+    /// </summary>
     public bool IsDead()
     {
-        
-        return _deatTimer > 0;
-        
+        return _deatTimer > 0;   
     }
 
 
 }
-
-
-#if UNITY_EDITOR
-[CustomEditor(typeof(Controller))]
-internal class ControllerEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-        var controller = (Controller) target;
-    }
-}
-#endif
