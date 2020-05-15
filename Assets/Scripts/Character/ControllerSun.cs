@@ -76,7 +76,8 @@ public class ControllerSun : MonoBehaviour
     /// </summary>
     float DefineSpeed()
     {
-        if (Mathf.Abs(_gotoAngle - _angle) > Mathf.Abs(_angleVelocity) * Time.deltaTime && Mathf.Abs(_angleVelocity) < _maxRotateSpeed)
+        Debug.Log(Mathf.Abs(_gotoAngle - _angle)+ " " + Mathf.Abs(_angleVelocity) + " " + _maxRotateSpeed);
+        if (Mathf.Abs(_gotoAngle - _angle) > Mathf.Abs(_angleVelocity)/2 && Mathf.Abs(_angleVelocity) < _maxRotateSpeed)
             _angleVelocity = Mathf.Min(Mathf.Abs(_gotoAngle - _angle)/Time.deltaTime , Mathf.Abs(_angleVelocity) + _speedVelocity) * Mathf.Sign(_gotoAngle-_angle);
         else if (Mathf.Abs(_gotoAngle - _angle) <= _maxRotateSpeed * Time.deltaTime) _angleVelocity = 0;
         return _angleVelocity;
