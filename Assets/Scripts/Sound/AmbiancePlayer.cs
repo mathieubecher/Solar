@@ -38,6 +38,10 @@ public class AmbiancePlayer : MonoBehaviour
             type = other.gameObject.GetComponent<WwiseAbiance>().type;
             ++nbVolume;
         }
+        else if (other.gameObject.layer == 15)
+        {
+            AkSoundEngine.PostEvent(other.gameObject.GetComponent<WwiseMusic>().type,gameObject);
+        }
     }
 
     void OnTriggerExit(Collider other)
