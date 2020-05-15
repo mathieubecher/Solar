@@ -262,7 +262,71 @@
 				</Event>
 				<Event Id="1546453947" Name="Cha_Hurt" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Hurt" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3135834134" Name="Cha_IDLE" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_IDLE" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1215500860" Name="Cha_Respawn" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Respawn" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1215500860" Name="Cha_Respawn" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Respawn" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="126101664" Language="SFX">
+							<ShortName>lvl01_kiosk3_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_kiosk3_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="328126770" Language="SFX">
+							<ShortName>lvl01_transi2ndbridge_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_transi2ndbridge_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="393158941" Language="SFX">
+							<ShortName>lvl01_bridge_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_bridge_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="586779925" Language="SFX">
+							<ShortName>lvl01_2ndbridge_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_2ndbridge_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="770477499" Language="SFX">
+							<ShortName>lvl01_kiosk_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_kiosk_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="886504593" Language="SFX">
+							<ShortName>lvl01_temple_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_temple_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="895054583" Language="SFX">
+							<ShortName>astrolabe_v3_rocks.wav</ShortName>
+							<Path>SFX\astrolabe_v3_rocks_D79FB2B7.wem</Path>
+						</File>
+						<File Id="1050526820" Language="SFX">
+							<ShortName>astrolabe_v3.wav</ShortName>
+							<Path>SFX\astrolabe_v3_18B49136.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}">
+							<Media>
+								<File Id="886504593"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{0E37C743-B984-43CF-B535-5958B0E205F8}">
+							<Media>
+								<File Id="393158941"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{E6CF3B42-BDA1-4BA2-9E80-9174CCFBFDAA}">
+							<Media>
+								<File Id="770477499"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{8C02331C-F656-47FD-B344-4290DAF0CA9A}">
+							<Media>
+								<File Id="586779925"/>
+								<File Id="328126770"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{17385033-E0F3-4F4B-8D00-99C647357501}">
+							<Media>
+								<File Id="126101664"/>
+								<File Id="126101664"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="3845266727" Name="Cha_Run" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Run" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="300025675" Name="Cha_Walk" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Walk" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="771829065" Name="Music_Lvl01_Bridge1" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Bridge1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -272,6 +336,10 @@
 				<Event Id="503471100" Name="Music_Lvl01_Temple" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Temple" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
+						<File Id="126101664" Language="SFX">
+							<ShortName>lvl01_kiosk3_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_kiosk3_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
 						<File Id="328126770" Language="SFX">
 							<ShortName>lvl01_transi2ndbridge_95bpm4_4.wav</ShortName>
 							<Path>SFX\lvl01_transi2ndbridge_95bpm4_4_D79FB2B7.wem</Path>
@@ -315,6 +383,12 @@
 								<File Id="328126770"/>
 							</Media>
 						</SwitchContainer>
+						<SwitchContainer SwitchValue="{17385033-E0F3-4F4B-8D00-99C647357501}">
+							<Media>
+								<File Id="126101664"/>
+								<File Id="126101664"/>
+							</Media>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 				<Event Id="2337456342" Name="Sun_Feedback_Play" ObjectPath="\Events\Default Work Unit\ALL\Sun_Feedback_Play" DurationType="Infinite">
@@ -337,8 +411,10 @@
 			<GameParameters>
 				<GameParameter Id="582120507" Name="RTPC_Sun_Velocity" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Sun_Velocity"/>
 				<GameParameter Id="748151351" Name="Breath_RTPC" ObjectPath="\Game Parameters\Default Work Unit\Breath_RTPC"/>
+				<GameParameter Id="1687410496" Name="RTPC_WindGain" ObjectPath="\Game Parameters\Default Work Unit\RTPC_WindGain"/>
 				<GameParameter Id="2257099397" Name="RTPC_Distance_Sun" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Distance_Sun"/>
 				<GameParameter Id="2682991203" Name="Amb_RTPC" ObjectPath="\Game Parameters\Default Work Unit\Amb_RTPC"/>
+				<GameParameter Id="2972377204" Name="RTPC_AstroSidechain" ObjectPath="\Game Parameters\Default Work Unit\RTPC_AstroSidechain"/>
 			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="3826569560" Name="Music_State" ObjectPath="\States\Default Work Unit\Music_State">
@@ -374,6 +450,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<IncludedAuxBusses>
+				<AuxBus Id="1657183839" Name="Sidechain_Music" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Sidechain_Music"/>
 				<AuxBus Id="2323193050" Name="Temple" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Temple"/>
 				<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
 			</IncludedAuxBusses>
