@@ -9,9 +9,19 @@
 			<ChildrenList>
 				<BlendContainer Name="Obj_Astrolabe_Moving" ID="{40B22666-9847-4BD6-ABC2-5D5B26739A2E}" ShortID="568806698">
 					<PropertyList>
-						<Property Name="Volume" Type="Real64">
+						<Property Name="OutputBusVolume" Type="Real64">
+							<ValueList>
+								<Value>-96</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UserAuxSendVolume0" Type="Real64">
 							<ValueList>
 								<Value>-3</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -21,6 +31,9 @@
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+						</Reference>
+						<Reference Name="UserAuxSend0">
+							<ObjectRef Name="Sidechain_Music" ID="{FA81C55F-011D-4E0D-9F1D-D8BE90E52F44}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>

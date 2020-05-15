@@ -115,6 +115,7 @@ namespace AK
     {
         static const AkUniqueID AMB_RTPC = 2682991203U;
         static const AkUniqueID BREATH_RTPC = 748151351U;
+        static const AkUniqueID RTPC_ASTROSIDECHAIN = 2972377204U;
         static const AkUniqueID RTPC_DISTANCE_SUN = 2257099397U;
         static const AkUniqueID RTPC_SUN_VELOCITY = 582120507U;
         static const AkUniqueID RTPC_WINDGAIN = 1687410496U;
@@ -135,6 +136,7 @@ namespace AK
     namespace AUX_BUSSES
     {
         static const AkUniqueID INT_LVL01_FX = 2514557383U;
+        static const AkUniqueID SIDECHAIN_MUSIC = 1657183839U;
         static const AkUniqueID TEMPLE = 2323193050U;
     } // namespace AUX_BUSSES
 
