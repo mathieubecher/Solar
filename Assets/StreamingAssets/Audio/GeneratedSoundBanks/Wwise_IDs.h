@@ -28,10 +28,11 @@ namespace AK
         static const AkUniqueID CHA_RESPAWN = 1215500860U;
         static const AkUniqueID CHA_RUN = 3845266727U;
         static const AkUniqueID CHA_WALK = 300025675U;
-        static const AkUniqueID MUSIC_BRIDGE1 = 994844631U;
-        static const AkUniqueID MUSIC_KIOSK1 = 1689044463U;
-        static const AkUniqueID MUSIC_KIOSK2 = 1689044460U;
-        static const AkUniqueID MUSIC_KIOSK3 = 1689044461U;
+        static const AkUniqueID MUSIC_LVL01_BRIDGE1 = 771829065U;
+        static const AkUniqueID MUSIC_LVL01_KIOSK1 = 2884165201U;
+        static const AkUniqueID MUSIC_LVL01_KIOSK2 = 2884165202U;
+        static const AkUniqueID MUSIC_LVL01_KIOSK3 = 2884165203U;
+        static const AkUniqueID MUSIC_LVL01_TEMPLE = 503471100U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
         static const AkUniqueID SUN_FEEDBACK_PLAY = 2337456342U;
     } // namespace EVENTS

@@ -253,19 +253,19 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
-										<Action Name="" ID="{E86F8FCF-43CB-4AAB-9E44-1F86A6AD4F9C}" ShortID="967112335">
+										<Action Name="" ID="{1F22EB37-705C-4299-9EBB-C05A9DDCA232}" ShortID="425979522">
 											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="22"/>
+												<Property Name="ActionType" Type="int16" Value="41"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Part01" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+													<ObjectRef Name="Music_Lvl01_Temple" ID="{F0DCEDD3-1E08-41C4-A8F3-6401A6F3BFB9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Music_Bridge1" ID="{7D13B74F-8ABC-46A9-A295-9C850CDBFA98}">
+								<Event Name="Music_Lvl01_Bridge1" ID="{7D13B74F-8ABC-46A9-A295-9C850CDBFA98}">
 									<ChildrenList>
 										<Action Name="" ID="{5FFAB563-65FD-42E8-8529-BBAAB5F2DBBE}" ShortID="414343872">
 											<PropertyList>
@@ -279,7 +279,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Music_Kiosk1" ID="{62799125-CB0E-4D1D-9378-139512600054}">
+								<Event Name="Music_Lvl01_Kiosk1" ID="{62799125-CB0E-4D1D-9378-139512600054}">
 									<ChildrenList>
 										<Action Name="" ID="{5BDCF39E-7B77-494B-884D-A504EB1B43BE}" ShortID="188032128">
 											<PropertyList>
@@ -293,7 +293,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Music_Kiosk2" ID="{9CB33FF9-5713-437D-902A-664634D6C543}">
+								<Event Name="Music_Lvl01_Kiosk2" ID="{9CB33FF9-5713-437D-902A-664634D6C543}">
 									<ChildrenList>
 										<Action Name="" ID="{CF7F4CD9-63B5-43BA-B4B0-7BCEE1E6F682}" ShortID="90237173">
 											<PropertyList>
@@ -307,7 +307,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Music_Kiosk3" ID="{7063693C-4A84-45ED-9893-1EDECBF8D4B7}">
+								<Event Name="Music_Lvl01_Kiosk3" ID="{7063693C-4A84-45ED-9893-1EDECBF8D4B7}">
 									<ChildrenList>
 										<Action Name="" ID="{5FA5B131-D7F4-434A-826A-26F00FD9EEB0}" ShortID="964925989">
 											<PropertyList>
@@ -316,6 +316,20 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Part05" ID="{17385033-E0F3-4F4B-8D00-99C647357501}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Music_Lvl01_Temple" ID="{F0DCEDD3-1E08-41C4-A8F3-6401A6F3BFB9}">
+									<ChildrenList>
+										<Action Name="" ID="{0429E338-73FC-4A92-924B-58D1CBB8A6D9}" ShortID="199142808">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Part01" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -358,6 +372,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{0ECBD27C-9839-489A-814F-BBEA38C78CBB}" ShortID="374799059">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Music_Play" ID="{6068AEC3-2B39-457A-A8CC-9C7517543F06}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
