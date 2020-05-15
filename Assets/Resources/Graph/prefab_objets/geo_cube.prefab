@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3348852268319919629}
   - component: {fileID: 5990497626589983803}
   - component: {fileID: 8458205671491778}
-  - component: {fileID: 5461181874329367049}
+  - component: {fileID: 4912659184616166065}
   m_Layer: 0
-  m_Name: geo_cube_01
+  m_Name: geo_cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,8 +80,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5461181874329367049
-MeshCollider:
+--- !u!65 &4912659184616166065
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,7 +90,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8809236092050408363, guid: 583156ce86e7a85488003ea313ec2a94, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 2.3670974, y: 2.466852, z: 2.3378017}
+  m_Center: {x: 0.044122458, y: -0.033940315, z: 0}
