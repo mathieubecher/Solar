@@ -391,6 +391,14 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="3078438999" Name="Plateform_Moving_Play" ObjectPath="\Events\Default Work Unit\ALL\Plateform_Moving_Play" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="889595550" Language="SFX">
+							<ShortName>obj_plateform_moving.wav</ShortName>
+							<Path>SFX\obj_plateform_moving_1178DA91.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2337456342" Name="Sun_Feedback_Play" ObjectPath="\Events\Default Work Unit\ALL\Sun_Feedback_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="20225164" Language="SFX">
@@ -415,6 +423,7 @@
 				<GameParameter Id="2257099397" Name="RTPC_Distance_Sun" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Distance_Sun"/>
 				<GameParameter Id="2682991203" Name="Amb_RTPC" ObjectPath="\Game Parameters\Default Work Unit\Amb_RTPC"/>
 				<GameParameter Id="2972377204" Name="RTPC_AstroSidechain" ObjectPath="\Game Parameters\Default Work Unit\RTPC_AstroSidechain"/>
+				<GameParameter Id="3829022635" Name="RTPC_Plateform_Velocity" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Plateform_Velocity"/>
 			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="3826569560" Name="Music_State" ObjectPath="\States\Default Work Unit\Music_State">
@@ -450,9 +459,8 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<IncludedAuxBusses>
-				<AuxBus Id="1657183839" Name="Sidechain_Music" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Sidechain_Music"/>
-				<AuxBus Id="2323193050" Name="Temple" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Temple"/>
-				<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
+				<AuxBus Id="1657183839" Name="Sidechain_Music" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Sidechain_Music"/>
+				<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
 			</IncludedAuxBusses>
 		</SoundBank>
 	</SoundBanks>

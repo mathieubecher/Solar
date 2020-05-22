@@ -34,6 +34,7 @@ namespace AK
         static const AkUniqueID MUSIC_LVL01_KIOSK3 = 2884165203U;
         static const AkUniqueID MUSIC_LVL01_TEMPLE = 503471100U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
+        static const AkUniqueID PLATEFORM_MOVING_PLAY = 3078438999U;
         static const AkUniqueID SUN_FEEDBACK_PLAY = 2337456342U;
     } // namespace EVENTS
 
@@ -117,6 +118,7 @@ namespace AK
         static const AkUniqueID BREATH_RTPC = 748151351U;
         static const AkUniqueID RTPC_ASTROSIDECHAIN = 2972377204U;
         static const AkUniqueID RTPC_DISTANCE_SUN = 2257099397U;
+        static const AkUniqueID RTPC_PLATEFORM_VELOCITY = 3829022635U;
         static const AkUniqueID RTPC_SUN_VELOCITY = 582120507U;
         static const AkUniqueID RTPC_WINDGAIN = 1687410496U;
     } // namespace GAME_PARAMETERS
@@ -129,15 +131,19 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID AMBIANCE_BUS = 3161292138U;
+        static const AkUniqueID BREATHING_BUS = 3834658866U;
+        static const AkUniqueID FOLEYS_BUS = 1306998534U;
+        static const AkUniqueID FX = 1802970371U;
         static const AkUniqueID INT_LVL01_ACOUSTIC = 1571012312U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC_BUS = 2680856269U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES
     {
         static const AkUniqueID INT_LVL01_FX = 2514557383U;
         static const AkUniqueID SIDECHAIN_MUSIC = 1657183839U;
-        static const AkUniqueID TEMPLE = 2323193050U;
     } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES

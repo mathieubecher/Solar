@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{A38F9F3A-D83E-405C-96D9-B61328E6FE65}" SchemaVersion="97">
 	<MixingSessions>
-		<WorkUnit Name="Default Work Unit" ID="{A38F9F3A-D83E-405C-96D9-B61328E6FE65}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{A38F9F3A-D83E-405C-96D9-B61328E6FE65}" PersistMode="Standalone">
+			<ChildrenList>
+				<MixingSession Name="Mix01" ID="{1EB986A4-BF7C-4478-9AA9-3DFE78DBAD90}">
+					<ObjectList>
+						<ObjectRef Name="Ambiance_Bus" ID="{29FDE568-B384-4C81-B1B5-252B9099C7BB}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+						<ObjectRef Name="Breathing_Bus" ID="{902E587E-5F52-4318-BBF4-84185BA1386D}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+						<ObjectRef Name="Foleys_Bus" ID="{24383F11-053E-4433-8C86-F1951086C8E7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+						<ObjectRef Name="Music_Bus" ID="{FE95FA85-D8C7-46AF-B639-4E9995364634}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+					</ObjectList>
+				</MixingSession>
+			</ChildrenList>
+		</WorkUnit>
 	</MixingSessions>
 </WwiseDocument>
