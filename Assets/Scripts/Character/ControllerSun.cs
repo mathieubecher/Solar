@@ -76,7 +76,7 @@ public class ControllerSun : MonoBehaviour
     /// </summary>
     float DefineSpeed()
     {
-        Debug.Log(Mathf.Abs(_gotoAngle - _angle)+ " " + Mathf.Abs(_angleVelocity) + " " + _maxRotateSpeed);
+        //Debug.Log(Mathf.Abs(_gotoAngle - _angle)+ " " + Mathf.Abs(_angleVelocity) + " " + _maxRotateSpeed);
         if (Mathf.Abs(_gotoAngle - _angle) > Mathf.Abs(_angleVelocity)/2 && Mathf.Abs(_angleVelocity) < _maxRotateSpeed)
             _angleVelocity = Mathf.Min(Mathf.Abs(_gotoAngle - _angle)/Time.deltaTime , Mathf.Abs(_angleVelocity) + _speedVelocity) * Mathf.Sign(_gotoAngle-_angle);
         else if (Mathf.Abs(_gotoAngle - _angle) <= _maxRotateSpeed * Time.deltaTime) _angleVelocity = 0;
@@ -89,6 +89,7 @@ public class ControllerSun : MonoBehaviour
     /// </summary>
     private void SetLife()
     {
+        
         bool touch = false;
         for (int i = 0; i < _points.Count; ++i)
         {
@@ -100,7 +101,7 @@ public class ControllerSun : MonoBehaviour
         else if (_life <= 0)
         {
             _controller.Dying();
-            
+            _life = 0;
         }
         
         // Produit un son en fonction de la vie
