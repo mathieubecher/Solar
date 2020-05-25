@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4118703180938250860}
   - component: {fileID: 4932448777737318490}
   - component: {fileID: 1679593539905539235}
-  - component: {fileID: 6672947233342944872}
+  - component: {fileID: 1947822933961389486}
   m_Layer: 0
-  m_Name: geo_wallSmall_01
+  m_Name: geo_wallSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,8 +80,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6672947233342944872
-MeshCollider:
+--- !u!65 &1947822933961389486
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,7 +90,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6757891595931359810, guid: a83dcb1c297edbf4b9d5cab05ee00283, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.30416685, y: 0.9996472, z: 7.177676}
+  m_Center: {x: 0, y: 0, z: 0}

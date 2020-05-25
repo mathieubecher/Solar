@@ -9,6 +9,7 @@ public class MultiMonitor : MonoBehaviour
 {
     [SerializeField] private Camera main;
     [SerializeField] private Camera player2;
+    private AkAudioListener _listener;
     private GameManager _manager;
     private bool multi = false;
     
@@ -31,6 +32,7 @@ public class MultiMonitor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _listener = main.GetComponent<AkAudioListener>();
         _manager = FindObjectOfType<GameManager>();
         if(_manager.gameType == GameManager.GameType.SOLO) Mono();
         else if(_manager.gameType == GameManager.GameType.LOCAL) Dual();
@@ -58,6 +60,8 @@ public class MultiMonitor : MonoBehaviour
     public void Mono()
     {
         multi = false;
+        main.gameObject.SetActive(true);
+        player2.gameObject.SetActive(true);
         Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         Screen.SetResolution (1920,1080,true);
         main.rect = new Rect(0,0,1,1);
@@ -77,7 +81,7 @@ public class MultiMonitor : MonoBehaviour
         Display.displays[0].Activate(1920, 1080, 60);
         Display.displays[1].Activate(1920, 1080, 30);
          */
-        
+        player2.gameObject.SetActive(true);
         
         Screen.fullScreenMode = FullScreenMode.Windowed;   
         Screen.SetResolution (3840,1080+100,false);
@@ -90,6 +94,7 @@ public class MultiMonitor : MonoBehaviour
 
     public void OnlineSun()
     {
+        player2.gameObject.SetActive(true);
         Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         Screen.SetResolution (1920,1080,true);
         player2.rect = new Rect(0,0,1,1);
@@ -98,6 +103,7 @@ public class MultiMonitor : MonoBehaviour
     }
     public void OnlinePlayer()
     {
+        player2.gameObject.SetActive(false);
         Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         Screen.SetResolution (1920,1080,true);
         main.rect = new Rect(0,0,1,1);

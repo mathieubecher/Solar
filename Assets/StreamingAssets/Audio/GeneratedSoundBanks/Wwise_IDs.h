@@ -28,10 +28,12 @@ namespace AK
         static const AkUniqueID CHA_RESPAWN = 1215500860U;
         static const AkUniqueID CHA_RUN = 3845266727U;
         static const AkUniqueID CHA_WALK = 300025675U;
-        static const AkUniqueID MUSIC_DROP = 2212149258U;
+        static const AkUniqueID MUSIC_LVL01_BRIDGE1 = 771829065U;
+        static const AkUniqueID MUSIC_LVL01_KIOSK1 = 2884165201U;
+        static const AkUniqueID MUSIC_LVL01_KIOSK2 = 2884165202U;
+        static const AkUniqueID MUSIC_LVL01_KIOSK3 = 2884165203U;
+        static const AkUniqueID MUSIC_LVL01_TEMPLE = 503471100U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
-        static const AkUniqueID MUSIC_POSTINTRO = 3194768471U;
-        static const AkUniqueID MUSIC_STOP = 3227181061U;
         static const AkUniqueID SUN_FEEDBACK_PLAY = 2337456342U;
     } // namespace EVENTS
 
@@ -70,11 +72,12 @@ namespace AK
 
             namespace STATE
             {
-                static const AkUniqueID DROP = 1878686274U;
-                static const AkUniqueID INTRO = 1125500713U;
                 static const AkUniqueID NONE = 748895195U;
-                static const AkUniqueID OUTRO = 4184794294U;
-                static const AkUniqueID POST_INTRO = 2098910396U;
+                static const AkUniqueID PART01 = 2201513847U;
+                static const AkUniqueID PART02 = 2201513844U;
+                static const AkUniqueID PART03 = 2201513845U;
+                static const AkUniqueID PART04 = 2201513842U;
+                static const AkUniqueID PART05 = 2201513843U;
             } // namespace STATE
         } // namespace MUSIC_STATE
 
@@ -112,6 +115,7 @@ namespace AK
     {
         static const AkUniqueID AMB_RTPC = 2682991203U;
         static const AkUniqueID BREATH_RTPC = 748151351U;
+        static const AkUniqueID RTPC_ASTROSIDECHAIN = 2972377204U;
         static const AkUniqueID RTPC_DISTANCE_SUN = 2257099397U;
         static const AkUniqueID RTPC_SUN_VELOCITY = 582120507U;
         static const AkUniqueID RTPC_WINDGAIN = 1687410496U;
@@ -132,6 +136,7 @@ namespace AK
     namespace AUX_BUSSES
     {
         static const AkUniqueID INT_LVL01_FX = 2514557383U;
+        static const AkUniqueID SIDECHAIN_MUSIC = 1657183839U;
         static const AkUniqueID TEMPLE = 2323193050U;
     } // namespace AUX_BUSSES
 

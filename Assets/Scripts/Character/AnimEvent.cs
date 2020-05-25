@@ -11,10 +11,8 @@ public class AnimEvent : MonoBehaviour
     [SerializeField] private GameObject decalLeft;
     [SerializeField] private GameObject decalRight;
     [SerializeField] private GameObject footSteps;
-    private int _mask;
     void Start()
     {
-        _mask =~ LayerMask.GetMask("Character");
     }
 
     // Update is called once per frame
@@ -22,13 +20,16 @@ public class AnimEvent : MonoBehaviour
     {
         
     }
-
+    
+    /// <summary>
+    /// Fonction appelée quand le personnage pose le pied gauche sur le sol
+    /// </summary>
     public void LeftFootStep()
     {
         
         Vector3 position = leftFoot.transform.position;
         if (Physics.Raycast(origin: leftFoot.transform.position, direction: Vector3.down,
-                hitInfo: out RaycastHit hit, maxDistance: 5, layerMask: _mask) && hit.collider.gameObject.layer == 11)
+                hitInfo: out RaycastHit hit, maxDistance: 5, layerMask: GameManager.mask) && hit.collider.gameObject.layer == 11)
         {
             AkSoundEngine.SetSwitch("FootStep_Floor","Sand",leftFoot);
             position = hit.point + Vector3.up * 0.1f;
@@ -39,14 +40,16 @@ public class AnimEvent : MonoBehaviour
         else AkSoundEngine.SetSwitch("FootStep_Floor","Stone",leftFoot);
 
         AkSoundEngine.PostEvent("Cha_Footsteps_Play", leftFoot);
-
     }
 
+    /// <summary>
+    /// Fonction appelée quand le personnage pose le pied droit sur le sol
+    /// </summary>
     public void RightFootStep()
     {
         Vector3 position = rightFoot.transform.position;
         if (Physics.Raycast(origin: rightFoot.transform.position, direction: Vector3.down,
-            hitInfo: out RaycastHit hit, maxDistance: 5, layerMask: _mask) && hit.collider.gameObject.layer == 11)
+            hitInfo: out RaycastHit hit, maxDistance: 5, layerMask: GameManager.mask) && hit.collider.gameObject.layer == 11)
         {
             AkSoundEngine.SetSwitch("FootStep_Floor","Sand",rightFoot);
             position = hit.point + Vector3.up*0.1f;

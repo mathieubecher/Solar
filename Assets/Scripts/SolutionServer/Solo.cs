@@ -10,9 +10,11 @@ public class Solo : AbstractInput
 
     public Solo(Controller controller) : base(controller)
     {
+        // Récupère le controlleur du personnage
         _controller = controller;
         _controls = _controller.GetComponent<PlayerInput>();
         
+        // Abonne la classe aux evennements d'InputSystem
         _controls.currentActionMap["Movement"].performed += ctx => Velocity(ctx.ReadValue<Vector2>());
         _controls.currentActionMap["Movement"].canceled += ctx => Velocity(ctx.ReadValue<Vector2>());
             
@@ -36,11 +38,18 @@ public class Solo : AbstractInput
 #endif
     }
 
+    /// <summary>
+    /// Récupère la vélocité à appliquer à la plateforme
+    /// </summary>
+    /// <param name="readValue">valeur envoyé par InputSystem</param>
     private void ProgressPlatform(float readValue)
     {
         _controller.puzzle.cmActual.SetPlatformProgress(readValue);
     }
 
+    /// <summary>
+    /// Mise à jour des variables du personnage lors d'Update.
+    /// </summary>
     public override void InputUpdate()
     {
 
@@ -53,9 +62,17 @@ public class Solo : AbstractInput
 
     }
 
+    
+    /// <summary>
+    /// Mise à jour des variables du personnage lors de FixedUpdate.
+    /// </summary>
     public override void InputFixed() {}
 
 
+    
+    /// <summary>
+    /// Déplacement du personnage.
+    /// </summary>
     public override void MovePlayer()
     {
         _controller.velocity = Quaternion.Euler(0,_controller.cam.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
@@ -70,24 +87,38 @@ public class Solo : AbstractInput
         }
     }
 
-
- 
+    
+    /// <summary>
+    /// Détecte la vélocité de la souris
+    /// </summary>
     private void MouseCamera()
     {
-        
-        _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y")) * 0.8f);
+
+        _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * 0.8f);
     }
-    
-    
-    // Input Manager
+
+    /// <summary>
+    /// Récupère la vélocité à appliquer au personnage
+    /// </summary>
+    /// <param name="readValue">valeur envoyé par InputSystem</param>
     public void Velocity(Vector2 readValue)
     {
         _move = new Vector2(readValue.x, readValue.y);
     }
+    
+    /// <summary>
+    /// Récupère la vélocité à appliquer au soleil
+    /// </summary>
+    /// <param name="angle">valeur envoyé par InputSystem</param>
     public void RotateSun(float angle)
     {
         _gotoAngleVelocity = angle;
     }
+    
+    /// <summary>
+    /// Récupère la vélocité à appliquer à la caméra
+    /// </summary>
+    /// <param name="velocity">valeur envoyé par InputSystem</param>
     public void VelocityCam(Vector2 velocity)
     {
         _controller.cam.Rotate(velocity);
