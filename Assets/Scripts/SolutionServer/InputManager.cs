@@ -36,10 +36,12 @@ public class InputManager : ControllerBehavior
             {
                 controller.inputs = new OnlinePlayer(controller,this);
                 FindObjectOfType<MultiMonitor>().OnlinePlayer();
+                StaticClass.serverType = StaticClass.ServerType.SUN;
             }
             else
             {
                 controller.inputs = new OnlineSun(controller,this);
+                StaticClass.serverType = StaticClass.ServerType.PLAYER;
             }
         }
         
