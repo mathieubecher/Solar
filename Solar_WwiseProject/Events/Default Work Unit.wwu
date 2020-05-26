@@ -91,7 +91,7 @@
 												<Action Name="" ID="{9BE34F6B-48A2-4B4E-A294-AD068C593224}" ShortID="730185991">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="38"/>
-														<Property Name="GameParameterValue" Type="Real64" Value="35"/>
+														<Property Name="GameParameterValue" Type="Real64" Value="60"/>
 														<Property Name="Scope" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>
@@ -104,10 +104,20 @@
 										</Event>
 										<Event Name="Cha_Hurt" ID="{8D2FD11F-A280-4DF0-A1F1-16E4AA776625}">
 											<ChildrenList>
+												<Action Name="" ID="{F25BA27C-E25A-4796-859C-A1A8B48713E9}" ShortID="117402795">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="23"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="isHurting" ID="{EE9D29D8-0B28-40CE-A6BB-829669375CA5}" WorkUnitID="{53F1FF98-385A-4108-A4F3-AF5283BC8DF9}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
 												<Action Name="" ID="{86B3D609-E852-444E-A2C3-92079F6A4396}" ShortID="652395998">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="38"/>
-														<Property Name="GameParameterValue" Type="Real64" Value="90"/>
+														<Property Name="GameParameterValue" Type="Real64" Value="100"/>
 														<Property Name="Scope" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>

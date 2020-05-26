@@ -24,8 +24,52 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: cbb31e6cefe2e64c8308806bca5ec1fc
     GuidInternal: 
-    m_lastTime: -8586129393246260416
+    m_lastTime: -8586111923457834199
     List:
+    - name: Ambiance_Bus
+      guid: 68e5fd2984b3814cb1b5252b9099c7bb
+      id: 3161292138
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Ambiance_Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Ambiance_Bus
+    - name: Breathing_Bus
+      guid: 7e582e90525f1843bbf484185ba1386d
+      id: 3834658866
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Breathing_Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Breathing_Bus
+    - name: Foleys_Bus
+      guid: 113f38243e0533448c86f1951086c8e7
+      id: 1306998534
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Foleys_Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Foleys_Bus
+    - name: FX
+      guid: 1c31ecac1f36e94bb05642b1f9986e37
+      id: 1802970371
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: FX
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\FX
     - name: Int_Lvl01_Acoustic
       guid: f378abc2057b114c8336bb168f154956
       id: 1571012312
@@ -34,11 +78,11 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Master Audio Bus
         ObjectType: 2
-      - ElementName: Temple
-        ObjectType: 1
+      - ElementName: FX
+        ObjectType: 2
       - ElementName: Int_Lvl01_Acoustic
         ObjectType: 2
-      Path: Default Work Unit\Master Audio Bus\Temple\Int_Lvl01_Acoustic
+      Path: Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic
     - name: Int_Lvl01_Fx
       guid: f608b582e66eb349904b8dade0f771b7
       id: 2514557383
@@ -47,13 +91,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Master Audio Bus
         ObjectType: 2
-      - ElementName: Temple
-        ObjectType: 1
+      - ElementName: FX
+        ObjectType: 2
       - ElementName: Int_Lvl01_Acoustic
         ObjectType: 2
       - ElementName: Int_Lvl01_Fx
         ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\Temple\Int_Lvl01_Acoustic\Int_Lvl01_Fx
+      Path: Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -63,17 +107,32 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
-    - name: Temple
-      guid: 54e5477b64d41749a328d76a1c7c645c
-      id: 2323193050
+    - name: Music_Bus
+      guid: 85fa95fec7d8af46b6394e9995364634
+      id: 2680856269
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Master Audio Bus
         ObjectType: 2
-      - ElementName: Temple
+      - ElementName: Music_Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Music_Bus
+    - name: Sidechain_Music
+      guid: 5fc581fa1d010d4e9f1dd8be90e52f44
+      id: 1657183839
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: FX
+        ObjectType: 2
+      - ElementName: Int_Lvl01_Acoustic
+        ObjectType: 2
+      - ElementName: Sidechain_Music
         ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\Temple
+      Path: Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Sidechain_Music
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPath: Default Work Unit
@@ -95,7 +154,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f62c9fea2fdc9049963bd5bc5510a430
     GuidInternal: 
-    m_lastTime: -8586121571848747784
+    m_lastTime: -8586111922600962668
     List:
     - name: ALL
       guid: feb41afcf094434080809b90df1849fe
@@ -469,9 +528,9 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Music_Drop
-      guid: 3e3a742ceaad19448d2d2e4053adedf4
-      id: 2212149258
+    - name: Music_Lvl01_Bridge1
+      guid: 4fb7137dbc8aa946a2959c850cdbfa98
+      id: 771829065
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -479,9 +538,73 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Music
         ObjectType: 4
-      - ElementName: Music_Drop
+      - ElementName: Music_Lvl01_Bridge1
         ObjectType: 3
-      Path: Default Work Unit\ALL\Music\Music_Drop
+      Path: Default Work Unit\ALL\Music\Music_Lvl01_Bridge1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music_Lvl01_Kiosk1
+      guid: 259179620ecb1d4d9378139512600054
+      id: 2884165201
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Music_Lvl01_Kiosk1
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Music\Music_Lvl01_Kiosk1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music_Lvl01_Kiosk2
+      guid: f93fb39c13577d43902a664634d6c543
+      id: 2884165202
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Music_Lvl01_Kiosk2
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Music\Music_Lvl01_Kiosk2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music_Lvl01_Kiosk3
+      guid: 3c696370844aed4598931edecbf8d4b7
+      id: 2884165203
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Music_Lvl01_Kiosk3
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Music\Music_Lvl01_Kiosk3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music_Lvl01_Temple
+      guid: d3eddcf0081ec441a8f36401a6f3bfb9
+      id: 503471100
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Music_Lvl01_Temple
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Music\Music_Lvl01_Temple
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -501,35 +624,17 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Music_PostIntro
-      guid: 0354a453b38d6d438ec2e3c13fbe0341
-      id: 3194768471
+    - name: Plateform_Moving_Play
+      guid: 4f706c45a6038d4994ecfc0a4deea59e
+      id: 3078438999
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: ALL
         ObjectType: 4
-      - ElementName: Music
-        ObjectType: 4
-      - ElementName: Music_PostIntro
+      - ElementName: Plateform_Moving_Play
         ObjectType: 3
-      Path: Default Work Unit\ALL\Music\Music_PostIntro
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Music_Stop
-      guid: 40aee0805b5ccf4ab74b64818ef8fb81
-      id: 3227181061
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: ALL
-        ObjectType: 4
-      - ElementName: Music
-        ObjectType: 4
-      - ElementName: Music_Stop
-        ObjectType: 3
-      Path: Default Work Unit\ALL\Music\Music_Stop
+      Path: Default Work Unit\ALL\Plateform_Moving_Play
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -552,7 +657,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c351adaffa0926499d3369b21999a571
     GuidInternal: 
-    m_lastTime: -8586122435825371545
+    m_lastTime: -8586111919940237264
     List:
     - name: Amb_RTPC
       guid: 84e709144ae8ee45b8f32e8112055082
@@ -572,6 +677,15 @@ MonoBehaviour:
       - ElementName: Breath_RTPC
         ObjectType: 13
       Path: Default Work Unit\Breath_RTPC
+    - name: RTPC_AstroSidechain
+      guid: 35d75b0ce717d04fb4a5f2bf295bba0f
+      id: 2972377204
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_AstroSidechain
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_AstroSidechain
     - name: RTPC_Distance_Sun
       guid: 91f4c94e645e1247a19706c225eeaab1
       id: 2257099397
@@ -581,6 +695,15 @@ MonoBehaviour:
       - ElementName: RTPC_Distance_Sun
         ObjectType: 13
       Path: Default Work Unit\RTPC_Distance_Sun
+    - name: RTPC_Plateform_Velocity
+      guid: 0169a0edc2dcb343a46bc63cda2e1e86
+      id: 3829022635
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Plateform_Velocity
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Plateform_Velocity
     - name: RTPC_Sun_Velocity
       guid: 8e51189e63d22c4297b389a763c30da6
       id: 582120507
@@ -604,7 +727,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 8d677a4eefbf304cb66e086a1eaa1126
     GuidInternal: 
-    m_lastTime: -8586123173848807478
+    m_lastTime: -8586120745262922124
     List:
     - name: Ambiances
       guid: b5f994637803be4c96ff1e6db35df03b
@@ -668,35 +791,41 @@ MonoBehaviour:
         ObjectType: 9
       Path: Default Work Unit\Music_State
       values:
-      - name: Drop
-        guid: 13309c9698c03c4e8a39dba065d2084d
-        id: 1878686274
-        PathAndIcons:
-        - ElementName: Drop
-          ObjectType: 8
-      - name: Intro
-        guid: 17ed36319943ac4eab4f2502cd3a9d13
-        id: 1125500713
-        PathAndIcons:
-        - ElementName: Intro
-          ObjectType: 8
       - name: None
         guid: 0c2596d51f41104bb71bb7e0b18d347b
         id: 748895195
         PathAndIcons:
         - ElementName: None
           ObjectType: 8
-      - name: Outro
-        guid: 48161ec54f0343488be728edb0b377c9
-        id: 4184794294
+      - name: Part01
+        guid: 17ed36319943ac4eab4f2502cd3a9d13
+        id: 2201513847
         PathAndIcons:
-        - ElementName: Outro
+        - ElementName: Part01
           ObjectType: 8
-      - name: Post_Intro
-        guid: d0efdfdd01e06c4b9659e07fa3889d5d
-        id: 2098910396
+      - name: Part02
+        guid: 43c7370e84b9cf43b5355958b0e205f8
+        id: 2201513844
         PathAndIcons:
-        - ElementName: Post_Intro
+        - ElementName: Part02
+          ObjectType: 8
+      - name: Part03
+        guid: 423bcfe6a1bda24b9e809174ccfbfdaa
+        id: 2201513845
+        PathAndIcons:
+        - ElementName: Part03
+          ObjectType: 8
+      - name: Part04
+        guid: 1c33028c56f6fd47b3444290daf0ca9a
+        id: 2201513842
+        PathAndIcons:
+        - ElementName: Part04
+          ObjectType: 8
+      - name: Part05
+        guid: 33503817f3e04b4f8d0099c647357501
+        id: 2201513843
+        PathAndIcons:
+        - ElementName: Part05
           ObjectType: 8
       ValueGuids: []
       ValueIcons: []
@@ -706,7 +835,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 98fff1535a380841a4f3af5283bc8df9
     GuidInternal: 
-    m_lastTime: -8586122445019828923
+    m_lastTime: -8586111923457774068
     List:
     - name: Breath_Switch
       guid: 154f162208a86041a24076776ff2f0b5

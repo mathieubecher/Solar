@@ -605,6 +605,74 @@
 										</CustomStateList>
 									</StateInfo>
 								</BlendContainer>
+								<Sound Name="Amb_Ext_Desert_View" ID="{C5196A59-6F80-465A-9549-8711B56B38F4}" ShortID="1013779356">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="amb_desert_beautifulview" ID="{7983323C-1288-4BC1-B071-DF2B6B193FB1}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="9263.158"/>
+												<Property Name="LoopBegin" Type="Real64" Value="5.64271588661833"/>
+												<Property Name="LoopEnd" Type="Real64" Value="68.9255108767304"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>amb_desert_beautifulview.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="693437066"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="Amb_Lvl01" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}"/>
+												<CustomState Name="" ID="{E3504F7A-9FD2-4721-9528-C734E4C668B3}" ShortID="584172470">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
+												<CustomState Name="" ID="{5015A7F7-3075-43CA-AA25-16C089531E6C}" ShortID="335228161">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Ext_Lvl01_Desert_View" ID="{9B72EE0B-9760-4D2B-B9CE-1752501D274D}"/>
+												<CustomState Name="" ID="{5E4F86BF-BD45-44B0-97ED-24BC5175B9DC}" ShortID="1042494968"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Ext_Lvl01_Desert_Kiosk" ID="{FC399029-B1DF-4FF4-9006-8DF9F1A6A27F}"/>
+												<CustomState Name="" ID="{3724FCD6-6A02-437D-9ACF-760F1076D76B}" ShortID="350349921">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+									<ActiveSourceList>
+										<ActiveSource Name="amb_desert_beautifulview" ID="{7983323C-1288-4BC1-B071-DF2B6B193FB1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 							<BlendTrackList>
 								<BlendTrack Name="Amb_Blend" ID="{594EC151-B4E0-41AD-816C-8C29F097E60C}" ShortID="863984996">
