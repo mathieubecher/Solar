@@ -97,7 +97,7 @@
         float cosTime = _CosTime.w*0.2;
         float gradientvalue;
         Unity_GradientNoise_float(input.texcoord + float2(cosTime,time)*0.05,100,gradientvalue);
-        float value =1-min(1,max(0,GetWorldFromViewPosition(input).y/3));
+        float value =1-min(1,max(0,(GetWorldFromViewPosition(input).y )/3));
         uint2 newpos = (input.texcoord) * _ScreenSize.xy  + float2(gradientvalue,gradientvalue) * _DeformPow * (1-lerpDepth) * _Intensity * value;
         
         float3 deform = LOAD_TEXTURE2D_X(_InputTexture, newpos).xyz;
@@ -107,10 +107,6 @@
         return float4(deform,1); //float4(outColor,1); // float4(outColor, 1);
     }
     
-    
-    
-    
-        
     
     ENDHLSL
 

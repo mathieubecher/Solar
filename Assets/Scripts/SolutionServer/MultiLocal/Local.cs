@@ -17,22 +17,36 @@ public class Local : AbstractInput
         
     }
 
+    /// <summary>
+    /// Mise à jour des variables du personnage lors d'Update.
+    /// </summary>
     public override void InputUpdate()
     {
+        // Applique la velocité de la camera
         MoveCamera();
+        // Applique la vélocité du personnage et du soleil
         if (!_controller.IsDead())
         {
             MovePlayer();
             RotateSun();
+            ProgressPlatform();
         }
     }
-    
+
+
+    /// <summary>
+    /// Déplacement du personnage.
+    /// </summary>
     public override void MovePlayer()
     {
+        // ignore cette étape si le joueur ne controle pas le personnage
         if (!_hasPlayer) return;
+        
+        // transforme la valeur de l'input en velocité pour le joueur
         _move = _player.Move;
         _controller.velocity = Quaternion.Euler(0,_controller.cam.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
-
+        
+        // met à jour la rotation du joueur en fonction de la vélocité calculée
         if (_controller.velocity.magnitude > 0)
         {
             _controller.transform.rotation = Quaternion.LookRotation(_controller.velocity);
@@ -42,20 +56,39 @@ public class Local : AbstractInput
             _controller.velocity = Vector3.zero;
         }
     }
+    /// <summary>
+    /// Déplacement du soleil.
+    /// </summary>
     private void RotateSun()
     {
         if (!_hasSun) return;
         _gotoAngleVelocity = _sun.AngleVelocity;
         _controller.sun._gotoAngle += _gotoAngleVelocity * _controller.sun._maxRotateSpeed * Time.deltaTime;
     }
-
+    
+    /// <summary>
+    /// Déplacement de la caméra.
+    /// </summary>
     private void MoveCamera()
     {
         if (!_hasPlayer) return;
         _controller.cam.RotateMouse(_player.RotateMouse);
         _controller.cam.Rotate(_player.Rotate);
     }
+    
+    /// <summary>
+    /// Déplacement des plateformes.
+    /// </summary>
+    private void ProgressPlatform()
+    {
+        _controller.puzzle.cmActual.SetPlatformProgress(_sun.VelocityPlatform);
+    }
 
+    /// <summary>
+    /// Défini les input du personnage.
+    /// </summary>
+    /// <param name="inputLocal"></param>
+    /// <returns>Renvoie le type du player</returns>
     public int SetInput(InputLocal inputLocal)
     {
         if(_hasPlayer)

@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedInterpol("{\"inter\":[0,0,0.15,0.15,0]")]
+	[GeneratedInterpol("{\"inter\":[0,0,0.15,0,0]")]
 	public partial class ControllerNetworkObject : NetworkObject
 	{
-		public const int IDENTITY = 2;
+		public const int IDENTITY = 8;
 
 		private byte[] _dirtyFields = new byte[1];
 
@@ -111,7 +111,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		[ForgeGeneratedField]
 		private float _sunrotation;
 		public event FieldEvent<float> sunrotationChanged;
-		public InterpolateFloat sunrotationInterpolation = new InterpolateFloat() { LerpT = 0.15f, Enabled = true };
+		public InterpolateFloat sunrotationInterpolation = new InterpolateFloat() { LerpT = 0f, Enabled = false };
 		public float sunrotation
 		{
 			get { return _sunrotation; }

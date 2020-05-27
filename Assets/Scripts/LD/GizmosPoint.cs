@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Points utilisable pour les graphs et trajectoires.
+/// </summary>
 public class GizmosPoint : MonoBehaviour
 {
     #if UNITY_EDITOR

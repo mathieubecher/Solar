@@ -27,11 +27,13 @@
 												<XPos>0</XPos>
 												<YPos>75</YPos>
 												<Flags>5</Flags>
+												<SegmentShape>SCurve</SegmentShape>
 											</Point>
 											<Point>
-												<XPos>99</XPos>
-												<YPos>50</YPos>
+												<XPos>56.713</XPos>
+												<YPos>52</YPos>
 												<Flags>0</Flags>
+												<SegmentShape>SCurve</SegmentShape>
 											</Point>
 											<Point>
 												<XPos>100</XPos>
@@ -105,7 +107,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>2</Value>
+										<Value>5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -118,143 +120,13 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<BlendContainer Name="Amb_Desert_Calm" ID="{C91756AB-4289-4E84-B23A-7A61B95214F0}" ShortID="167118869">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
-										</Reference>
-										<Reference Name="Effect0">
-											<Custom>
-												<Effect Name="Wwise_Meter_(Custom)" ID="{2728D896-093B-4371-9184-06FF04B311B2}" ShortID="200938609" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
-													<PropertyList>
-														<Property Name="AttackTime" Type="Real32" Value="1"/>
-														<Property Name="Hold" Type="Real32" Value="0.5"/>
-														<Property Name="ReleaseTime" Type="Real32" Value="2"/>
-													</PropertyList>
-													<PluginData>
-	<GameParameter Name="RTPC_WindGain" ID="{C1A5BC66-B4DF-474B-9AEE-1068B3D47755}"/>
-</PluginData>
-												</Effect>
-											</Custom>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="amb_desert_02_calm2" ID="{0B484D07-92E0-4FEF-9D1D-5855BFD8F186}" ShortID="991648396">
-											<PropertyList>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>3</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="amb_desert_02_calm2" ID="{807EF654-C9E4-4335-8A41-25495504A04E}">
-													<PropertyList>
-														<Property Name="CrossfadeDuration" Type="Real64" Value="2947.368"/>
-														<Property Name="LoopBegin" Type="Real64" Value="3.64383561643836"/>
-														<Property Name="LoopEnd" Type="Real64" Value="33.9452054794521"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>amb_desert_02_calm2.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="881745992"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_desert_02_calm2" ID="{807EF654-C9E4-4335-8A41-25495504A04E}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="amb_desert_02_calm" ID="{D5BF4AB1-A1A9-4C8A-AC62-43D695C08306}" ShortID="942632885">
-											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="amb_desert_02_calm" ID="{3604F4DC-05AC-4A3D-9196-FC4EEB02EF6E}">
-													<Language>SFX</Language>
-													<AudioFile>amb_desert_02_calm.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="935140790"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_desert_02_calm" ID="{3604F4DC-05AC-4A3D-9196-FC4EEB02EF6E}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
-									<StateInfo>
-										<StateGroupList>
-											<StateGroupInfo>
-												<StateGroupRef Name="Amb_Lvl01" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
-											</StateGroupInfo>
-										</StateGroupList>
-										<CustomStateList>
-											<CustomState>
-												<StateRef Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}"/>
-												<CustomState Name="" ID="{0BB88894-85F8-4C40-8B63-825EC9E418F4}" ShortID="113987348">
-													<PropertyList>
-														<Property Name="Volume" Type="Real64" Value="-108"/>
-													</PropertyList>
-												</CustomState>
-											</CustomState>
-											<CustomState>
-												<StateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
-												<CustomState Name="" ID="{74556E94-AB97-4845-9FB4-08C684CC00C3}" ShortID="562756469">
-													<PropertyList>
-														<Property Name="Volume" Type="Real64" Value="-108"/>
-													</PropertyList>
-												</CustomState>
-											</CustomState>
-											<CustomState>
-												<StateRef Name="Ext_Lvl01_Desert_View" ID="{9B72EE0B-9760-4D2B-B9CE-1752501D274D}"/>
-												<CustomState Name="" ID="{4315E431-59F1-481B-9D88-358D0981A289}" ShortID="165324578">
-													<PropertyList>
-														<Property Name="Volume" Type="Real64" Value="-108"/>
-													</PropertyList>
-												</CustomState>
-											</CustomState>
-											<CustomState>
-												<StateRef Name="Ext_Lvl01_Desert_Kiosk" ID="{FC399029-B1DF-4FF4-9006-8DF9F1A6A27F}"/>
-												<CustomState Name="" ID="{600C798F-4E03-4DDC-ACC5-75562EDCF256}" ShortID="872605555"/>
-											</CustomState>
-										</CustomStateList>
-									</StateInfo>
-								</BlendContainer>
-								<Sound Name="amb_desert_02" ID="{137E8615-C3E5-4E00-A9FB-72C2A2A6A6E7}" ShortID="123102016">
+								<Sound Name="Amb_Lvl01_Ext_Global" ID="{137E8615-C3E5-4E00-A9FB-72C2A2A6A6E7}" ShortID="123102016">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="ListenerRelativeRouting" Type="bool" Value="False"/>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-3</Value>
-											</ValueList>
-										</Property>
+										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -262,6 +134,9 @@
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="Int_Lvl01_Fx" ID="{82B508F6-6EE6-49B3-904B-8DADE0F771B7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
@@ -284,7 +159,18 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<PositioningInfo>
+										<Panner Name="" ID="{B216E624-70CE-43A4-954A-9403A60CC788}"/>
+									</PositioningInfo>
 									<StateInfo>
+										<StatePropertyList>
+											<Property Name="Highpass"/>
+											<Property Name="Lowpass"/>
+											<Property Name="MakeUpGain"/>
+											<Property Name="Pitch"/>
+											<Property Name="UserAuxSendVolume0"/>
+											<Property Name="Volume"/>
+										</StatePropertyList>
 										<StateGroupList>
 											<StateGroupInfo>
 												<StateGroupRef Name="Amb_Lvl01" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
@@ -293,25 +179,38 @@
 										<CustomStateList>
 											<CustomState>
 												<StateRef Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}"/>
-												<CustomState Name="" ID="{59BA935B-540D-4EDD-8E57-00550DDF2D5C}" ShortID="614202830"/>
+												<CustomState Name="" ID="{23375C91-4297-444E-8736-4365072D8004}" ShortID="118305506">
+													<PropertyList>
+														<Property Name="UserAuxSendVolume0" Type="Real64" Value="-108"/>
+														<Property Name="Volume" Type="Real64" Value="-8"/>
+													</PropertyList>
+												</CustomState>
 											</CustomState>
 											<CustomState>
 												<StateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
-												<CustomState Name="" ID="{7B631562-380B-4F24-A00C-331D5B9F2A50}" ShortID="92086845">
+												<CustomState Name="" ID="{98E6C9AD-5BF3-43B3-A340-7E930F64C7EA}" ShortID="558529458">
 													<PropertyList>
-														<Property Name="Volume" Type="Real64" Value="-108"/>
+														<Property Name="Lowpass" Type="int16" Value="35"/>
+														<Property Name="Volume" Type="Real64" Value="-20"/>
 													</PropertyList>
 												</CustomState>
 											</CustomState>
 											<CustomState>
 												<StateRef Name="Ext_Lvl01_Desert_View" ID="{9B72EE0B-9760-4D2B-B9CE-1752501D274D}"/>
-												<CustomState Name="" ID="{CD05FA8F-6DEF-4018-8B27-5A705B7FC41F}" ShortID="285107538"/>
+												<CustomState Name="" ID="{BA4DE15A-6B7F-4A5B-AE43-12E5B763F591}" ShortID="657787100">
+													<PropertyList>
+														<Property Name="UserAuxSendVolume0" Type="Real64" Value="-108"/>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
 											</CustomState>
 											<CustomState>
 												<StateRef Name="Ext_Lvl01_Desert_Kiosk" ID="{FC399029-B1DF-4FF4-9006-8DF9F1A6A27F}"/>
-												<CustomState Name="" ID="{22F9D57A-C3F9-40BA-81FF-6DB9196EFB69}" ShortID="427693847">
+												<CustomState Name="" ID="{1B266C01-DB01-4237-9121-194508DF1FC9}" ShortID="516106536">
 													<PropertyList>
-														<Property Name="Volume" Type="Real64" Value="-108"/>
+														<Property Name="Lowpass" Type="int16" Value="25"/>
+														<Property Name="UserAuxSendVolume0" Type="Real64" Value="-108"/>
+														<Property Name="Volume" Type="Real64" Value="-11"/>
 													</PropertyList>
 												</CustomState>
 											</CustomState>
@@ -321,14 +220,9 @@
 										<ActiveSource Name="amb_desert_02" ID="{3D7821CA-F123-492C-830A-3FCD7668F218}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="amb_int_01" ID="{C62F04B4-F970-45C7-BDE9-0C7C4A619E52}" ShortID="334362901">
+								<Sound Name="amb_desert_02_calm2" ID="{0B484D07-92E0-4FEF-9D1D-5855BFD8F186}" ShortID="991648396">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>6</Value>
-											</ValueList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -336,7 +230,7 @@
 										</Reference>
 										<Reference Name="Effect0">
 											<Custom>
-												<Effect Name="Wwise_Meter_(Custom)" ID="{A03CC734-98FA-4910-A2C0-E71E2EC22A93}" ShortID="83270789" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+												<Effect Name="Wwise_Meter_(Custom)" ID="{4B967046-9667-4793-A8BE-956964822F38}" ShortID="776527512" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
 													<PropertyList>
 														<Property Name="AttackTime" Type="Real32" Value="1"/>
 														<Property Name="Hold" Type="Real32" Value="0.5"/>
@@ -353,17 +247,17 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="amb_int_01" ID="{984B306D-D271-4DC3-A49F-2CF8087AF6BA}">
+										<AudioFileSource Name="amb_desert_02_calm2" ID="{807EF654-C9E4-4335-8A41-25495504A04E}">
 											<PropertyList>
-												<Property Name="CrossfadeDuration" Type="Real64" Value="2273.684"/>
-												<Property Name="LoopBegin" Type="Real64" Value="2.3013698630137"/>
-												<Property Name="LoopEnd" Type="Real64" Value="30.2465753424658"/>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="2947.368"/>
+												<Property Name="LoopBegin" Type="Real64" Value="3.64383561643836"/>
+												<Property Name="LoopEnd" Type="Real64" Value="33.9452054794521"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 											</PropertyList>
 											<Language>SFX</Language>
-											<AudioFile>amb_int_01.wav</AudioFile>
+											<AudioFile>amb_desert_02_calm2.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="718226633"/>
+												<MediaID ID="881745992"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
@@ -376,7 +270,7 @@
 										<CustomStateList>
 											<CustomState>
 												<StateRef Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}"/>
-												<CustomState Name="" ID="{D2615716-4A01-41A3-89D6-A57F8060BA3C}" ShortID="129864358">
+												<CustomState Name="" ID="{73A3CA56-B9B0-414E-AA5B-106854CE8098}" ShortID="724598408">
 													<PropertyList>
 														<Property Name="Volume" Type="Real64" Value="-108"/>
 													</PropertyList>
@@ -384,11 +278,15 @@
 											</CustomState>
 											<CustomState>
 												<StateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
-												<CustomState Name="" ID="{D593777C-6BFB-45BC-B228-D0A8ABC65D65}" ShortID="967221571"/>
+												<CustomState Name="" ID="{0619FE82-9C66-4172-9744-3C63EF7E35DB}" ShortID="217052087">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
 											</CustomState>
 											<CustomState>
 												<StateRef Name="Ext_Lvl01_Desert_View" ID="{9B72EE0B-9760-4D2B-B9CE-1752501D274D}"/>
-												<CustomState Name="" ID="{838F728F-DF7E-43DF-B6A6-47E05E62A82C}" ShortID="733635236">
+												<CustomState Name="" ID="{B013F957-A147-4556-9DD0-BDEC9306CB3A}" ShortID="722621286">
 													<PropertyList>
 														<Property Name="Volume" Type="Real64" Value="-108"/>
 													</PropertyList>
@@ -396,7 +294,7 @@
 											</CustomState>
 											<CustomState>
 												<StateRef Name="Ext_Lvl01_Desert_Kiosk" ID="{FC399029-B1DF-4FF4-9006-8DF9F1A6A27F}"/>
-												<CustomState Name="" ID="{7FFBD139-0BDF-4BAB-AB6B-8FAAA63D3390}" ShortID="87726960">
+												<CustomState Name="" ID="{0681B170-4EA3-46D6-AF64-D9A4BD0CC13E}" ShortID="531184956">
 													<PropertyList>
 														<Property Name="Volume" Type="Real64" Value="-108"/>
 													</PropertyList>
@@ -405,9 +303,305 @@
 										</CustomStateList>
 									</StateInfo>
 									<ActiveSourceList>
-										<ActiveSource Name="amb_int_01" ID="{984B306D-D271-4DC3-A49F-2CF8087AF6BA}" Platform="Linked"/>
+										<ActiveSource Name="amb_desert_02_calm2" ID="{807EF654-C9E4-4335-8A41-25495504A04E}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<BlendContainer Name="Amb_Lvl01_Int_Temple" ID="{31027357-3124-40F0-98C2-90CCF9B3302A}" ShortID="114787963">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Amb_Lvl01_Int" ID="{D5BF4AB1-A1A9-4C8A-AC62-43D695C08306}" ShortID="942632885">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>40</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+												</Reference>
+												<Reference Name="Effect0">
+													<Custom>
+														<Effect Name="Wwise_Meter_(Custom)" ID="{81DB3D6F-EAFF-4FC3-9487-B44526DC22F8}" ShortID="300751018" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+															<PropertyList>
+																<Property Name="AttackTime" Type="Real32" Value="1"/>
+																<Property Name="Hold" Type="Real32" Value="0.5"/>
+																<Property Name="ReleaseTime" Type="Real32" Value="2"/>
+															</PropertyList>
+															<PluginData>
+	<GameParameter Name="RTPC_WindGain" ID="{C1A5BC66-B4DF-474B-9AEE-1068B3D47755}"/>
+</PluginData>
+														</Effect>
+													</Custom>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="amb_desert_02_calm" ID="{3604F4DC-05AC-4A3D-9196-FC4EEB02EF6E}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="12140.799"/>
+														<Property Name="LoopBegin" Type="Real64" Value="29.6879267022124"/>
+														<Property Name="LoopEnd" Type="Real64" Value="79.9401733640061"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="22.4469689699655"/>
+														<Property Name="TrimEnd" Type="Real64" Value="88.3396843334125"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>amb_desert_02_calm.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="935140790"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="amb_int_01" ID="{984B306D-D271-4DC3-A49F-2CF8087AF6BA}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="2273.684"/>
+														<Property Name="LoopBegin" Type="Real64" Value="2.3013698630137"/>
+														<Property Name="LoopEnd" Type="Real64" Value="30.2465753424658"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+														</Reference>
+													</ReferenceList>
+													<Language>SFX</Language>
+													<AudioFile>amb_int_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="718226633"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="amb_desert_02_calm" ID="{3604F4DC-05AC-4A3D-9196-FC4EEB02EF6E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<RandomSequenceContainer Name="Amb_Lvl01_Int_Rand" ID="{05D825AE-EE8C-427C-8C82-6AFF0AA33AF8}" ShortID="942991579">
+											<PropertyList>
+												<Property Name="3DPosition" Type="int16" Value="1"/>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="InitialDelay" Type="Real64">
+													<ValueList>
+														<Value>4</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="10">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{A4A380CE-EBC1-40C9-BA64-B58DBEC9DD8A}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="5"/>
+																	<Property Name="Min" Type="Real64" Value="-3"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="UserAuxSendVolume0" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Stone_Attenuation" ID="{1628FB86-38F7-4372-8DD8-3E1DF7D1FFAD}" WorkUnitID="{91CB72B5-EEFD-40A8-945B-A933AD0F8842}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+												</Reference>
+												<Reference Name="Effect0">
+													<Custom>
+														<Effect Name="Wwise_Meter_(Custom)" ID="{D5F90690-9B4F-467C-86C7-F929F36A0756}" ShortID="905067630" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+															<PropertyList>
+																<Property Name="AttackTime" Type="Real32" Value="1"/>
+																<Property Name="Hold" Type="Real32" Value="0.5"/>
+																<Property Name="ReleaseTime" Type="Real32" Value="2"/>
+															</PropertyList>
+															<PluginData>
+	<GameParameter Name="RTPC_WindGain" ID="{C1A5BC66-B4DF-474B-9AEE-1068B3D47755}"/>
+</PluginData>
+														</Effect>
+													</Custom>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Int_Lvl01_Fx" ID="{82B508F6-6EE6-49B3-904B-8DADE0F771B7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="stones_rand-002" ID="{1C990F27-EA38-4693-92C4-613637A29396}" ShortID="851532431">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="stones_rand-002" ID="{F5B9E938-7B30-4513-9135-C03CE20ED21F}">
+															<Language>SFX</Language>
+															<AudioFile>stones_rand-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="836332354"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="stones_rand-002" ID="{F5B9E938-7B30-4513-9135-C03CE20ED21F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="stones_rand-003" ID="{7E3B7E52-9207-4DF5-92A9-D21DD2492131}" ShortID="472006553">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="stones_rand-003" ID="{A81932E5-0856-4BE1-8959-82F64ADB4B37}">
+															<Language>SFX</Language>
+															<AudioFile>stones_rand-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="966275830"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="stones_rand-003" ID="{A81932E5-0856-4BE1-8959-82F64ADB4B37}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="stones_rand-004" ID="{908C26F6-BAC2-4000-BBBD-E70E1D20FD61}" ShortID="234790653">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="stones_rand-004" ID="{33419950-27C8-4F1D-AE26-4B5ED0602066}">
+															<Language>SFX</Language>
+															<AudioFile>stones_rand-004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1071624230"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="stones_rand-004" ID="{33419950-27C8-4F1D-AE26-4B5ED0602066}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="stones_rand-001" ID="{B6F120BF-849B-45AF-9C05-729AEB375C33}" ShortID="889939305">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="stones_rand-001" ID="{C176015B-9F1E-4FAF-BA27-38FF999555F7}">
+															<Language>SFX</Language>
+															<AudioFile>stones_rand-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="120543137"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="stones_rand-001" ID="{C176015B-9F1E-4FAF-BA27-38FF999555F7}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<PositioningInfo>
+												<Position Name="" ID="{EA834896-BD0D-4020-8E99-BE378A8DAD48}">
+													<ChildrenList>
+														<Path2D Name="Stone_Rand_Path" ID="{6A5350AA-2123-4228-B77C-B6CEEC58E36B}">
+															<PropertyList>
+																<Property Name="RandomX" Type="Real64" Value="50"/>
+																<Property Name="RandomY" Type="Real64" Value="20"/>
+															</PropertyList>
+															<PointList>
+																<Point>
+																	<XPos>0</XPos>
+																	<YPos>-40</YPos>
+																	<Flags>12</Flags>
+																	<Time>0</Time>
+																</Point>
+															</PointList>
+														</Path2D>
+													</ChildrenList>
+												</Position>
+											</PositioningInfo>
+										</RandomSequenceContainer>
+									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="Amb_Lvl01" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}"/>
+												<CustomState Name="" ID="{4A8C7B61-5627-4844-B7A9-523F6FDAFDF5}" ShortID="252117105">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
+												<CustomState Name="" ID="{D6F6322D-247F-4107-9DC4-29908941367A}" ShortID="415824375">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-3"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Ext_Lvl01_Desert_View" ID="{9B72EE0B-9760-4D2B-B9CE-1752501D274D}"/>
+												<CustomState Name="" ID="{B86CBC5A-DF8D-4D2A-BC4C-798A415E62B7}" ShortID="155558672">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Ext_Lvl01_Desert_Kiosk" ID="{FC399029-B1DF-4FF4-9006-8DF9F1A6A27F}"/>
+												<CustomState Name="" ID="{54195323-003B-4A4B-A8EB-6D5D4540DAC3}" ShortID="212033869">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+								</BlendContainer>
 							</ChildrenList>
 							<BlendTrackList>
 								<BlendTrack Name="Amb_Blend" ID="{594EC151-B4E0-41AD-816C-8C29F097E60C}" ShortID="863984996">
