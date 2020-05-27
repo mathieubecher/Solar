@@ -38,6 +38,7 @@ public class Controller : MonoBehaviour
     [SerializeField] bool activeDead = true;
     public Vector3 Target {  get => _target.gameObject.transform.position;}
     
+    
     // Start is called before the first frame update
     void Awake()
     {
