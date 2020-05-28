@@ -123,12 +123,11 @@ public class Controller : MonoBehaviour
         // si la mort est activé
         if(activeDead){
             
-            animator.SetFloat("velocity", 0);
             AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", 0);
             AkSoundEngine.SetRTPCValue("RTPC_Sun_Velocity", 0);
             AkSoundEngine.PostEvent("Cha_Death_Play", this.gameObject);
-            
             animator.SetBool("die", true);
+            //animator.SetFloat("velocity", 0);
             _deatTimer = DeadTimer;
             velocity = Vector3.zero;
             _rigidbody.velocity = velocity;
