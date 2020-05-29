@@ -22,6 +22,10 @@
 							<ShortName>stones_rand-001.wav</ShortName>
 							<Path>SFX\stones_rand-001_10C4C929.wem</Path>
 						</File>
+						<File Id="693437066" Language="SFX">
+							<ShortName>amb_desert_beautifulview.wav</ShortName>
+							<Path>SFX\amb_desert_beautifulview_594C81D2.wem</Path>
+						</File>
 						<File Id="744231200" Language="SFX">
 							<ShortName>amb_desert_02.wav</ShortName>
 							<Path>SFX\amb_desert_02_D6B00BF6.wem</Path>
@@ -65,114 +69,27 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2165331746" Name="Astro_Moving_Stop" ObjectPath="\Events\Default Work Unit\ALL\Astro_Moving_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="182011575" Name="Cha_Breath_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Play" DurationType="Infinite">
+				<Event Id="186543767" Name="Cha_Breath_Expi" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Expi" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1039592238" Name="Cha_Breath_Inspi" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Inspi" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="182011575" Name="Cha_Breath_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Play" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="872937223" Name="Cha_Death_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Death_Play" DurationType="OneShot" DurationMin="4.872177" DurationMax="4.872177">
 					<IncludedMemoryFiles>
-						<File Id="49281544" Language="SFX">
-							<ShortName>fast_breath_-001.wav</ShortName>
-							<Path>SFX\fast_breath_-001_DB98B37E.wem</Path>
-						</File>
-						<File Id="60824643" Language="SFX">
-							<ShortName>slow_breath_-003.wav</ShortName>
-							<Path>SFX\slow_breath_-003_C65878D0.wem</Path>
-						</File>
-						<File Id="79531810" Language="SFX">
-							<ShortName>slow_breath_-005.wav</ShortName>
-							<Path>SFX\slow_breath_-005_A8F89F3C.wem</Path>
-						</File>
-						<File Id="418608309" Language="SFX">
-							<ShortName>slow_breath_-003.wav</ShortName>
-							<Path>SFX\slow_breath_-003_9B561665.wem</Path>
-						</File>
-						<File Id="470143034" Language="SFX">
-							<ShortName>slow_breath_-002.wav</ShortName>
-							<Path>SFX\slow_breath_-002_F808FAD5.wem</Path>
-						</File>
-						<File Id="491786789" Language="SFX">
-							<ShortName>slow_breath_-004.wav</ShortName>
-							<Path>SFX\slow_breath_-004_ACB6CB55.wem</Path>
-						</File>
-						<File Id="889565288" Language="SFX">
-							<ShortName>fast_breath_-002.wav</ShortName>
-							<Path>SFX\fast_breath_-002_973BF513.wem</Path>
-						</File>
-						<File Id="960349348" Language="SFX">
-							<ShortName>fast_breath_-001.wav</ShortName>
-							<Path>SFX\fast_breath_-001_02FF98E6.wem</Path>
-						</File>
-						<File Id="999728394" Language="SFX">
-							<ShortName>fast_breath_-002.wav</ShortName>
-							<Path>SFX\fast_breath_-002_B5BAC3D9.wem</Path>
-						</File>
-						<File Id="1016571576" Language="SFX">
-							<ShortName>slow_breath_-002.wav</ShortName>
-							<Path>SFX\slow_breath_-002_AC632333.wem</Path>
-						</File>
-						<File Id="1018653064" Language="SFX">
-							<ShortName>slow_breath_-005.wav</ShortName>
-							<Path>SFX\slow_breath_-005_52B1CEE7.wem</Path>
-						</File>
-						<File Id="1035605294" Language="SFX">
-							<ShortName>slow_breath_-004.wav</ShortName>
-							<Path>SFX\slow_breath_-004_54AFAF9B.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-					<SwitchContainers>
-						<SwitchContainer SwitchValue="{9F3CF65F-1212-4392-9770-B52E013AA7BE}">
-							<Media>
-								<File Id="1016571576"/>
-								<File Id="418608309"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}">
-							<Media>
-								<File Id="1018653064"/>
-								<File Id="491786789"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{EE9D29D8-0B28-40CE-A6BB-829669375CA5}">
-							<Media>
-								<File Id="889565288"/>
-								<File Id="960349348"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}">
-							<Media>
-								<File Id="1035605294"/>
-								<File Id="79531810"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{9F3CF65F-1212-4392-9770-B52E013AA7BE}">
-							<Media>
-								<File Id="470143034"/>
-								<File Id="60824643"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{EE9D29D8-0B28-40CE-A6BB-829669375CA5}">
-							<Media>
-								<File Id="49281544"/>
-								<File Id="999728394"/>
-							</Media>
-						</SwitchContainer>
-					</SwitchContainers>
-				</Event>
-				<Event Id="872937223" Name="Cha_Death_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Death_Play" DurationType="OneShot" DurationMin="4.100000" DurationMax="4.100000">
-					<IncludedMemoryFiles>
-						<File Id="279438939" Language="SFX">
-							<ShortName>cha_death_voice.wav</ShortName>
-							<Path>SFX\cha_death_voice_10C4C929.wem</Path>
-						</File>
-						<File Id="288145335" Language="SFX">
-							<ShortName>cha_death_v2_pt2.wav</ShortName>
-							<Path>SFX\cha_death_v2_pt2_6BF483B2.wem</Path>
-						</File>
-						<File Id="630750408" Language="SFX">
+						<File Id="381247970" Language="SFX">
 							<ShortName>cha_death_v2.wav</ShortName>
-							<Path>SFX\cha_death_v2_10C4C929.wem</Path>
+							<Path>SFX\cha_death_v2_662DB034.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1343142182" Name="Cha_Footsteps_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Footsteps\Cha_Footsteps_Play" DurationType="OneShot" DurationMin="0.666667" DurationMax="1.317674">
+				<Event Id="1343142182" Name="Cha_Footsteps_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Footsteps\Cha_Footsteps_Play" DurationType="OneShot" DurationMin="1.055363" DurationMax="1.630726">
 					<IncludedMemoryFiles>
+						<File Id="30457628" Language="SFX">
+							<ShortName>cha_footstep_sand_01-003.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_01-003_10C4C929.wem</Path>
+						</File>
+						<File Id="74051159" Language="SFX">
+							<ShortName>cha_footstep_sand_01-007.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_01-007_10C4C929.wem</Path>
+						</File>
 						<File Id="108555249" Language="SFX">
 							<ShortName>stone_footsteps_hard-006.wav</ShortName>
 							<Path>SFX\stone_footsteps_hard-006_10C4C929.wem</Path>
@@ -189,9 +106,13 @@
 							<ShortName>stone_footsteps_hard-003.wav</ShortName>
 							<Path>SFX\stone_footsteps_hard-003_10C4C929.wem</Path>
 						</File>
-						<File Id="352773824" Language="SFX">
-							<ShortName>cha_foleys_sand (2).wav</ShortName>
-							<Path>SFX\cha_foleys_sand (2)_1FFEEEC1.wem</Path>
+						<File Id="191374361" Language="SFX">
+							<ShortName>cha_footstep_sand_02-004.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_02-004_10C4C929.wem</Path>
+						</File>
+						<File Id="320773818" Language="SFX">
+							<ShortName>cha_footstep_sand_01-004.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_01-004_10C4C929.wem</Path>
 						</File>
 						<File Id="370427915" Language="SFX">
 							<ShortName>stone_footsteps_hard-002.wav</ShortName>
@@ -201,6 +122,22 @@
 							<ShortName>stone_footsteps_hard-001.wav</ShortName>
 							<Path>SFX\stone_footsteps_hard-001_10C4C929.wem</Path>
 						</File>
+						<File Id="406006456" Language="SFX">
+							<ShortName>cha_footstep_sand_01-005.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_01-005_10C4C929.wem</Path>
+						</File>
+						<File Id="439218548" Language="SFX">
+							<ShortName>cha_footstep_sand_02-002.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_02-002_10C4C929.wem</Path>
+						</File>
+						<File Id="452536381" Language="SFX">
+							<ShortName>cha_footstep_sand_01-008.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_01-008_10C4C929.wem</Path>
+						</File>
+						<File Id="469927625" Language="SFX">
+							<ShortName>cha_footstep_sand_01-006.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_01-006_10C4C929.wem</Path>
+						</File>
 						<File Id="533551184" Language="SFX">
 							<ShortName>cha_footsteps_sand_05.wav</ShortName>
 							<Path>SFX\cha_footsteps_sand_05_10C4C929.wem</Path>
@@ -209,43 +146,60 @@
 							<ShortName>stone_footsteps_hard-005.wav</ShortName>
 							<Path>SFX\stone_footsteps_hard-005_10C4C929.wem</Path>
 						</File>
-						<File Id="672561057" Language="SFX">
-							<ShortName>cha_foleys_sand (5).wav</ShortName>
-							<Path>SFX\cha_foleys_sand (5)_10C4C929.wem</Path>
+						<File Id="607460593" Language="SFX">
+							<ShortName>cha_footstep_sand_02-005.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_02-005_10C4C929.wem</Path>
 						</File>
-						<File Id="703007086" Language="SFX">
-							<ShortName>cha_foleys_sand (3).wav</ShortName>
-							<Path>SFX\cha_foleys_sand (3)_D7850D26.wem</Path>
+						<File Id="615280238" Language="SFX">
+							<ShortName>cha_footstep_sand_02-001.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_02-001_10C4C929.wem</Path>
 						</File>
 						<File Id="714571509" Language="SFX">
 							<ShortName>cha_footsteps_sand_02.wav</ShortName>
 							<Path>SFX\cha_footsteps_sand_02_10C4C929.wem</Path>
 						</File>
+						<File Id="792893649" Language="SFX">
+							<ShortName>cha_footstep_sand_02-006.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_02-006_10C4C929.wem</Path>
+						</File>
 						<File Id="821191582" Language="SFX">
 							<ShortName>stone_footsteps_hard-004.wav</ShortName>
 							<Path>SFX\stone_footsteps_hard-004_10C4C929.wem</Path>
+						</File>
+						<File Id="943839916" Language="SFX">
+							<ShortName>cha_footstep_sand_02-003.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_02-003_10C4C929.wem</Path>
 						</File>
 						<File Id="1011376572" Language="SFX">
 							<ShortName>cha_footsteps_sand_03.wav</ShortName>
 							<Path>SFX\cha_footsteps_sand_03_10C4C929.wem</Path>
 						</File>
-						<File Id="1046695966" Language="SFX">
-							<ShortName>cha_foleys_sand (4).wav</ShortName>
-							<Path>SFX\cha_foleys_sand (4)_10C4C929.wem</Path>
+						<File Id="1064452481" Language="SFX">
+							<ShortName>cha_footstep_sand_01-001.wav</ShortName>
+							<Path>SFX\cha_footstep_sand_01-001_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
 						<SwitchContainer SwitchValue="{569C2DF3-2300-48E3-A79C-55536C42AD41}">
 							<Media>
+								<File Id="469927625"/>
+								<File Id="74051159"/>
+								<File Id="452536381"/>
+								<File Id="1064452481"/>
+								<File Id="30457628"/>
+								<File Id="320773818"/>
+								<File Id="406006456"/>
+								<File Id="191374361"/>
+								<File Id="607460593"/>
+								<File Id="792893649"/>
+								<File Id="615280238"/>
+								<File Id="439218548"/>
+								<File Id="943839916"/>
+								<File Id="714571509"/>
+								<File Id="1011376572"/>
 								<File Id="140851678"/>
 								<File Id="533551184"/>
 								<File Id="149248493"/>
-								<File Id="714571509"/>
-								<File Id="1011376572"/>
-								<File Id="703007086"/>
-								<File Id="1046695966"/>
-								<File Id="672561057"/>
-								<File Id="352773824"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{7F448724-BC1B-4C15-90D8-2AF4C3E0833E}">
@@ -329,6 +283,14 @@
 				</Event>
 				<Event Id="3845266727" Name="Cha_Run" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Run" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="300025675" Name="Cha_Walk" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Walk" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="372239821" Name="Flying_Sphere_Play" ObjectPath="\Events\Default Work Unit\ALL\Flying_Sphere_Play" MaxAttenuation="100.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="686565307" Language="SFX">
+							<ShortName>flyingplateform-v2.wav</ShortName>
+							<Path>SFX\flyingplateform-v2_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="771829065" Name="Music_Lvl01_Bridge1" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Bridge1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2884165201" Name="Music_Lvl01_Kiosk1" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Kiosk1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2884165202" Name="Music_Lvl01_Kiosk2" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Kiosk2" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -410,11 +372,11 @@
 			</IncludedEvents>
 			<GameParameters>
 				<GameParameter Id="582120507" Name="RTPC_Sun_Velocity" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Sun_Velocity"/>
-				<GameParameter Id="748151351" Name="Breath_RTPC" ObjectPath="\Game Parameters\Default Work Unit\Breath_RTPC"/>
 				<GameParameter Id="1687410496" Name="RTPC_WindGain" ObjectPath="\Game Parameters\Default Work Unit\RTPC_WindGain"/>
 				<GameParameter Id="2257099397" Name="RTPC_Distance_Sun" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Distance_Sun"/>
 				<GameParameter Id="2682991203" Name="Amb_RTPC" ObjectPath="\Game Parameters\Default Work Unit\Amb_RTPC"/>
 				<GameParameter Id="2972377204" Name="RTPC_AstroSidechain" ObjectPath="\Game Parameters\Default Work Unit\RTPC_AstroSidechain"/>
+				<GameParameter Id="3829022635" Name="RTPC_Plateform_Velocity" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Plateform_Velocity"/>
 			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="3826569560" Name="Music_State" ObjectPath="\States\Default Work Unit\Music_State">
@@ -435,14 +397,6 @@
 						<Switch Id="1216965916" Name="Stone" ObjectPath="\Switches\Default Work Unit\Footstep_Floor\Stone"/>
 					</Switches>
 				</SwitchGroup>
-				<SwitchGroup Id="1231199118" Name="Breath_Switch" ObjectPath="\Switches\Default Work Unit\Breath_Switch">
-					<Switches>
-						<Switch Id="2139983939" Name="isIDLE" ObjectPath="\Switches\Default Work Unit\Breath_Switch\isIDLE"/>
-						<Switch Id="3629409974" Name="isWalking" ObjectPath="\Switches\Default Work Unit\Breath_Switch\isWalking"/>
-						<Switch Id="4119476486" Name="isRunning" ObjectPath="\Switches\Default Work Unit\Breath_Switch\isRunning"/>
-						<Switch Id="1898407218" Name="isHurting" ObjectPath="\Switches\Default Work Unit\Breath_Switch\isHurting"/>
-					</Switches>
-				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX">
@@ -450,9 +404,8 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<IncludedAuxBusses>
-				<AuxBus Id="1657183839" Name="Sidechain_Music" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Sidechain_Music"/>
-				<AuxBus Id="2323193050" Name="Temple" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Temple"/>
-				<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
+				<AuxBus Id="1657183839" Name="Sidechain_Music" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Sidechain_Music"/>
+				<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
 			</IncludedAuxBusses>
 		</SoundBank>
 	</SoundBanks>

@@ -24,8 +24,52 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: cbb31e6cefe2e64c8308806bca5ec1fc
     GuidInternal: 
-    m_lastTime: -8586111942776434364
+    m_lastTime: -8586111923457834199
     List:
+    - name: Ambiance_Bus
+      guid: 68e5fd2984b3814cb1b5252b9099c7bb
+      id: 3161292138
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Ambiance_Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Ambiance_Bus
+    - name: Breathing_Bus
+      guid: 7e582e90525f1843bbf484185ba1386d
+      id: 3834658866
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Breathing_Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Breathing_Bus
+    - name: Foleys_Bus
+      guid: 113f38243e0533448c86f1951086c8e7
+      id: 1306998534
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Foleys_Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Foleys_Bus
+    - name: FX
+      guid: 1c31ecac1f36e94bb05642b1f9986e37
+      id: 1802970371
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: FX
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\FX
     - name: Int_Lvl01_Acoustic
       guid: f378abc2057b114c8336bb168f154956
       id: 1571012312
@@ -34,11 +78,11 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Master Audio Bus
         ObjectType: 2
-      - ElementName: Temple
-        ObjectType: 1
+      - ElementName: FX
+        ObjectType: 2
       - ElementName: Int_Lvl01_Acoustic
         ObjectType: 2
-      Path: Default Work Unit\Master Audio Bus\Temple\Int_Lvl01_Acoustic
+      Path: Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic
     - name: Int_Lvl01_Fx
       guid: f608b582e66eb349904b8dade0f771b7
       id: 2514557383
@@ -47,13 +91,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Master Audio Bus
         ObjectType: 2
-      - ElementName: Temple
-        ObjectType: 1
+      - ElementName: FX
+        ObjectType: 2
       - ElementName: Int_Lvl01_Acoustic
         ObjectType: 2
       - ElementName: Int_Lvl01_Fx
         ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\Temple\Int_Lvl01_Acoustic\Int_Lvl01_Fx
+      Path: Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -63,6 +107,17 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
+    - name: Music_Bus
+      guid: 85fa95fec7d8af46b6394e9995364634
+      id: 2680856269
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Music_Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Music_Bus
     - name: Sidechain_Music
       guid: 5fc581fa1d010d4e9f1dd8be90e52f44
       id: 1657183839
@@ -71,24 +126,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Master Audio Bus
         ObjectType: 2
-      - ElementName: Temple
-        ObjectType: 1
+      - ElementName: FX
+        ObjectType: 2
       - ElementName: Int_Lvl01_Acoustic
         ObjectType: 2
       - ElementName: Sidechain_Music
         ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\Temple\Int_Lvl01_Acoustic\Sidechain_Music
-    - name: Temple
-      guid: 54e5477b64d41749a328d76a1c7c645c
-      id: 2323193050
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Master Audio Bus
-        ObjectType: 2
-      - ElementName: Temple
-        ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\Temple
+      Path: Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Sidechain_Music
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPath: Default Work Unit
@@ -110,7 +154,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f62c9fea2fdc9049963bd5bc5510a430
     GuidInternal: 
-    m_lastTime: -8586111942776464299
+    m_lastTime: -8586108595870593986
     List:
     - name: ALL
       guid: feb41afcf094434080809b90df1849fe
@@ -580,6 +624,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Plateform_Moving_Play
+      guid: 4f706c45a6038d4994ecfc0a4deea59e
+      id: 3078438999
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Plateform_Moving_Play
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Plateform_Moving_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Sun_Feedback_Play
       guid: 3438ea43d4eea4409bcde7ad668d74f5
       id: 2337456342
@@ -599,7 +657,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c351adaffa0926499d3369b21999a571
     GuidInternal: 
-    m_lastTime: -8586111942776454329
+    m_lastTime: -8586111919940237264
     List:
     - name: Amb_RTPC
       guid: 84e709144ae8ee45b8f32e8112055082
@@ -637,6 +695,15 @@ MonoBehaviour:
       - ElementName: RTPC_Distance_Sun
         ObjectType: 13
       Path: Default Work Unit\RTPC_Distance_Sun
+    - name: RTPC_Plateform_Velocity
+      guid: 0169a0edc2dcb343a46bc63cda2e1e86
+      id: 3829022635
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Plateform_Velocity
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Plateform_Velocity
     - name: RTPC_Sun_Velocity
       guid: 8e51189e63d22c4297b389a763c30da6
       id: 582120507
@@ -660,7 +727,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 8d677a4eefbf304cb66e086a1eaa1126
     GuidInternal: 
-    m_lastTime: -8586111942776424406
+    m_lastTime: -8586120745262922124
     List:
     - name: Ambiances
       guid: b5f994637803be4c96ff1e6db35df03b
@@ -768,7 +835,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 98fff1535a380841a4f3af5283bc8df9
     GuidInternal: 
-    m_lastTime: -8586111952126618404
+    m_lastTime: -8586111923457774068
     List:
     - name: Breath_Switch
       guid: 154f162208a86041a24076776ff2f0b5
