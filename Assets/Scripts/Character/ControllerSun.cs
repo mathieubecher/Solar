@@ -33,12 +33,15 @@ public class ControllerSun : MonoBehaviour
     private float _pulsateSpeed = 2;
     [SerializeField] private Image _fxUI;
     [SerializeField]  private float _speedHeal=1f;
-
+    public PostProcessEffect ppeffect;
+    
+    
     private Controller _controller;
     private int _testPoint;
     
     void Awake()
     {
+        ppeffect = FindObjectOfType<PostProcessEffect>();
         _sun = FindObjectOfType<LightController>();
         _controller = GetComponent<Controller>();
         _points = new List<Point>();
@@ -138,11 +141,7 @@ public class ControllerSun : MonoBehaviour
         {
             _controller.Dying();
         }
-
     }
-    
-    
-    
     
     /// <summary>
     /// Cherche parmis les fils du GameObject les points de contact 

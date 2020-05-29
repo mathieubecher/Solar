@@ -74,5 +74,12 @@ public class CMCamera : MonoBehaviour
             p.enabled = false;
         }
     }
-    
+
+#if UNITY_EDITOR
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawSphere(transform.position,0.5f);
+    }
+#endif
 }

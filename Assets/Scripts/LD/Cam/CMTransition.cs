@@ -20,8 +20,24 @@ public class CMTransition : MonoBehaviour
         previousCollider = collides[0];
         nextCollider = collides[1];
     }
+#if UNITY_EDITOR
+    void OnDrawGizmos()
+    {
+        if (_previous != null && _next != null)
+        {
+            CameraCurve curve = GetComponent<CameraCurve>();
+            Vector3 last = _previous.transform.position;
+            foreach (GizmosPoint point in curve.Points)
+            {
+                Gizmos.DrawLine(last, point.transform.position);
+                last = point.transform.position;
 
-    
-    
+            }
+            Gizmos.DrawLine(last, _next.transform.position);
+
+
+        }
+    }
+#endif
 
 }
