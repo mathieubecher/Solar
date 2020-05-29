@@ -8,6 +8,7 @@ public class Puzzle : MonoBehaviour
     [SerializeField]
     private GameObject respawn;
 
+    [SerializeField] private CMCamera last;
     public CMCamera cam;
 
     public float beginRotate;
@@ -25,5 +26,11 @@ public class Puzzle : MonoBehaviour
     {
         //TODO Nouveau spawn
         beginRotate = sunGotoAngle;
+    }
+
+    void OnDrawGizmos()
+    {
+        if(last != null)
+        Gizmos.DrawLine(last.transform.position, cam.transform.position);
     }
 }

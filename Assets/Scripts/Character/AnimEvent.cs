@@ -80,4 +80,14 @@ public class AnimEvent : MonoBehaviour
         burnTimer = 0;
         Shader.SetGlobalFloat("timerburn", burnTimer);
     }
+
+    public void Inspiration()
+    {
+        
+    }
+
+    public void Expiration()
+    {
+        
+    }
 }
