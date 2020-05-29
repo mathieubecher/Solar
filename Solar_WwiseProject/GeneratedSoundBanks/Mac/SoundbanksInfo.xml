@@ -283,6 +283,14 @@
 				</Event>
 				<Event Id="3845266727" Name="Cha_Run" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Run" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="300025675" Name="Cha_Walk" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Walk" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="372239821" Name="Flying_Sphere_Play" ObjectPath="\Events\Default Work Unit\ALL\Flying_Sphere_Play" MaxAttenuation="100.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="686565307" Language="SFX">
+							<ShortName>flyingplateform-v2.wav</ShortName>
+							<Path>SFX\flyingplateform-v2_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="771829065" Name="Music_Lvl01_Bridge1" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Bridge1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2884165201" Name="Music_Lvl01_Kiosk1" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Kiosk1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2884165202" Name="Music_Lvl01_Kiosk2" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Kiosk2" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -344,14 +352,6 @@
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
-				</Event>
-				<Event Id="3078438999" Name="Plateform_Moving_Play" ObjectPath="\Events\Default Work Unit\ALL\Plateform_Moving_Play" MaxAttenuation="100.000000" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="686565307" Language="SFX">
-							<ShortName>flyingplateform-v2.wav</ShortName>
-							<Path>SFX\flyingplateform-v2_D79FB2B7.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2337456342" Name="Sun_Feedback_Play" ObjectPath="\Events\Default Work Unit\ALL\Sun_Feedback_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
