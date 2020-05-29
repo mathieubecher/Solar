@@ -38,6 +38,7 @@ public class Controller : MonoBehaviour
     [SerializeField] bool activeDead = true;
     public Vector3 Target {  get => _target.gameObject.transform.position;}
     
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -54,6 +55,7 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<AnimEvent>().ResetBurn();
         _rigidbody = GetComponent<Rigidbody>();
         GameManager manager = FindObjectOfType<GameManager>();
 
@@ -122,11 +124,11 @@ public class Controller : MonoBehaviour
         // si la mort est activé
         if(activeDead){
             
-            animator.SetFloat("velocity", 0);
             AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", 0);
             AkSoundEngine.SetRTPCValue("RTPC_Sun_Velocity", 0);
             AkSoundEngine.PostEvent("Cha_Death_Play", this.gameObject);
-            
+            animator.SetBool("die", true);
+            //animator.SetFloat("velocity", 0);
             _deatTimer = DeadTimer;
             velocity = Vector3.zero;
             _rigidbody.velocity = velocity;
@@ -139,7 +141,9 @@ public class Controller : MonoBehaviour
     public void Respawn()
     {
         AkSoundEngine.PostEvent("Cha_Respawn", this.gameObject);
+        animator.SetBool("die", false);
         puzzle.Dead();
+        FindObjectOfType<AnimEvent>().ResetBurn();
     }
     
     /// <summary>

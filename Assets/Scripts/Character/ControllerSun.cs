@@ -25,13 +25,14 @@ public class ControllerSun : MonoBehaviour
     private float _angleVelocity = 0;
     
     [Header("Player Reaction with Sun")]
-    private float _life = 1;
+    [SerializeField] private float _life = 1;
     public float Life => _life;
     [SerializeField] private List<Point> _points;
     [SerializeField] private Gradient fx;
     [SerializeField] private AnimationCurve _pulsate;
     private float _pulsateSpeed = 2;
     [SerializeField] private Image _fxUI;
+    [SerializeField]  private float _speedHeal=1f;
 
     private Controller _controller;
     private int _testPoint;
@@ -75,16 +76,51 @@ public class ControllerSun : MonoBehaviour
     /// </summary>
     float DefineSpeed()
     {
-        if (Mathf.Abs(_gotoAngle - _angle) > _maxRotateSpeed * Time.deltaTime)
-            _angleVelocity = Mathf.Min(_maxRotateSpeed, Mathf.Max(-_maxRotateSpeed, _angleVelocity + _speedVelocity * Mathf.Sign(_gotoAngle-_angle)));
-        else _angleVelocity = 0;
+        //Debug.Log(Mathf.Abs(_gotoAngle - _angle)+ " " + Mathf.Abs(_angleVelocity) + " " + _maxRotateSpeed);
+        if (Mathf.Abs(_gotoAngle - _angle) > Mathf.Abs(_angleVelocity)/2 && Mathf.Abs(_angleVelocity) < _maxRotateSpeed)
+            _angleVelocity = Mathf.Min(Mathf.Abs(_gotoAngle - _angle)/Time.deltaTime , Mathf.Abs(_angleVelocity) + _speedVelocity) * Mathf.Sign(_gotoAngle-_angle);
+        else if (Mathf.Abs(_gotoAngle - _angle) <= _maxRotateSpeed * Time.deltaTime) _angleVelocity = 0;
         return _angleVelocity;
     }
+
 
     /// <summary>
     ///  Calcul la vie actuel du personnage à l'aide des points de contact.
     /// </summary>
     private void SetLife()
+    {
+        
+        bool touch = false;
+        for (int i = 0; i < _points.Count; ++i)
+        {
+            _life -= _points[i].TestLight(_sun,_testPoint == i) * Time.deltaTime;
+            touch |= _points[i].Touch;
+        }
+
+        if (!touch) _life  = Mathf.Min(1, _life +_speedHeal * Time.deltaTime);
+        else if (_life <= 0)
+        {
+            _controller.Dying();
+            _life = 0;
+        }
+        
+        // Produit un son en fonction de la vie
+        AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", Mathf.Abs(_life * 100));
+
+        // Feedback visuel
+        _time = (_time + Time.deltaTime * _pulsateSpeed * (1 - _life)) % 1;
+        _fxUI.color = fx.Evaluate(1 - _life) * new Color(1, 1, 1, 0.8f + _pulsate.Evaluate(_time) * 0.2f);
+        
+        // Incrémente le point à vérifier à la prochaine frame
+        ++_testPoint;
+        if (_testPoint == _points.Count) _testPoint = 0;
+    }
+    
+    
+    /// <summary>
+    ///  Calcul la vie actuel du personnage à l'aide des points de contact.
+    /// </summary>
+    private void LastSetLife()
     {
         // Calcul la vie en fonction des points en contact avec le soleil 
         _life = _points.Count;
@@ -96,24 +132,17 @@ public class ControllerSun : MonoBehaviour
         
         _life /= _points.Count;
         
-        // Produit un son en fonction de la vie
-        AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", Mathf.Abs(_life * 100));
-
-        // Feedback visuel
-        _time = (_time + Time.deltaTime * _pulsateSpeed * (1 - _life)) % 1;
-        _fxUI.color = fx.Evaluate(1 - _life) * new Color(1, 1, 1, 0.8f + _pulsate.Evaluate(_time) * 0.2f);
         
         // Active la mort du personnage si sa vie atteint zéro
         if (_life <= 0)
         {
             _controller.Dying();
         }
-        
-        // Incrémente le point à vérifier à la prochaine frame
-        ++_testPoint;
-        if (_testPoint == _points.Count) _testPoint = 0;
 
     }
+    
+    
+    
     
     /// <summary>
     /// Cherche parmis les fils du GameObject les points de contact 

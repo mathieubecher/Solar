@@ -6,12 +6,14 @@ using UnityEngine;
 public class Point : MonoBehaviour
 {
     private bool _touch;
+    public bool Touch => _touch;
     private float _speedDamage = 0.5f;
-    private float _speedHeal=1f;
 
     private Material _parentMat;
     private float _damageValue = 0;
     private float dist = 100;
+
+    [SerializeField] private float pointForce = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,17 +23,11 @@ public class Point : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _damageValue = Mathf.Max(0, Mathf.Min(1,_damageValue + ((_touch)?_speedDamage:-_speedHeal) * Time.deltaTime));
+        //_damageValue = Mathf.Max(0, Mathf.Min(1,_damageValue + ((_touch)?_speedDamage:-_speedHeal) * Time.deltaTime));
         //_parentMat.SetFloat("_sunTouch", _damageValue);
     }
-
-    // Affiche une sphere rouge ou verte en fonction de la détection
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = (_touch)?Color.red:Color.green;
-        Gizmos.DrawSphere(transform.position,0.1f);
-    }
-
+    
+    
     /// <summary>
     /// Regarde si le soleil atteint le point de contact.
     /// </summary>
@@ -43,10 +39,12 @@ public class Point : MonoBehaviour
         if (Physics.Raycast(origin: transform.position, direction: sun.transform.rotation * Vector3.back, hitInfo: out RaycastHit hit, maxDistance:dist, layerMask: GameManager.mask))
         {
             _touch = false;
+            _damageValue = 0;
         }
         else
         {
             _touch = true;
+            _damageValue = pointForce;
         }
 
         return _damageValue;
@@ -71,4 +69,12 @@ public class Point : MonoBehaviour
     {
         _damageValue = 0;
     }
+
+    // Affiche une sphere rouge ou verte en fonction de la détection
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = (_touch)?Color.red:Color.green;
+        Gizmos.DrawSphere(transform.position,0.1f);
+    }
+
 }

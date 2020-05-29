@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
 
     public GameType gameType = GameType.SOLO;
 
+    
+    
+    [Header("Vitesse en jeu")]
+    [Range(0,1)]
+    public float timeScale = 1;
 
     // Start is called before the first frame update
     void Awake()
@@ -41,5 +46,6 @@ public class GameManager : MonoBehaviour
             debug = !debug;
         }
 
+        Time.timeScale = timeScale;
     }
 }

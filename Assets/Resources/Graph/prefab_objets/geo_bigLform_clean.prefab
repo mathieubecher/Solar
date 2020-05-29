@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5676347228320370914}
   - component: {fileID: 3719244341013654228}
   - component: {fileID: 6963093264623457837}
-  - component: {fileID: 3131672058342370534}
+  - component: {fileID: 2790600978294379083}
+  - component: {fileID: 4344312700640767563}
   m_Layer: 0
-  m_Name: geo_bigLform_clean_01
+  m_Name: geo_bigLform_clean
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,8 +81,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3131672058342370534
-MeshCollider:
+--- !u!65 &2790600978294379083
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,7 +91,19 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6085695498266406563, guid: 6b0e48871fd6c0943a99d285881c2350, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 3.6741278, y: 3.8173327, z: 1.1822717}
+  m_Center: {x: 0, y: 0.019340277, z: 0.000000059604645}
+--- !u!65 &4344312700640767563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8691162651140154097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3795446, y: 6.442707, z: 1.1822717}
+  m_Center: {x: 1.1472914, y: -1.2933469, z: 0.000000059604645}
