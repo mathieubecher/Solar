@@ -20,6 +20,8 @@ namespace AK
         static const AkUniqueID AMB_INT_LVL01 = 3602364923U;
         static const AkUniqueID ASTRO_MOVING_PLAY = 3822072736U;
         static const AkUniqueID ASTRO_MOVING_STOP = 2165331746U;
+        static const AkUniqueID CHA_BREATH_EXPI = 186543767U;
+        static const AkUniqueID CHA_BREATH_INSPI = 1039592238U;
         static const AkUniqueID CHA_BREATH_PLAY = 182011575U;
         static const AkUniqueID CHA_DEATH_PLAY = 872937223U;
         static const AkUniqueID CHA_FOOTSTEPS_PLAY = 1343142182U;
