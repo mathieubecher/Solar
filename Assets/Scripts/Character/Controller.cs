@@ -55,6 +55,7 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<AnimEvent>().ResetBurn();
         _rigidbody = GetComponent<Rigidbody>();
         GameManager manager = FindObjectOfType<GameManager>();
 
@@ -142,6 +143,7 @@ public class Controller : MonoBehaviour
         AkSoundEngine.PostEvent("Cha_Respawn", this.gameObject);
         animator.SetBool("die", false);
         puzzle.Dead();
+        FindObjectOfType<AnimEvent>().ResetBurn();
     }
     
     /// <summary>
