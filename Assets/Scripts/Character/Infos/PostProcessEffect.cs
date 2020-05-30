@@ -1,23 +1,36 @@
 ﻿
+using System;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
 
 public class PostProcessEffect : MonoBehaviour
 {
-    private VolumeProfile _profile;
-    [Header("Bloom")] 
-    public float die_threshold = 0.5f;
-    public float die_intensity = 0.75f;
-    [Header("Exposure")] 
-    public float die_exposure = 8f;
+    [Serializable]
+    struct BloomEffect
+    {
+        public float threshold;
+        public float intensity;
+    }
+
+    [Serializable]
+    struct ExposureEffect
+    {
+        public float exposure;
+    }
     
-    // Bloom
+    private VolumeProfile _profile;
+    
     private Bloom _bloom;
-    private float threshold;
-    private float intensity;
-    // Exposure
+    [Header("Bloom")]
+    [SerializeField] private BloomEffect _bloomEffect;
+    private BloomEffect _originBloom;
+    
     private Exposure _exposure;
+    [Header("Exposure")] 
+    [SerializeField] private ExposureEffect _exposureEffect;
+    private ExposureEffect _originExposure;
+    // Exposure
     private float exposure;
 
     void Start()
@@ -30,10 +43,10 @@ public class PostProcessEffect : MonoBehaviour
             if (_profile.components[i].name == "Exposure(Clone)") _exposure = (Exposure) _profile.components[i];
         }
 
-        threshold = _bloom.threshold.value;
-        intensity = _bloom.intensity.value;
+        _originBloom.threshold = _bloom.threshold.value;
+        _originBloom.intensity = _bloom.intensity.value;
 
-        exposure = _exposure.fixedExposure.value;
+        _originExposure.exposure = _exposure.fixedExposure.value;
         
     }
 
@@ -43,9 +56,9 @@ public class PostProcessEffect : MonoBehaviour
 
     public void Interpolate(float value)
     {
-        _bloom.threshold.value = Lerp(threshold, die_threshold, value);
-        _bloom.intensity.value = Lerp(intensity, die_intensity, value);
-        _exposure.fixedExposure.value = Lerp(exposure, die_exposure, value);
+        _bloom.threshold.value = Lerp(_originBloom.threshold, _bloomEffect.threshold, value);
+        _bloom.intensity.value = Lerp(_originBloom.intensity, _bloomEffect.intensity, value);
+        _exposure.fixedExposure.value = Lerp(_originExposure.exposure, _exposureEffect.exposure, value);
     }
 
     private float Lerp(float a, float b, float value)

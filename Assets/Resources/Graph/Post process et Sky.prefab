@@ -57,6 +57,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2672016370792606433}
+  - component: {fileID: 566812460}
   - component: {fileID: 2672016370792606432}
   m_Layer: 0
   m_Name: Post Process Volume
@@ -79,6 +80,23 @@ Transform:
   m_Father: {fileID: 688351762182653356}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &566812460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672016370792606435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d4da6f896f90243b43b111382ef80a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bloomEffect:
+    threshold: 0.5
+    intensity: 0.75
+  _exposureEffect:
+    exposure: 6
 --- !u!114 &2672016370792606432
 MonoBehaviour:
   m_ObjectHideFlags: 0
