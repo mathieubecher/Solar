@@ -32,22 +32,23 @@ public class PostProcessEffect : MonoBehaviour
     private ExposureEffect _originExposure;
     // Exposure
     private float exposure;
-
+    private bool _define;
+    
     void Start()
     {
         _profile = GetComponent<Volume>().profile;
         for (int i = 0; i < _profile.components.Count; ++i)
         {
-            Debug.Log(_profile.components[i].name);
             if (_profile.components[i].name == "Bloom(Clone)") _bloom = (Bloom) _profile.components[i];
             if (_profile.components[i].name == "Exposure(Clone)") _exposure = (Exposure) _profile.components[i];
         }
 
+        // Récupération des valeurs d'origine
         _originBloom.threshold = _bloom.threshold.value;
         _originBloom.intensity = _bloom.intensity.value;
 
         _originExposure.exposure = _exposure.fixedExposure.value;
-        
+        _define = true;
     }
 
     void Update()
@@ -56,9 +57,11 @@ public class PostProcessEffect : MonoBehaviour
 
     public void Interpolate(float value)
     {
+        if (!_define) return;
         _bloom.threshold.value = Lerp(_originBloom.threshold, _bloomEffect.threshold, value);
         _bloom.intensity.value = Lerp(_originBloom.intensity, _bloomEffect.intensity, value);
         _exposure.fixedExposure.value = Lerp(_originExposure.exposure, _exposureEffect.exposure, value);
+        
     }
 
     private float Lerp(float a, float b, float value)
