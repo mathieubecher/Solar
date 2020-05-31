@@ -1,5 +1,6 @@
 ﻿
 using System;
+using Boo.Lang;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
@@ -61,7 +62,7 @@ public class PostProcessEffect : MonoBehaviour
         _bloom.threshold.value = Lerp(_originBloom.threshold, _bloomEffect.threshold, value);
         _bloom.intensity.value = Lerp(_originBloom.intensity, _bloomEffect.intensity, value);
         _exposure.fixedExposure.value = Lerp(_originExposure.exposure, _exposureEffect.exposure, value);
-        
+
     }
 
     private float Lerp(float a, float b, float value)

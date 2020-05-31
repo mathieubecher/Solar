@@ -15,12 +15,12 @@ public class ControllerSun : MonoBehaviour
     private float _time;
     // Variable définissant la position que dois atteindre le soleil. 
     // Elle est modifié par le controlleur d'input
-    [HideInInspector]
+    //[HideInInspector]
     public float _gotoAngle = 0;
     
     // Aiguilles de l'astrolabe
     [SerializeField] private GameObject _gotoAngleInfo;
-    private float _angle = 0;
+    public float _angle = 0;
     [SerializeField] private GameObject _angleInfo;
     private float _angleVelocity = 0;
     

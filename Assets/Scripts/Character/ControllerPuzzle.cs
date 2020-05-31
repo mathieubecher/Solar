@@ -108,6 +108,6 @@ public class ControllerPuzzle : MonoBehaviour
     {
         _timer_CMnext = 1f;
         _CMnext = cam;
-        sphere.CMCam = cam.transform;
+        //sphere.CMCam = cam.transform;
     }
 }
