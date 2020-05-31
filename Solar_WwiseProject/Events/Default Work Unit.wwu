@@ -151,6 +151,11 @@
 												<Action Name="" ID="{76718F4E-AF06-4780-97D9-21E8055F8D2B}" ShortID="259233065">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="23"/>
+														<Property Name="Inclusion" Type="bool">
+															<ValueList>
+																<Value>False</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
@@ -161,6 +166,11 @@
 												<Action Name="" ID="{2D93FC69-3E34-4550-A6FA-188F18B3A1E5}" ShortID="809047096">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="38"/>
+														<Property Name="Inclusion" Type="bool">
+															<ValueList>
+																<Value>False</Value>
+															</ValueList>
+														</Property>
 														<Property Name="Scope" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>
@@ -171,8 +181,28 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Cha_Breath_Inspi" ID="{490D4164-D5C7-4ABF-BC7C-CDCF5F0E88DC}"/>
-										<Event Name="Cha_Breath_Expi" ID="{355160FD-5BE4-4EB0-B23E-4B27143290F1}"/>
+										<Event Name="Cha_Breath_Inspi" ID="{490D4164-D5C7-4ABF-BC7C-CDCF5F0E88DC}">
+											<ChildrenList>
+												<Action Name="" ID="{32F0E859-4962-4009-8F6F-960B7450E508}" ShortID="393751294">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Cha_Breath_Inspi" ID="{79544230-EE6A-433F-B1CA-A8BFD52101C5}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Cha_Breath_Expi" ID="{355160FD-5BE4-4EB0-B23E-4B27143290F1}">
+											<ChildrenList>
+												<Action Name="" ID="{C03CD81C-A021-43C6-8260-4E4CBB0FF73C}" ShortID="948766544">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Cha_Breath_Expi" ID="{36A3C286-6D77-4A34-9150-5B189832CCA9}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="Footsteps" ID="{594F9C33-0A0F-470F-ADFF-37FDDB6E693E}" ShortID="970023229">
