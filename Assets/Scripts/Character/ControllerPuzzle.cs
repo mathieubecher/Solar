@@ -23,6 +23,7 @@ public class ControllerPuzzle : MonoBehaviour
         {
             transform.position = _puzzle.GetRespawnPoint();
             _controller.sun.ResetRotate(_puzzle.beginRotate);
+            _controller.poncho.GetComponent<Cloth>().ClearTransformMotion();
         }
         cmActual = _puzzle.cam;
         cmActual.Enable(this);
@@ -39,6 +40,7 @@ public class ControllerPuzzle : MonoBehaviour
                 ChangeCam(_CMnext);
             }
         }
+        _controller.poncho.GetComponent<Cloth>().ClearTransformMotion();
     }
     
     private void OnTriggerEnter(Collider other)
@@ -71,6 +73,7 @@ public class ControllerPuzzle : MonoBehaviour
         ChangeCam(_puzzle.cam);
         
         _controller.sun.ResetPoints();
+        _controller.poncho.GetComponent<Cloth>().ClearTransformMotion();
     }
     
     /// <summary>
