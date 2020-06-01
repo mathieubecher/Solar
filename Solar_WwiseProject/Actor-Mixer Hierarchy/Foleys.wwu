@@ -2278,6 +2278,11 @@
 												</RandomSequenceContainer>
 												<RandomSequenceContainer Name="Cha_Inspi_Slow" ID="{9E8E90AA-DF2C-4AEA-9078-AADB45C34897}" ShortID="713972378">
 													<PropertyList>
+														<Property Name="Highpass" Type="int16">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
 														<Property Name="PlayMechanismInfiniteOrNumberOfLoops" Type="int16" Value="0"/>
 														<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 														<Property Name="PlayMechanismLoopCount" Type="int32" Value="1"/>
@@ -2323,9 +2328,23 @@
 																		<MediaID ID="1018653064"/>
 																	</MediaIDList>
 																</AudioFileSource>
+																<AudioFileSource Name="cha_breath_idle_inspi-002" ID="{82039F26-AC38-45F1-920B-84F4AF2C4D1F}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0795019409653556"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.252006152493957"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.25050611587197"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="1.05002563539149"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>cha_breath_idle_inspi-002.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="573294209"/>
+																	</MediaIDList>
+																</AudioFileSource>
 															</ChildrenList>
 															<ActiveSourceList>
-																<ActiveSource Name="slow_breath_-005" ID="{EC5A3AEE-083B-4067-883A-A9CFA53F9234}" Platform="Linked"/>
+																<ActiveSource Name="cha_breath_idle_inspi-002" ID="{82039F26-AC38-45F1-920B-84F4AF2C4D1F}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 														<Sound Name="slow_inspi_01" ID="{F3EB7F5F-FBA9-4CA9-8BE9-77FF32F2F7E1}" ShortID="948564367">
@@ -2358,9 +2377,117 @@
 																		<MediaID ID="491786789"/>
 																	</MediaIDList>
 																</AudioFileSource>
+																<AudioFileSource Name="cha_breath_idle_inspi-001" ID="{53BE9B93-870B-4E6E-BCB3-6CC8D56DD7D8}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0818419215631759"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.210846984366148"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.188652564959185"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.997361722100398"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>cha_breath_idle_inspi-001.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="708153651"/>
+																	</MediaIDList>
+																</AudioFileSource>
 															</ChildrenList>
 															<ActiveSourceList>
-																<ActiveSource Name="slow_breath_-004" ID="{E1620958-646A-4333-B045-7C710A9ADB2D}" Platform="Linked"/>
+																<ActiveSource Name="cha_breath_idle_inspi-001" ID="{53BE9B93-870B-4E6E-BCB3-6CC8D56DD7D8}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="slow_inspi_03" ID="{AE8C9F26-754E-4200-9E2A-50CCED2DCF86}" ShortID="147615882">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="cha_breath_idle_inspi-003" ID="{59468F10-86E7-4E93-83CE-E8A8FBD3CD6C}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0652420264963819"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.136553078713358"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.300416773169387"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="1.03325162893107"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>cha_breath_idle_inspi-003.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="214860601"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="cha_breath_idle_inspi-003" ID="{59468F10-86E7-4E93-83CE-E8A8FBD3CD6C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="slow_inspi_04" ID="{A99E2081-4C63-424C-8756-AD3EED898249}" ShortID="304604185">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="cha_breath_idle_inspi-004" ID="{402ACADB-BBE8-40B0-A969-DE151EB90564}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0509648922192476"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.207779945201548"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.056192060651991"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.713508491069467"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>cha_breath_idle_inspi-004.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="902245356"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="cha_breath_idle_inspi-004" ID="{402ACADB-BBE8-40B0-A969-DE151EB90564}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="slow_inspi_05" ID="{032497C5-2D6C-43BD-8FD1-09FFEAFF599D}" ShortID="1048013657">
+															<PropertyList>
+																<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+																<Property Name="VirtualVoiceQueueBehavior" Type="int16" Value="0"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+																</Reference>
+																<Reference Name="UserAuxSend0">
+																	<ObjectRef Name="Int_Lvl01_Fx" ID="{82B508F6-6EE6-49B3-904B-8DADE0F771B7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="cha_breath_idle_inspi-005" ID="{CE6CB6CC-3E2C-4012-B0F8-2505BF601ABF}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.100047085412939"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.330155381862699"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.201523414903206"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.944730335113611"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>cha_breath_idle_inspi-005.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="518075592"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="cha_breath_idle_inspi-005" ID="{CE6CB6CC-3E2C-4012-B0F8-2505BF601ABF}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 													</ChildrenList>
@@ -2615,6 +2742,13 @@
 											</ReferenceList>
 											<ChildrenList>
 												<RandomSequenceContainer Name="Cha_Expi_Slow" ID="{3E6FE811-17F6-4B01-A6AA-E0FC368B536F}" ShortID="938623261">
+													<PropertyList>
+														<Property Name="Highpass" Type="int16">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
@@ -2659,9 +2793,23 @@
 																		<MediaID ID="1035605294"/>
 																	</MediaIDList>
 																</AudioFileSource>
+																<AudioFileSource Name="cha_breath_idle_expi-001" ID="{B7158678-0925-4CD4-B32C-0596FC02C1CE}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0605104058762595"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.167123978134431"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.106613572258172"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.844264234368765"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>cha_breath_idle_expi-001.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="251096265"/>
+																	</MediaIDList>
+																</AudioFileSource>
 															</ChildrenList>
 															<ActiveSourceList>
-																<ActiveSource Name="slow_breath_-004" ID="{C04FCB09-5456-4B7E-AA57-D0DCC0A8DF27}" Platform="Linked"/>
+																<ActiveSource Name="cha_breath_idle_expi-001" ID="{B7158678-0925-4CD4-B32C-0596FC02C1CE}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 														<Sound Name="slow_expi_02" ID="{E8458B8A-3016-4E4A-BCDF-0FB2ED517B15}" ShortID="941017688">
@@ -2699,9 +2847,117 @@
 																		<MediaID ID="79531810"/>
 																	</MediaIDList>
 																</AudioFileSource>
+																<AudioFileSource Name="cha_breath_idle_expi-002" ID="{CFEF3C0D-6DCA-4669-B204-3A9CE0F75F02}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0448403804501365"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.279006811689739"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.105873120507267"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.863177323665129"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>cha_breath_idle_expi-002.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="960451097"/>
+																	</MediaIDList>
+																</AudioFileSource>
 															</ChildrenList>
 															<ActiveSourceList>
-																<ActiveSource Name="slow_breath_-005" ID="{7060ABF5-7AB3-4A34-9537-A91D82DAFDF9}" Platform="Linked"/>
+																<ActiveSource Name="cha_breath_idle_expi-002" ID="{CFEF3C0D-6DCA-4669-B204-3A9CE0F75F02}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="slow_expi_03" ID="{EBA6A1F1-E9CB-484B-AE96-7D055AD4C043}" ShortID="455091898">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="cha_breath_idle_expi-003" ID="{3AC219DA-55B3-460A-8251-FC7612046B8C}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0392688158541817"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.213173571779844"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.116403989853467"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.614276476576127"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>cha_breath_idle_expi-003.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="351467781"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="cha_breath_idle_expi-003" ID="{3AC219DA-55B3-460A-8251-FC7612046B8C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="slow_expi_04" ID="{F2706437-E3DA-40B5-A1F7-CF116F7D5C1A}" ShortID="175896784">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="cha_breath_idle_expi-004" ID="{AE5DCB8E-6F89-4D75-B99C-94A6ABDD2B92}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0761115520697402"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.39519459728519"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.0907483890062288"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.927975461773371"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>cha_breath_idle_expi-004.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="824679765"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="cha_breath_idle_expi-004" ID="{AE5DCB8E-6F89-4D75-B99C-94A6ABDD2B92}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="slow_expi_05" ID="{66492AA1-FD14-47BB-8F3D-E1721644D0A8}" ShortID="747393009">
+															<PropertyList>
+																<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+																<Property Name="VirtualVoiceQueueBehavior" Type="int16" Value="0"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+																</Reference>
+																<Reference Name="UserAuxSend0">
+																	<ObjectRef Name="Int_Lvl01_Fx" ID="{82B508F6-6EE6-49B3-904B-8DADE0F771B7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="cha_breath_idle_expi-005" ID="{2E5EC6DC-2937-4C92-9869-715020049A20}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0737696581599021"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.34425840474621"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.0491797721066014"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.827377342499293"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>cha_breath_idle_expi-005.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="780988206"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="cha_breath_idle_expi-005" ID="{2E5EC6DC-2937-4C92-9869-715020049A20}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 													</ChildrenList>

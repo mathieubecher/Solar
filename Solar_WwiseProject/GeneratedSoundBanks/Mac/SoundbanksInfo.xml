@@ -69,7 +69,7 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2165331746" Name="Astro_Moving_Stop" ObjectPath="\Events\Default Work Unit\ALL\Astro_Moving_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="186543767" Name="Cha_Breath_Expi" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Expi" DurationType="OneShot" DurationMin="0.310000" DurationMax="1.181740">
+				<Event Id="186543767" Name="Cha_Breath_Expi" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Expi" DurationType="OneShot" DurationMin="0.310000" DurationMax="1.025488">
 					<IncludedMemoryFiles>
 						<File Id="49281544" Language="SFX">
 							<ShortName>fast_breath_-001.wav</ShortName>
@@ -79,9 +79,17 @@
 							<ShortName>slow_breath_-003.wav</ShortName>
 							<Path>SFX\slow_breath_-003_C65878D0.wem</Path>
 						</File>
-						<File Id="79531810" Language="SFX">
-							<ShortName>slow_breath_-005.wav</ShortName>
-							<Path>SFX\slow_breath_-005_A8F89F3C.wem</Path>
+						<File Id="214860601" Language="SFX">
+							<ShortName>cha_breath_idle_inspi-003.wav</ShortName>
+							<Path>SFX\cha_breath_idle_inspi-003_F2B4845D.wem</Path>
+						</File>
+						<File Id="251096265" Language="SFX">
+							<ShortName>cha_breath_idle_expi-001.wav</ShortName>
+							<Path>SFX\cha_breath_idle_expi-001_20C64A3C.wem</Path>
+						</File>
+						<File Id="351467781" Language="SFX">
+							<ShortName>cha_breath_idle_expi-003.wav</ShortName>
+							<Path>SFX\cha_breath_idle_expi-003_38214067.wem</Path>
 						</File>
 						<File Id="418608309" Language="SFX">
 							<ShortName>slow_breath_-003.wav</ShortName>
@@ -91,17 +99,41 @@
 							<ShortName>slow_breath_-002.wav</ShortName>
 							<Path>SFX\slow_breath_-002_F808FAD5.wem</Path>
 						</File>
-						<File Id="491786789" Language="SFX">
-							<ShortName>slow_breath_-004.wav</ShortName>
-							<Path>SFX\slow_breath_-004_ACB6CB55.wem</Path>
+						<File Id="518075592" Language="SFX">
+							<ShortName>cha_breath_idle_inspi-005.wav</ShortName>
+							<Path>SFX\cha_breath_idle_inspi-005_A9CBC812.wem</Path>
+						</File>
+						<File Id="573294209" Language="SFX">
+							<ShortName>cha_breath_idle_inspi-002.wav</ShortName>
+							<Path>SFX\cha_breath_idle_inspi-002_D1502EAE.wem</Path>
+						</File>
+						<File Id="708153651" Language="SFX">
+							<ShortName>cha_breath_idle_inspi-001.wav</ShortName>
+							<Path>SFX\cha_breath_idle_inspi-001_08BAC747.wem</Path>
+						</File>
+						<File Id="780988206" Language="SFX">
+							<ShortName>cha_breath_idle_expi-005.wav</ShortName>
+							<Path>SFX\cha_breath_idle_expi-005_013115FB.wem</Path>
+						</File>
+						<File Id="824679765" Language="SFX">
+							<ShortName>cha_breath_idle_expi-004.wav</ShortName>
+							<Path>SFX\cha_breath_idle_expi-004_DC67794C.wem</Path>
 						</File>
 						<File Id="889565288" Language="SFX">
 							<ShortName>fast_breath_-002.wav</ShortName>
 							<Path>SFX\fast_breath_-002_973BF513.wem</Path>
 						</File>
+						<File Id="902245356" Language="SFX">
+							<ShortName>cha_breath_idle_inspi-004.wav</ShortName>
+							<Path>SFX\cha_breath_idle_inspi-004_D82B3125.wem</Path>
+						</File>
 						<File Id="960349348" Language="SFX">
 							<ShortName>fast_breath_-001.wav</ShortName>
 							<Path>SFX\fast_breath_-001_02FF98E6.wem</Path>
+						</File>
+						<File Id="960451097" Language="SFX">
+							<ShortName>cha_breath_idle_expi-002.wav</ShortName>
+							<Path>SFX\cha_breath_idle_expi-002_4789E8E8.wem</Path>
 						</File>
 						<File Id="999728394" Language="SFX">
 							<ShortName>fast_breath_-002.wav</ShortName>
@@ -110,14 +142,6 @@
 						<File Id="1016571576" Language="SFX">
 							<ShortName>slow_breath_-002.wav</ShortName>
 							<Path>SFX\slow_breath_-002_F79676FD.wem</Path>
-						</File>
-						<File Id="1018653064" Language="SFX">
-							<ShortName>slow_breath_-005.wav</ShortName>
-							<Path>SFX\slow_breath_-005_52B1CEE7.wem</Path>
-						</File>
-						<File Id="1035605294" Language="SFX">
-							<ShortName>slow_breath_-004.wav</ShortName>
-							<Path>SFX\slow_breath_-004_54AFAF9B.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
@@ -129,8 +153,11 @@
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}">
 							<Media>
-								<File Id="1018653064"/>
-								<File Id="491786789"/>
+								<File Id="573294209"/>
+								<File Id="708153651"/>
+								<File Id="214860601"/>
+								<File Id="902245356"/>
+								<File Id="518075592"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{EE9D29D8-0B28-40CE-A6BB-829669375CA5}">
@@ -141,8 +168,11 @@
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}">
 							<Media>
-								<File Id="1035605294"/>
-								<File Id="79531810"/>
+								<File Id="251096265"/>
+								<File Id="960451097"/>
+								<File Id="351467781"/>
+								<File Id="824679765"/>
+								<File Id="780988206"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{9F3CF65F-1212-4392-9770-B52E013AA7BE}">
@@ -159,7 +189,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1039592238" Name="Cha_Breath_Inspi" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Inspi" DurationType="OneShot" DurationMin="0.310000" DurationMax="1.181740">
+				<Event Id="1039592238" Name="Cha_Breath_Inspi" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Inspi" DurationType="OneShot" DurationMin="0.310000" DurationMax="1.025488">
 					<IncludedMemoryFiles>
 						<File Id="49281544" Language="SFX">
 							<ShortName>fast_breath_-001.wav</ShortName>
@@ -169,9 +199,17 @@
 							<ShortName>slow_breath_-003.wav</ShortName>
 							<Path>SFX\slow_breath_-003_C65878D0.wem</Path>
 						</File>
-						<File Id="79531810" Language="SFX">
-							<ShortName>slow_breath_-005.wav</ShortName>
-							<Path>SFX\slow_breath_-005_A8F89F3C.wem</Path>
+						<File Id="214860601" Language="SFX">
+							<ShortName>cha_breath_idle_inspi-003.wav</ShortName>
+							<Path>SFX\cha_breath_idle_inspi-003_F2B4845D.wem</Path>
+						</File>
+						<File Id="251096265" Language="SFX">
+							<ShortName>cha_breath_idle_expi-001.wav</ShortName>
+							<Path>SFX\cha_breath_idle_expi-001_20C64A3C.wem</Path>
+						</File>
+						<File Id="351467781" Language="SFX">
+							<ShortName>cha_breath_idle_expi-003.wav</ShortName>
+							<Path>SFX\cha_breath_idle_expi-003_38214067.wem</Path>
 						</File>
 						<File Id="418608309" Language="SFX">
 							<ShortName>slow_breath_-003.wav</ShortName>
@@ -181,17 +219,41 @@
 							<ShortName>slow_breath_-002.wav</ShortName>
 							<Path>SFX\slow_breath_-002_F808FAD5.wem</Path>
 						</File>
-						<File Id="491786789" Language="SFX">
-							<ShortName>slow_breath_-004.wav</ShortName>
-							<Path>SFX\slow_breath_-004_ACB6CB55.wem</Path>
+						<File Id="518075592" Language="SFX">
+							<ShortName>cha_breath_idle_inspi-005.wav</ShortName>
+							<Path>SFX\cha_breath_idle_inspi-005_A9CBC812.wem</Path>
+						</File>
+						<File Id="573294209" Language="SFX">
+							<ShortName>cha_breath_idle_inspi-002.wav</ShortName>
+							<Path>SFX\cha_breath_idle_inspi-002_D1502EAE.wem</Path>
+						</File>
+						<File Id="708153651" Language="SFX">
+							<ShortName>cha_breath_idle_inspi-001.wav</ShortName>
+							<Path>SFX\cha_breath_idle_inspi-001_08BAC747.wem</Path>
+						</File>
+						<File Id="780988206" Language="SFX">
+							<ShortName>cha_breath_idle_expi-005.wav</ShortName>
+							<Path>SFX\cha_breath_idle_expi-005_013115FB.wem</Path>
+						</File>
+						<File Id="824679765" Language="SFX">
+							<ShortName>cha_breath_idle_expi-004.wav</ShortName>
+							<Path>SFX\cha_breath_idle_expi-004_DC67794C.wem</Path>
 						</File>
 						<File Id="889565288" Language="SFX">
 							<ShortName>fast_breath_-002.wav</ShortName>
 							<Path>SFX\fast_breath_-002_973BF513.wem</Path>
 						</File>
+						<File Id="902245356" Language="SFX">
+							<ShortName>cha_breath_idle_inspi-004.wav</ShortName>
+							<Path>SFX\cha_breath_idle_inspi-004_D82B3125.wem</Path>
+						</File>
 						<File Id="960349348" Language="SFX">
 							<ShortName>fast_breath_-001.wav</ShortName>
 							<Path>SFX\fast_breath_-001_02FF98E6.wem</Path>
+						</File>
+						<File Id="960451097" Language="SFX">
+							<ShortName>cha_breath_idle_expi-002.wav</ShortName>
+							<Path>SFX\cha_breath_idle_expi-002_4789E8E8.wem</Path>
 						</File>
 						<File Id="999728394" Language="SFX">
 							<ShortName>fast_breath_-002.wav</ShortName>
@@ -200,14 +262,6 @@
 						<File Id="1016571576" Language="SFX">
 							<ShortName>slow_breath_-002.wav</ShortName>
 							<Path>SFX\slow_breath_-002_F79676FD.wem</Path>
-						</File>
-						<File Id="1018653064" Language="SFX">
-							<ShortName>slow_breath_-005.wav</ShortName>
-							<Path>SFX\slow_breath_-005_52B1CEE7.wem</Path>
-						</File>
-						<File Id="1035605294" Language="SFX">
-							<ShortName>slow_breath_-004.wav</ShortName>
-							<Path>SFX\slow_breath_-004_54AFAF9B.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
@@ -219,8 +273,11 @@
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}">
 							<Media>
-								<File Id="1018653064"/>
-								<File Id="491786789"/>
+								<File Id="573294209"/>
+								<File Id="708153651"/>
+								<File Id="214860601"/>
+								<File Id="902245356"/>
+								<File Id="518075592"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{EE9D29D8-0B28-40CE-A6BB-829669375CA5}">
@@ -231,8 +288,11 @@
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}">
 							<Media>
-								<File Id="1035605294"/>
-								<File Id="79531810"/>
+								<File Id="251096265"/>
+								<File Id="960451097"/>
+								<File Id="351467781"/>
+								<File Id="824679765"/>
+								<File Id="780988206"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{9F3CF65F-1212-4392-9770-B52E013AA7BE}">
