@@ -171,7 +171,7 @@ SkinnedMeshRenderer:
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: 0, y: -0.00007241964, z: 0.002223298}
-    m_Extent: {x: 0.35937476, y: 0.25061226, z: 0.13661009}
+    m_Extent: {x: 0.3593748, y: 0.25061226, z: 0.13661009}
   m_DirtyAABB: 0
 --- !u!183 &1490695465
 Cloth:
@@ -990,6 +990,7 @@ MonoBehaviour:
   _speedVelocity: 2
   _gotoAngle: 0
   _gotoAngleInfo: {fileID: 1212830908989974066}
+  _angle: 0
   _angleInfo: {fileID: 7794986552955640657}
   _life: 1
   _points: []
@@ -1057,6 +1058,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _fxUI: {fileID: 0}
   _speedHeal: 1
+  ppeffect: {fileID: 0}
 --- !u!114 &608893813510402475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1072,6 +1074,7 @@ MonoBehaviour:
   cmActual: {fileID: 0}
   brain: {fileID: 0}
   _puzzle: {fileID: 0}
+  sphere: {fileID: 0}
 --- !u!33 &7426975512071695567
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2727,7 +2730,7 @@ PrefabInstance:
     - target: {fileID: 686023265614217566, guid: 60b7f970b5ba85345819f59a1daf2b0b,
         type: 3}
       propertyPath: pointForce
-      value: 0.3
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4987310246886984343, guid: 60b7f970b5ba85345819f59a1daf2b0b,
         type: 3}

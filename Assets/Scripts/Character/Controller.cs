@@ -159,6 +159,4 @@ public class Controller : MonoBehaviour
     {
         return _deatTimer > 0;   
     }
-
-
 }
