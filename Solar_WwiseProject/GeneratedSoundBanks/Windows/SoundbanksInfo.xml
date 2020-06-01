@@ -69,7 +69,7 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2165331746" Name="Astro_Moving_Stop" ObjectPath="\Events\Default Work Unit\ALL\Astro_Moving_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="186543767" Name="Cha_Breath_Expi" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Expi" DurationType="OneShot" DurationMin="0.352685" DurationMax="1.181740">
+				<Event Id="186543767" Name="Cha_Breath_Expi" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Expi" DurationType="OneShot" DurationMin="0.310000" DurationMax="1.181740">
 					<IncludedMemoryFiles>
 						<File Id="49281544" Language="SFX">
 							<ShortName>fast_breath_-001.wav</ShortName>
@@ -83,45 +83,13 @@
 							<ShortName>slow_breath_-005.wav</ShortName>
 							<Path>SFX\slow_breath_-005_A8F89F3C.wem</Path>
 						</File>
+						<File Id="418608309" Language="SFX">
+							<ShortName>slow_breath_-003.wav</ShortName>
+							<Path>SFX\slow_breath_-003_43185EB4.wem</Path>
+						</File>
 						<File Id="470143034" Language="SFX">
 							<ShortName>slow_breath_-002.wav</ShortName>
 							<Path>SFX\slow_breath_-002_F808FAD5.wem</Path>
-						</File>
-						<File Id="999728394" Language="SFX">
-							<ShortName>fast_breath_-002.wav</ShortName>
-							<Path>SFX\fast_breath_-002_B5BAC3D9.wem</Path>
-						</File>
-						<File Id="1035605294" Language="SFX">
-							<ShortName>slow_breath_-004.wav</ShortName>
-							<Path>SFX\slow_breath_-004_54AFAF9B.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-					<SwitchContainers>
-						<SwitchContainer SwitchValue="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}">
-							<Media>
-								<File Id="1035605294"/>
-								<File Id="79531810"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{9F3CF65F-1212-4392-9770-B52E013AA7BE}">
-							<Media>
-								<File Id="470143034"/>
-								<File Id="60824643"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{EE9D29D8-0B28-40CE-A6BB-829669375CA5}">
-							<Media>
-								<File Id="49281544"/>
-								<File Id="999728394"/>
-							</Media>
-						</SwitchContainer>
-					</SwitchContainers>
-				</Event>
-				<Event Id="1039592238" Name="Cha_Breath_Inspi" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Inspi" DurationType="OneShot" DurationMin="0.310000" DurationMax="0.925566">
-					<IncludedMemoryFiles>
-						<File Id="418608309" Language="SFX">
-							<ShortName>slow_breath_-003.wav</ShortName>
-							<Path>SFX\slow_breath_-003_9B561665.wem</Path>
 						</File>
 						<File Id="491786789" Language="SFX">
 							<ShortName>slow_breath_-004.wav</ShortName>
@@ -135,13 +103,21 @@
 							<ShortName>fast_breath_-001.wav</ShortName>
 							<Path>SFX\fast_breath_-001_02FF98E6.wem</Path>
 						</File>
+						<File Id="999728394" Language="SFX">
+							<ShortName>fast_breath_-002.wav</ShortName>
+							<Path>SFX\fast_breath_-002_B5BAC3D9.wem</Path>
+						</File>
 						<File Id="1016571576" Language="SFX">
 							<ShortName>slow_breath_-002.wav</ShortName>
-							<Path>SFX\slow_breath_-002_AC632333.wem</Path>
+							<Path>SFX\slow_breath_-002_F79676FD.wem</Path>
 						</File>
 						<File Id="1018653064" Language="SFX">
 							<ShortName>slow_breath_-005.wav</ShortName>
 							<Path>SFX\slow_breath_-005_52B1CEE7.wem</Path>
+						</File>
+						<File Id="1035605294" Language="SFX">
+							<ShortName>slow_breath_-004.wav</ShortName>
+							<Path>SFX\slow_breath_-004_54AFAF9B.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
@@ -163,9 +139,136 @@
 								<File Id="960349348"/>
 							</Media>
 						</SwitchContainer>
+						<SwitchContainer SwitchValue="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}">
+							<Media>
+								<File Id="1035605294"/>
+								<File Id="79531810"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{9F3CF65F-1212-4392-9770-B52E013AA7BE}">
+							<Media>
+								<File Id="470143034"/>
+								<File Id="60824643"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{EE9D29D8-0B28-40CE-A6BB-829669375CA5}">
+							<Media>
+								<File Id="49281544"/>
+								<File Id="999728394"/>
+							</Media>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="182011575" Name="Cha_Breath_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Play" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1039592238" Name="Cha_Breath_Inspi" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Inspi" DurationType="OneShot" DurationMin="0.310000" DurationMax="1.181740">
+					<IncludedMemoryFiles>
+						<File Id="49281544" Language="SFX">
+							<ShortName>fast_breath_-001.wav</ShortName>
+							<Path>SFX\fast_breath_-001_DB98B37E.wem</Path>
+						</File>
+						<File Id="60824643" Language="SFX">
+							<ShortName>slow_breath_-003.wav</ShortName>
+							<Path>SFX\slow_breath_-003_C65878D0.wem</Path>
+						</File>
+						<File Id="79531810" Language="SFX">
+							<ShortName>slow_breath_-005.wav</ShortName>
+							<Path>SFX\slow_breath_-005_A8F89F3C.wem</Path>
+						</File>
+						<File Id="418608309" Language="SFX">
+							<ShortName>slow_breath_-003.wav</ShortName>
+							<Path>SFX\slow_breath_-003_43185EB4.wem</Path>
+						</File>
+						<File Id="470143034" Language="SFX">
+							<ShortName>slow_breath_-002.wav</ShortName>
+							<Path>SFX\slow_breath_-002_F808FAD5.wem</Path>
+						</File>
+						<File Id="491786789" Language="SFX">
+							<ShortName>slow_breath_-004.wav</ShortName>
+							<Path>SFX\slow_breath_-004_ACB6CB55.wem</Path>
+						</File>
+						<File Id="889565288" Language="SFX">
+							<ShortName>fast_breath_-002.wav</ShortName>
+							<Path>SFX\fast_breath_-002_973BF513.wem</Path>
+						</File>
+						<File Id="960349348" Language="SFX">
+							<ShortName>fast_breath_-001.wav</ShortName>
+							<Path>SFX\fast_breath_-001_02FF98E6.wem</Path>
+						</File>
+						<File Id="999728394" Language="SFX">
+							<ShortName>fast_breath_-002.wav</ShortName>
+							<Path>SFX\fast_breath_-002_B5BAC3D9.wem</Path>
+						</File>
+						<File Id="1016571576" Language="SFX">
+							<ShortName>slow_breath_-002.wav</ShortName>
+							<Path>SFX\slow_breath_-002_F79676FD.wem</Path>
+						</File>
+						<File Id="1018653064" Language="SFX">
+							<ShortName>slow_breath_-005.wav</ShortName>
+							<Path>SFX\slow_breath_-005_52B1CEE7.wem</Path>
+						</File>
+						<File Id="1035605294" Language="SFX">
+							<ShortName>slow_breath_-004.wav</ShortName>
+							<Path>SFX\slow_breath_-004_54AFAF9B.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{9F3CF65F-1212-4392-9770-B52E013AA7BE}">
+							<Media>
+								<File Id="1016571576"/>
+								<File Id="418608309"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}">
+							<Media>
+								<File Id="1018653064"/>
+								<File Id="491786789"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{EE9D29D8-0B28-40CE-A6BB-829669375CA5}">
+							<Media>
+								<File Id="889565288"/>
+								<File Id="960349348"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}">
+							<Media>
+								<File Id="1035605294"/>
+								<File Id="79531810"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{9F3CF65F-1212-4392-9770-B52E013AA7BE}">
+							<Media>
+								<File Id="470143034"/>
+								<File Id="60824643"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{EE9D29D8-0B28-40CE-A6BB-829669375CA5}">
+							<Media>
+								<File Id="49281544"/>
+								<File Id="999728394"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="182011575" Name="Cha_Breath_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Play" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="49281544" Language="SFX">
+							<ShortName>fast_breath_-001.wav</ShortName>
+							<Path>SFX\fast_breath_-001_DB98B37E.wem</Path>
+						</File>
+						<File Id="889565288" Language="SFX">
+							<ShortName>fast_breath_-002.wav</ShortName>
+							<Path>SFX\fast_breath_-002_973BF513.wem</Path>
+						</File>
+						<File Id="960349348" Language="SFX">
+							<ShortName>fast_breath_-001.wav</ShortName>
+							<Path>SFX\fast_breath_-001_02FF98E6.wem</Path>
+						</File>
+						<File Id="999728394" Language="SFX">
+							<ShortName>fast_breath_-002.wav</ShortName>
+							<Path>SFX\fast_breath_-002_B5BAC3D9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="872937223" Name="Cha_Death_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Death_Play" DurationType="OneShot" DurationMin="4.872177" DurationMax="4.872177">
 					<IncludedMemoryFiles>
 						<File Id="381247970" Language="SFX">
@@ -377,7 +480,15 @@
 				</Event>
 				<Event Id="3845266727" Name="Cha_Run" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Run" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="300025675" Name="Cha_Walk" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Walk" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="372239821" Name="Flying_Sphere_Play" ObjectPath="\Events\Default Work Unit\ALL\Flying_Sphere_Play" MaxAttenuation="100.000000" DurationType="Infinite">
+				<Event Id="1047307714" Name="Lvl01_Flying_Sphere_Big_Play" ObjectPath="\Events\Default Work Unit\ALL\Lvl01_Flying_Sphere_Big_Play" MaxAttenuation="50.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="686565307" Language="SFX">
+							<ShortName>flyingplateform-v2.wav</ShortName>
+							<Path>SFX\flyingplateform-v2_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3897898391" Name="Lvl01_Flying_Sphere_Small_Play" ObjectPath="\Events\Default Work Unit\ALL\Lvl01_Flying_Sphere_Small_Play" MaxAttenuation="30.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="686565307" Language="SFX">
 							<ShortName>flyingplateform-v2.wav</ShortName>

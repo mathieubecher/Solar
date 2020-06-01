@@ -30,7 +30,8 @@ namespace AK
         static const AkUniqueID CHA_RESPAWN = 1215500860U;
         static const AkUniqueID CHA_RUN = 3845266727U;
         static const AkUniqueID CHA_WALK = 300025675U;
-        static const AkUniqueID FLYING_SPHERE_PLAY = 372239821U;
+        static const AkUniqueID LVL01_FLYING_SPHERE_BIG_PLAY = 1047307714U;
+        static const AkUniqueID LVL01_FLYING_SPHERE_SMALL_PLAY = 3897898391U;
         static const AkUniqueID MUSIC_LVL01_BRIDGE1 = 771829065U;
         static const AkUniqueID MUSIC_LVL01_KIOSK1 = 2884165201U;
         static const AkUniqueID MUSIC_LVL01_KIOSK2 = 2884165202U;
@@ -111,6 +112,17 @@ namespace AK
                 static const AkUniqueID STONE = 1216965916U;
             } // namespace SWITCH
         } // namespace FOOTSTEP_FLOOR
+
+        namespace GLOBAL_SWITCH
+        {
+            static const AkUniqueID GROUP = 3921090687U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID ISHURTING2 = 1392790916U;
+                static const AkUniqueID NORMAL = 1160234136U;
+            } // namespace SWITCH
+        } // namespace GLOBAL_SWITCH
 
     } // namespace SWITCHES
 
