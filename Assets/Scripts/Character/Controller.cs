@@ -29,7 +29,8 @@ public class Controller : MonoBehaviour
     private Vector2 _move;
     private bool isMoving = false;
     public Vector3 velocity;
-    
+    public GameObject poncho;
+
     [Header("Gestion Mort")]
     [Range(0,5)]
     public float DeadTimer = 2;
@@ -37,6 +38,7 @@ public class Controller : MonoBehaviour
     private float _deatTimer;
     [SerializeField] bool activeDead = true;
     public Vector3 Target {  get => _target.gameObject.transform.position;}
+
     
     // Start is called before the first frame update
     void Awake()
@@ -54,6 +56,7 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<AnimEvent>().ResetBurn();
         _rigidbody = GetComponent<Rigidbody>();
         GameManager manager = FindObjectOfType<GameManager>();
 
@@ -82,9 +85,11 @@ public class Controller : MonoBehaviour
             // Retours visuels et sonores lié aux déplacements du personnage
             animator.SetFloat("velocity", velocity.magnitude);
             // RESPIRATION
+            
+            //if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
             if(sun.Life >= 1){
                 if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
-                else if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("Cha_Walk", this.gameObject);
+                // else if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("Cha_Walk", this.gameObject);
                 else AkSoundEngine.PostEvent("Cha_IDLE", this.gameObject);
             }
             else AkSoundEngine.PostEvent("Cha_Hurt", this.gameObject);
@@ -122,14 +127,17 @@ public class Controller : MonoBehaviour
         // si la mort est activé
         if(activeDead){
             
-            animator.SetFloat("velocity", 0);
             AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", 0);
             AkSoundEngine.SetRTPCValue("RTPC_Sun_Velocity", 0);
             AkSoundEngine.PostEvent("Cha_Death_Play", this.gameObject);
+            animator.SetBool("die", true);
             
+            //animator.SetFloat("velocity", 0);
             _deatTimer = DeadTimer;
             velocity = Vector3.zero;
             _rigidbody.velocity = velocity;
+            
+            sun.ResetPoints();
         }
     }
     
@@ -139,7 +147,9 @@ public class Controller : MonoBehaviour
     public void Respawn()
     {
         AkSoundEngine.PostEvent("Cha_Respawn", this.gameObject);
-        puzzle.Dead();
+        animator.SetBool("die", false);
+        puzzle.Respawn();
+        FindObjectOfType<AnimEvent>().ResetBurn();
     }
     
     /// <summary>
@@ -149,6 +159,4 @@ public class Controller : MonoBehaviour
     {
         return _deatTimer > 0;   
     }
-
-
 }

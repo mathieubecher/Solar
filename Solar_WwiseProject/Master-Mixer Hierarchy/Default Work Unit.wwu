@@ -10,29 +10,83 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AuxBus Name="Temple" ID="{7B47E554-D464-4917-A328-D76A1C7C645C}"/>
-						<Bus Name="Int_Lvl01_Acoustic" ID="{C2AB78F3-7B05-4C11-8336-BB168F154956}">
-							<ReferenceList>
-								<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
-									<ObjectRef Name="Plate_Large" ID="{62CB7384-421D-4F9A-9CF1-E90F7336A07B}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AuxBus Name="Int_Lvl01_Fx" ID="{82B508F6-6EE6-49B3-904B-8DADE0F771B7}"/>
-							</ChildrenList>
+						<Bus Name="Ambiance_Bus" ID="{29FDE568-B384-4C81-B1B5-252B9099C7BB}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="2"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>0.982828129966933</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 						</Bus>
-						<AuxBus Name="Sidechain_Music" ID="{FA81C55F-011D-4E0D-9F1D-D8BE90E52F44}">
-							<ReferenceList>
-								<Reference Name="Effect0">
-									<Custom>
-										<Effect Name="Wwise_Meter_(Custom)" ID="{FEB43F5A-8257-443E-9FBE-ABE5DBFC9037}" ShortID="96981672" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">											<PluginData>
+						<Bus Name="Music_Bus" ID="{FE95FA85-D8C7-46AF-B639-4E9995364634}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="23"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>0.0201247562111029</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+						</Bus>
+						<Bus Name="Breathing_Bus" ID="{902E587E-5F52-4318-BBF4-84185BA1386D}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="21"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6.97518168511873</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+						</Bus>
+						<Bus Name="Foleys_Bus" ID="{24383F11-053E-4433-8C86-F1951086C8E7}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>1.03870825570803</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+						</Bus>
+						<Bus Name="FX" ID="{ACEC311C-361F-4BE9-B056-42B1F9986E37}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="14"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Bus Name="Int_Lvl01_Acoustic" ID="{C2AB78F3-7B05-4C11-8336-BB168F154956}">
+									<ReferenceList>
+										<Reference Name="AudioDevice">
+											<ObjectRef Name="System" ID="{ECC9FC8D-59CE-4A49-A46D-5680333299C8}" WorkUnitID="{463B918D-9BAF-4E3C-A8F5-DBF6564D2BF6}"/>
+										</Reference>
+										<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
+											<ObjectRef Name="Plate_Large" ID="{62CB7384-421D-4F9A-9CF1-E90F7336A07B}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AuxBus Name="Int_Lvl01_Fx" ID="{82B508F6-6EE6-49B3-904B-8DADE0F771B7}"/>
+									</ChildrenList>
+								</Bus>
+								<AuxBus Name="Sidechain_Music" ID="{FA81C55F-011D-4E0D-9F1D-D8BE90E52F44}">
+									<ReferenceList>
+										<Reference Name="Effect0">
+											<Custom>
+												<Effect Name="Wwise_Meter_(Custom)" ID="{FEB43F5A-8257-443E-9FBE-ABE5DBFC9037}" ShortID="96981672" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">													<PluginData>
 	<GameParameter Name="RTPC_AstroSidechain" ID="{0C5BD735-17E7-4FD0-B4A5-F2BF295BBA0F}"/>
 </PluginData>
-										</Effect>
-									</Custom>
-								</Reference>
-							</ReferenceList>
-						</AuxBus>
+												</Effect>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+								</AuxBus>
+							</ChildrenList>
+						</Bus>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

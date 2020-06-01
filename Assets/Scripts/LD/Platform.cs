@@ -57,6 +57,7 @@ public class Platform : MonoBehaviour
     /// </summary>
     protected void InputVelocity()
     {
+        float lastProgress = progress;
         // S'il s'agit d'un serveur
         if ((StaticClass.gameType == GameManager.GameType.SERVER ||
              StaticClass.gameType == GameManager.GameType.CLIENT))
@@ -81,6 +82,8 @@ public class Platform : MonoBehaviour
         {
             progress += _velocity * speed * Time.deltaTime;
         }
+        Debug.Log(Mathf.Abs(progress - lastProgress)/(Time.deltaTime * speed));
+        AkSoundEngine.SetRTPCValue("RTPC_Plateform_Velocity", Mathf.Abs(progress - lastProgress)/(Time.deltaTime * speed) *100);
     }
     
 #if UNITY_EDITOR

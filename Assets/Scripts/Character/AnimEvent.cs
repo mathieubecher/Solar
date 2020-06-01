@@ -11,6 +11,9 @@ public class AnimEvent : MonoBehaviour
     [SerializeField] private GameObject decalLeft;
     [SerializeField] private GameObject decalRight;
     [SerializeField] private GameObject footSteps;
+
+    private bool isBurning;
+    private float burnTimer;
     void Start()
     {
     }
@@ -18,7 +21,11 @@ public class AnimEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isBurning && burnTimer < 1.1f)
+        {
+            burnTimer += Time.deltaTime/3f;
+            Shader.SetGlobalFloat("timerburn", burnTimer);
+        }
     }
     
     /// <summary>
@@ -34,8 +41,8 @@ public class AnimEvent : MonoBehaviour
             AkSoundEngine.SetSwitch("FootStep_Floor","Sand",leftFoot);
             position = hit.point + Vector3.up * 0.1f;
             GameObject left = Instantiate(decalLeft, position, leftFoot.transform.rotation, footSteps.transform);
-            left.transform.Rotate(Vector3.right, 180);
-            left.transform.Rotate(Vector3.forward, 180);
+            left.transform.Rotate(Vector3.right, 90);
+            //left.transform.Rotate(Vector3.forward, 180);
         }
         else AkSoundEngine.SetSwitch("FootStep_Floor","Stone",leftFoot);
 
@@ -54,11 +61,33 @@ public class AnimEvent : MonoBehaviour
             AkSoundEngine.SetSwitch("FootStep_Floor","Sand",rightFoot);
             position = hit.point + Vector3.up*0.1f;
             GameObject right = Instantiate(decalRight, position, rightFoot.transform.rotation,footSteps.transform);
-            right.transform.Rotate(Vector3.right, 180);
-            right.transform.Rotate(Vector3.forward, 180);
+            right.transform.Rotate(Vector3.right, 90);
+            //right.transform.Rotate(Vector3.forward, 180);
         }
         else AkSoundEngine.SetSwitch("FootStep_Floor","Stone",rightFoot);
         
         AkSoundEngine.PostEvent("Cha_Footsteps_Play", rightFoot);
+    }
+
+    public void BeginBurn()
+    {
+        isBurning = true;
+    }
+
+    public void ResetBurn()
+    {
+        isBurning = false;
+        burnTimer = 0;
+        Shader.SetGlobalFloat("timerburn", burnTimer);
+    }
+
+    public void Inspiration()
+    {
+        AkSoundEngine.PostEvent("Cha_Breath_Inspi", gameObject);
+    }
+
+    public void Expiration()
+    {
+        AkSoundEngine.PostEvent("Cha_Breath_Expi", gameObject);
     }
 }

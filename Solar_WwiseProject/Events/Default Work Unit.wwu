@@ -91,7 +91,7 @@
 												<Action Name="" ID="{9BE34F6B-48A2-4B4E-A294-AD068C593224}" ShortID="730185991">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="38"/>
-														<Property Name="GameParameterValue" Type="Real64" Value="35"/>
+														<Property Name="GameParameterValue" Type="Real64" Value="60"/>
 														<Property Name="Scope" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>
@@ -104,10 +104,20 @@
 										</Event>
 										<Event Name="Cha_Hurt" ID="{8D2FD11F-A280-4DF0-A1F1-16E4AA776625}">
 											<ChildrenList>
+												<Action Name="" ID="{F25BA27C-E25A-4796-859C-A1A8B48713E9}" ShortID="117402795">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="23"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="isHurting" ID="{EE9D29D8-0B28-40CE-A6BB-829669375CA5}" WorkUnitID="{53F1FF98-385A-4108-A4F3-AF5283BC8DF9}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
 												<Action Name="" ID="{86B3D609-E852-444E-A2C3-92079F6A4396}" ShortID="652395998">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="38"/>
-														<Property Name="GameParameterValue" Type="Real64" Value="90"/>
+														<Property Name="GameParameterValue" Type="Real64" Value="100"/>
 														<Property Name="Scope" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>
@@ -125,6 +135,13 @@
 											</PropertyList>
 											<ChildrenList>
 												<Action Name="" ID="{575A865D-B05C-41EA-AC84-6AB048CF0C27}" ShortID="404574181">
+													<PropertyList>
+														<Property Name="Inclusion" Type="bool">
+															<ValueList>
+																<Value>False</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="Cha_Breath" ID="{4B063AD4-94B7-4BAC-88D6-FBEC2E2F60DB}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
@@ -134,6 +151,11 @@
 												<Action Name="" ID="{76718F4E-AF06-4780-97D9-21E8055F8D2B}" ShortID="259233065">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="23"/>
+														<Property Name="Inclusion" Type="bool">
+															<ValueList>
+																<Value>False</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
@@ -144,11 +166,38 @@
 												<Action Name="" ID="{2D93FC69-3E34-4550-A6FA-188F18B3A1E5}" ShortID="809047096">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="38"/>
+														<Property Name="Inclusion" Type="bool">
+															<ValueList>
+																<Value>False</Value>
+															</ValueList>
+														</Property>
 														<Property Name="Scope" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Cha_Breath_Inspi" ID="{490D4164-D5C7-4ABF-BC7C-CDCF5F0E88DC}">
+											<ChildrenList>
+												<Action Name="" ID="{32F0E859-4962-4009-8F6F-960B7450E508}" ShortID="393751294">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Cha_Breath_Inspi" ID="{79544230-EE6A-433F-B1CA-A8BFD52101C5}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Cha_Breath_Expi" ID="{355160FD-5BE4-4EB0-B23E-4B27143290F1}">
+											<ChildrenList>
+												<Action Name="" ID="{C03CD81C-A021-43C6-8260-4E4CBB0FF73C}" ShortID="948766544">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Cha_Breath_Expi" ID="{36A3C286-6D77-4A34-9150-5B189832CCA9}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>
@@ -180,6 +229,7 @@
 										<Action Name="" ID="{D2728E26-D4EF-4D7C-BDDA-F30E76F90AF2}" ShortID="912184419">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="FadeInCurve" Type="int16" Value="1"/>
 												<Property Name="Scope" Type="int16" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
@@ -191,17 +241,31 @@
 										<Action Name="" ID="{41711270-0F1D-4948-BEF6-A0492DF77B29}" ShortID="537731969">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="3"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.9"/>
 												<Property Name="Scope" Type="int16" Value="1"/>
 											</PropertyList>
 											<ReferenceList/>
 										</Action>
 										<Action Name="" ID="{BD5F7963-4402-483E-B248-E014C82A2A09}" ShortID="662345490">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.1"/>
+												<Property Name="Delay" Type="Real64" Value="0.82"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Cha_Death" ID="{F38C0427-746F-44C9-9D7C-ADAB469779B9}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{68D54400-FABC-4A70-AA19-D64972FDA6F3}" ShortID="194244152">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -245,6 +309,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Music_Switch_Lvl01" ID="{8952174F-F067-4B4F-A9AE-D5F4536C877F}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{5CB76F52-838B-43FD-B488-14D2AAAE1821}" ShortID="364603035">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Sun_Feedback_Play" ID="{43EA3834-EED4-40A4-9BCD-E7AD668D74F5}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -475,6 +549,17 @@
 								</Folder>
 							</ChildrenList>
 						</Folder>
+						<Event Name="Flying_Sphere_Play" ID="{456C704F-03A6-498D-94EC-FC0A4DEEA59E}">
+							<ChildrenList>
+								<Action Name="" ID="{C6D84F39-A784-4B08-999C-287BCA642235}" ShortID="828565199">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Obj_Plateform_Moving" ID="{6074D100-5BB1-4C5F-AB3E-3D5738B20953}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

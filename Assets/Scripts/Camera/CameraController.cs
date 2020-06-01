@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-#if UNITY_EDITOR
-using UnityEditor;
-using UnityEditor.SceneManagement;
-#endif
+
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -92,9 +89,7 @@ public class CameraController : MonoBehaviour
         
         transform.position = follow.Target + direction * actualDistance;
     }
-    
-    
-    
+
     public void RotateMouse(Vector3 mousePosition)
     {
         rotateMouse = new Vector3(-mousePosition.y,mousePosition.x,0);    
