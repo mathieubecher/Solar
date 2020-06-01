@@ -11,6 +11,9 @@ public class AnimEvent : MonoBehaviour
     [SerializeField] private GameObject decalLeft;
     [SerializeField] private GameObject decalRight;
     [SerializeField] private GameObject footSteps;
+
+    private bool isBurning;
+    private float burnTimer;
     void Start()
     {
     }
@@ -18,7 +21,11 @@ public class AnimEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isBurning && burnTimer < 1)
+        {
+            burnTimer += Time.deltaTime/3f;
+            Shader.SetGlobalFloat("timerburn", burnTimer);
+        }
     }
     
     /// <summary>
@@ -60,5 +67,27 @@ public class AnimEvent : MonoBehaviour
         else AkSoundEngine.SetSwitch("FootStep_Floor","Stone",rightFoot);
         
         AkSoundEngine.PostEvent("Cha_Footsteps_Play", rightFoot);
+    }
+
+    public void BeginBurn()
+    {
+        isBurning = true;
+    }
+
+    public void ResetBurn()
+    {
+        isBurning = false;
+        burnTimer = 0;
+        Shader.SetGlobalFloat("timerburn", burnTimer);
+    }
+
+    public void Inspiration()
+    {
+        AkSoundEngine.PostEvent("Cha_Breath_Inspi", gameObject);
+    }
+
+    public void Expiration()
+    {
+        AkSoundEngine.PostEvent("Cha_Breath_Expi", gameObject);
     }
 }

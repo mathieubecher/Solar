@@ -5,16 +5,188 @@
 			<ChildrenList>
 				<ControlSurfaceSession Name="Default Control Surface Session" ID="{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}">
 					<ChildrenList>
-						<ControlSurfaceBindingGroup Name="Global" ID="{69288639-0896-40B1-B4B9-054ACFD786FA}"/>
+						<ControlSurfaceBindingGroup Name="Global" ID="{69288639-0896-40B1-B4B9-054ACFD786FA}">
+							<ChildrenList>
+								<ControlSurfaceBinding Name="Binding" ID="{2DA0CF74-5804-444D-81D8-46B5BB661CFD}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Pitch-Bend"/>
+										<Property Name="TargetName" Type="string" Value="Volume"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="TargetObject">
+											<ObjectRef Name="Ambiance_Bus" ID="{29FDE568-B384-4C81-B1B5-252B9099C7BB}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{F44070CF-DC94-489B-926E-464433593B63}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.2~Pitch-Bend"/>
+										<Property Name="TargetName" Type="string" Value="Volume"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="TargetObject">
+											<ObjectRef Name="Breathing_Bus" ID="{902E587E-5F52-4318-BBF4-84185BA1386D}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{9873ADC3-849F-4C1E-BC32-67BDB13DD49F}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.3~Pitch-Bend"/>
+										<Property Name="TargetName" Type="string" Value="Volume"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="TargetObject">
+											<ObjectRef Name="Foleys_Bus" ID="{24383F11-053E-4433-8C86-F1951086C8E7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{80AE2A55-BB95-4E9E-B372-F30C58339572}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.4~Pitch-Bend"/>
+										<Property Name="TargetName" Type="string" Value="Volume"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="TargetObject">
+											<ObjectRef Name="Music_Bus" ID="{FE95FA85-D8C7-46AF-B639-4E9995364634}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{1E18B9AD-0A24-4880-84D4-E6D6B78A757C}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Note-On~16"/>
+										<Property Name="TargetName" Type="string" Value="ToggleMute"/>
+										<Property Name="TargetType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="TargetObject">
+											<ObjectRef Name="Ambiance_Bus" ID="{29FDE568-B384-4C81-B1B5-252B9099C7BB}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{8E2527AD-243C-4B5B-8B34-65C8709BD35E}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Note-On~8"/>
+										<Property Name="TargetName" Type="string" Value="ToggleSolo"/>
+										<Property Name="TargetType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="TargetObject">
+											<ObjectRef Name="Ambiance_Bus" ID="{29FDE568-B384-4C81-B1B5-252B9099C7BB}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{42DA4F94-417F-4EBA-BE34-A5EA09104F98}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Note-On~17"/>
+										<Property Name="TargetName" Type="string" Value="ToggleMute"/>
+										<Property Name="TargetType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="TargetObject">
+											<ObjectRef Name="Breathing_Bus" ID="{902E587E-5F52-4318-BBF4-84185BA1386D}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{B9D942E4-766E-437E-A94F-9196AB784BFD}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Note-On~9"/>
+										<Property Name="TargetName" Type="string" Value="ToggleSolo"/>
+										<Property Name="TargetType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="TargetObject">
+											<ObjectRef Name="Breathing_Bus" ID="{902E587E-5F52-4318-BBF4-84185BA1386D}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{9A3BD68A-0B15-46D1-9FA7-5D6D26AB362D}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Note-On~18"/>
+										<Property Name="TargetName" Type="string" Value="ToggleMute"/>
+										<Property Name="TargetType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="TargetObject">
+											<ObjectRef Name="Foleys_Bus" ID="{24383F11-053E-4433-8C86-F1951086C8E7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{3D032963-0E21-46C2-9378-5D93222CBC65}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Note-On~10"/>
+										<Property Name="TargetName" Type="string" Value="ToggleSolo"/>
+										<Property Name="TargetType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="TargetObject">
+											<ObjectRef Name="Foleys_Bus" ID="{24383F11-053E-4433-8C86-F1951086C8E7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{58735BFD-1ECF-4328-B819-9DA622AB973A}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Note-On~19"/>
+										<Property Name="TargetName" Type="string" Value="ToggleMute"/>
+										<Property Name="TargetType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="TargetObject">
+											<ObjectRef Name="Music_Bus" ID="{FE95FA85-D8C7-46AF-B639-4E9995364634}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{DF71B522-0F9E-467E-A249-073BBB96A257}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Note-On~11"/>
+										<Property Name="TargetName" Type="string" Value="ToggleSolo"/>
+										<Property Name="TargetType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="TargetObject">
+											<ObjectRef Name="Music_Bus" ID="{FE95FA85-D8C7-46AF-B639-4E9995364634}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</ControlSurfaceBinding>
+							</ChildrenList>
+						</ControlSurfaceBindingGroup>
 						<ControlSurfaceBindingGroup Name="Current Selection" ID="{FC4A2880-54A8-4E85-9A1D-ED81C3160248}">
 							<PropertyList>
 								<Property Name="GroupType" Type="int16" Value="4"/>
 							</PropertyList>
 							<ChildrenList>
-								<ControlSurfaceBinding Name="Binding" ID="{7F607389-453E-45CA-91CE-638787C52EEC}">
+								<ControlSurfaceBinding Name="Binding" ID="{F200EE43-CFF9-42F6-807D-8D8431BD12C2}">
 									<PropertyList>
-										<Property Name="TargetName" Type="string" Value="PassMidiNote"/>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Note-On~94"/>
+										<Property Name="TargetName" Type="string" Value="TransportPlayStop"/>
+										<Property Name="TargetType" Type="int16" Value="2"/>
+									</PropertyList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{5D766493-7EAA-42BB-A1D3-09CDE57C6A86}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Note-On~50"/>
+										<Property Name="TargetName" Type="string" Value="SwitchToLayoutSoundBank"/>
+										<Property Name="TargetType" Type="int16" Value="2"/>
+									</PropertyList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{36BE9253-C52D-4DC8-815E-1202DDD161D3}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Note-On~51"/>
+										<Property Name="TargetName" Type="string" Value="SwitchToLayoutDesigner"/>
+										<Property Name="TargetType" Type="int16" Value="2"/>
+									</PropertyList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{58F11B3C-C4CE-4D38-999B-49375655FBE4}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.1~Note-On~93"/>
+										<Property Name="TargetName" Type="string" Value="TransportStop"/>
 										<Property Name="TargetType" Type="int16" Value="1"/>
+									</PropertyList>
+								</ControlSurfaceBinding>
+								<ControlSurfaceBinding Name="Binding" ID="{37E226D0-9317-4EB0-A6A1-A95BC7BC7702}">
+									<PropertyList>
+										<Property Name="HardwareControllerKey" Type="string" Value="XTouch~Ch.9~Pitch-Bend"/>
+										<Property Name="TargetClassID" Type="int32" Value="524304"/>
+										<Property Name="TargetName" Type="string" Value="Volume"/>
 									</PropertyList>
 								</ControlSurfaceBinding>
 							</ChildrenList>
