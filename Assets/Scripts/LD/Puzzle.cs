@@ -41,7 +41,6 @@ public class Puzzle : MonoBehaviour
 
                 if (bezier == null || bezier.Count == 0 || PointChange())
                 {
-                    Debug.Log("debug bezier");
                     UpdateBezier();
                 }
                 for (int i = 1; i < bezier.Count; ++i)
