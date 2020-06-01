@@ -53,8 +53,8 @@ public class SphereController : MonoBehaviour
 
     void Transition()
     {
-        progress += Time.deltaTime * ((curve!= null)?curve.spead:1);
-
+        progress += Time.deltaTime * ((curve != null)?curve.speed:1);
+        Debug.Log(curve.speed);
         List<Vector3> points = new List<Vector3>();
         points.Add(last.position);
         if(curve != null){
