@@ -15,12 +15,12 @@ public class ControllerSun : MonoBehaviour
     private float _time;
     // Variable définissant la position que dois atteindre le soleil. 
     // Elle est modifié par le controlleur d'input
-    [HideInInspector]
+    //[HideInInspector]
     public float _gotoAngle = 0;
     
     // Aiguilles de l'astrolabe
     [SerializeField] private GameObject _gotoAngleInfo;
-    private float _angle = 0;
+    public float _angle = 0;
     [SerializeField] private GameObject _angleInfo;
     private float _angleVelocity = 0;
     
@@ -42,6 +42,7 @@ public class ControllerSun : MonoBehaviour
     void Awake()
     {
         ppeffect = FindObjectOfType<PostProcessEffect>();
+        
         _sun = FindObjectOfType<LightController>();
         _controller = GetComponent<Controller>();
         _points = new List<Point>();
@@ -79,10 +80,22 @@ public class ControllerSun : MonoBehaviour
     /// </summary>
     float DefineSpeed()
     {
+        /*
         //Debug.Log(Mathf.Abs(_gotoAngle - _angle)+ " " + Mathf.Abs(_angleVelocity) + " " + _maxRotateSpeed);
         if (Mathf.Abs(_gotoAngle - _angle) > Mathf.Abs(_angleVelocity)/2 && Mathf.Abs(_angleVelocity) < _maxRotateSpeed)
             _angleVelocity = Mathf.Min(Mathf.Abs(_gotoAngle - _angle)/Time.deltaTime , Mathf.Abs(_angleVelocity) + _speedVelocity) * Mathf.Sign(_gotoAngle-_angle);
         else if (Mathf.Abs(_gotoAngle - _angle) <= _maxRotateSpeed * Time.deltaTime) _angleVelocity = 0;
+        return _angleVelocity;
+        */
+        
+        
+        // _gotoAngle - _angle - _angleVelocity - _maxRotateSpeed
+        float _maxActualSpeed = Mathf.Min(_maxRotateSpeed, Mathf.Abs(_gotoAngle - _angle) / Time.deltaTime);
+        _angleVelocity = Mathf.Min(_maxActualSpeed, Mathf.Abs(_angleVelocity) + _speedVelocity * Time.deltaTime) * Mathf.Sign(_gotoAngle - _angle);
+
+
+
+
         return _angleVelocity;
     }
 
@@ -113,6 +126,7 @@ public class ControllerSun : MonoBehaviour
         // Feedback visuel
         _time = (_time + Time.deltaTime * _pulsateSpeed * (1 - _life)) % 1;
         _fxUI.color = fx.Evaluate(1 - _life) * new Color(1, 1, 1, 0.8f + _pulsate.Evaluate(_time) * 0.2f);
+        ppeffect.Interpolate(1-_life);
         
         // Incrémente le point à vérifier à la prochaine frame
         ++_testPoint;

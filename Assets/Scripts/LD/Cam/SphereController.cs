@@ -7,6 +7,7 @@ using UnityEditor.SceneManagement;
 #endif
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SphereController : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class SphereController : MonoBehaviour
         get => cmCam;
         set
         {
+            if (value == cmCam) return;
+            Debug.Log("Change cam sphere");
             last = cmCam;
             cmCam = value;
             progress = 0;
@@ -50,10 +53,24 @@ public class SphereController : MonoBehaviour
 
     void Transition()
     {
-        progress += Time.deltaTime;
-        transform.position = Vector3.Lerp(last.position, cmCam.position, progress);
-        //TODO Gestion des points de la curve
+        progress += Time.deltaTime * ((curve!= null)?curve.spead:1);
+
+        List<Vector3> points = new List<Vector3>();
+        points.Add(last.position);
+        if(curve != null){
+            //TODO Gestion des points de la curve
+            foreach (GizmosPoint point in curve.Points)
+            {
+                points.Add(point.transform.position);
+            }
+        }
+        points.Add(cmCam.position);
+        transform.position = CameraCurve.Bezier(points, (curve != null)?curve.progressCurve.Evaluate(progress):progress);
+       
     }
+
+   
+    
 }
 #if UNITY_EDITOR
 [CustomEditor(typeof(SphereController))]

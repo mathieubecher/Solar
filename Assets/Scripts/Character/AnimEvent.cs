@@ -83,11 +83,11 @@ public class AnimEvent : MonoBehaviour
 
     public void Inspiration()
     {
-        
+        AkSoundEngine.PostEvent("Cha_Breath_Inspi", gameObject);
     }
 
     public void Expiration()
     {
-        
+        AkSoundEngine.PostEvent("Cha_Breath_Expi", gameObject);
     }
 }
