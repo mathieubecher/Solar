@@ -84,9 +84,11 @@ public class Controller : MonoBehaviour
             // Retours visuels et sonores lié aux déplacements du personnage
             animator.SetFloat("velocity", velocity.magnitude);
             // RESPIRATION
+            
+            //if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
             if(sun.Life >= 1){
                 if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
-                else if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("Cha_Walk", this.gameObject);
+                // else if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("Cha_Walk", this.gameObject);
                 else AkSoundEngine.PostEvent("Cha_IDLE", this.gameObject);
             }
             else AkSoundEngine.PostEvent("Cha_Hurt", this.gameObject);
@@ -128,10 +130,13 @@ public class Controller : MonoBehaviour
             AkSoundEngine.SetRTPCValue("RTPC_Sun_Velocity", 0);
             AkSoundEngine.PostEvent("Cha_Death_Play", this.gameObject);
             animator.SetBool("die", true);
+            
             //animator.SetFloat("velocity", 0);
             _deatTimer = DeadTimer;
             velocity = Vector3.zero;
             _rigidbody.velocity = velocity;
+            
+            sun.ResetPoints();
         }
     }
     
@@ -142,7 +147,7 @@ public class Controller : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Cha_Respawn", this.gameObject);
         animator.SetBool("die", false);
-        puzzle.Dead();
+        puzzle.Respawn();
         FindObjectOfType<AnimEvent>().ResetBurn();
     }
     

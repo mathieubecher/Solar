@@ -69,7 +69,7 @@ public class ControllerPuzzle : MonoBehaviour
     /// <summary>
     /// Réinitialise position rotation et camera du joueur en fonction du puzzle actif.
     /// </summary>
-    public void Dead()
+    public void Respawn()
     {
         _controller.sun.ResetRotate(_puzzle.beginRotate);
         ResetPlatform(_puzzle);
