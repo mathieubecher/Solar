@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraCurve : MonoBehaviour
 {
     public GizmosPoint[] points;
-    public float spead = 1;
+    public float speed = 1;
     public AnimationCurve progressCurve = AnimationCurve.Linear(0,0,1,1);
 
     public GizmosPoint[] Points
