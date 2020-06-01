@@ -29,7 +29,8 @@ public class Controller : MonoBehaviour
     private Vector2 _move;
     private bool isMoving = false;
     public Vector3 velocity;
-    
+    public GameObject poncho;
+
     [Header("Gestion Mort")]
     [Range(0,5)]
     public float DeadTimer = 2;
