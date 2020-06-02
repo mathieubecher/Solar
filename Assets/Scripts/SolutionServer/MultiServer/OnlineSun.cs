@@ -102,4 +102,17 @@ public class OnlineSun: AbstractInput
     {
         _controller.puzzle.cmActual.SetPlatformProgress(readValue);
     }
+    public override void Dead()
+    {
+        _manager.CallSetPosition(_controller.transform.position);
+        _manager.CallSetRotate(_controller.transform.rotation);
+        _manager.CallSetVelocity(Vector3.zero);
+        _manager.CallSetSunRotate(_controller.sun._gotoAngle);
+        InputFixed();
+    }
+
+    public override bool CouldDie()
+    {
+        return false;
+    }
 }

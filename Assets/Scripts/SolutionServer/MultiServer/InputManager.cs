@@ -87,5 +87,14 @@ public class InputManager : ControllerBehavior
         if (networkObject.IsServer) networkObject.velocity = args.GetNext<Vector3>();
     }
 
-
+    public void CallDie()
+    {
+        networkObject.SendRpcUnreliable(RPC_DIE, (networkObject.IsServer)?Receivers.Others:Receivers.Server);
+    }
+    public override void Die(RpcArgs args)
+    {
+        Controller controller = FindObjectOfType<Controller>();
+        controller.Dying();
+        Debug.Log("receive dead");
+    }
 }

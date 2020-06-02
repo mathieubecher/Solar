@@ -48,13 +48,15 @@ public class SphereController : MonoBehaviour
         {
             Transition();
         }
-        else transform.position = cmCam.position;
+        else
+        {
+            transform.position = cmCam.position;
+        }
     }
 
     void Transition()
     {
         progress += Time.deltaTime * ((curve != null)?curve.speed:1);
-        Debug.Log(curve.speed);
         List<Vector3> points = new List<Vector3>();
         points.Add(last.position);
         if(curve != null){

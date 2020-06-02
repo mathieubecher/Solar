@@ -82,7 +82,6 @@ public class Platform : MonoBehaviour
         {
             progress += _velocity * speed * Time.deltaTime;
         }
-        Debug.Log(Mathf.Abs(progress - lastProgress)/(Time.deltaTime * speed));
         AkSoundEngine.SetRTPCValue("RTPC_Plateform_Velocity", Mathf.Abs(progress - lastProgress)/(Time.deltaTime * speed) *100);
     }
     
