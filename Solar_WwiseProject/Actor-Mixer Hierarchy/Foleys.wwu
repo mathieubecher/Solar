@@ -3448,7 +3448,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="obj_plateform_moving" ID="{E7ABD6F7-5BA7-4DC5-8E7B-704C6AA3897B}" ShortID="790987850">
+										<Sound Name="obj_plateform_static" ID="{E7ABD6F7-5BA7-4DC5-8E7B-704C6AA3897B}" ShortID="790987850">
 											<PropertyList>
 												<Property Name="Highpass" Type="int16">
 													<ValueList>
@@ -3466,29 +3466,41 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="obj_plateform_moving" ID="{6FA1879E-FE70-433E-A1A5-2B0C3080C697}">
-													<PropertyList>
-														<Property Name="CrossfadeDuration" Type="Real64" Value="578.947"/>
-														<Property Name="LoopBegin" Type="Real64" Value="1.22280817402769"/>
-														<Property Name="LoopEnd" Type="Real64" Value="4.56163480553724"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
+												<AudioFileSource Name="foley_plateform_static" ID="{1B2BC65E-4E57-433F-982E-82B1E62F92FA}">
 													<Language>SFX</Language>
-													<AudioFile>obj_plateform_moving.wav</AudioFile>
+													<AudioFile>foley_plateform_static.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="889595550"/>
-													</MediaIDList>
-												</AudioFileSource>
-												<AudioFileSource Name="flyingplateform-v2" ID="{79676A19-2995-4CBB-868F-765D6C33EEAB}">
-													<Language>SFX</Language>
-													<AudioFile>flyingplateform-v2.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="686565307"/>
+														<MediaID ID="882519658"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="flyingplateform-v2" ID="{79676A19-2995-4CBB-868F-765D6C33EEAB}" Platform="Linked"/>
+												<ActiveSource Name="foley_plateform_static" ID="{1B2BC65E-4E57-433F-982E-82B1E62F92FA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="foley_plateform_moving" ID="{92B34220-9851-431D-9E1D-2D9FAF0F1AFE}" ShortID="621820797">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="foley_plateform_moving" ID="{10FF4A3D-A330-402F-8DD2-A7EFE83D8C01}">
+													<Language>SFX</Language>
+													<AudioFile>foley_plateform_moving.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="406367280"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="foley_plateform_moving" ID="{10FF4A3D-A330-402F-8DD2-A7EFE83D8C01}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -3594,29 +3606,16 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="obj_plateform_moving" ID="{8EB15C71-E578-49A0-9CB7-4FCA104250DB}">
-													<PropertyList>
-														<Property Name="CrossfadeDuration" Type="Real64" Value="578.947"/>
-														<Property Name="LoopBegin" Type="Real64" Value="1.22280817402769"/>
-														<Property Name="LoopEnd" Type="Real64" Value="4.56163480553724"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
+												<AudioFileSource Name="foley_plateform_static" ID="{BC794A0F-F7DB-492E-9309-1B839B9CA721}">
 													<Language>SFX</Language>
-													<AudioFile>obj_plateform_moving.wav</AudioFile>
+													<AudioFile>foley_plateform_static.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="889595550"/>
-													</MediaIDList>
-												</AudioFileSource>
-												<AudioFileSource Name="flyingplateform-v2" ID="{F85B79AB-7AB3-4E98-8CBF-35BEF9D85315}">
-													<Language>SFX</Language>
-													<AudioFile>flyingplateform-v2.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="686565307"/>
+														<MediaID ID="882519658"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="flyingplateform-v2" ID="{F85B79AB-7AB3-4E98-8CBF-35BEF9D85315}" Platform="Linked"/>
+												<ActiveSource Name="foley_plateform_static" ID="{BC794A0F-F7DB-492E-9309-1B839B9CA721}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
