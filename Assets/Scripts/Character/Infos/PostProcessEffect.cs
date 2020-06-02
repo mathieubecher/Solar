@@ -1,6 +1,5 @@
 ﻿
 using System;
-using Boo.Lang;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;

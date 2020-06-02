@@ -48,7 +48,10 @@ public class SphereController : MonoBehaviour
         {
             Transition();
         }
-        else transform.position = cmCam.position;
+        else
+        {
+            transform.position = cmCam.position;
+        }
     }
 
     void Transition()

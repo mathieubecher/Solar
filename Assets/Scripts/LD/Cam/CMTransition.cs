@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -8,8 +9,13 @@ using UnityEngine.PlayerLoop;
 /// </summary>
 public class CMTransition : MonoBehaviour
 {
-    public CMCamera _previous;
-    public CMCamera _next;
+
+    public CMCamera previous;
+    public CMCamera next;
+
+    [Header("Transition info")]
+    public CinemachineBlendDefinition.Style type = CinemachineBlendDefinition.Style.EaseInOut;
+    [Range(0,5)] public float transitionTime = 1;
 
     [HideInInspector] public Collider previousCollider;
     [HideInInspector] public Collider nextCollider;
@@ -26,7 +32,7 @@ public class CMTransition : MonoBehaviour
     
     void OnDrawGizmos()
     {
-        if (_previous != null && _next != null)
+        if (previous != null && next != null)
         {
             CameraCurve curve = GetComponent<CameraCurve>();
             if(curve.Points.Length>0){
@@ -39,7 +45,7 @@ public class CMTransition : MonoBehaviour
             }
             else
             {
-                Gizmos.DrawLine(_previous.transform.position, _next.transform.position);
+                Gizmos.DrawLine(previous.transform.position, next.transform.position);
             }
 
         }
@@ -51,19 +57,19 @@ public class CMTransition : MonoBehaviour
         bezier = new List<Vector3>();
         CameraCurve curve = GetComponent<CameraCurve>();
         List<Vector3> points = new List<Vector3>();
-        points.Add(_previous.transform.position);
+        points.Add(previous.transform.position);
         foreach (GizmosPoint point in curve.Points)
         {
             points.Add(point.transform.position);
         }
-        points.Add(_next.transform.position);
+        points.Add(next.transform.position);
 
-        bezier.Add(_previous.transform.position);
+        bezier.Add(previous.transform.position);
         for (float i = 0.1f; i <= 1; i += 0.1f)
         {
             bezier.Add(CameraCurve.Bezier(points,i));
         }
-        bezier.Add(_next.transform.position);
+        bezier.Add(next.transform.position);
     }
 
     bool PointChange()
