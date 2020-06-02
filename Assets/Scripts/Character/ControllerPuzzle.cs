@@ -13,7 +13,6 @@ public class ControllerPuzzle : MonoBehaviour
     private float _timer_CMnext = 0;
     
     private Controller _controller;
-    public SphereController sphere;
     
     void Start()
     {
@@ -24,7 +23,6 @@ public class ControllerPuzzle : MonoBehaviour
         {
             transform.position = _puzzle.GetRespawnPoint();
             _controller.sun.ResetRotate(_puzzle.beginRotate);
-            _controller.poncho.GetComponent<Cloth>().ClearTransformMotion();
         }
         cmActual = _puzzle.cam;
         cmActual.Enable(this);
@@ -41,18 +39,16 @@ public class ControllerPuzzle : MonoBehaviour
                 ChangeCam(_CMnext);
             }
         }
-        _controller.poncho.GetComponent<Cloth>().ClearTransformMotion();
     }
     
     private void OnTriggerEnter(Collider other)
     {
         // Entre dans un puzzle
-        if (other.gameObject.layer == 12)
+        if (other.gameObject.layer == 12 && _puzzle != other.gameObject.GetComponentInParent<Puzzle>())
         {
             _puzzle = other.gameObject.GetComponentInParent<Puzzle>();
             _puzzle.Enter(_controller.sun._gotoAngle);
             ChangeCam(_puzzle.cam);
-
         }
         // Transition de camera
         else if (other.gameObject.layer == 14)
@@ -60,12 +56,7 @@ public class ControllerPuzzle : MonoBehaviour
             CMTransition transition = other.gameObject.GetComponent<CMTransition>();
             if (other == transition.nextCollider) DecideChangeCam(transition._next);
             else DecideChangeCam(transition._previous);
-            
-            
         }
-        else return;
-
-        sphere.Curve = other.gameObject.GetComponent<CameraCurve>();
     }
     
     /// <summary>
@@ -80,7 +71,6 @@ public class ControllerPuzzle : MonoBehaviour
         ChangeCam(_puzzle.cam);
         
         _controller.sun.ResetPoints();
-        _controller.poncho.GetComponent<Cloth>().ClearTransformMotion();
     }
     
     /// <summary>
@@ -104,13 +94,11 @@ public class ControllerPuzzle : MonoBehaviour
         cmActual.Disable();
         cmActual = cam;
         cam.Enable(this);
-        sphere.CMCam = cam.transform;
     }
 
     public void DecideChangeCam(CMCamera cam)
     {
         _timer_CMnext = 1f;
         _CMnext = cam;
-        //sphere.CMCam = cam.transform;
     }
 }
