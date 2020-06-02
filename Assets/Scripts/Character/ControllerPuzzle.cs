@@ -35,6 +35,7 @@ public class ControllerPuzzle : MonoBehaviour
     private float _timer_CMnext = 0;
     
     private Controller _controller;
+    public SphereController sphere;
     
     void Start()
     {
@@ -127,7 +128,7 @@ public class ControllerPuzzle : MonoBehaviour
         cmActual.Disable();
         cmActual = transition.next;
         transition.next.Enable(this);
-        sphere.CMCam =  transition.next.transform;
+        sphere.CMCam = transition.next.transform;
         
     }
 
