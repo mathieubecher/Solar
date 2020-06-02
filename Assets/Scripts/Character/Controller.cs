@@ -137,7 +137,7 @@ public class Controller : MonoBehaviour
             velocity = Vector3.zero;
             _rigidbody.velocity = velocity;
             
-            sun.ResetPoints();
+            //sun.ResetPoints();
         }
     }
     

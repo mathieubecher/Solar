@@ -136,6 +136,16 @@ public class OnlinePlayer : AbstractInput
     {
         // force la mise à jour des données à l'autre joueur
         isMoving = true;
+        _manager.CallSetPosition(_controller.transform.position);
+        _manager.CallSetRotate(_controller.transform.rotation);
+        _manager.CallSetVelocity(Vector3.zero);
+        _manager.CallSetSunRotate(_controller.sun._gotoAngle);
         InputFixed();
+    }
+    
+    public override bool CouldDie()
+    {
+        _manager.CallDie();
+        return true;
     }
 }

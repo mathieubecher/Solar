@@ -24,4 +24,9 @@ public abstract class AbstractInput
     public virtual void Dead()
     {
     }
+
+    public virtual bool CouldDie()
+    {
+        return true;
+    }
 }

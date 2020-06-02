@@ -114,11 +114,13 @@ public class ControllerSun : MonoBehaviour
         }
 
         if (!touch) _life  = Mathf.Min(1, _life +_speedHeal * Time.deltaTime);
-        else if (_life <= 0)
+        
+        
+        else if (_life <= 0 && _controller.inputs.CouldDie())
         {
             _controller.Dying();
-            _life = 0;
         }
+        if(_life < 0) _life = 0;
         
         // Produit un son en fonction de la vie
         AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", Mathf.Abs(_life * 100));

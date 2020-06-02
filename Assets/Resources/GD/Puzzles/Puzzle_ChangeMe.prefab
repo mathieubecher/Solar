@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72f4cf009b094418a04e2d0c7c9a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  change: 0
 --- !u!1 &1221860326192763725
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72f4cf009b094418a04e2d0c7c9a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  change: 0
 --- !u!1 &1221860326218195451
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72f4cf009b094418a04e2d0c7c9a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  change: 0
 --- !u!1 &1221860326374016135
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72f4cf009b094418a04e2d0c7c9a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  change: 0
 --- !u!1 &1221860326852056901
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72f4cf009b094418a04e2d0c7c9a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  change: 0
 --- !u!1 &1221860327032571314
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72f4cf009b094418a04e2d0c7c9a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  change: 0
 --- !u!1 &1221860327116017523
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72f4cf009b094418a04e2d0c7c9a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  change: 0
 --- !u!1 &1221860327129964505
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72f4cf009b094418a04e2d0c7c9a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  change: 0
 --- !u!1 &1221860327157088911
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72f4cf009b094418a04e2d0c7c9a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  change: 0
 --- !u!1 &1221860327406675697
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72f4cf009b094418a04e2d0c7c9a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  change: 0
 --- !u!1 &1221860327459684188
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72f4cf009b094418a04e2d0c7c9a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  change: 0
 --- !u!1 &1788686045138291152
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,8 +786,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawn: {fileID: 5407878815700586195}
+  last: {fileID: 0}
   cam: {fileID: 7034531658753044527}
   beginRotate: 0
+  curve: {fileID: 0}
 --- !u!1 &3801005072774741855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,6 +1314,16 @@ PrefabInstance:
     - target: {fileID: 1553459731146254123, guid: 84089476483825c44b2ea05667c5d374,
         type: 3}
       propertyPath: _next
+      value: 
+      objectReference: {fileID: 9010897017673765216}
+    - target: {fileID: 1553459731146254123, guid: 84089476483825c44b2ea05667c5d374,
+        type: 3}
+      propertyPath: previous
+      value: 
+      objectReference: {fileID: 7034531658753044527}
+    - target: {fileID: 1553459731146254123, guid: 84089476483825c44b2ea05667c5d374,
+        type: 3}
+      propertyPath: next
       value: 
       objectReference: {fileID: 9010897017673765216}
     - target: {fileID: 1553459731146254125, guid: 84089476483825c44b2ea05667c5d374,
@@ -2122,6 +2145,16 @@ PrefabInstance:
     - target: {fileID: 1553459731146254123, guid: 84089476483825c44b2ea05667c5d374,
         type: 3}
       propertyPath: _next
+      value: 
+      objectReference: {fileID: 1755619030589270796}
+    - target: {fileID: 1553459731146254123, guid: 84089476483825c44b2ea05667c5d374,
+        type: 3}
+      propertyPath: previous
+      value: 
+      objectReference: {fileID: 9010897017673765216}
+    - target: {fileID: 1553459731146254123, guid: 84089476483825c44b2ea05667c5d374,
+        type: 3}
+      propertyPath: next
       value: 
       objectReference: {fileID: 1755619030589270796}
     - target: {fileID: 1553459731146254125, guid: 84089476483825c44b2ea05667c5d374,
