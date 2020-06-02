@@ -46,7 +46,6 @@ public class ControllerPuzzle : MonoBehaviour
         {
             transform.position = _puzzle.GetRespawnPoint();
             _controller.sun.ResetRotate(_puzzle.beginRotate);
-            _controller.poncho.GetComponent<Cloth>().ClearTransformMotion();
         }
         cmActual = _puzzle.cam;
         cmActual.Enable(this);
@@ -63,13 +62,12 @@ public class ControllerPuzzle : MonoBehaviour
                 ChangeCam(_infosTransition);
             }
         }
-        _controller.poncho.GetComponent<Cloth>().ClearTransformMotion();
     }
     
     private void OnTriggerEnter(Collider other)
     {
         // Entre dans un puzzle
-        if (other.gameObject.layer == 12)
+        if (other.gameObject.layer == 12 && _puzzle != other.gameObject.GetComponentInParent<Puzzle>())
         {
             _puzzle = other.gameObject.GetComponentInParent<Puzzle>();
             _puzzle.Enter(_controller.sun._gotoAngle);
@@ -85,9 +83,6 @@ public class ControllerPuzzle : MonoBehaviour
             
             
         }
-        else return;
-
-        sphere.Curve = other.gameObject.GetComponent<CameraCurve>();
     }
     
     /// <summary>
@@ -133,7 +128,7 @@ public class ControllerPuzzle : MonoBehaviour
         cmActual.Disable();
         cmActual = transition.next;
         transition.next.Enable(this);
-        sphere.CMCam =  transition.next.transform;
+        sphere.CMCam = transition.next.transform;
         
     }
 
