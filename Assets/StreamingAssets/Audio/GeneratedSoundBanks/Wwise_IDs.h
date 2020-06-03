@@ -132,7 +132,10 @@ namespace AK
         static const AkUniqueID BREATH_RTPC = 748151351U;
         static const AkUniqueID RTPC_ASTROSIDECHAIN = 2972377204U;
         static const AkUniqueID RTPC_DISTANCE_SUN = 2257099397U;
+        static const AkUniqueID RTPC_MAIN_VOLUME = 1856500933U;
+        static const AkUniqueID RTPC_MUSIC_VOLUME = 1596647065U;
         static const AkUniqueID RTPC_PLATEFORM_VELOCITY = 3829022635U;
+        static const AkUniqueID RTPC_SFX_VOLUME = 932301089U;
         static const AkUniqueID RTPC_SUN_VELOCITY = 582120507U;
         static const AkUniqueID RTPC_WINDGAIN = 1687410496U;
     } // namespace GAME_PARAMETERS
