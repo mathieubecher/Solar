@@ -21,6 +21,9 @@ public abstract class AbstractInput
     public virtual void InputFixed(){}
     public virtual void SetManager(InputManager manager){}
 
+    public virtual void BindSun(Options.Bind bind) {}
+
+    public virtual void BindPlatform(Options.Bind bind) {}
     public virtual void Dead()
     {
     }

@@ -38,7 +38,6 @@ public class MultiMonitor : MonoBehaviour
         else if(_manager.gameType == GameManager.GameType.LOCAL) Dual();
         else if (StaticClass.serverType == StaticClass.ServerType.PLAYER) OnlinePlayer();
         else if (StaticClass.serverType == StaticClass.ServerType.SUN) OnlineSun();
-        
     }
 
     void Update()

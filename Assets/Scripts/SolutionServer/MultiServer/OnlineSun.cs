@@ -1,4 +1,5 @@
-﻿using BeardedManStudios.Forge.Networking;
+﻿using System;
+using BeardedManStudios.Forge.Networking;
 using BeardedManStudios.Forge.Networking.Generated;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -18,7 +19,12 @@ public class OnlineSun: AbstractInput
         isManager = true;
         _manager = manager;
     }
+
+    private Action<InputAction.CallbackContext> rotateSun;
+    private Action<InputAction.CallbackContext> rotateStickSun;
     
+    private Action<InputAction.CallbackContext> progressPlatform;
+    private Action<InputAction.CallbackContext> progressStickPlatform;
     /// <summary>
     /// Met en place la structure serveur.
     /// </summary>
@@ -26,17 +32,25 @@ public class OnlineSun: AbstractInput
     /// <param name="manager"></param>
     public OnlineSun(Controller controller, InputManager manager) : base(controller)
     {
+        
+        rotateSun = ctx => RotateSun(ctx.ReadValue<float>());
+        rotateStickSun = ctx => RotateStickSun(ctx.ReadValue<Vector2>());
+        
+        
+        progressPlatform = ctx => ProgressPlatform(ctx.ReadValue<float>());
+        progressStickPlatform = ctx => ProgressStickPlatform(ctx.ReadValue<Vector2>());
+        
         _controls = controller.GetComponent<PlayerInput>();
         SetManager(manager);
         _goto = controller.transform.position;
         _controller.GetComponent<Rigidbody>().isKinematic = true;
         
         // Abonne la classe aux evennements d'InputSystem
-        _controls.currentActionMap["RotateSun"].performed += ctx => RotateSun(ctx.ReadValue<float>());
-        _controls.currentActionMap["RotateSun"].canceled += ctx => RotateSun(ctx.ReadValue<float>());
+        _controls.currentActionMap["RotateSun"].performed += rotateSun;
+        _controls.currentActionMap["RotateSun"].canceled += rotateSun;
         
-        _controls.currentActionMap["ProgressPlatform"].performed += ctx => ProgressPlatform(ctx.ReadValue<float>());
-        _controls.currentActionMap["ProgressPlatform"].canceled += ctx => ProgressPlatform(ctx.ReadValue<float>());
+        _controls.currentActionMap["ProgressPlatform"].performed += progressPlatform;
+        _controls.currentActionMap["ProgressPlatform"].canceled += progressPlatform;
         
         // Défini la position et rotation de départ du personnage
         if (GameObject.FindObjectOfType<GameManager>().gameType == GameManager.GameType.CLIENT)
@@ -59,8 +73,11 @@ public class OnlineSun: AbstractInput
     {
         if(!_controller.IsDead()){
             MovePlayer();
-            _controller.sun._gotoAngle += _gotoAngleVelocity * _controller.sun._maxRotateSpeed * Time.deltaTime;
-            if(isManager) _manager.CallSetSunRotate(_controller.sun._gotoAngle);
+            if (!_controller.options.gameObject.active)
+            {
+                _controller.sun._gotoAngle += _gotoAngleVelocity * _controller.sun._maxRotateSpeed * Time.deltaTime;
+                if (isManager) _manager.CallSetSunRotate(_controller.sun._gotoAngle);
+            }
         }
     }
 
@@ -92,7 +109,7 @@ public class OnlineSun: AbstractInput
     /// </summary>
     public void RotateSun(float angle)
     {
-        _gotoAngleVelocity = angle;
+        _gotoAngleVelocity = angle  * _controller.options.player2Settings.sunSensitivity * ((_controller.options.player2Settings.invertSun)?-1:1);
     }
     
     /// <summary>
@@ -100,7 +117,7 @@ public class OnlineSun: AbstractInput
     /// </summary>
     private void ProgressPlatform(float readValue)
     {
-        _controller.puzzle.cmActual.SetPlatformProgress(readValue);
+        _controller.puzzle.cmActual.SetPlatformProgress(readValue * _controller.options.player2Settings.platformSensitivity);
     }
     public override void Dead()
     {
@@ -114,5 +131,130 @@ public class OnlineSun: AbstractInput
     public override bool CouldDie()
     {
         return false;
+    }
+    
+    private Options.Bind lastPlatform = Options.Bind.L1R1;
+    private Options.Bind lastSun = Options.Bind.L2R2;
+    public override void BindPlatform(Options.Bind bind)
+    {
+        if (lastPlatform != bind) BindPlatform(lastPlatform, bind);
+        lastPlatform = bind;
+    }
+
+    public override void BindSun(Options.Bind bind)
+    {
+        if (lastSun != bind) BindSun(lastSun, bind);
+        lastSun = bind;
+    }
+    
+    
+    #region Biding Platform
+    
+    public void BindPlatform(Options.Bind last, Options.Bind bind)
+    {
+        ResetBind(last);
+        if (bind == Options.Bind.L1R1)
+        {
+            _controls.currentActionMap["ProgressPlatform"].performed += progressPlatform;
+            _controls.currentActionMap["ProgressPlatform"].canceled += progressPlatform;
+        }
+        else if (bind == Options.Bind.L2R2)
+        {
+            _controls.currentActionMap["RotateSun"].performed += progressPlatform;
+            _controls.currentActionMap["RotateSun"].canceled += progressPlatform;
+        }
+        else if (bind == Options.Bind.LeftStick)
+        {
+            _controls.currentActionMap["Movement"].performed += progressStickPlatform;
+            _controls.currentActionMap["Movement"].canceled += progressStickPlatform;
+        }
+        else
+        {
+            _controls.currentActionMap["Rotate"].performed += progressStickPlatform;
+            _controls.currentActionMap["Rotate"].canceled += progressStickPlatform;
+        }
+    }
+
+    private void ProgressStickPlatform(Vector2 readValue)
+    {
+        _controller.puzzle.cmActual.SetPlatformProgress(readValue.y * _controller.options.player2Settings.platformSensitivity);
+    }
+
+
+    #endregion
+
+    #region Biding Sun
+    
+
+    public void BindSun(Options.Bind last, Options.Bind bind)
+    {
+        ResetBind(last);
+        if (bind == Options.Bind.L1R1)
+        {
+            _controls.currentActionMap["ProgressPlatform"].performed += rotateSun;
+            _controls.currentActionMap["ProgressPlatform"].canceled += rotateSun;
+        }
+        else if (bind == Options.Bind.L2R2)
+        {
+            
+            _controls.currentActionMap["RotateSun"].performed += rotateSun;
+            _controls.currentActionMap["RotateSun"].canceled += rotateSun;
+        }
+        else if (bind == Options.Bind.LeftStick)
+        {
+            _controls.currentActionMap["Movement"].performed += rotateStickSun;
+            _controls.currentActionMap["Movement"].canceled += rotateStickSun;
+        }
+        else
+        {
+            _controls.currentActionMap["Rotate"].performed += rotateStickSun;
+            _controls.currentActionMap["Rotate"].canceled += rotateStickSun;
+        }
+        
+    }
+
+    private void RotateStickSun(Vector2 readValue)
+    {
+        _gotoAngleVelocity = readValue.y  * _controller.options.player2Settings.sunSensitivity * ((_controller.options.player2Settings.invertSun)?-1:1);
+    }
+
+    #endregion
+    
+    private void ResetBind(Options.Bind last)
+    {
+        if (last == Options.Bind.L1R1)
+        {
+            _controls.currentActionMap["ProgressPlatform"].performed -= rotateSun;
+            _controls.currentActionMap["ProgressPlatform"].canceled -= rotateSun;
+            _controls.currentActionMap["ProgressPlatform"].performed -= progressPlatform;
+            _controls.currentActionMap["ProgressPlatform"].canceled -= progressPlatform;
+            
+        }
+        else if (last == Options.Bind.L2R2)
+        {
+            _controls.currentActionMap["RotateSun"].performed -= rotateSun;
+            _controls.currentActionMap["RotateSun"].canceled -= rotateSun;
+            _controls.currentActionMap["RotateSun"].performed -= progressPlatform;
+            _controls.currentActionMap["RotateSun"].canceled -= progressPlatform;
+        }
+        else if (last == Options.Bind.LeftStick)
+        {
+            _controls.currentActionMap["Movement"].performed -= rotateStickSun;
+            _controls.currentActionMap["Movement"].canceled -= rotateStickSun;
+            _controls.currentActionMap["Movement"].performed -= progressStickPlatform;
+            _controls.currentActionMap["Movement"].canceled -= progressStickPlatform;
+        }
+        else
+        {
+            _controls.currentActionMap["Rotate"].performed -= rotateStickSun;
+            _controls.currentActionMap["Rotate"].canceled -= rotateStickSun;
+            _controls.currentActionMap["Rotate"].performed -= progressStickPlatform;
+            _controls.currentActionMap["Rotate"].canceled -= progressStickPlatform;
+        }
+    }
+
+    public void UpdateSunSensitivity(float value)
+    {
+        
     }
 }

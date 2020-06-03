@@ -22,14 +22,23 @@ public class Local : AbstractInput
     /// </summary>
     public override void InputUpdate()
     {
-        // Applique la velocité de la camera
-        MoveCamera();
-        // Applique la vélocité du personnage et du soleil
-        if (!_controller.IsDead())
+        if (!_controller.options.gameObject.active)
         {
-            MovePlayer();
-            RotateSun();
-            ProgressPlatform();
+            // Applique la velocité de la camera
+            MoveCamera();
+            // Applique la vélocité du personnage et du soleil
+            if (!_controller.IsDead())
+            {
+                MovePlayer();
+                RotateSun();
+                ProgressPlatform();
+            }
+        }
+        else
+        {
+            _controller.velocity = Vector3.zero;
+            _controller.cam.RotateMouse(Vector3.zero);
+            _controller.cam.Rotate(Vector3.zero);
         }
     }
 
@@ -44,7 +53,8 @@ public class Local : AbstractInput
         
         // transforme la valeur de l'input en velocité pour le joueur
         _move = _player.Move;
-        _controller.velocity = Quaternion.Euler(0,_controller.cam.transform.eulerAngles.y,0) * (new Vector3(_move.x,0,_move.y) * _controller.speed);
+        _controller.velocity = Quaternion.Euler(0,_controller.cam.transform.eulerAngles.y,0) * 
+                               (new Vector3(_move.x,0,_move.y) * _controller.speed);
         
         // met à jour la rotation du joueur en fonction de la vélocité calculée
         if (_controller.velocity.magnitude > 0)
@@ -56,6 +66,7 @@ public class Local : AbstractInput
             _controller.velocity = Vector3.zero;
         }
     }
+    
     /// <summary>
     /// Déplacement du soleil.
     /// </summary>
@@ -81,6 +92,7 @@ public class Local : AbstractInput
     /// </summary>
     private void ProgressPlatform()
     {
+        if (!_hasSun) return; 
         _controller.puzzle.cmActual.SetPlatformProgress(_sun.VelocityPlatform);
     }
 
@@ -98,5 +110,19 @@ public class Local : AbstractInput
         }
         else SetPlayer(inputLocal);
         return 0;
+    }
+
+    private Options.Bind lastPlatform = Options.Bind.L1R1;
+    private Options.Bind lastSun = Options.Bind.L2R2;
+    public override void BindPlatform(Options.Bind bind)
+    {
+        if (lastPlatform != bind) _sun.BindPlatform(lastPlatform, bind);
+        lastPlatform = bind;
+    }
+
+    public override void BindSun(Options.Bind bind)
+    {
+        if (lastSun != bind) _sun.BindSun(lastSun, bind);
+        lastSun = bind;
     }
 }

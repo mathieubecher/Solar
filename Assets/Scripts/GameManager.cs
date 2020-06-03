@@ -16,15 +16,18 @@ public class GameManager : MonoBehaviour
 
     public GameType gameType = GameType.SOLO;
 
-    
+    public Options options;
     
     [Header("Vitesse en jeu")]
     [Range(0,1)]
     public float timeScale = 1;
 
+    public Controller controller;
+
     // Start is called before the first frame update
     void Awake()
     {
+        controller = FindObjectOfType<Controller>();
         gameType = StaticClass.gameType;
         Debug.Log(gameType);
         mask = LayerMask.GetMask("Sand")+LayerMask.GetMask("Default");
@@ -36,10 +39,13 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
         #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPlaying = false;
         #else
-            Application.Quit();
+            //Application.Quit();
         #endif
+
+            options.gameObject.SetActive(!options.gameObject.active);
+
         }
         if (Input.GetKeyDown(KeyCode.F))
         {

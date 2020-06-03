@@ -13,7 +13,8 @@ public class Controller : MonoBehaviour
     public AbstractInput inputs;
     private PlayerInput _controls;
     protected Rigidbody _rigidbody;
-    
+
+    public Options options;
     // External
     [HideInInspector] public CameraController cam;
 
@@ -43,6 +44,7 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+       
         // Active la mort quelque soit la valeur défini d'activeDead en dehors de l'editor.
 #if UNITY_EDITOR
 #else
@@ -56,10 +58,16 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
+#if UNITY_EDITOR
+#else
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+#endif
         FindObjectOfType<AnimEvent>().ResetBurn();
         _rigidbody = GetComponent<Rigidbody>();
         GameManager manager = FindObjectOfType<GameManager>();
-
+        options = manager.options;
+        
         // Met en place les différents gestionnaires d'input en fonction des paramètres choisis par le joueur
         inputs = new Solo(this);
         if (manager.gameType == GameManager.GameType.SOLO)
