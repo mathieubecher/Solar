@@ -68,13 +68,13 @@ public class MultiMonitor : MonoBehaviour
         #if UNITY_STANDALONE_WIN
         StartCoroutine(SetWindowPosition(0,0));
         #endif
+        _manager.UiInterface.GetComponent<SizeGestor>().Full();
     }
 
     public void Dual()
     {
         Debug.Log("dual");
         multi = true;
-        
         /*
         // MULTI GPU 
         Display.displays[0].Activate(1920, 1080, 60);
@@ -89,6 +89,7 @@ public class MultiMonitor : MonoBehaviour
         #if UNITY_STANDALONE_WIN
         StartCoroutine(SetWindowPosition(-8, -50));
         #endif
+        _manager.UiInterface.GetComponent<SizeGestor>().Half();
     }
 
     public void OnlineSun()
@@ -99,6 +100,7 @@ public class MultiMonitor : MonoBehaviour
         player2.rect = new Rect(0,0,1,1);
         main.enabled = false;
         player2.enabled = true;
+        _manager.UiInterface.GetComponent<SizeGestor>().Full();
     }
     public void OnlinePlayer()
     {
@@ -108,6 +110,7 @@ public class MultiMonitor : MonoBehaviour
         main.rect = new Rect(0,0,1,1);
         player2.enabled = false;
         main.enabled = true;
+        _manager.UiInterface.GetComponent<SizeGestor>().Full();
     }
 
     public void SetFullScreen(bool value)
@@ -118,6 +121,7 @@ public class MultiMonitor : MonoBehaviour
             if(value) Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
             else SetResolution(res, true);
         }
+        _manager.UiInterface.GetComponent<SizeGestor>().Full();
     }
 
     private Int32 res;
