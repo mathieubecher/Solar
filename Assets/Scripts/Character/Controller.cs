@@ -40,29 +40,22 @@ public class Controller : MonoBehaviour
     [SerializeField] bool activeDead = true;
     public Vector3 Target {  get => _target.gameObject.transform.position;}
 
-    
-    // Start is called before the first frame update
+
+
     void Awake()
     {
-       
         // Active la mort quelque soit la valeur défini d'activeDead en dehors de l'editor.
-#if UNITY_EDITOR
-#else
+#if !UNITY_EDITOR
         activeDead = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 #endif
+        
         cam = FindObjectOfType<CameraController>();
         _target = FindObjectOfType<CameraTarget>();
         sun = GetComponent<ControllerSun>();
         puzzle = GetComponent<ControllerPuzzle>();
-    }
-
-    void Start()
-    {
-#if UNITY_EDITOR
-#else
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-#endif
+        
         FindObjectOfType<AnimEvent>().ResetBurn();
         _rigidbody = GetComponent<Rigidbody>();
         GameManager manager = FindObjectOfType<GameManager>();
