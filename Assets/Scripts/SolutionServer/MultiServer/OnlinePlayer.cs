@@ -60,7 +60,7 @@ public class OnlinePlayer : AbstractInput
     /// </summary>
     public override void InputUpdate()
     {
-        if (!_controller.options.gameObject.active)
+        if (!_controller.UiInterface.gameObject.active)
         {
             MouseCamera();
             if (!_controller.IsDead())
@@ -121,8 +121,8 @@ public class OnlinePlayer : AbstractInput
     /// </summary>
     private void MouseCamera()
     {
-        _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X") * _controller.options.player1Settings.xAxisSensitivity, 
-                                        Input.GetAxis("Mouse Y") * _controller.options.player1Settings.yAxisSensitivity * ((_controller.options.player1Settings.invertVertical)?-1:1)) * 0.8f);
+        _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X") * _controller.UiInterface.player1Settings.xAxisSensitivity, 
+                                        Input.GetAxis("Mouse Y") * _controller.UiInterface.player1Settings.yAxisSensitivity * ((_controller.UiInterface.player1Settings.invertVertical)?-1:1)) * 0.8f);
     }
     /// <summary>
     /// Récupère la vélocité à appliquer à la caméra
@@ -130,8 +130,8 @@ public class OnlinePlayer : AbstractInput
     /// <param name="velocity">valeur envoyé par InputSystem</param>
     public void VelocityCam(Vector2 velocity)
     {
-        _controller.cam.Rotate(new Vector2(velocity.x * _controller.options.player1Settings.xAxisSensitivity, 
-            velocity.y  * _controller.options.player1Settings.yAxisSensitivity * ((_controller.options.player1Settings.invertVertical)?-1:1)));
+        _controller.cam.Rotate(new Vector2(velocity.x * _controller.UiInterface.player1Settings.xAxisSensitivity, 
+            velocity.y  * _controller.UiInterface.player1Settings.yAxisSensitivity * ((_controller.UiInterface.player1Settings.invertVertical)?-1:1)));
     }
     
     /// <summary>

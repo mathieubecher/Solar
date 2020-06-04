@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Options : Menu
+public class UIWrapper : MonoBehaviour
 {
-    
+    public UIInterface uiInterface;
+
 }

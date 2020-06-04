@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Player2List : MonoBehaviour
+public class Player2List : Menu
 {
     public Dropdown SunBinding;
     public Dropdown PlatformBinding;

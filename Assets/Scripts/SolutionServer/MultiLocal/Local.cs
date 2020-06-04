@@ -22,7 +22,7 @@ public class Local : AbstractInput
     /// </summary>
     public override void InputUpdate()
     {
-        if (!_controller.options.gameObject.active)
+        if (!_controller.UiInterface.gameObject.active)
         {
             // Applique la velocité de la camera
             MoveCamera();
@@ -112,15 +112,15 @@ public class Local : AbstractInput
         return 0;
     }
 
-    private Options.Bind lastPlatform = Options.Bind.L1R1;
-    private Options.Bind lastSun = Options.Bind.L2R2;
-    public override void BindPlatform(Options.Bind bind)
+    private UIInterface.Bind lastPlatform = UIInterface.Bind.L1R1;
+    private UIInterface.Bind lastSun = UIInterface.Bind.L2R2;
+    public override void BindPlatform(UIInterface.Bind bind)
     {
         if (lastPlatform != bind) _sun.BindPlatform(lastPlatform, bind);
         lastPlatform = bind;
     }
 
-    public override void BindSun(Options.Bind bind)
+    public override void BindSun(UIInterface.Bind bind)
     {
         if (lastSun != bind) _sun.BindSun(lastSun, bind);
         lastSun = bind;

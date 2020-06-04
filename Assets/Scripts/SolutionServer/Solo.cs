@@ -41,7 +41,7 @@ public class Solo : AbstractInput
     /// <param name="readValue">valeur envoyé par InputSystem</param>
     private void ProgressPlatform(float readValue)
     {
-        _controller.puzzle.cmActual.SetPlatformProgress(readValue * _controller.options.player2Settings.platformSensitivity);
+        _controller.puzzle.cmActual.SetPlatformProgress(readValue * _controller.UiInterface.player2Settings.platformSensitivity);
     }
 
     /// <summary>
@@ -49,7 +49,7 @@ public class Solo : AbstractInput
     /// </summary>
     public override void InputUpdate()
     {
-        if (!_controller.options.gameObject.active)
+        if (!_controller.UiInterface.gameObject.active)
         {
             MouseCamera();
             if (!_controller.IsDead())
@@ -99,8 +99,8 @@ public class Solo : AbstractInput
     private void MouseCamera()
     {
 
-        _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X") * _controller.options.player1Settings.xAxisSensitivity, 
-                                        Input.GetAxis("Mouse Y") * _controller.options.player1Settings.yAxisSensitivity * ((_controller.options.player1Settings.invertVertical)?-1:1)) * 0.8f);
+        _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X") * _controller.UiInterface.player1Settings.xAxisSensitivity, 
+                                        Input.GetAxis("Mouse Y") * _controller.UiInterface.player1Settings.yAxisSensitivity * ((_controller.UiInterface.player1Settings.invertVertical)?-1:1)) * 0.8f);
     }
 
     /// <summary>
@@ -118,7 +118,7 @@ public class Solo : AbstractInput
     /// <param name="angle">valeur envoyé par InputSystem</param>
     public void RotateSun(float angle)
     {
-        _gotoAngleVelocity = angle * _controller.options.player2Settings.sunSensitivity * ((_controller.options.player2Settings.invertSun)?-1:1);
+        _gotoAngleVelocity = angle * _controller.UiInterface.player2Settings.sunSensitivity * ((_controller.UiInterface.player2Settings.invertSun)?-1:1);
     }
     
     /// <summary>
@@ -127,8 +127,8 @@ public class Solo : AbstractInput
     /// <param name="velocity">valeur envoyé par InputSystem</param>
     public void VelocityCam(Vector2 velocity)
     {
-        _controller.cam.Rotate(new Vector2(velocity.x * _controller.options.player1Settings.xAxisSensitivity, 
-            velocity.y  * _controller.options.player1Settings.yAxisSensitivity * ((_controller.options.player1Settings.invertVertical)?-1:1)));
+        _controller.cam.Rotate(new Vector2(velocity.x * _controller.UiInterface.player1Settings.xAxisSensitivity, 
+            velocity.y  * _controller.UiInterface.player1Settings.yAxisSensitivity * ((_controller.UiInterface.player1Settings.invertVertical)?-1:1)));
     }
 
 }

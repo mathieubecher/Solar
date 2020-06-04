@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Options : Menu
+public class StartMenu : Menu
 {
-    
+
 }

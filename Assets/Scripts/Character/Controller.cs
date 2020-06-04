@@ -14,7 +14,7 @@ public class Controller : MonoBehaviour
     private PlayerInput _controls;
     protected Rigidbody _rigidbody;
 
-    public Options options;
+    public UIInterface UiInterface;
     // External
     [HideInInspector] public CameraController cam;
 
@@ -59,7 +59,7 @@ public class Controller : MonoBehaviour
         FindObjectOfType<AnimEvent>().ResetBurn();
         _rigidbody = GetComponent<Rigidbody>();
         GameManager manager = FindObjectOfType<GameManager>();
-        options = manager.options;
+        UiInterface = manager.UiInterface;
         
         // Met en place les différents gestionnaires d'input en fonction des paramètres choisis par le joueur
         inputs = new Solo(this);

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class GraphicsList : MonoBehaviour
+public class GraphicsList : Menu
 {
     public Slider Brightness;
     public Slider Contrast;
