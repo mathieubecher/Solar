@@ -90,8 +90,8 @@ public class ControllerSun : MonoBehaviour
         
         
         // _gotoAngle - _angle - _angleVelocity - _maxRotateSpeed
-        float _maxActualSpeed = Mathf.Min(_maxRotateSpeed, Mathf.Abs(_gotoAngle - _angle) / Time.deltaTime);
-        _angleVelocity = Mathf.Min(_maxActualSpeed, Mathf.Abs(_angleVelocity) + _speedVelocity * Time.deltaTime) * Mathf.Sign(_gotoAngle - _angle);
+        float _maxActualSpeed = Mathf.Min(_maxRotateSpeed * _controller.UiInterface.player2Settings.sunSensitivity , Mathf.Abs(_gotoAngle - _angle) / Time.deltaTime);
+        _angleVelocity = Mathf.Min(_maxActualSpeed, Mathf.Abs(_angleVelocity) + _speedVelocity* _controller.UiInterface.player2Settings.sunSensitivity * Time.deltaTime) * Mathf.Sign(_gotoAngle - _angle);
 
 
 
