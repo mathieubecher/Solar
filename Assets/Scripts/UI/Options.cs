@@ -2,8 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.UI;
+using UnityEngine.VFX.Utility;
 
 public class Options : MonoBehaviour
 {
@@ -30,6 +33,31 @@ public class Options : MonoBehaviour
         }
     }
 
+    public void ApplyAllChange()
+    {
+        OnChangeMainVolume(sounds.MainVolume.value);
+        OnChangeMusic(sounds.Music.value);
+        OnChangeSoundEffect(sounds.SoundEffect.value);
+        
+        ChangeBrightness(graphics.Brightness.value);
+        ChangeContrast(graphics.Contrast.value);
+        SwitchFullscreen(graphics.FullScreen.isOn);
+        SwitchScreenResolution(graphics.ScreenResolution.value);
+        SwitchVSync(graphics.VSync.isOn);
+        SwitchQualitySettings(graphics.Quality.value);
+
+        InvertVerticalAxis(player1.InvertVerticalAxis.isOn);
+        OnChangeXAsisSensitivity(player1.XSensitivity.value);
+        OnChangeYAxisSensitivity(player1.YSensitivity.value);
+        Player1ActiveVibration(player1.Vibration.isOn);
+
+        BindMoveSun(player2.SunBinding.value);
+        BindPlatform(player2.PlatformBinding.value);
+        OnChangeSunSensitivity(player2.SunSensitivity.value);
+        
+        
+    }
+    
     void OnEnable()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -74,48 +102,123 @@ public class Options : MonoBehaviour
     #region Graphics
     public void ChangeBrightness(float value)
     {
+        VolumeProfile p = FindObjectOfType<GameManager>().postProcess.profile;
+        if (p.TryGet(out ColorAdjustments color))
+        {
+            color.postExposure.value = value * 2;
+        }
         graphics.Brightness.value = value;
     }
-
     public void ChangeContrast(float value)
     {
+        VolumeProfile p = FindObjectOfType<GameManager>().postProcess.profile;
+        if (p.TryGet(out ColorAdjustments color))
+        {
+            color.contrast.value = value*50 + 9;
+        }
         graphics.Contrast.value = value;
     }
-
     public void SwitchFullscreen(bool value)
     {
+        #if !UNITY_EDITOR
+        FindObjectOfType<MultiMonitor>().SetFullScreen(value);
+        #endif
         graphics.FullScreen.isOn = value;
     }
-
     public void SwitchScreenResolution(Int32 value)
     {
+        #if !UNITY_EDITOR
+        FindObjectOfType<MultiMonitor>().SetResolution(value);
+        #endif    
         graphics.ScreenResolution.value = value;
     }
 
+
+    public void SwitchQualitySettings(Int32 value)
+    {
+        switch (value)
+        {
+            case 0 :
+                SwitchAntiAliasing(0);
+                SwitchMotionBlur(false);
+                SwitchVolumetricLights(false);
+                SwitchAnisotropic(false);
+                SwitchTextureRes(2);
+                break;
+            case 1 :
+                SwitchMotionBlur(true);
+                SwitchVolumetricLights(true);
+                SwitchAnisotropic(false);
+                SwitchTextureRes(1);
+                break;
+            default :
+                SwitchMotionBlur(true);
+                SwitchVolumetricLights(true);
+                SwitchAnisotropic(true);
+                SwitchTextureRes(0);
+                break;
+        }
+        graphics.Quality.value = value;
+    }
+    
+    // TODO
     public void SwitchAntiAliasing(Int32 value)
     {
+        foreach (HDAdditionalCameraData cameraData in FindObjectsOfType<HDAdditionalCameraData>())
+        {
+            cameraData.antialiasing = (HDAdditionalCameraData.AntialiasingMode) value;
+        }
         graphics.AntiAliasing.value = value;
     }
-
+    
     public void SwitchMotionBlur(bool value)
     {
+        VolumeProfile p = FindObjectOfType<GameManager>().postProcess.profile;
+        if (p.TryGet(out MotionBlur blur))
+        {
+            blur.active = value;
+        }
         graphics.MotionBlur.isOn = value;
     }
 
-    public void SwtichVolumetricLights(bool value)
+    public void SwitchVolumetricLights(bool value)
     {
+        VolumeProfile p = FindObjectOfType<GameManager>().sky.profile;
+        if (p.TryGet(out Fog fog))
+        {
+            fog.active = value;
+        }
         graphics.VolumetricLight.isOn = value;
+    }
+
+    public void SwitchAnisotropic(bool value)
+    {
+        QualitySettings.anisotropicFiltering = (value)? AnisotropicFiltering.Enable : AnisotropicFiltering.Disable;
+        graphics.Anisotropic.isOn = value;
+    }
+
+    public void SwitchTextureRes(Int32 value)
+    {
+        QualitySettings.masterTextureLimit = value;
+        graphics.TextureRes.value = value;
+    }
+    
+    public void SwitchVSync(bool value)
+    {
+        QualitySettings.vSyncCount = (value) ? 1 : 0;
+        graphics.VSync.isOn = value;
     }
 
     public void OnClickDefaultGraphics()
     {
-        ChangeBrightness(0.5f);
+        ChangeBrightness(0);
         ChangeContrast(0.5f);
         SwitchFullscreen(true);
-        SwitchAntiAliasing(2);
-        SwitchMotionBlur(true);
-        SwtichVolumetricLights(true);
+        SwitchVSync(true);
+        SwitchQualitySettings(graphics.Quality.value);
     }
+
+
     
     
     
