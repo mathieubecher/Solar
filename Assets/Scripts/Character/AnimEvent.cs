@@ -21,7 +21,7 @@ public class AnimEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isBurning && burnTimer < 1)
+        if (isBurning && burnTimer < 1.1f)
         {
             burnTimer += Time.deltaTime/3f;
             Shader.SetGlobalFloat("timerburn", burnTimer);

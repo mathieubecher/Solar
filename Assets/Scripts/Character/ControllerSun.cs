@@ -90,8 +90,8 @@ public class ControllerSun : MonoBehaviour
         
         
         // _gotoAngle - _angle - _angleVelocity - _maxRotateSpeed
-        float _maxActualSpeed = Mathf.Min(_maxRotateSpeed, Mathf.Abs(_gotoAngle - _angle) / Time.deltaTime);
-        _angleVelocity = Mathf.Min(_maxActualSpeed, Mathf.Abs(_angleVelocity) + _speedVelocity * Time.deltaTime) * Mathf.Sign(_gotoAngle - _angle);
+        float _maxActualSpeed = Mathf.Min(_maxRotateSpeed * _controller.options.player2Settings.sunSensitivity , Mathf.Abs(_gotoAngle - _angle) / Time.deltaTime);
+        _angleVelocity = Mathf.Min(_maxActualSpeed, Mathf.Abs(_angleVelocity) + _speedVelocity* _controller.options.player2Settings.sunSensitivity * Time.deltaTime) * Mathf.Sign(_gotoAngle - _angle);
 
 
 
@@ -114,11 +114,13 @@ public class ControllerSun : MonoBehaviour
         }
 
         if (!touch) _life  = Mathf.Min(1, _life +_speedHeal * Time.deltaTime);
-        else if (_life <= 0)
+        
+        
+        else if (_life <= 0 && _controller.inputs.CouldDie())
         {
             _controller.Dying();
-            _life = 0;
         }
+        if(_life < 0) _life = 0;
         
         // Produit un son en fonction de la vie
         AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", Mathf.Abs(_life * 100));

@@ -87,5 +87,24 @@ public class InputManager : ControllerBehavior
         if (networkObject.IsServer) networkObject.velocity = args.GetNext<Vector3>();
     }
 
+    public void CallDie()
+    {
+        networkObject.SendRpcUnreliable(RPC_DIE, (networkObject.IsServer)?Receivers.Others:Receivers.Server);
+    }
+    public override void Die(RpcArgs args)
+    {
+        Controller controller = FindObjectOfType<Controller>();
+        controller.Dying();
+        Debug.Log("receive dead");
+    }
 
+    public void CallSetSunSensitivity(float value)
+    {
+        networkObject.SendRpcUnreliable(RPC_SET_SUN_VELOCITY, (networkObject.IsServer)?Receivers.Others:Receivers.Server,value);
+    }
+    public override void SetSunVelocity(RpcArgs args)
+    {
+        Options options = FindObjectOfType<Options>();
+        options.player2Settings.sunSensitivity = args.GetNext<float>();
+    }
 }

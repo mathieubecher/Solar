@@ -38,7 +38,6 @@ public class MultiMonitor : MonoBehaviour
         else if(_manager.gameType == GameManager.GameType.LOCAL) Dual();
         else if (StaticClass.serverType == StaticClass.ServerType.PLAYER) OnlinePlayer();
         else if (StaticClass.serverType == StaticClass.ServerType.SUN) OnlineSun();
-        
     }
 
     void Update()
@@ -109,5 +108,42 @@ public class MultiMonitor : MonoBehaviour
         main.rect = new Rect(0,0,1,1);
         player2.enabled = false;
         main.enabled = true;
+    }
+
+    public void SetFullScreen(bool value)
+    {
+
+        if (_manager.gameType != GameManager.GameType.LOCAL)
+        {
+            if(value) Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+            else SetResolution(res, true);
+        }
+    }
+
+    private Int32 res;
+    public void SetResolution(Int32 value, bool change = false)
+    {
+        res = value;
+        if ((Screen.fullScreenMode != FullScreenMode.FullScreenWindow && Screen.fullScreenMode != FullScreenMode.MaximizedWindow) || change)
+        {
+            switch (res)
+            {
+                case 0 : 
+                    Screen.SetResolution (1366,768,false);
+                    break;
+                case 1 : 
+                    Screen.SetResolution (1600,900,false);
+                    break;
+                case 2 : 
+                    Screen.SetResolution (1920,1080,false);
+                    break;
+                default: 
+                    Screen.SetResolution (2560,1440,false);
+                    break;
+                
+            }
+
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+        }
     }
 }

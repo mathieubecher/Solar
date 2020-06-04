@@ -7,11 +7,16 @@ public class Puzzle : MonoBehaviour
 {
     [SerializeField]
     private GameObject respawn;
-
+    
+    public float beginRotate;
+    
+    [Header("Transition info")]
     [SerializeField] private CMCamera last;
     public CMCamera cam;
 
-    public float beginRotate;
+    public CinemachineBlendDefinition.Style type = CinemachineBlendDefinition.Style.EaseInOut;
+    [Range(0,5)] public float transitionTime = 1;
+    
     // Start is called before the first frame update
     public Vector3 GetRespawnPoint()
     {
@@ -41,7 +46,6 @@ public class Puzzle : MonoBehaviour
 
                 if (bezier == null || bezier.Count == 0 || PointChange())
                 {
-                    Debug.Log("debug bezier");
                     UpdateBezier();
                 }
                 for (int i = 1; i < bezier.Count; ++i)

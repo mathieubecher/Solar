@@ -35,8 +35,8 @@ public class OnlinePlayer : AbstractInput
         _controls.currentActionMap["KeyMovement"].performed += ctx => Velocity(ctx.ReadValue<Vector2>());
         _controls.currentActionMap["KeyMovement"].canceled += ctx => Velocity(ctx.ReadValue<Vector2>());
         
-        _controls.currentActionMap["Rotate"].performed += ctx => _controller.cam.Rotate(ctx.ReadValue<Vector2>());
-        _controls.currentActionMap["Rotate"].canceled += ctx => _controller.cam.Rotate(ctx.ReadValue<Vector2>());
+        _controls.currentActionMap["Rotate"].performed += ctx => VelocityCam(ctx.ReadValue<Vector2>());
+        _controls.currentActionMap["Rotate"].canceled += ctx => VelocityCam(ctx.ReadValue<Vector2>());
         
         // Défini la position et rotation de départ du personnage
         if (GameObject.FindObjectOfType<GameManager>().gameType == GameManager.GameType.CLIENT)
@@ -52,11 +52,6 @@ public class OnlinePlayer : AbstractInput
             _manager.CallSetSunRotate(_controller.sun._gotoAngle);
         }
         
-#if UNITY_EDITOR
-#else
-    Cursor.lockState = CursorLockMode.Locked;
-    Cursor.visible = false;
-#endif
     }
     
     
@@ -65,11 +60,21 @@ public class OnlinePlayer : AbstractInput
     /// </summary>
     public override void InputUpdate()
     {
-        MouseCamera();
-        if (!_controller.IsDead())
+        if (!_controller.options.gameObject.active)
         {
-            MovePlayer();
+            MouseCamera();
+            if (!_controller.IsDead())
+            {
+                MovePlayer();
+            }
         }
+        else
+        {
+            _controller.velocity = Vector3.zero;
+            _controller.cam.RotateMouse(Vector3.zero);
+            _controller.cam.Rotate(Vector3.zero);
+        }
+
         if(isManager) _controller.sun._gotoAngle = _manager.sunRotation;
     }
 
@@ -116,8 +121,17 @@ public class OnlinePlayer : AbstractInput
     /// </summary>
     private void MouseCamera()
     {
-        Vector3 camDir = Vector3.forward;
-        _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y")) * 0.8f);
+        _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X") * _controller.options.player1Settings.xAxisSensitivity, 
+                                        Input.GetAxis("Mouse Y") * _controller.options.player1Settings.yAxisSensitivity * ((_controller.options.player1Settings.invertVertical)?-1:1)) * 0.8f);
+    }
+    /// <summary>
+    /// Récupère la vélocité à appliquer à la caméra
+    /// </summary>
+    /// <param name="velocity">valeur envoyé par InputSystem</param>
+    public void VelocityCam(Vector2 velocity)
+    {
+        _controller.cam.Rotate(new Vector2(velocity.x * _controller.options.player1Settings.xAxisSensitivity, 
+            velocity.y  * _controller.options.player1Settings.yAxisSensitivity * ((_controller.options.player1Settings.invertVertical)?-1:1)));
     }
     
     /// <summary>
@@ -136,6 +150,17 @@ public class OnlinePlayer : AbstractInput
     {
         // force la mise à jour des données à l'autre joueur
         isMoving = true;
+        _manager.CallSetPosition(_controller.transform.position);
+        _manager.CallSetRotate(_controller.transform.rotation);
+        _manager.CallSetVelocity(Vector3.zero);
+        _manager.CallSetSunRotate(_controller.sun._gotoAngle);
         InputFixed();
     }
+    
+    public override bool CouldDie()
+    {
+        _manager.CallDie();
+        return true;
+    }
+    
 }

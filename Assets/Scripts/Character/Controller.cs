@@ -13,7 +13,8 @@ public class Controller : MonoBehaviour
     public AbstractInput inputs;
     private PlayerInput _controls;
     protected Rigidbody _rigidbody;
-    
+
+    public Options options;
     // External
     [HideInInspector] public CameraController cam;
 
@@ -29,7 +30,8 @@ public class Controller : MonoBehaviour
     private Vector2 _move;
     private bool isMoving = false;
     public Vector3 velocity;
-    
+    public GameObject poncho;
+
     [Header("Gestion Mort")]
     [Range(0,5)]
     public float DeadTimer = 2;
@@ -38,27 +40,27 @@ public class Controller : MonoBehaviour
     [SerializeField] bool activeDead = true;
     public Vector3 Target {  get => _target.gameObject.transform.position;}
 
-    
-    // Start is called before the first frame update
+
+
     void Awake()
     {
         // Active la mort quelque soit la valeur défini d'activeDead en dehors de l'editor.
-#if UNITY_EDITOR
-#else
+#if !UNITY_EDITOR
         activeDead = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 #endif
+        
         cam = FindObjectOfType<CameraController>();
         _target = FindObjectOfType<CameraTarget>();
         sun = GetComponent<ControllerSun>();
         puzzle = GetComponent<ControllerPuzzle>();
-    }
-
-    void Start()
-    {
+        
         FindObjectOfType<AnimEvent>().ResetBurn();
         _rigidbody = GetComponent<Rigidbody>();
         GameManager manager = FindObjectOfType<GameManager>();
-
+        options = manager.options;
+        
         // Met en place les différents gestionnaires d'input en fonction des paramètres choisis par le joueur
         inputs = new Solo(this);
         if (manager.gameType == GameManager.GameType.SOLO)
@@ -136,7 +138,7 @@ public class Controller : MonoBehaviour
             velocity = Vector3.zero;
             _rigidbody.velocity = velocity;
             
-            sun.ResetPoints();
+            //sun.ResetPoints();
         }
     }
     
@@ -158,6 +160,4 @@ public class Controller : MonoBehaviour
     {
         return _deatTimer > 0;   
     }
-
-
 }

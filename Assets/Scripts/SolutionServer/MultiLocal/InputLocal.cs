@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,6 +14,8 @@ public class InputLocal : MonoBehaviour
     {
         PLAYER,SUN
     }
+
+    public Options options;
     
     private Controller _controller;
     private PlayerInput _controls;
@@ -29,15 +32,39 @@ public class InputLocal : MonoBehaviour
     [SerializeField]
     private InputType _type;
 
+    
+    private Action<InputAction.CallbackContext> rotateSun;
+    private Action<InputAction.CallbackContext> rotateStickSun;
+    
+    private Action<InputAction.CallbackContext> progressPlatform;
+    private Action<InputAction.CallbackContext> progressStickPlatform;
     public Vector2 Move => _move;
-    public Vector3 RotateMouse => _rotateMouse;
-    public Vector2 Rotate => _rotate;
-    public float AngleVelocity => _gotoAngleVelocity;
 
-    public float VelocityPlatform => _velocityPlatform;
+    public Vector3 RotateMouse {get{
+            return new Vector3(_rotateMouse.x * options.player1Settings.xAxisSensitivity,_rotateMouse.y * options.player1Settings.yAxisSensitivity * ((options.player1Settings.invertVertical)?-1:1),0); 
+    }}
+
+    public Vector2 Rotate{get{    
+            return new Vector3(_rotate.x * options.player1Settings.xAxisSensitivity,_rotate.y * options.player1Settings.yAxisSensitivity * ((options.player1Settings.invertVertical)?-1:1));
+    }}
+
+    public float AngleVelocity { get{return _gotoAngleVelocity * options.player2Settings.sunSensitivity * ((options.player2Settings.invertSun)?-1:1); } }
+
+    public float VelocityPlatform { get{return _velocityPlatform * options.player2Settings.platformSensitivity;} }
 
     void Start()
     {
+        
+        rotateSun = ctx => RotateSun(ctx.ReadValue<float>());
+        rotateStickSun = ctx => RotateStickSun(ctx.ReadValue<Vector2>());
+        
+        
+        progressPlatform = ctx => ProgressPlatform(ctx.ReadValue<float>());
+        progressStickPlatform = ctx => ProgressStickPlatform(ctx.ReadValue<Vector2>());
+
+        
+        options = FindObjectOfType<Controller>().options;
+        
         // Récupère le controlleur du personnage
         _controller = FindObjectOfType<Controller>();
         
@@ -47,21 +74,22 @@ public class InputLocal : MonoBehaviour
         _controls = GetComponent<PlayerInput>();
         Debug.Log(_controls.currentControlScheme);
         
+        if(_type == InputType.PLAYER){
         // Abonne la classe aux evennements d'InputSystem
-        _controls.currentActionMap["Movement"].performed += ctx => Velocity(ctx.ReadValue<Vector2>());
-        _controls.currentActionMap["Movement"].canceled += ctx => Velocity(ctx.ReadValue<Vector2>());
-            
-        _controls.currentActionMap["KeyMovement"].performed += ctx => Velocity(ctx.ReadValue<Vector2>());
-        _controls.currentActionMap["KeyMovement"].canceled += ctx => Velocity(ctx.ReadValue<Vector2>());
-            
-        _controls.currentActionMap["Rotate"].performed += ctx => VelocityCam(ctx.ReadValue<Vector2>());
-        _controls.currentActionMap["Rotate"].canceled += ctx => VelocityCam(ctx.ReadValue<Vector2>());
+            _controls.currentActionMap["Movement"].performed += ctx => Velocity(ctx.ReadValue<Vector2>());
+            _controls.currentActionMap["Movement"].canceled += ctx => Velocity(ctx.ReadValue<Vector2>());
+                
+            _controls.currentActionMap["KeyMovement"].performed += ctx => Velocity(ctx.ReadValue<Vector2>());
+            _controls.currentActionMap["KeyMovement"].canceled += ctx => Velocity(ctx.ReadValue<Vector2>());
+                
+            _controls.currentActionMap["Rotate"].performed += ctx => VelocityCam(ctx.ReadValue<Vector2>());
+            _controls.currentActionMap["Rotate"].canceled += ctx => VelocityCam(ctx.ReadValue<Vector2>());
+        }
+        _controls.currentActionMap["RotateSun"].performed += rotateSun;
+        _controls.currentActionMap["RotateSun"].canceled += rotateSun;
         
-        _controls.currentActionMap["RotateSun"].performed += ctx => RotateSun(ctx.ReadValue<float>());
-        _controls.currentActionMap["RotateSun"].canceled += ctx => RotateSun(ctx.ReadValue<float>());
-        
-        _controls.currentActionMap["ProgressPlatform"].performed += ctx => ProgressPlatform(ctx.ReadValue<float>());
-        _controls.currentActionMap["ProgressPlatform"].canceled += ctx => ProgressPlatform(ctx.ReadValue<float>());
+        _controls.currentActionMap["ProgressPlatform"].performed += progressPlatform;
+        _controls.currentActionMap["ProgressPlatform"].canceled += progressPlatform;
     }
 
     public void Update()
@@ -109,5 +137,124 @@ public class InputLocal : MonoBehaviour
     private void ProgressPlatform(float readValue)
     {
         _velocityPlatform = readValue;
+    }
+
+
+
+    #region Biding Platform
+    
+    public void BindPlatform(Options.Bind last, Options.Bind bind)
+    {
+        ResetBind(last);
+        if (bind == Options.Bind.L1R1)
+        {
+            _controls.currentActionMap["ProgressPlatform"].performed += progressPlatform;
+            _controls.currentActionMap["ProgressPlatform"].canceled += progressPlatform;
+        }
+        else if (bind == Options.Bind.L2R2)
+        {
+            _controls.currentActionMap["RotateSun"].performed += progressPlatform;
+            _controls.currentActionMap["RotateSun"].canceled += progressPlatform;
+        }
+        else if (bind == Options.Bind.LeftStick)
+        {
+            _controls.currentActionMap["Movement"].performed += progressStickPlatform;
+            _controls.currentActionMap["Movement"].canceled += progressStickPlatform;
+        }
+        else
+        {
+            _controls.currentActionMap["Rotate"].performed += progressStickPlatform;
+            _controls.currentActionMap["Rotate"].canceled += progressStickPlatform;
+        }
+    }
+
+
+    private void ProgressStickPlatform(Vector2 readValue)
+    {
+        _velocityPlatform = readValue.y;
+    }
+
+
+    #endregion
+
+    #region Biding Sun
+    
+
+    public void BindSun(Options.Bind last, Options.Bind bind)
+    {
+        ResetBind(last);
+        if (bind == Options.Bind.L1R1)
+        {
+            _controls.currentActionMap["ProgressPlatform"].performed += rotateSun;
+            _controls.currentActionMap["ProgressPlatform"].canceled += rotateSun;
+            Debug.Log("Rebind Sun L1R1 " + last);
+        }
+        else if (bind == Options.Bind.L2R2)
+        {
+            _controls.currentActionMap["RotateSun"].performed += rotateSun;
+            _controls.currentActionMap["RotateSun"].canceled += rotateSun;
+            Debug.Log("Rebind Sun L2R2 " + last);
+        }
+        else if (bind == Options.Bind.LeftStick)
+        {
+            _controls.currentActionMap["Movement"].performed += rotateStickSun;
+            _controls.currentActionMap["Movement"].canceled += rotateStickSun;
+            Debug.Log("Rebind Sun LeftStick " + last);
+        }
+        else
+        {
+            _controls.currentActionMap["Rotate"].performed += rotateStickSun;
+            _controls.currentActionMap["Rotate"].canceled += rotateStickSun;
+            Debug.Log("Rebind Sun RightStick " + last);
+        }
+        
+    }
+
+    private void RotateStickSun(Vector2 readValue)
+    {
+        _gotoAngleVelocity = readValue.y;
+    }
+
+    #endregion
+    
+    private void ResetBind(Options.Bind last)
+    {
+        // TODO isolé les fonctions ciblé
+        if (last == Options.Bind.L1R1)
+        {
+            Debug.Log("Reset L1R1");
+            _controls.currentActionMap["ProgressPlatform"].performed -= rotateSun;
+            _controls.currentActionMap["ProgressPlatform"].canceled -= rotateSun;
+            _controls.currentActionMap["ProgressPlatform"].performed -= progressPlatform;
+            _controls.currentActionMap["ProgressPlatform"].canceled -= progressPlatform;
+            
+        }
+        else if (last == Options.Bind.L2R2)
+        {
+            
+            Debug.Log("Reset L2R2");
+            _controls.currentActionMap["RotateSun"].performed -= rotateSun;
+            _controls.currentActionMap["RotateSun"].canceled -= rotateSun;
+            _controls.currentActionMap["RotateSun"].performed -= progressPlatform;
+            _controls.currentActionMap["RotateSun"].canceled -= progressPlatform;
+        }
+        else if (last == Options.Bind.LeftStick)
+        {
+            
+            Debug.Log("Reset LeftStick");
+            _controls.currentActionMap["Movement"].performed -= rotateStickSun;
+            _controls.currentActionMap["Movement"].canceled -= rotateStickSun;
+            _controls.currentActionMap["Movement"].performed -= progressStickPlatform;
+            _controls.currentActionMap["Movement"].canceled -= progressStickPlatform;
+        }
+        else
+        {
+            
+            Debug.Log("Reset RigthStick");
+            _controls.currentActionMap["Rotate"].performed -= rotateStickSun;
+            _controls.currentActionMap["Rotate"].canceled -= rotateStickSun;
+            _controls.currentActionMap["Rotate"].performed -= progressStickPlatform;
+            _controls.currentActionMap["Rotate"].canceled -= progressStickPlatform;
+        }
     }
 }

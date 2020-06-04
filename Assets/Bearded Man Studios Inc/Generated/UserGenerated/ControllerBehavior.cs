@@ -4,14 +4,16 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[\"Quaternion\"][\"Vector3\"][\"float\"][\"Vector3\"]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[\"rotation\"][\"position\"][\"rotation\"][\"velocity\"]]")]
+	[GeneratedRPC("{\"types\":[[\"Quaternion\"][\"Vector3\"][\"float\"][\"Vector3\"][][\"float\"]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[\"rotation\"][\"position\"][\"rotation\"][\"velocity\"][][\"value\"]]")]
 	public abstract partial class ControllerBehavior : NetworkBehavior
 	{
 		public const byte RPC_SET_ROTATE = 0 + 5;
 		public const byte RPC_SET_POSITION = 1 + 5;
 		public const byte RPC_SET_SUN_ROTATE = 2 + 5;
 		public const byte RPC_SET_VELOCITY = 3 + 5;
+		public const byte RPC_DIE = 4 + 5;
+		public const byte RPC_SET_SUN_VELOCITY = 5 + 5;
 		
 		public ControllerNetworkObject networkObject = null;
 
@@ -29,6 +31,8 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.RegisterRpc("SetPosition", SetPosition, typeof(Vector3));
 			networkObject.RegisterRpc("SetSunRotate", SetSunRotate, typeof(float));
 			networkObject.RegisterRpc("SetVelocity", SetVelocity, typeof(Vector3));
+			networkObject.RegisterRpc("Die", Die);
+			networkObject.RegisterRpc("SetSunVelocity", SetSunVelocity, typeof(float));
 
 			networkObject.onDestroy += DestroyGameObject;
 
@@ -125,6 +129,14 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		/// Vector3 velocity
 		/// </summary>
 		public abstract void SetVelocity(RpcArgs args);
+		/// <summary>
+		/// Arguments:
+		/// </summary>
+		public abstract void Die(RpcArgs args);
+		/// <summary>
+		/// Arguments:
+		/// </summary>
+		public abstract void SetSunVelocity(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}
