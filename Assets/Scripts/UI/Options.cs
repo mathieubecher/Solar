@@ -75,19 +75,19 @@ public class Options : MonoBehaviour
     #region Sound
     public void OnChangeMainVolume(float value)
     {
-        //TODO Charge RTPC
+        AkSoundEngine.SetRTPCValue("RTPC_Main_Volume", value);
         sounds.MainVolume.value = value;
     }
 
     public void OnChangeMusic(float value)
     {
-        //TODO Charge RTPC
+        AkSoundEngine.SetRTPCValue("RTPC_Music_Volume", value);
         sounds.Music.value = value;
     }
 
     public void OnChangeSoundEffect(float value)
     {
-        //TODO Charge RTPC
+        AkSoundEngine.SetRTPCValue("RTPC_SFX_Volume", value);
         sounds.SoundEffect.value = value;
     }
 
@@ -193,8 +193,8 @@ public class Options : MonoBehaviour
 
     public void SwitchAnisotropic(bool value)
     {
-        QualitySettings.anisotropicFiltering = (value)? AnisotropicFiltering.Enable : AnisotropicFiltering.Disable;
-        graphics.Anisotropic.isOn = value;
+        //QualitySettings.anisotropicFiltering = (value)? AnisotropicFiltering.Enable : AnisotropicFiltering.Disable;
+        //graphics.Anisotropic.isOn = value;
     }
 
     public void SwitchTextureRes(Int32 value)
