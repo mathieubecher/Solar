@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: cbb31e6cefe2e64c8308806bca5ec1fc
     GuidInternal: 
-    m_lastTime: -8586108427209722082
+    m_lastTime: -8586105900537645405
     List:
     - name: Ambiance_Bus
       guid: 68e5fd2984b3814cb1b5252b9099c7bb
@@ -154,7 +154,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f62c9fea2fdc9049963bd5bc5510a430
     GuidInternal: 
-    m_lastTime: -8586108427209742015
+    m_lastTime: -8586105889065165915
     List:
     - name: ALL
       guid: feb41afcf094434080809b90df1849fe
@@ -512,20 +512,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Flying_Sphere_Play
-      guid: 4f706c45a6038d4994ecfc0a4deea59e
-      id: 372239821
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: ALL
-        ObjectType: 4
-      - ElementName: Flying_Sphere_Play
-        ObjectType: 3
-      Path: Default Work Unit\ALL\Flying_Sphere_Play
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: Footsteps
       guid: 339c4f590f0a0f47adff37fddb6e693e
       id: 2385628198
@@ -559,6 +545,34 @@ MonoBehaviour:
       - ElementName: Level 1
         ObjectType: 3
       Path: Default Work Unit\ALL\Amb\Level 1\Level 1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Lvl01_Flying_Sphere_Big_Play
+      guid: b1dfb371703d89459c8fcef3a5d0a655
+      id: 1047307714
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Lvl01_Flying_Sphere_Big_Play
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Lvl01_Flying_Sphere_Big_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Lvl01_Flying_Sphere_Small_Play
+      guid: 4f706c45a6038d4994ecfc0a4deea59e
+      id: 3897898391
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Lvl01_Flying_Sphere_Small_Play
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Lvl01_Flying_Sphere_Small_Play
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -693,7 +707,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c351adaffa0926499d3369b21999a571
     GuidInternal: 
-    m_lastTime: -8586108427209742015
+    m_lastTime: -8586105906144429872
     List:
     - name: Amb_RTPC
       guid: 84e709144ae8ee45b8f32e8112055082
@@ -871,7 +885,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 98fff1535a380841a4f3af5283bc8df9
     GuidInternal: 
-    m_lastTime: -8586111923457774068
+    m_lastTime: -8586105892132684760
     List:
     - name: Breath_Switch
       guid: 154f162208a86041a24076776ff2f0b5
@@ -935,6 +949,31 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: Global_Switch
+      guid: 4114905c893a614f82f06d1b55b92257
+      id: 3921090687
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Global_Switch
+        ObjectType: 11
+      Path: Default Work Unit\Global_Switch
+      values:
+      - name: isHurting2
+        guid: 772d3a3167a2b64382c97b71d46d2680
+        id: 1392790916
+        PathAndIcons:
+        - ElementName: isHurting2
+          ObjectType: 10
+      - name: Normal
+        guid: 75b5ae80ca82a2468b56912cc4469063
+        id: 1160234136
+        PathAndIcons:
+        - ElementName: Normal
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPath: Default Work Unit
@@ -947,8 +986,5 @@ MonoBehaviour:
   - /Solar_WwiseProject/Events
   - /Solar_WwiseProject/Events/Default Work Unit
   - /Solar_WwiseProject/Events/Default Work Unit/ALL
-  - /Solar_WwiseProject/Events/Default Work Unit/ALL/Music
-  - /Solar_WwiseProject/States
-  - /Solar_WwiseProject/States/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
