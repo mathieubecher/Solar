@@ -28,6 +28,8 @@ public class UIInterface : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SwitchFullscreen(graphics.FullScreen.isOn);
+        SwitchScreenResolution(graphics.ScreenResolution.value);
         
         foreach (UIInterface options in FindObjectsOfType<UIInterface>())
         {
@@ -137,18 +139,28 @@ public class UIInterface : MonoBehaviour
     public void SwitchFullscreen(bool value)
     {
         graphics.FullScreen.isOn = value;
-        if (!inGame) return;
         #if !UNITY_EDITOR
-        FindObjectOfType<MultiMonitor>().SetFullScreen(value);
+        if (!inGame){
+            FindObjectOfType<UiScreenGestor>().SetFullScreen(value);
+        }
+        else{
+            FindObjectOfType<MultiMonitor>().SetFullScreen(value);
+        }
         #endif
     }
     public void SwitchScreenResolution(Int32 value)
     {
         graphics.ScreenResolution.value = value;
-        if (!inGame) return;
+        
         #if !UNITY_EDITOR
-        FindObjectOfType<MultiMonitor>().SetResolution(value);
-        #endif    
+        if (!inGame){
+            FindObjectOfType<UiScreenGestor>().SetResolution(value);
+        }
+        else
+        {
+            FindObjectOfType<MultiMonitor>().SetResolution(value);
+        }
+        #endif
     }
 
 
