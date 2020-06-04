@@ -116,13 +116,16 @@ public class Local : AbstractInput
     private UIInterface.Bind lastSun = UIInterface.Bind.L2R2;
     public override void BindPlatform(UIInterface.Bind bind)
     {
-        if (lastPlatform != bind) _sun.BindPlatform(lastPlatform, bind);
+        if (!_hasSun) return;
+        if (lastPlatform != bind || !_sun._definePlatform) _sun.BindPlatform(lastPlatform, bind);
         lastPlatform = bind;
     }
 
     public override void BindSun(UIInterface.Bind bind)
     {
-        if (lastSun != bind) _sun.BindSun(lastSun, bind);
+        Debug.Log("rebind");
+        if (!_hasSun) return;
+        if (lastSun != bind || !_sun._defineSun) _sun.BindSun(lastSun, bind);
         lastSun = bind;
     }
 }

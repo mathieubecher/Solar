@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton0)) && !UiInterface.gameObject.activeSelf)
+        if ((Input.GetKeyDown(KeyCode.Escape) /*|| Input.GetKeyDown(KeyCode.JoystickButton0)*/) && !UiInterface.gameObject.activeSelf)
         {
             UiInterface.gameObject.SetActive(true);
 
@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
             debug = !debug;
         }
 
+        if (Input.GetKeyDown(KeyCode.G)) controller.activeDead = !controller.activeDead;
+        
         Time.timeScale = timeScale;
     }
 }

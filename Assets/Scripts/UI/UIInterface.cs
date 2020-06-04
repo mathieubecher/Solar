@@ -59,7 +59,9 @@ public class UIInterface : MonoBehaviour
         OnChangeYAxisSensitivity(player1.YSensitivity.value);
         Player1ActiveVibration(player1.Vibration.isOn);
 
+        player2Settings.sun = Bind.L2R2;
         BindMoveSun(player2.SunBinding.value);
+        player2Settings.platform = Bind.L1R1;
         BindPlatform(player2.PlatformBinding.value);
         OnChangeSunSensitivity(player2.SunSensitivity.value);
 
@@ -333,30 +335,30 @@ public class UIInterface : MonoBehaviour
     public void BindMoveSun(int value)
     {
         player2.SunBinding.value = value;
-        if (!inGame) return;
-        if(controller == null) controller = FindObjectOfType<Controller>();
-        Bind last = player2Settings.sun;
-        
+        Bind last= player2Settings.sun;
         player2Settings.sun = (Bind)value;
         if(player2Settings.platform == (Bind)value) BindPlatform((int)last);
         
+        if (!inGame) return;
+        
+        if(controller == null) controller = FindObjectOfType<Controller>();
         controller.inputs.BindSun((Bind)value);
         
     }
-
     
     public void BindPlatform(int value)
     {
         player2.PlatformBinding.value = value;
-        if (!inGame) return;
-        if(controller == null) controller = FindObjectOfType<Controller>();
         Bind last = player2Settings.platform;
-        
         player2Settings.platform = (Bind)value;
         if(player2Settings.sun == (Bind)value) BindMoveSun((int)last);
         
+        if (!inGame) return;
+        
+        if(controller == null) controller = FindObjectOfType<Controller>();
         controller.inputs.BindPlatform((Bind)value);
     }
+    
     public void OnChangeSunSensitivity(float value)
     {
         player2.SunSensitivity.value = value;

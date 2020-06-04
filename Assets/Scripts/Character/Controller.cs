@@ -37,7 +37,7 @@ public class Controller : MonoBehaviour
     public float DeadTimer = 2;
     [SerializeField]
     private float _deatTimer;
-    [SerializeField] bool activeDead = true;
+    [SerializeField] public bool activeDead = true;
     public Vector3 Target {  get => _target.gameObject.transform.position;}
 
 
