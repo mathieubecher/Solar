@@ -14,6 +14,7 @@ public class Platform : MonoBehaviour
     protected float _velocity;
     [SerializeField] public float speed = 0.2f;
     protected PlatformServer _server;
+    [SerializeField] private bool Loop = true;
     
     protected virtual void Awake()
     {
@@ -25,7 +26,7 @@ public class Platform : MonoBehaviour
         {
             childs.Add(transform.GetChild(i));
         }
-        progress = 0;
+        progress = begin_progress;
     }
 
     /// <summary>
@@ -42,7 +43,7 @@ public class Platform : MonoBehaviour
     /// <returns></returns>
     protected float GetLocalProgress()
     {
-        return progress + begin_progress;
+        return progress;
     }
     
     // Update is called once per frame
@@ -69,6 +70,15 @@ public class Platform : MonoBehaviour
                 StaticClass.gameType == GameManager.GameType.CLIENT))
             {
                 progress += _velocity * speed * Time.deltaTime;
+                if(Loop){
+                    if (progress > 1) progress -= 1;
+                    else if (progress < 0) progress += 1;
+                }
+                else
+                {
+                    if (progress > 1) progress = 1;
+                    else if (progress < 0) progress = 0;
+                }
                 _server.CallSetProgress(progress);
             }
             // et que l'instance du joueur n'a pas le control du soleil
@@ -81,6 +91,16 @@ public class Platform : MonoBehaviour
         else
         {
             progress += _velocity * speed * Time.deltaTime;
+            if(Loop){
+                if (progress > 1) progress -= 1;
+                else if (progress < 0) progress += 1;
+            }
+            else
+            {
+                if (progress > 1) progress = 1;
+                else if (progress < 0) progress = 0;
+            }
+ 
         }
         AkSoundEngine.SetRTPCValue("RTPC_Plateform_Velocity", Mathf.Abs(progress - lastProgress)/(Time.deltaTime * speed) *100);
     }

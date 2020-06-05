@@ -59,7 +59,7 @@ public class LinearPlatform : Platform
     /// <returns>Position actuel de la plateforme</returns>
     Vector3 progressPos()
     {
-        float total = (GetLocalProgress()+begin_progress)%1 * maxDist;
+        float total = ((GetLocalProgress()) * maxDist)%maxDist;
         for (int i = 1; i < pathPoints.Count; ++i)
         {
             float actualDist = (pathPoints[i] - pathPoints[i - 1]).magnitude;

@@ -31,14 +31,7 @@ public class UIInterface : MonoBehaviour
         SwitchFullscreen(graphics.FullScreen.isOn);
         SwitchScreenResolution(graphics.ScreenResolution.value);
         
-        foreach (UIInterface options in FindObjectsOfType<UIInterface>())
-        {
-            if (options != this)
-            {
-                Destroy(this.gameObject);
-                return;
-            }
-        }
+       
     }
 
     public void ApplyAllChange()

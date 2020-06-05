@@ -29,10 +29,17 @@ public class GameManager : MonoBehaviour
 
     public Controller controller;
 
+    public GameObject wrapperPrefab;
     // Start is called before the first frame update
     void Awake()
     {
-        UiInterface = FindObjectOfType<UIWrapper>().uiInterface; 
+        UIWrapper wrapper = FindObjectOfType<UIWrapper>();
+        if (wrapper == null)
+        {
+            GameObject o = Instantiate(wrapperPrefab);
+            wrapper = o.GetComponent<UIWrapper>();
+        }
+        UiInterface = wrapper.uiInterface;
         UiInterface.gameObject.SetActive(false);
         controller = FindObjectOfType<Controller>();
         gameType = StaticClass.gameType;
@@ -59,6 +66,7 @@ public class GameManager : MonoBehaviour
             debug = !debug;
         }
 
+        
         if (Input.GetKeyDown(KeyCode.G)) controller.activeDead = !controller.activeDead;
         
         Time.timeScale = timeScale;
