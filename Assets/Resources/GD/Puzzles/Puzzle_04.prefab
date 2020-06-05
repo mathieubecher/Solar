@@ -4202,9 +4202,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawn: {fileID: 6471821470784325289}
+  beginRotate: 0
   last: {fileID: 0}
   cam: {fileID: 447884430879509326}
-  beginRotate: 0
+  type: 1
+  transitionTime: 1
+  curve: {fileID: 0}
 --- !u!1 &6733278645674583255
 GameObject:
   m_ObjectHideFlags: 0
@@ -6748,7 +6751,7 @@ PrefabInstance:
     - target: {fileID: 115487693836982370, guid: 16479041833431f46b1257db27c76661,
         type: 3}
       propertyPath: speed
-      value: 0.035
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 115487694078779869, guid: 16479041833431f46b1257db27c76661,
         type: 3}
