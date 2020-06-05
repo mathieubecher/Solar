@@ -30,7 +30,8 @@ namespace AK
         static const AkUniqueID CHA_RESPAWN = 1215500860U;
         static const AkUniqueID CHA_RUN = 3845266727U;
         static const AkUniqueID CHA_WALK = 300025675U;
-        static const AkUniqueID FLYING_SPHERE_PLAY = 372239821U;
+        static const AkUniqueID LVL01_FLYING_SPHERE_BIG_PLAY = 1047307714U;
+        static const AkUniqueID LVL01_FLYING_SPHERE_SMALL_PLAY = 3897898391U;
         static const AkUniqueID MUSIC_LVL01_BRIDGE1 = 771829065U;
         static const AkUniqueID MUSIC_LVL01_KIOSK1 = 2884165201U;
         static const AkUniqueID MUSIC_LVL01_KIOSK2 = 2884165202U;
@@ -112,6 +113,17 @@ namespace AK
             } // namespace SWITCH
         } // namespace FOOTSTEP_FLOOR
 
+        namespace GLOBAL_SWITCH
+        {
+            static const AkUniqueID GROUP = 3921090687U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID ISHURTING2 = 1392790916U;
+                static const AkUniqueID NORMAL = 1160234136U;
+            } // namespace SWITCH
+        } // namespace GLOBAL_SWITCH
+
     } // namespace SWITCHES
 
     namespace GAME_PARAMETERS
@@ -120,7 +132,10 @@ namespace AK
         static const AkUniqueID BREATH_RTPC = 748151351U;
         static const AkUniqueID RTPC_ASTROSIDECHAIN = 2972377204U;
         static const AkUniqueID RTPC_DISTANCE_SUN = 2257099397U;
+        static const AkUniqueID RTPC_MAIN_VOLUME = 1856500933U;
+        static const AkUniqueID RTPC_MUSIC_VOLUME = 1596647065U;
         static const AkUniqueID RTPC_PLATEFORM_VELOCITY = 3829022635U;
+        static const AkUniqueID RTPC_SFX_VOLUME = 932301089U;
         static const AkUniqueID RTPC_SUN_VELOCITY = 582120507U;
         static const AkUniqueID RTPC_WINDGAIN = 1687410496U;
     } // namespace GAME_PARAMETERS

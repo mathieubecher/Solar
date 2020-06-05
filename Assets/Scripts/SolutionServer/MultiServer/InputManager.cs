@@ -97,4 +97,14 @@ public class InputManager : ControllerBehavior
         controller.Dying();
         Debug.Log("receive dead");
     }
+
+    public void CallSetSunSensitivity(float value)
+    {
+        networkObject.SendRpcUnreliable(RPC_SET_SUN_VELOCITY, (networkObject.IsServer)?Receivers.Others:Receivers.Server,value);
+    }
+    public override void SetSunVelocity(RpcArgs args)
+    {
+        UIInterface uiInterface = FindObjectOfType<UIInterface>();
+        uiInterface.player2Settings.sunSensitivity = args.GetNext<float>();
+    }
 }

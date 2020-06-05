@@ -134,28 +134,9 @@
 												<Property Name="OverrideColor" Type="bool" Value="True"/>
 											</PropertyList>
 											<ChildrenList>
-												<Action Name="" ID="{575A865D-B05C-41EA-AC84-6AB048CF0C27}" ShortID="404574181">
-													<PropertyList>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="Cha_Breath" ID="{4B063AD4-94B7-4BAC-88D6-FBEC2E2F60DB}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
 												<Action Name="" ID="{76718F4E-AF06-4780-97D9-21E8055F8D2B}" ShortID="259233065">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="23"/>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
@@ -166,11 +147,6 @@
 												<Action Name="" ID="{2D93FC69-3E34-4550-A6FA-188F18B3A1E5}" ShortID="809047096">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="38"/>
-														<Property Name="Inclusion" Type="bool">
-															<ValueList>
-																<Value>False</Value>
-															</ValueList>
-														</Property>
 														<Property Name="Scope" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>
@@ -179,14 +155,21 @@
 														</Reference>
 													</ReferenceList>
 												</Action>
+												<Action Name="" ID="{D1F64BB2-95F4-4C3D-89FA-184B58BBE0E5}" ShortID="553711146">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Cha_Hurt_Breath" ID="{EAC280A8-2AFA-4509-BDC7-51284DF00C88}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
 											</ChildrenList>
 										</Event>
 										<Event Name="Cha_Breath_Inspi" ID="{490D4164-D5C7-4ABF-BC7C-CDCF5F0E88DC}">
 											<ChildrenList>
-												<Action Name="" ID="{32F0E859-4962-4009-8F6F-960B7450E508}" ShortID="393751294">
+												<Action Name="" ID="{0B992990-E31F-4B4A-A2B6-486AFACB8C72}" ShortID="807314463">
 													<ReferenceList>
 														<Reference Name="Target">
-															<ObjectRef Name="Cha_Breath_Inspi" ID="{79544230-EE6A-433F-B1CA-A8BFD52101C5}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+															<ObjectRef Name="Cha_Breath_Behavior" ID="{B8EC7F86-B471-4A5A-B4B2-B8687A820BDB}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>
@@ -194,10 +177,10 @@
 										</Event>
 										<Event Name="Cha_Breath_Expi" ID="{355160FD-5BE4-4EB0-B23E-4B27143290F1}">
 											<ChildrenList>
-												<Action Name="" ID="{C03CD81C-A021-43C6-8260-4E4CBB0FF73C}" ShortID="948766544">
+												<Action Name="" ID="{5264F4F2-DFE9-4720-B854-F801E1B64A99}" ShortID="324567573">
 													<ReferenceList>
 														<Reference Name="Target">
-															<ObjectRef Name="Cha_Breath_Expi" ID="{36A3C286-6D77-4A34-9150-5B189832CCA9}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+															<ObjectRef Name="Cha_Breath_Behavior" ID="{B8EC7F86-B471-4A5A-B4B2-B8687A820BDB}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>
@@ -238,6 +221,18 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{68D54400-FABC-4A70-AA19-D64972FDA6F3}" ShortID="194244152">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 										<Action Name="" ID="{41711270-0F1D-4948-BEF6-A0492DF77B29}" ShortID="537731969">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="3"/>
@@ -257,18 +252,6 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
-										<Action Name="" ID="{68D54400-FABC-4A70-AA19-D64972FDA6F3}" ShortID="194244152">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="38"/>
-												<Property Name="GameParameterValue" Type="Real64" Value="100"/>
-												<Property Name="Scope" Type="int16" Value="1"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Cha_Respawn" ID="{4CCAC55C-0D65-49D3-82EB-90C005FE93C0}">
@@ -277,6 +260,17 @@
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
+										<Action Name="" ID="{9968137F-10C6-4552-85CB-A36C6A760732}" ShortID="325189071">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 										<Action Name="" ID="{EE23F25C-1729-4B02-9B6C-83B5A2D81474}" ShortID="974430438">
 											<ReferenceList>
 												<Reference Name="Target">
@@ -461,16 +455,6 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
-										<Action Name="" ID="{9620204E-6311-4C41-9D17-4BA32AAF089C}" ShortID="1031728415">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="41"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 										<Action Name="" ID="{DFC34E71-D451-4A78-8E95-F7B1CF84B43A}" ShortID="736373115">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="22"/>
@@ -478,6 +462,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{3D078A9F-2D27-4C84-B92F-A575C42E31CB}" ShortID="622854739">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -549,12 +543,23 @@
 								</Folder>
 							</ChildrenList>
 						</Folder>
-						<Event Name="Flying_Sphere_Play" ID="{456C704F-03A6-498D-94EC-FC0A4DEEA59E}">
+						<Event Name="Lvl01_Flying_Sphere_Small_Play" ID="{456C704F-03A6-498D-94EC-FC0A4DEEA59E}">
 							<ChildrenList>
 								<Action Name="" ID="{C6D84F39-A784-4B08-999C-287BCA642235}" ShortID="828565199">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Obj_Plateform_Moving" ID="{6074D100-5BB1-4C5F-AB3E-3D5738B20953}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+											<ObjectRef Name="Obj_Plateform_Moving_Small" ID="{6074D100-5BB1-4C5F-AB3E-3D5738B20953}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Lvl01_Flying_Sphere_Big_Play" ID="{71B3DFB1-3D70-4589-9C8F-CEF3A5D0A655}">
+							<ChildrenList>
+								<Action Name="" ID="{7A702B1A-1F65-434C-8FF7-0012DBBC74C9}" ShortID="28360647">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Obj_Plateform_Moving_Big" ID="{2E717F99-B19C-45E1-9F06-1758C3B0DD6B}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
