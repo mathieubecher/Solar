@@ -97,6 +97,7 @@ public class Instantiator : MonoBehaviour
         
         if (active)
         {
+            //Reset if list change
             if (prefabs.Count == 0)
             {
                 prefab = null;
@@ -113,11 +114,18 @@ public class Instantiator : MonoBehaviour
             {
                 click = true;
                 move = true;
+                
+                GetCursorPos(out mouseValuePos);
+                mousepos = Event.current.mousePosition;
                 hasInstance = false;
             }
             else if (move && type == EventType.MouseUp)
             {
                 move = false;
+                if (instance != null)
+                {
+                    Debug.Log("undo");
+                }
             }
 
             type = (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseUp)?Event.current.type:type;
@@ -202,18 +210,43 @@ public class Instantiator : MonoBehaviour
                 
             }
             // 
-            else if (move && !click && hasInstance && prefab != null)
+            else if (move && !click && hasInstance)
             {
-                instance.transform.Rotate(new Vector3(0,(mousepos.x - Event.current.mousePosition.x),0));
-                instance.transform.position = instance.transform.position + (mousepos.y - Event.current.mousePosition.y) * Vector3.up/50;
-                SetCursorPos(mouseValuePos.x, mouseValuePos.y);
+                if (ctrl)
+                {
+                    instance.transform.RotateAround(instance.transform.position,SceneView.lastActiveSceneView.camera.transform.rotation * Vector3.up,(mousepos.x - Event.current.mousePosition.x));
+                    instance.transform.RotateAround(instance.transform.position,SceneView.lastActiveSceneView.camera.transform.rotation *Vector3.right,(mousepos.y - Event.current.mousePosition.y));
+                    
+                    UnityEditor.Handles.color = Color.blue;
+                    UnityEditor.Handles.DrawWireDisc(instance.transform.position, SceneView.lastActiveSceneView.camera.transform.rotation *Vector3.right, 2);
+                    UnityEditor.Handles.color = Color.red;
+                    UnityEditor.Handles.DrawWireDisc(instance.transform.position, SceneView.lastActiveSceneView.camera.transform.rotation *Vector3.up, 2);
+                    
+                    SetCursorPos(mouseValuePos.x, mouseValuePos.y);
+                    
+                }
+                else
+                {
+                    instance.transform.Rotate(new Vector3(0,(mousepos.x - Event.current.mousePosition.x),0));
+                    instance.transform.position = instance.transform.position + (mousepos.y - Event.current.mousePosition.y) * Vector3.up/50;
+                    
+                    UnityEditor.Handles.color = Color.blue;
+                    UnityEditor.Handles.DrawWireDisc(instance.transform.position, Vector3.up, 2);
+                    UnityEditor.Handles.color = Color.red;
+                    UnityEditor.Handles.DrawLine(instance.transform.position, instance.transform.position + Vector3.up*2);
+                    
+                    SetCursorPos(mouseValuePos.x, mouseValuePos.y);
+                    
+                    
+                }
 
             }
+            
             // Define raycast target
             else if (Physics.Raycast(ray, out hit, 200, LayerMask.GetMask("Sand") + LayerMask.GetMask("Default")))
             {
                 // Spawn Prefab
-                if (click && !alt && prefab)
+                if (click && !alt && !shift && prefab)
                 {
                     GameObject searchParent = hit.collider.gameObject;
                     SearchParent();
@@ -229,12 +262,15 @@ public class Instantiator : MonoBehaviour
                     hasInstance = true;
                     mouseValuePos = new IntPoint();
                     GetCursorPos(out mouseValuePos);
+                    SetCursorPos(mouseValuePos.x, mouseValuePos.y);
+                    mousepos = Event.current.mousePosition;
+
+                    
 
                 }
                 // Delete Prefab spawn with raycast
-                else if (click && alt && prefab != null)
+                else if (click && alt)
                 {
-                    Debug.Log("search delete");
                     if (_instances.Find(ctx => hit.collider.gameObject == ctx))
                     {
                         _instances.Remove(hit.collider.gameObject);
@@ -250,6 +286,31 @@ public class Instantiator : MonoBehaviour
                                 
                                 _instances.Remove(searchInstance);
                                 Undo.DestroyObjectImmediate(searchInstance);
+                                break;
+                            }
+                            else searchInstance = searchInstance.transform.parent.gameObject;
+                        }
+                    }
+                }
+                else if (click && shift)
+                {
+                    if (_instances.Find(ctx => hit.collider.gameObject == ctx))
+                    {
+                        hasInstance = true;
+                        instance = hit.collider.gameObject;
+                        Undo.RegisterCompleteObjectUndo(instance.transform, "Transform Position "+instance.name);
+                        instance.transform.position = instance.transform.position;
+                    }
+                    else
+                    {
+                        GameObject searchInstance = hit.collider.gameObject;
+                        while (searchInstance.name != "archi" && searchInstance.name != "Archi" && searchInstance.transform.parent != null)
+                        {
+                            if (_instances.Find(ctx => searchInstance == ctx))
+                            {
+                                hasInstance = true;
+                                instance = searchInstance;
+                                
                                 break;
                             }
                             else searchInstance = searchInstance.transform.parent.gameObject;
