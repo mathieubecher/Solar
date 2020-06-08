@@ -60,6 +60,18 @@
 							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="RTPC_SFX_Volume" ID="{7A73F0C1-1BA4-47CA-9F28-50E82C34435B}"/>
+							<Value>1</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Music_Volume" ID="{A1EBBE06-22B6-49F9-B806-502A4C00EDBC}"/>
+							<Value>1</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Main_Volume" ID="{EBB1F119-65A5-4A70-BBC1-49B2E6DFDBF7}"/>
+							<Value>1</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}"/>
 							<Value>100</Value>
 						</RTPCValue>
@@ -69,13 +81,15 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Part03" ID="{E6CF3B42-BDA1-4BA2-9E80-9174CCFBFDAA}"/>
+						<CurrentStateRef Name="Part01" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}"/>
 						<CurrentStateRef Name="isHurting" ID="{1AF9F27D-C6FE-4ABC-8F91-9E284B0C2607}"/>
-						<CurrentStateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
+						<CurrentStateRef Name="inGame" ID="{5C50D9A6-4DF8-48DC-BE99-D9B6ED47DFC3}"/>
+						<CurrentStateRef Name="Ext_Lvl01_Desert_Kiosk" ID="{FC399029-B1DF-4FF4-9006-8DF9F1A6A27F}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="isHurting" ID="{EE9D29D8-0B28-40CE-A6BB-829669375CA5}"/>
+						<CurrentSwitchRef Name="isIDLE" ID="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}"/>
 						<CurrentSwitchRef Name="Sand" ID="{569C2DF3-2300-48E3-A79C-55536C42AD41}"/>
+						<CurrentSwitchRef Name="isHurting2" ID="{313A2D77-A267-43B6-82C9-7B71D46D2680}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Breath_System" ID="{637BB05B-1284-41C7-AFDA-78E2A129D135}">
@@ -271,15 +285,15 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_SFX_Volume" ID="{7A73F0C1-1BA4-47CA-9F28-50E82C34435B}"/>
-							<Value>0</Value>
+							<Value>1</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Music_Volume" ID="{A1EBBE06-22B6-49F9-B806-502A4C00EDBC}"/>
-							<Value>0</Value>
+							<Value>1</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Main_Volume" ID="{EBB1F119-65A5-4A70-BBC1-49B2E6DFDBF7}"/>
-							<Value>0.958202716823406</Value>
+							<Value>1</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}"/>
@@ -292,7 +306,8 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Part01" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}"/>
-						<CurrentStateRef Name="None" ID="{EC546398-FFAA-4A6B-A2C8-7F0077B7FAE6}"/>
+						<CurrentStateRef Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
+						<CurrentStateRef Name="inMenu" ID="{E5705BD7-A089-43D8-9E54-E9283D5AE51A}"/>
 						<CurrentStateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
