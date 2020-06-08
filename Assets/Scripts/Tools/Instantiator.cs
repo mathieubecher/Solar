@@ -40,7 +40,16 @@ public class Instantiator : MonoBehaviour
 
 
    
-    public bool active = false;
+    private bool active = false;
+
+    public bool Active
+    {
+        get => active;
+        set => active = value;
+    }
+
+
+    private bool _firstclick = true;
     [Range(0, 100)] public float margey;
     private GameObject last;
 
@@ -95,7 +104,8 @@ public class Instantiator : MonoBehaviour
         
         if (Event.current.keyCode == KeyCode.Escape) active = false;
         
-        if (active)
+        _firstclick &= type == EventType.MouseDown && currentButton == 0;
+        if (active && !_firstclick)
         {
             //Reset if list change
             if (prefabs.Count == 0)
@@ -187,6 +197,8 @@ public class Instantiator : MonoBehaviour
             }
         }
         else if(_instances.Count > 0) _instances = new List<GameObject>();
+
+        if (!active) _firstclick = true;
     }
     
     private GameObject instance;
@@ -225,15 +237,30 @@ public class Instantiator : MonoBehaviour
                     SetCursorPos(mouseValuePos.x, mouseValuePos.y);
                     
                 }
-                else
+                else if (shift)
                 {
-                    instance.transform.Rotate(new Vector3(0,(mousepos.x - Event.current.mousePosition.x),0));
-                    instance.transform.position = instance.transform.position + (mousepos.y - Event.current.mousePosition.y) * Vector3.up/50;
+                    Vector3 forward = Vector3.Cross(Vector3.up, SceneView.lastActiveSceneView.camera.transform.rotation * Vector3.right);
+                    Vector3 right = Vector3.Cross(Vector3.up, forward);
+                    instance.transform.position += right * (mousepos.x - Event.current.mousePosition.x)/40 + forward * (Event.current.mousePosition.y - mousepos.y)/40;
+                    
                     
                     UnityEditor.Handles.color = Color.blue;
-                    UnityEditor.Handles.DrawWireDisc(instance.transform.position, Vector3.up, 2);
+                    UnityEditor.Handles.DrawLine(instance.transform.position, instance.transform.position + Vector3.forward*2);
                     UnityEditor.Handles.color = Color.red;
-                    UnityEditor.Handles.DrawLine(instance.transform.position, instance.transform.position + Vector3.up*2);
+                    UnityEditor.Handles.DrawLine(instance.transform.position, instance.transform.position + Vector3.right*2);
+                    
+                    SetCursorPos(mouseValuePos.x, mouseValuePos.y);
+                }
+                else
+                {
+                    Vector3 up = instance.transform.rotation * Vector3.up;
+                    instance.transform.Rotate(new Vector3(0,(mousepos.x - Event.current.mousePosition.x),0));
+                    instance.transform.position = instance.transform.position + up * (mousepos.y - Event.current.mousePosition.y)/50;
+                    
+                    UnityEditor.Handles.color = Color.blue;
+                    UnityEditor.Handles.DrawWireDisc(instance.transform.position, up, 2);
+                    UnityEditor.Handles.color = Color.red;
+                    UnityEditor.Handles.DrawLine(instance.transform.position, instance.transform.position + up*2);
                     
                     SetCursorPos(mouseValuePos.x, mouseValuePos.y);
                     
@@ -370,4 +397,20 @@ public class Instantiator : MonoBehaviour
         for(int i = 0; i < o.transform.childCount; ++i) GetMesh(o.transform.GetChild(i).gameObject);
     }
 
+}
+
+[CustomEditor(typeof(Instantiator))]
+public class InstantiatorEditor: Editor
+{
+    private bool active;
+    public override void OnInspectorGUI()
+    {
+        if (GUILayout.Button((active) ? "Disable" : "Enable"))
+        {
+            active = !active;
+            ((Instantiator) base.target).Active = active;
+        }
+        base.OnInspectorGUI();
+        
+    }
 }
