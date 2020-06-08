@@ -67,6 +67,7 @@ public class UIInterface : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        AkSoundEngine.SetState("Menu_State", "inMenu");   //While inGame
     }
     void OnDisable()
     {
@@ -76,6 +77,7 @@ public class UIInterface : MonoBehaviour
         Cursor.visible = false;
 #endif
         GoTo("Pause");
+        AkSoundEngine.SetState("Menu_State", "inGame");   //While inGame
     }
     
     #region Sound
