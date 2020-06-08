@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public GameType gameType = GameType.SOLO;
     
     
-    public Options options;
+    public UIInterface UiInterface;
     
     public Volume sky;
     public Volume postProcess;
@@ -29,9 +29,18 @@ public class GameManager : MonoBehaviour
 
     public Controller controller;
 
+    public GameObject wrapperPrefab;
     // Start is called before the first frame update
     void Awake()
     {
+        UIWrapper wrapper = FindObjectOfType<UIWrapper>();
+        if (wrapper == null)
+        {
+            GameObject o = Instantiate(wrapperPrefab);
+            wrapper = o.GetComponent<UIWrapper>();
+        }
+        UiInterface = wrapper.uiInterface;
+        UiInterface.gameObject.SetActive(false);
         controller = FindObjectOfType<Controller>();
         gameType = StaticClass.gameType;
         Debug.Log(gameType);
@@ -41,21 +50,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        options.ApplyAllChange();    
+        UiInterface.ApplyAllChange();    
     }
     
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if ((Input.GetKeyDown(KeyCode.Escape) /*|| Input.GetKeyDown(KeyCode.JoystickButton0)*/) && !UiInterface.gameObject.activeSelf)
         {
-        #if UNITY_EDITOR
-            //UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            //Application.Quit();
-        #endif
-
-            options.gameObject.SetActive(!options.gameObject.active);
+            UiInterface.gameObject.SetActive(true);
 
         }
         if (Input.GetKeyDown(KeyCode.F))
@@ -63,6 +66,9 @@ public class GameManager : MonoBehaviour
             debug = !debug;
         }
 
+        
+        if (Input.GetKeyDown(KeyCode.G)) controller.activeDead = !controller.activeDead;
+        
         Time.timeScale = timeScale;
     }
 }

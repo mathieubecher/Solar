@@ -104,7 +104,7 @@ public class InputManager : ControllerBehavior
     }
     public override void SetSunVelocity(RpcArgs args)
     {
-        Options options = FindObjectOfType<Options>();
-        options.player2Settings.sunSensitivity = args.GetNext<float>();
+        UIInterface uiInterface = FindObjectOfType<UIInterface>();
+        uiInterface.player2Settings.sunSensitivity = args.GetNext<float>();
     }
 }

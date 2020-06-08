@@ -15,7 +15,7 @@ public class InputLocal : MonoBehaviour
         PLAYER,SUN
     }
 
-    public Options options;
+    public UIInterface UiInterface;
     
     private Controller _controller;
     private PlayerInput _controls;
@@ -32,6 +32,9 @@ public class InputLocal : MonoBehaviour
     [SerializeField]
     private InputType _type;
 
+    [HideInInspector] public bool _defineSun;
+    [HideInInspector] public bool _definePlatform;
+
     
     private Action<InputAction.CallbackContext> rotateSun;
     private Action<InputAction.CallbackContext> rotateStickSun;
@@ -41,16 +44,16 @@ public class InputLocal : MonoBehaviour
     public Vector2 Move => _move;
 
     public Vector3 RotateMouse {get{
-            return new Vector3(_rotateMouse.x * options.player1Settings.xAxisSensitivity,_rotateMouse.y * options.player1Settings.yAxisSensitivity * ((options.player1Settings.invertVertical)?-1:1),0); 
+            return new Vector3(_rotateMouse.x * UiInterface.player1Settings.xAxisSensitivity,_rotateMouse.y * UiInterface.player1Settings.yAxisSensitivity * ((UiInterface.player1Settings.invertVertical)?-1:1),0); 
     }}
 
     public Vector2 Rotate{get{    
-            return new Vector3(_rotate.x * options.player1Settings.xAxisSensitivity,_rotate.y * options.player1Settings.yAxisSensitivity * ((options.player1Settings.invertVertical)?-1:1));
+            return new Vector3(_rotate.x * UiInterface.player1Settings.xAxisSensitivity,_rotate.y * UiInterface.player1Settings.yAxisSensitivity * ((UiInterface.player1Settings.invertVertical)?-1:1));
     }}
 
-    public float AngleVelocity { get{return _gotoAngleVelocity * options.player2Settings.sunSensitivity * ((options.player2Settings.invertSun)?-1:1); } }
+    public float AngleVelocity { get{return _gotoAngleVelocity * UiInterface.player2Settings.sunSensitivity * ((UiInterface.player2Settings.invertSun)?-1:1); } }
 
-    public float VelocityPlatform { get{return _velocityPlatform * options.player2Settings.platformSensitivity;} }
+    public float VelocityPlatform { get{return _velocityPlatform * UiInterface.player2Settings.platformSensitivity;} }
 
     void Start()
     {
@@ -63,15 +66,17 @@ public class InputLocal : MonoBehaviour
         progressStickPlatform = ctx => ProgressStickPlatform(ctx.ReadValue<Vector2>());
 
         
-        options = FindObjectOfType<Controller>().options;
+        UiInterface = FindObjectOfType<Controller>().UiInterface;
         
         // Récupère le controlleur du personnage
         _controller = FindObjectOfType<Controller>();
         
         Local inputs = (Local)_controller.inputs;
         _type = (inputs.SetInput(this) == 0)? InputType.PLAYER:InputType.SUN;
-        
+       
         _controls = GetComponent<PlayerInput>();
+        
+        
         Debug.Log(_controls.currentControlScheme);
         
         if(_type == InputType.PLAYER){
@@ -85,11 +90,10 @@ public class InputLocal : MonoBehaviour
             _controls.currentActionMap["Rotate"].performed += ctx => VelocityCam(ctx.ReadValue<Vector2>());
             _controls.currentActionMap["Rotate"].canceled += ctx => VelocityCam(ctx.ReadValue<Vector2>());
         }
-        _controls.currentActionMap["RotateSun"].performed += rotateSun;
-        _controls.currentActionMap["RotateSun"].canceled += rotateSun;
-        
-        _controls.currentActionMap["ProgressPlatform"].performed += progressPlatform;
-        _controls.currentActionMap["ProgressPlatform"].canceled += progressPlatform;
+        else{
+            inputs.BindSun(UiInterface.player2Settings.sun);
+            inputs.BindPlatform(UiInterface.player2Settings.platform);
+        }
     }
 
     public void Update()
@@ -143,20 +147,21 @@ public class InputLocal : MonoBehaviour
 
     #region Biding Platform
     
-    public void BindPlatform(Options.Bind last, Options.Bind bind)
+    public void BindPlatform(UIInterface.Bind last, UIInterface.Bind bind)
     {
-        ResetBind(last);
-        if (bind == Options.Bind.L1R1)
+       
+        if(_defineSun) ResetBind(last);
+        if (bind == UIInterface.Bind.L1R1)
         {
             _controls.currentActionMap["ProgressPlatform"].performed += progressPlatform;
             _controls.currentActionMap["ProgressPlatform"].canceled += progressPlatform;
         }
-        else if (bind == Options.Bind.L2R2)
+        else if (bind == UIInterface.Bind.L2R2)
         {
             _controls.currentActionMap["RotateSun"].performed += progressPlatform;
             _controls.currentActionMap["RotateSun"].canceled += progressPlatform;
         }
-        else if (bind == Options.Bind.LeftStick)
+        else if (bind == UIInterface.Bind.LeftStick)
         {
             _controls.currentActionMap["Movement"].performed += progressStickPlatform;
             _controls.currentActionMap["Movement"].canceled += progressStickPlatform;
@@ -166,6 +171,7 @@ public class InputLocal : MonoBehaviour
             _controls.currentActionMap["Rotate"].performed += progressStickPlatform;
             _controls.currentActionMap["Rotate"].canceled += progressStickPlatform;
         }
+        _defineSun = true;
     }
 
 
@@ -179,23 +185,22 @@ public class InputLocal : MonoBehaviour
 
     #region Biding Sun
     
-
-    public void BindSun(Options.Bind last, Options.Bind bind)
+    public void BindSun(UIInterface.Bind last, UIInterface.Bind bind)
     {
-        ResetBind(last);
-        if (bind == Options.Bind.L1R1)
+        if(_definePlatform) ResetBind(last);
+        if (bind == UIInterface.Bind.L1R1)
         {
             _controls.currentActionMap["ProgressPlatform"].performed += rotateSun;
             _controls.currentActionMap["ProgressPlatform"].canceled += rotateSun;
             Debug.Log("Rebind Sun L1R1 " + last);
         }
-        else if (bind == Options.Bind.L2R2)
+        else if (bind == UIInterface.Bind.L2R2)
         {
             _controls.currentActionMap["RotateSun"].performed += rotateSun;
             _controls.currentActionMap["RotateSun"].canceled += rotateSun;
             Debug.Log("Rebind Sun L2R2 " + last);
         }
-        else if (bind == Options.Bind.LeftStick)
+        else if (bind == UIInterface.Bind.LeftStick)
         {
             _controls.currentActionMap["Movement"].performed += rotateStickSun;
             _controls.currentActionMap["Movement"].canceled += rotateStickSun;
@@ -207,6 +212,7 @@ public class InputLocal : MonoBehaviour
             _controls.currentActionMap["Rotate"].canceled += rotateStickSun;
             Debug.Log("Rebind Sun RightStick " + last);
         }
+        _definePlatform = true;
         
     }
 
@@ -217,10 +223,10 @@ public class InputLocal : MonoBehaviour
 
     #endregion
     
-    private void ResetBind(Options.Bind last)
+    private void ResetBind(UIInterface.Bind last)
     {
         // TODO isolé les fonctions ciblé
-        if (last == Options.Bind.L1R1)
+        if (last == UIInterface.Bind.L1R1)
         {
             Debug.Log("Reset L1R1");
             _controls.currentActionMap["ProgressPlatform"].performed -= rotateSun;
@@ -229,7 +235,7 @@ public class InputLocal : MonoBehaviour
             _controls.currentActionMap["ProgressPlatform"].canceled -= progressPlatform;
             
         }
-        else if (last == Options.Bind.L2R2)
+        else if (last == UIInterface.Bind.L2R2)
         {
             
             Debug.Log("Reset L2R2");
@@ -238,7 +244,7 @@ public class InputLocal : MonoBehaviour
             _controls.currentActionMap["RotateSun"].performed -= progressPlatform;
             _controls.currentActionMap["RotateSun"].canceled -= progressPlatform;
         }
-        else if (last == Options.Bind.LeftStick)
+        else if (last == UIInterface.Bind.LeftStick)
         {
             
             Debug.Log("Reset LeftStick");
