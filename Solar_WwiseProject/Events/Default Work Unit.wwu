@@ -260,17 +260,6 @@
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
-										<Action Name="" ID="{9968137F-10C6-4552-85CB-A36C6A760732}" ShortID="325189071">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="38"/>
-												<Property Name="GameParameterValue" Type="Real64" Value="100"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 										<Action Name="" ID="{EE23F25C-1729-4B02-9B6C-83B5A2D81474}" ShortID="974430438">
 											<ReferenceList>
 												<Reference Name="Target">
@@ -309,10 +298,21 @@
 										<Action Name="" ID="{5CB76F52-838B-43FD-B488-14D2AAAE1821}" ShortID="364603035">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="41"/>
+												<Property Name="Delay" Type="Real64" Value="3"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Sun_Feedback_Play" ID="{43EA3834-EED4-40A4-9BCD-E7AD668D74F5}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{9A65F37C-9294-49A9-ACB8-02298A42F1D2}" ShortID="963927336">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cha_Hurt_Breath" ID="{EAC280A8-2AFA-4509-BDC7-51284DF00C88}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
