@@ -81,7 +81,7 @@
 				<SoundcasterSession Name="Breath_System" ID="{637BB05B-1284-41C7-AFDA-78E2A129D135}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="Cha_Breath_Inspi" ID="{490D4164-D5C7-4ABF-BC7C-CDCF5F0E88DC}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<ObjectRef Name="Cha_Breath_Expi" ID="{355160FD-5BE4-4EB0-B23E-4B27143290F1}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
@@ -124,7 +124,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}"/>
-							<Value>0</Value>
+							<Value>100</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_WindGain" ID="{C1A5BC66-B4DF-474B-9AEE-1068B3D47755}"/>
@@ -140,11 +140,11 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Main_Volume" ID="{EBB1F119-65A5-4A70-BBC1-49B2E6DFDBF7}"/>
-							<Value>8.81554761797483E-312</Value>
+							<Value>1</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Breath_RTPC" ID="{1CF66F0A-F1A4-4C6C-A66D-6C1A71F47297}"/>
-							<Value>0</Value>
+							<Value>67</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_AstroSidechain" ID="{0C5BD735-17E7-4FD0-B4A5-F2BF295BBA0F}"/>
@@ -152,14 +152,14 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Part01" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}"/>
-						<CurrentStateRef Name="None" ID="{EC546398-FFAA-4A6B-A2C8-7F0077B7FAE6}"/>
-						<CurrentStateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
+						<CurrentStateRef Name="Part04" ID="{8C02331C-F656-47FD-B344-4290DAF0CA9A}"/>
+						<CurrentStateRef Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
+						<CurrentStateRef Name="Ext_Lvl01_Desert_Kiosk" ID="{FC399029-B1DF-4FF4-9006-8DF9F1A6A27F}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="isIDLE" ID="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}"/>
 						<CurrentSwitchRef Name="Sand" ID="{569C2DF3-2300-48E3-A79C-55536C42AD41}"/>
-						<CurrentSwitchRef Name="isHurting2" ID="{313A2D77-A267-43B6-82C9-7B71D46D2680}"/>
+						<CurrentSwitchRef Name="Normal" ID="{80AEB575-82CA-46A2-8B56-912CC4469063}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Amb_System" ID="{7527CA5A-4674-496A-946F-9649F423D743}">
