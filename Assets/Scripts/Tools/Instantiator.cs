@@ -133,7 +133,7 @@ public class Instantiator : MonoBehaviour
         
             HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
 
-            if (Event.current.type == EventType.ScrollWheel)
+            if (Event.current.type == EventType.ScrollWheel && shift)
             {
                 Event.current.Use();
                 if (Event.current.delta.y > 0) scale -= 0.1f;
