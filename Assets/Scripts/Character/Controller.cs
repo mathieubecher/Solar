@@ -39,8 +39,8 @@ public class Controller : MonoBehaviour
     
     private float _deadTimer;
     private float _respawnTimer;
-    private AnimationCurve _deadCurve;
-    private AnimationCurve _respawnCurve;
+    [SerializeField] private AnimationCurve _deadCurve;
+    [SerializeField] private AnimationCurve _respawnCurve;
     
     [SerializeField] public bool activeDead = true;
     [SerializeField] private Image deadImg;
