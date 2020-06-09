@@ -593,9 +593,17 @@
 							<ShortName>cha_breath_hurt_expi-003.wav</ShortName>
 							<Path>SFX\cha_breath_hurt_expi-003_E42D57AF.wem</Path>
 						</File>
+						<File Id="246577569" Language="SFX">
+							<ShortName>lvl02_intro_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_intro_100bpm4_4_D79FB2B7.wem</Path>
+						</File>
 						<File Id="246583563" Language="SFX">
 							<ShortName>cha_breath_hurt_inspi-002.wav</ShortName>
 							<Path>SFX\cha_breath_hurt_inspi-002_972DE053.wem</Path>
+						</File>
+						<File Id="299307054" Language="SFX">
+							<ShortName>lvl02_drop_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_drop_100bpm4_4_D79FB2B7.wem</Path>
 						</File>
 						<File Id="328126770" Language="SFX">
 							<ShortName>lvl01_transi2ndbridge_95bpm4_4.wav</ShortName>
@@ -649,9 +657,17 @@
 							<ShortName>music_menu_lvl01.wav</ShortName>
 							<Path>SFX\music_menu_lvl01_D79FB2B7.wem</Path>
 						</File>
+						<File Id="992967537" Language="SFX">
+							<ShortName>lvl02_postintro_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_postintro_100bpm4_4_D79FB2B7.wem</Path>
+						</File>
 						<File Id="1007561845" Language="SFX">
 							<ShortName>cha_breath_hurt_inspi-004.wav</ShortName>
 							<Path>SFX\cha_breath_hurt_inspi-004_0DB7070B.wem</Path>
+						</File>
+						<File Id="1049193251" Language="SFX">
+							<ShortName>lvl02_predrop_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_predrop_100bpm4_4_D79FB2B7.wem</Path>
 						</File>
 						<File Id="1050526820" Language="SFX">
 							<ShortName>astrolabe_v3.wav</ShortName>
@@ -690,6 +706,26 @@
 								</SwitchContainer>
 							</Children>
 						</SwitchContainer>
+						<SwitchContainer SwitchValue="{83F76498-EC2F-4A91-A240-477AB407EC12}">
+							<Children>
+								<SwitchContainer SwitchValue="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}">
+									<Media>
+										<File Id="246577569"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{0E37C743-B984-43CF-B535-5958B0E205F8}">
+									<Media>
+										<File Id="992967537"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{E6CF3B42-BDA1-4BA2-9E80-9174CCFBFDAA}">
+									<Media>
+										<File Id="299307054"/>
+										<File Id="1049193251"/>
+									</Media>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
 						<SwitchContainer SwitchValue="{E831CF84-D453-4A17-9DFA-2A1E8EC3E4D5}">
 							<Media>
 								<File Id="912615941"/>
@@ -724,11 +760,20 @@
 				<Event Id="2884165202" Name="Music_Lvl01_Kiosk2" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Kiosk2" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2884165203" Name="Music_Lvl01_Kiosk3" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Kiosk3" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="503471100" Name="Music_Lvl01_Temple" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Temple" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3454836319" Name="Music_Lvl02_Switch_Event" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl02_Switch_Event" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="126101664" Language="SFX">
 							<ShortName>lvl01_kiosk3_95bpm4_4.wav</ShortName>
 							<Path>SFX\lvl01_kiosk3_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="246577569" Language="SFX">
+							<ShortName>lvl02_intro_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_intro_100bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="299307054" Language="SFX">
+							<ShortName>lvl02_drop_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_drop_100bpm4_4_D79FB2B7.wem</Path>
 						</File>
 						<File Id="328126770" Language="SFX">
 							<ShortName>lvl01_transi2ndbridge_95bpm4_4.wav</ShortName>
@@ -753,6 +798,14 @@
 						<File Id="912615941" Language="SFX">
 							<ShortName>music_menu_lvl01.wav</ShortName>
 							<Path>SFX\music_menu_lvl01_D79FB2B7.wem</Path>
+						</File>
+						<File Id="992967537" Language="SFX">
+							<ShortName>lvl02_postintro_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_postintro_100bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="1049193251" Language="SFX">
+							<ShortName>lvl02_predrop_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_predrop_100bpm4_4_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
@@ -787,6 +840,26 @@
 								</SwitchContainer>
 							</Children>
 						</SwitchContainer>
+						<SwitchContainer SwitchValue="{83F76498-EC2F-4A91-A240-477AB407EC12}">
+							<Children>
+								<SwitchContainer SwitchValue="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}">
+									<Media>
+										<File Id="246577569"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{0E37C743-B984-43CF-B535-5958B0E205F8}">
+									<Media>
+										<File Id="992967537"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{E6CF3B42-BDA1-4BA2-9E80-9174CCFBFDAA}">
+									<Media>
+										<File Id="299307054"/>
+										<File Id="1049193251"/>
+									</Media>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
 						<SwitchContainer SwitchValue="{E831CF84-D453-4A17-9DFA-2A1E8EC3E4D5}">
 							<Media>
 								<File Id="912615941"/>
@@ -794,6 +867,113 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="4260531187" Name="Music_Play_Global" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Play_Global" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="126101664" Language="SFX">
+							<ShortName>lvl01_kiosk3_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_kiosk3_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="246577569" Language="SFX">
+							<ShortName>lvl02_intro_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_intro_100bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="299307054" Language="SFX">
+							<ShortName>lvl02_drop_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_drop_100bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="328126770" Language="SFX">
+							<ShortName>lvl01_transi2ndbridge_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_transi2ndbridge_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="393158941" Language="SFX">
+							<ShortName>lvl01_bridge_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_bridge_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="586779925" Language="SFX">
+							<ShortName>lvl01_2ndbridge_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_2ndbridge_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="770477499" Language="SFX">
+							<ShortName>lvl01_kiosk_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_kiosk_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="886504593" Language="SFX">
+							<ShortName>lvl01_temple_95bpm4_4.wav</ShortName>
+							<Path>SFX\lvl01_temple_95bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="912615941" Language="SFX">
+							<ShortName>music_menu_lvl01.wav</ShortName>
+							<Path>SFX\music_menu_lvl01_D79FB2B7.wem</Path>
+						</File>
+						<File Id="992967537" Language="SFX">
+							<ShortName>lvl02_postintro_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_postintro_100bpm4_4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="1049193251" Language="SFX">
+							<ShortName>lvl02_predrop_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_predrop_100bpm4_4_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{E831CF84-D453-4A17-9DFA-2A1E8EC3E4D5}">
+							<Children>
+								<SwitchContainer SwitchValue="{17385033-E0F3-4F4B-8D00-99C647357501}">
+									<Media>
+										<File Id="126101664"/>
+										<File Id="126101664"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{0E37C743-B984-43CF-B535-5958B0E205F8}">
+									<Media>
+										<File Id="393158941"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}">
+									<Media>
+										<File Id="886504593"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{E6CF3B42-BDA1-4BA2-9E80-9174CCFBFDAA}">
+									<Media>
+										<File Id="770477499"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{8C02331C-F656-47FD-B344-4290DAF0CA9A}">
+									<Media>
+										<File Id="586779925"/>
+										<File Id="328126770"/>
+									</Media>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{83F76498-EC2F-4A91-A240-477AB407EC12}">
+							<Children>
+								<SwitchContainer SwitchValue="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}">
+									<Media>
+										<File Id="246577569"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{0E37C743-B984-43CF-B535-5958B0E205F8}">
+									<Media>
+										<File Id="992967537"/>
+									</Media>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{E6CF3B42-BDA1-4BA2-9E80-9174CCFBFDAA}">
+									<Media>
+										<File Id="299307054"/>
+										<File Id="1049193251"/>
+									</Media>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{E831CF84-D453-4A17-9DFA-2A1E8EC3E4D5}">
+							<Media>
+								<File Id="912615941"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1426984690" Name="Music_Stop_Fade" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Stop_Fade" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2337456342" Name="Sun_Feedback_Play" ObjectPath="\Events\Default Work Unit\ALL\Sun_Feedback_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="20225164" Language="SFX">
@@ -851,6 +1031,7 @@
 				<SwitchGroup Id="2502520850" Name="General_Music_Switch" ObjectPath="\Switches\Default Work Unit\General_Music_Switch">
 					<Switches>
 						<Switch Id="1709218600" Name="Lvl01" ObjectPath="\Switches\Default Work Unit\General_Music_Switch\Lvl01"/>
+						<Switch Id="1709218603" Name="Lvl02" ObjectPath="\Switches\Default Work Unit\General_Music_Switch\Lvl02"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>
