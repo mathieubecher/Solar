@@ -113,6 +113,7 @@ public class Controller : MonoBehaviour
         {
             // A la mort du personnage, laisse un temps défini avant le respawn
             _deadTimer -= Time.deltaTime;
+            sun.ppeffect.Interpolate(Mathf.Max(0,_deadTimer - (DeadTimer-1)));
             if (_deadTimer < 2)
             {
                 deadImg.color = new Color(deadImg.color.r,deadImg.color.g,deadImg.color.b,_deadCurve.Evaluate((2 - _deadTimer)/2));

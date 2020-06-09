@@ -31,7 +31,7 @@ public class ControllerSun : MonoBehaviour
     [SerializeField] private Gradient fx;
     [SerializeField] private AnimationCurve _pulsate;
     private float _pulsateSpeed = 2;
-    [SerializeField] private Image _fxUI;
+    [SerializeField] public Image fxUI;
     [SerializeField]  private float _speedHeal=1f;
     public PostProcessEffect ppeffect;
     
@@ -128,7 +128,7 @@ public class ControllerSun : MonoBehaviour
 
         // Feedback visuel
         _time = (_time + Time.deltaTime * _pulsateSpeed * (1 - _life)) % 1;
-        _fxUI.color = fx.Evaluate(1 - _life) * new Color(1, 1, 1, 0.8f + _pulsate.Evaluate(_time) * 0.2f);
+        fxUI.color = fx.Evaluate(1 - _life) * new Color(1, 1, 1, 0.8f + _pulsate.Evaluate(_time) * 0.2f);
         ppeffect.Interpolate(1-_life);
         
         // Incrémente le point à vérifier à la prochaine frame
