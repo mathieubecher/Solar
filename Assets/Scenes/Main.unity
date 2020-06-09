@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 131.16855, g: 162.52502, b: 215.10977, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3495,10 +3495,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 408235164, guid: 0a276cc94dfc60547bfb99d1ff61fcd2, type: 3}
-      propertyPath: isGlobal
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1162785119, guid: 0a276cc94dfc60547bfb99d1ff61fcd2, type: 3}
       propertyPath: cmCam
       value: 
@@ -3508,6 +3504,51 @@ PrefabInstance:
       propertyPath: _puzzle
       value: 
       objectReference: {fileID: 707081867}
+    - target: {fileID: 1166082285449232898, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928892920409596203, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
+        type: 3}
+      propertyPath: _deadCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928892920409596203, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
+        type: 3}
+      propertyPath: _respawnCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928892920409596203, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
+        type: 3}
+      propertyPath: _deadCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928892920409596203, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
+        type: 3}
+      propertyPath: _deadCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928892920409596203, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
+        type: 3}
+      propertyPath: _deadCurve.m_Curve.Array.data[1].time
+      value: 0.6582031
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928892920409596203, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
+        type: 3}
+      propertyPath: _deadCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928892920409596203, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
+        type: 3}
+      propertyPath: _respawnCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928892920409596203, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
+        type: 3}
+      propertyPath: _respawnCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6234210028320855969, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
         type: 3}
       propertyPath: ppeffect
@@ -3594,15 +3635,10 @@ PrefabInstance:
       propertyPath: postProcess
       value: 
       objectReference: {fileID: 931763997}
-    - target: {fileID: 7260959768706023882, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
+    - target: {fileID: 8338694354701484717, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7424885144911830758, guid: 0a276cc94dfc60547bfb99d1ff61fcd2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a276cc94dfc60547bfb99d1ff61fcd2, type: 3}

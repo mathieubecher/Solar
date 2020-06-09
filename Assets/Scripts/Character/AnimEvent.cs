@@ -11,6 +11,7 @@ public class AnimEvent : MonoBehaviour
     [SerializeField] private GameObject decalLeft;
     [SerializeField] private GameObject decalRight;
     [SerializeField] private GameObject footSteps;
+    [SerializeField] private ParticleSystem particle;
 
     private bool isBurning;
     private float burnTimer;
@@ -72,6 +73,8 @@ public class AnimEvent : MonoBehaviour
     public void BeginBurn()
     {
         isBurning = true;
+        Debug.Log("burn");
+        particle.Play();
     }
 
     public void ResetBurn()
