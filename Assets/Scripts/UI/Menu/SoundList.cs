@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundList : Menu
+public class SoundList : OptionsMenu
 {
     public Slider MainVolume;
     public Slider Music;

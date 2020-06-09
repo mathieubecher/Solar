@@ -52,6 +52,16 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
+				<StateGroup Name="Menu_State" ID="{1D3F4A28-63D8-4763-BB9D-B3E56D420B1B}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0.5"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{6DAAC01D-F08F-4349-8296-16600FB62B2C}"/>
+						<State Name="inMenu" ID="{E5705BD7-A089-43D8-9E54-E9283D5AE51A}"/>
+						<State Name="inGame" ID="{5C50D9A6-4DF8-48DC-BE99-D9B6ED47DFC3}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>
