@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        controller.UiInterface = UiInterface;
         UiInterface.ApplyAllChange();    
     }
     

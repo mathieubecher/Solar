@@ -59,8 +59,6 @@ public class Controller : MonoBehaviour
         FindObjectOfType<AnimEvent>().ResetBurn();
         _rigidbody = GetComponent<Rigidbody>();
         GameManager manager = FindObjectOfType<GameManager>();
-        UiInterface = manager.UiInterface;
-        
         // Met en place les différents gestionnaires d'input en fonction des paramètres choisis par le joueur
         inputs = new Solo(this);
         if (manager.gameType == GameManager.GameType.SOLO)

@@ -70,6 +70,18 @@ namespace AK
             } // namespace STATE
         } // namespace GENERALSTATES
 
+        namespace MENU_STATE
+        {
+            static const AkUniqueID GROUP = 3941853002U;
+
+            namespace STATE
+            {
+                static const AkUniqueID INGAME = 984691642U;
+                static const AkUniqueID INMENU = 3374585465U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace MENU_STATE
+
         namespace MUSIC_STATE
         {
             static const AkUniqueID GROUP = 3826569560U;
