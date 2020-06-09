@@ -34,6 +34,10 @@
 							<Position X="2" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Obj_Astrolabe_Moving" ID="{40B22666-9847-4BD6-ABC2-5D5B26739A2E}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Cha_Death_Play" ID="{89C594C2-D3B5-44EF-8EB0-017A6B3C6B50}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 							<Position X="5" Y="1"/>
 						</Module>
@@ -77,18 +81,19 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_AstroSidechain" ID="{0C5BD735-17E7-4FD0-B4A5-F2BF295BBA0F}"/>
-							<Value>-3.96374622356495</Value>
+							<Value>0</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Part01" ID="{3136ED17-4399-4EAC-AB4F-2502CD3A9D13}"/>
-						<CurrentStateRef Name="isHurting" ID="{1AF9F27D-C6FE-4ABC-8F91-9E284B0C2607}"/>
+						<CurrentStateRef Name="None" ID="{EC546398-FFAA-4A6B-A2C8-7F0077B7FAE6}"/>
 						<CurrentStateRef Name="inMenu" ID="{E5705BD7-A089-43D8-9E54-E9283D5AE51A}"/>
-						<CurrentStateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
+						<CurrentStateRef Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="isIDLE" ID="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}"/>
 						<CurrentSwitchRef Name="Sand" ID="{569C2DF3-2300-48E3-A79C-55536C42AD41}"/>
+						<CurrentSwitchRef Name="Lvl01" ID="{E831CF84-D453-4A17-9DFA-2A1E8EC3E4D5}"/>
 						<CurrentSwitchRef Name="isHurting2" ID="{313A2D77-A267-43B6-82C9-7B71D46D2680}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>

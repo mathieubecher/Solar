@@ -88,6 +88,7 @@ namespace AK
 
             namespace STATE
             {
+                static const AkUniqueID MENU_STATE = 3941853002U;
                 static const AkUniqueID NONE = 748895195U;
                 static const AkUniqueID PART01 = 2201513847U;
                 static const AkUniqueID PART02 = 2201513844U;
@@ -124,6 +125,16 @@ namespace AK
                 static const AkUniqueID STONE = 1216965916U;
             } // namespace SWITCH
         } // namespace FOOTSTEP_FLOOR
+
+        namespace GENERAL_MUSIC_SWITCH
+        {
+            static const AkUniqueID GROUP = 2502520850U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID LVL01 = 1709218600U;
+            } // namespace SWITCH
+        } // namespace GENERAL_MUSIC_SWITCH
 
         namespace GLOBAL_SWITCH
         {
