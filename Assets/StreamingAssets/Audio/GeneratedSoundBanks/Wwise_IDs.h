@@ -40,6 +40,7 @@ namespace AK
         static const AkUniqueID MUSIC_LVL02_SWITCH_EVENT = 3454836319U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
         static const AkUniqueID MUSIC_PLAY_GLOBAL = 4260531187U;
+        static const AkUniqueID MUSIC_STOP_FADE = 1426984690U;
         static const AkUniqueID SUN_FEEDBACK_PLAY = 2337456342U;
     } // namespace EVENTS
 

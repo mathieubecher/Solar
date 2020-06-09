@@ -459,34 +459,9 @@
 								</Event>
 								<Event Name="Music_Lvl02_Switch_Event" ID="{C1EE9C41-D60B-44BD-8FFA-225D82A35DB2}">
 									<ChildrenList>
-										<Action Name="" ID="{9E1AAF7F-A825-48EC-933C-65D2A7A8E68E}" ShortID="428571787">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="2"/>
-												<Property Name="FadeTime" Type="Real64" Value="5"/>
-												<Property Name="Scope" Type="int16" Value="1"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Music_Menu_Switch" ID="{76C7FC8E-7B1D-4C4A-8682-9906FB8BD447}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{2588EF95-021D-454A-9DB3-E43EC21970F5}" ShortID="819767191">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="2"/>
-												<Property Name="FadeTime" Type="Real64" Value="5"/>
-												<Property Name="Scope" Type="int16" Value="1"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Music_General_Switch" ID="{1427AE81-3815-4313-B2F3-1179DA446D42}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 										<Action Name="" ID="{BCB726A9-2B94-49ED-B206-11C3BC8809C1}" ShortID="920080413">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="23"/>
-												<Property Name="Delay" Type="Real64" Value="5"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -497,7 +472,6 @@
 										<Action Name="" ID="{410E992B-5BBB-460F-A038-DE2707CB069B}" ShortID="621407492">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="41"/>
-												<Property Name="Delay" Type="Real64" Value="10"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -525,7 +499,8 @@
 										</Action>
 										<Action Name="" ID="{6518BF63-AB1C-476D-BF6C-F6D473E53584}" ShortID="757682885">
 											<PropertyList>
-												<Property Name="FadeTime" Type="Real64" Value="20"/>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="30"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -540,6 +515,36 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Music_Menu_Switch" ID="{76C7FC8E-7B1D-4C4A-8682-9906FB8BD447}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Music_Stop_Fade" ID="{B9B92E04-4148-4898-9893-1370CFAF90E5}">
+									<ChildrenList>
+										<Action Name="" ID="{1019843B-4DF2-4969-B372-5EB9D14CE58B}" ShortID="176469286">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Music_Menu_Switch" ID="{76C7FC8E-7B1D-4C4A-8682-9906FB8BD447}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{B51BDB14-F5EA-4115-9715-70BF399E98B3}" ShortID="314246934">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="20"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Music_General_Switch" ID="{1427AE81-3815-4313-B2F3-1179DA446D42}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
