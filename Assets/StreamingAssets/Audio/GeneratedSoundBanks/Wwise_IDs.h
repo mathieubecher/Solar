@@ -37,7 +37,10 @@ namespace AK
         static const AkUniqueID MUSIC_LVL01_KIOSK2 = 2884165202U;
         static const AkUniqueID MUSIC_LVL01_KIOSK3 = 2884165203U;
         static const AkUniqueID MUSIC_LVL01_TEMPLE = 503471100U;
+        static const AkUniqueID MUSIC_LVL02_SWITCH_EVENT = 3454836319U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
+        static const AkUniqueID MUSIC_PLAY_GLOBAL = 4260531187U;
+        static const AkUniqueID MUSIC_STOP_FADE = 1426984690U;
         static const AkUniqueID SUN_FEEDBACK_PLAY = 2337456342U;
     } // namespace EVENTS
 
@@ -70,12 +73,25 @@ namespace AK
             } // namespace STATE
         } // namespace GENERALSTATES
 
+        namespace MENU_STATE
+        {
+            static const AkUniqueID GROUP = 3941853002U;
+
+            namespace STATE
+            {
+                static const AkUniqueID INGAME = 984691642U;
+                static const AkUniqueID INMENU = 3374585465U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace MENU_STATE
+
         namespace MUSIC_STATE
         {
             static const AkUniqueID GROUP = 3826569560U;
 
             namespace STATE
             {
+                static const AkUniqueID MENU_STATE = 3941853002U;
                 static const AkUniqueID NONE = 748895195U;
                 static const AkUniqueID PART01 = 2201513847U;
                 static const AkUniqueID PART02 = 2201513844U;
@@ -112,6 +128,17 @@ namespace AK
                 static const AkUniqueID STONE = 1216965916U;
             } // namespace SWITCH
         } // namespace FOOTSTEP_FLOOR
+
+        namespace GENERAL_MUSIC_SWITCH
+        {
+            static const AkUniqueID GROUP = 2502520850U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID LVL01 = 1709218600U;
+                static const AkUniqueID LVL02 = 1709218603U;
+            } // namespace SWITCH
+        } // namespace GENERAL_MUSIC_SWITCH
 
         namespace GLOBAL_SWITCH
         {

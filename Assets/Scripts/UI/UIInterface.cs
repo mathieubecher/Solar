@@ -59,7 +59,7 @@ public class UIInterface : MonoBehaviour
         player2Settings.platform = Bind.L1R1;
         BindPlatform(player2.PlatformBinding.value);
         OnChangeSunSensitivity(player2.SunSensitivity.value);
-
+        OnActiveOutline(player2.Outline.isOn);
         controller = FindObjectOfType<Controller>();
     }
     
@@ -67,6 +67,7 @@ public class UIInterface : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        AkSoundEngine.SetState("Menu_State", "inMenu");   //While inGame
     }
     void OnDisable()
     {
@@ -76,6 +77,7 @@ public class UIInterface : MonoBehaviour
         Cursor.visible = false;
 #endif
         GoTo("Pause");
+        AkSoundEngine.SetState("Menu_State", "inGame");   //While inGame
     }
     
     #region Sound
@@ -376,6 +378,12 @@ public class UIInterface : MonoBehaviour
         }
     }
 
+    public void OnActiveOutline(bool value)
+    {
+        player2.Outline.isOn = value;
+        controller.outline.SetActive(value);
+    }
+
     public void OnChangePlatformSensitivity(float value)
     {
         player2.PlatformSensitivity.value = value;
@@ -405,6 +413,7 @@ public class UIInterface : MonoBehaviour
         OnChangePlatformSensitivity(1);
         InvertSunRotation(false);
         Player2ActiveVibration(true);
+        OnActiveOutline(true);
     }
     
     #endregion

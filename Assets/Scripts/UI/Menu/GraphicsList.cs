@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class GraphicsList : Menu
+public class GraphicsList : OptionsMenu
 {
     public Slider Brightness;
     public Slider Contrast;

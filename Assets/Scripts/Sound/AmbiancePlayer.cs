@@ -23,6 +23,12 @@ public class AmbiancePlayer : MonoBehaviour
                 case WwiseAbiance.TypeAmbiance.AMB_KIOSK:
                     AkSoundEngine.PostEvent("Amb_Ext_Lvl01_Desert_Kiosk",gameObject);
                     break;
+                case WwiseAbiance.TypeAmbiance.AMB_PLACE:
+                    AkSoundEngine.PostEvent("Amb_Ext_Lvl02_Place",gameObject);
+                    break;
+                case WwiseAbiance.TypeAmbiance.AMB_ENTRANCE:
+                    AkSoundEngine.PostEvent("Amb_Ext_Lvl02_Entrance",gameObject);
+                    break;
             }
         }
         else

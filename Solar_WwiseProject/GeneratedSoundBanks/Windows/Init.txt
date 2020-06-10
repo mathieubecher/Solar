@@ -11,6 +11,7 @@ State Group	ID	Name			Wwise Object Path	Notes
 	416592333	Amb_Lvl01			\Default Work Unit\Ambiances\Lvl 1\Amb_Lvl01	
 	874109109	GeneralStates			\Default Work Unit\GeneralStates	
 	3826569560	Music_State			\Default Work Unit\Music_State	
+	3941853002	Menu_State			\Default Work Unit\Menu_State	
 
 State	ID	Name	State Group			Notes
 	748895195	None	Amb_Lvl01			
@@ -28,6 +29,18 @@ State	ID	Name	State Group			Notes
 	2201513844	Part02	Music_State			
 	2201513845	Part03	Music_State			
 	2201513847	Part01	Music_State			
+	3941853002	Menu_State	Music_State			
+	748895195	None	Menu_State			
+	984691642	inGame	Menu_State			
+	3374585465	inMenu	Menu_State			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	189098265	inMenu	Menu_State	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music_Bus		
+	395574166	inMenu	Menu_State	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Sidechain_Music		
+	424408354	inMenu	Menu_State	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Ambiance_Bus		
+	430929071	inMenu	Menu_State	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX		
+	993105081	inMenu	Menu_State	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Foleys_Bus		
+	1053621875	inMenu	Menu_State	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Breathing_Bus		
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	932301089	RTPC_SFX_Volume			\Default Work Unit\Menu\RTPC_SFX_Volume	

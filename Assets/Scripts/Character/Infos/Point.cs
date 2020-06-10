@@ -11,7 +11,7 @@ public class Point : MonoBehaviour
 
     private Material _parentMat;
     private float _damageValue = 0;
-    private float dist = 100;
+    private float dist = 200;
 
     [SerializeField] private float pointForce = 0.1f;
     // Start is called before the first frame update

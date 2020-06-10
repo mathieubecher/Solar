@@ -78,10 +78,36 @@
 									</RTPCList>
 								</Property>
 							</PropertyList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="Menu_State" ID="{1D3F4A28-63D8-4763-BB9D-B3E56D420B1B}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="inMenu" ID="{E5705BD7-A089-43D8-9E54-E9283D5AE51A}"/>
+										<CustomState Name="" ID="{A80731E8-BA84-4A38-8A82-5390A613F631}" ShortID="424408354">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16" Value="20"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="inGame" ID="{5C50D9A6-4DF8-48DC-BE99-D9B6ED47DFC3}"/>
+										<CustomState Name="" ID="{BEE3DCBE-7340-4D46-83AD-7E01260D4736}" ShortID="888588681"/>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 						</Bus>
 						<Bus Name="Music_Bus" ID="{FE95FA85-D8C7-46AF-B639-4E9995364634}">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="23"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
@@ -116,10 +142,37 @@
 									</RTPCList>
 								</Property>
 							</PropertyList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="Menu_State" ID="{1D3F4A28-63D8-4763-BB9D-B3E56D420B1B}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="inMenu" ID="{E5705BD7-A089-43D8-9E54-E9283D5AE51A}"/>
+										<CustomState Name="" ID="{67467E14-FCA1-4596-9DA2-C06B80AB361B}" ShortID="189098265">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16" Value="10"/>
+												<Property Name="Volume" Type="Real64" Value="-3"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="inGame" ID="{5C50D9A6-4DF8-48DC-BE99-D9B6ED47DFC3}"/>
+										<CustomState Name="" ID="{F2A5AA09-FFFF-47EE-974E-D7CAFDC97B4F}" ShortID="410663296"/>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 						</Bus>
 						<Bus Name="Breathing_Bus" ID="{902E587E-5F52-4318-BBF4-84185BA1386D}">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="21"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
@@ -154,6 +207,27 @@
 									</RTPCList>
 								</Property>
 							</PropertyList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="Menu_State" ID="{1D3F4A28-63D8-4763-BB9D-B3E56D420B1B}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="inMenu" ID="{E5705BD7-A089-43D8-9E54-E9283D5AE51A}"/>
+										<CustomState Name="" ID="{C2979CB8-E028-4BF2-A015-4C3B9E23FB9F}" ShortID="1053621875">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="inGame" ID="{5C50D9A6-4DF8-48DC-BE99-D9B6ED47DFC3}"/>
+										<CustomState Name="" ID="{46AB7C37-28D1-4A43-831D-EF371A6D7E59}" ShortID="539705760"/>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 						</Bus>
 						<Bus Name="Foleys_Bus" ID="{24383F11-053E-4433-8C86-F1951086C8E7}">
 							<PropertyList>
@@ -192,6 +266,27 @@
 									</RTPCList>
 								</Property>
 							</PropertyList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="Menu_State" ID="{1D3F4A28-63D8-4763-BB9D-B3E56D420B1B}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="inMenu" ID="{E5705BD7-A089-43D8-9E54-E9283D5AE51A}"/>
+										<CustomState Name="" ID="{D8A0C894-6920-4D69-B09F-EC2832B97ED5}" ShortID="993105081">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="inGame" ID="{5C50D9A6-4DF8-48DC-BE99-D9B6ED47DFC3}"/>
+										<CustomState Name="" ID="{EA5036F4-9C88-47DD-8B70-092CD0089371}" ShortID="613890294"/>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 						</Bus>
 						<Bus Name="FX" ID="{ACEC311C-361F-4BE9-B056-42B1F9986E37}">
 							<PropertyList>
@@ -229,6 +324,37 @@
 							</PropertyList>
 							<ChildrenList>
 								<Bus Name="Int_Lvl01_Acoustic" ID="{C2AB78F3-7B05-4C11-8336-BB168F154956}">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<RTPCList>
+												<RTPC Name="" ID="{758F6EE3-CC4B-44C3-ADD4-4D6B1316B37A}" ShortID="872488658">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="RTPC_SFX_Volume" ID="{7A73F0C1-1BA4-47CA-9F28-50E82C34435B}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{9370526F-B34A-4459-99C4-1ED6502A2706}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+																<SegmentShape>Exp1</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="AudioDevice">
 											<ObjectRef Name="System" ID="{ECC9FC8D-59CE-4A49-A46D-5680333299C8}" WorkUnitID="{463B918D-9BAF-4E3C-A8F5-DBF6564D2BF6}"/>
@@ -242,6 +368,37 @@
 									</ChildrenList>
 								</Bus>
 								<AuxBus Name="Sidechain_Music" ID="{FA81C55F-011D-4E0D-9F1D-D8BE90E52F44}">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<RTPCList>
+												<RTPC Name="" ID="{F4695A78-5BF7-48C4-86CF-5C9B533E41A2}" ShortID="470221932">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="RTPC_SFX_Volume" ID="{7A73F0C1-1BA4-47CA-9F28-50E82C34435B}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{548DEAA0-719F-4A70-AFE5-C40DB07A86D0}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+																<SegmentShape>Exp1</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Effect0">
 											<Custom>
@@ -252,8 +409,50 @@
 											</Custom>
 										</Reference>
 									</ReferenceList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="Menu_State" ID="{1D3F4A28-63D8-4763-BB9D-B3E56D420B1B}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="inMenu" ID="{E5705BD7-A089-43D8-9E54-E9283D5AE51A}"/>
+												<CustomState Name="" ID="{341B01E4-E448-401F-89B7-4A1532EFB33E}" ShortID="395574166">
+													<PropertyList>
+														<Property Name="BusVolume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="inGame" ID="{5C50D9A6-4DF8-48DC-BE99-D9B6ED47DFC3}"/>
+												<CustomState Name="" ID="{972ECF1E-8DE6-4132-9622-1DFFD5150AAC}" ShortID="536885956"/>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
 								</AuxBus>
 							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="Menu_State" ID="{1D3F4A28-63D8-4763-BB9D-B3E56D420B1B}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="inMenu" ID="{E5705BD7-A089-43D8-9E54-E9283D5AE51A}"/>
+										<CustomState Name="" ID="{0DAEEDCF-DEBA-421B-9760-404B62BCAC83}" ShortID="430929071">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="inGame" ID="{5C50D9A6-4DF8-48DC-BE99-D9B6ED47DFC3}"/>
+										<CustomState Name="" ID="{121BD512-7DA4-43FC-B6AC-13D68E43CB62}" ShortID="1042866962"/>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 						</Bus>
 					</ChildrenList>
 				</Bus>

@@ -11,7 +11,7 @@ public class MultiMonitor : MonoBehaviour
     [SerializeField] private Camera player2;
     private AkAudioListener _listener;
     private GameManager _manager;
-    private bool multi = false;
+    public int camState = 0;
     
     #if UNITY_STANDALONE_WIN
        
@@ -42,27 +42,34 @@ public class MultiMonitor : MonoBehaviour
 
     void Update()
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.P)  && (_manager.gameType == GameManager.GameType.SOLO || _manager.gameType == GameManager.GameType.LOCAL))
+        
+        if (Input.GetKeyDown(KeyCode.P)  && _manager.gameType == GameManager.GameType.SOLO)
         {
-            if(!multi)
+            ++camState;
+            switch (camState)
             {
-                Dual();
-            }
-            else
-            {
-                Mono();
+                case 0:
+                    Mono();
+                    break;
+                case 1:
+                    player2.enabled = false;
+                    break;
+                default:
+                    Cam2Only();
+                    camState = -1;
+                    break;
             }
         }
-        */
+        
         
     }
 
     public void Mono()
     {
-        multi = false;
         main.gameObject.SetActive(true);
         player2.gameObject.SetActive(true);
+        main.enabled = true;
+        player2.enabled = true;
         //Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         //Screen.SetResolution (1920,1080,true);
         //SetFullScreen(_manager.UiInterface.graphics.FullScreen);
@@ -74,10 +81,15 @@ public class MultiMonitor : MonoBehaviour
         
     }
 
+    public void Cam2Only()
+    {
+        main.enabled = false;
+        player2.enabled = true;
+        player2.rect = new Rect(0,0,1,1);
+    }
+
     public void Dual()
     {
-        Debug.Log("dual");
-        multi = true;
         /*
         // MULTI GPU 
         Display.displays[0].Activate(1920, 1080, 60);
