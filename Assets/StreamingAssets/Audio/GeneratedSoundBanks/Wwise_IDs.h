@@ -34,6 +34,7 @@ namespace AK
         static const AkUniqueID CHA_WALK = 300025675U;
         static const AkUniqueID LVL01_FLYING_SPHERE_BIG_PLAY = 1047307714U;
         static const AkUniqueID LVL01_FLYING_SPHERE_SMALL_PLAY = 3897898391U;
+        static const AkUniqueID LVL02_PLATEFORM_PLACE = 213028944U;
         static const AkUniqueID MUSIC_LVL01_BRIDGE1 = 771829065U;
         static const AkUniqueID MUSIC_LVL01_KIOSK1 = 2884165201U;
         static const AkUniqueID MUSIC_LVL01_KIOSK2 = 2884165202U;

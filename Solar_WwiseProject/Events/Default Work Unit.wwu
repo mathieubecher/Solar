@@ -688,28 +688,43 @@
 								</Folder>
 							</ChildrenList>
 						</Folder>
-						<Event Name="Lvl01_Flying_Sphere_Small_Play" ID="{456C704F-03A6-498D-94EC-FC0A4DEEA59E}">
+						<Folder Name="Obj" ID="{84F8B7E1-690E-41B4-8EA5-5AE539ACF812}" ShortID="402123455">
 							<ChildrenList>
-								<Action Name="" ID="{C6D84F39-A784-4B08-999C-287BCA642235}" ShortID="828565199">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Obj_Plateform_Moving_Small" ID="{6074D100-5BB1-4C5F-AB3E-3D5738B20953}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
+								<Event Name="Lvl01_Flying_Sphere_Big_Play" ID="{71B3DFB1-3D70-4589-9C8F-CEF3A5D0A655}">
+									<ChildrenList>
+										<Action Name="" ID="{7A702B1A-1F65-434C-8FF7-0012DBBC74C9}" ShortID="28360647">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Obj_Plateform_Moving_Big" ID="{2E717F99-B19C-45E1-9F06-1758C3B0DD6B}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Lvl01_Flying_Sphere_Small_Play" ID="{456C704F-03A6-498D-94EC-FC0A4DEEA59E}">
+									<ChildrenList>
+										<Action Name="" ID="{C6D84F39-A784-4B08-999C-287BCA642235}" ShortID="828565199">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Obj_Plateform_Moving_Small" ID="{6074D100-5BB1-4C5F-AB3E-3D5738B20953}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Lvl02_Plateform_Place" ID="{F1F4BD52-7205-49F2-BBAF-F187E33DA7D2}">
+									<ChildrenList>
+										<Action Name="" ID="{8358FAF3-803B-4408-83BA-48CC651398AF}" ShortID="737639095">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Obj_Plateform_Place" ID="{A2274BE8-D4B5-40F9-886C-8AFDB1588511}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
-						</Event>
-						<Event Name="Lvl01_Flying_Sphere_Big_Play" ID="{71B3DFB1-3D70-4589-9C8F-CEF3A5D0A655}">
-							<ChildrenList>
-								<Action Name="" ID="{7A702B1A-1F65-434C-8FF7-0012DBBC74C9}" ShortID="28360647">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Obj_Plateform_Moving_Big" ID="{2E717F99-B19C-45E1-9F06-1758C3B0DD6B}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

@@ -746,7 +746,7 @@
 				</Event>
 				<Event Id="3845266727" Name="Cha_Run" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Run" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="300025675" Name="Cha_Walk" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Walk" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1047307714" Name="Lvl01_Flying_Sphere_Big_Play" ObjectPath="\Events\Default Work Unit\ALL\Lvl01_Flying_Sphere_Big_Play" MaxAttenuation="50.000000" DurationType="Infinite">
+				<Event Id="1047307714" Name="Lvl01_Flying_Sphere_Big_Play" ObjectPath="\Events\Default Work Unit\ALL\Obj\Lvl01_Flying_Sphere_Big_Play" MaxAttenuation="50.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="406367280" Language="SFX">
 							<ShortName>foley_plateform_moving.wav</ShortName>
@@ -758,11 +758,23 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3897898391" Name="Lvl01_Flying_Sphere_Small_Play" ObjectPath="\Events\Default Work Unit\ALL\Lvl01_Flying_Sphere_Small_Play" MaxAttenuation="30.000000" DurationType="Infinite">
+				<Event Id="3897898391" Name="Lvl01_Flying_Sphere_Small_Play" ObjectPath="\Events\Default Work Unit\ALL\Obj\Lvl01_Flying_Sphere_Small_Play" MaxAttenuation="30.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="882519658" Language="SFX">
 							<ShortName>foley_plateform_static.wav</ShortName>
 							<Path>SFX\foley_plateform_static_F2BF74AC.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="213028944" Name="Lvl02_Plateform_Place" ObjectPath="\Events\Default Work Unit\ALL\Obj\Lvl02_Plateform_Place" MaxAttenuation="60.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="240274321" Language="SFX">
+							<ShortName>obj_place_flyingsphere_low.wav</ShortName>
+							<Path>SFX\obj_place_flyingsphere_low_38F4A589.wem</Path>
+						</File>
+						<File Id="271234795" Language="SFX">
+							<ShortName>obj_place_flyingsphere_high.wav</ShortName>
+							<Path>SFX\obj_place_flyingsphere_high_2F5D6146.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
