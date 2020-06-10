@@ -40,6 +40,7 @@ namespace AK
         static const AkUniqueID MUSIC_LVL01_KIOSK2 = 2884165202U;
         static const AkUniqueID MUSIC_LVL01_KIOSK3 = 2884165203U;
         static const AkUniqueID MUSIC_LVL01_TEMPLE = 503471100U;
+        static const AkUniqueID MUSIC_LVL02_CITY1 = 3897915588U;
         static const AkUniqueID MUSIC_LVL02_SWITCH_EVENT = 3454836319U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
         static const AkUniqueID MUSIC_PLAY_GLOBAL = 4260531187U;
@@ -102,6 +103,8 @@ namespace AK
                 static const AkUniqueID PART03 = 2201513845U;
                 static const AkUniqueID PART04 = 2201513842U;
                 static const AkUniqueID PART05 = 2201513843U;
+                static const AkUniqueID PART06 = 2201513840U;
+                static const AkUniqueID PART07 = 2201513841U;
             } // namespace STATE
         } // namespace MUSIC_STATE
 
