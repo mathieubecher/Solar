@@ -90,8 +90,8 @@ public class ControllerSun : MonoBehaviour
         
         
         // _gotoAngle - _angle - _angleVelocity - _maxRotateSpeed
-        float _maxActualSpeed = Mathf.Min(_maxRotateSpeed, Mathf.Abs(_gotoAngle - _angle) / Time.deltaTime);
-        _angleVelocity = Mathf.Min(_maxActualSpeed, Mathf.Abs(_angleVelocity) + _speedVelocity * Time.deltaTime) * Mathf.Sign(_gotoAngle - _angle);
+        float _maxActualSpeed = Mathf.Min(_maxRotateSpeed * _controller.UiInterface.player2Settings.sunSensitivity , Mathf.Abs(_gotoAngle - _angle) / Time.deltaTime);
+        _angleVelocity = Mathf.Min(_maxActualSpeed, Mathf.Abs(_angleVelocity) + _speedVelocity* _controller.UiInterface.player2Settings.sunSensitivity * Time.deltaTime) * Mathf.Sign(_gotoAngle - _angle);
 
 
 
@@ -106,22 +106,23 @@ public class ControllerSun : MonoBehaviour
     private void SetLife()
     {
         
-        bool touch = false;
-        for (int i = 0; i < _points.Count; ++i)
-        {
-            _life -= _points[i].TestLight(_sun,_testPoint == i) * Time.deltaTime;
-            touch |= _points[i].Touch;
-        }
+        if (!_controller.activeDead) _life = 1;
+        else{
+            bool touch = false;
+            for (int i = 0; i < _points.Count; ++i)
+            {
+                _life -= _points[i].TestLight(_sun,_testPoint == i) * Time.deltaTime;
+                touch |= _points[i].Touch;
+            }
 
-        if (!touch) _life  = Mathf.Min(1, _life +_speedHeal * Time.deltaTime);
-        
-        
-        else if (_life <= 0 && _controller.inputs.CouldDie())
-        {
-            _controller.Dying();
+            if (!touch) _life  = Mathf.Min(1, _life +_speedHeal * Time.deltaTime);
+
+            else if (_life <= 0 && _controller.inputs.CouldDie())
+            {
+                _controller.Dying();
+            }
+            if(_life < 0) _life = 0;
         }
-        if(_life < 0) _life = 0;
-        
         // Produit un son en fonction de la vie
         AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", Mathf.Abs(_life * 100));
 

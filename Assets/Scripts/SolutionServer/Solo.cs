@@ -10,6 +10,7 @@ public class Solo : AbstractInput
 
     public Solo(Controller controller) : base(controller)
     {
+        
         // Récupère le controlleur du personnage
         _controller = controller;
         _controls = _controller.GetComponent<PlayerInput>();
@@ -31,11 +32,7 @@ public class Solo : AbstractInput
         _controls.currentActionMap["ProgressPlatform"].canceled += ctx => ProgressPlatform(ctx.ReadValue<float>());
                 
         
-#if UNITY_EDITOR
-#else
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-#endif
+
     }
 
     /// <summary>
@@ -44,7 +41,7 @@ public class Solo : AbstractInput
     /// <param name="readValue">valeur envoyé par InputSystem</param>
     private void ProgressPlatform(float readValue)
     {
-        _controller.puzzle.cmActual.SetPlatformProgress(readValue);
+        _controller.puzzle.cmActual.SetPlatformProgress(readValue * _controller.UiInterface.player2Settings.platformSensitivity);
     }
 
     /// <summary>
@@ -52,14 +49,22 @@ public class Solo : AbstractInput
     /// </summary>
     public override void InputUpdate()
     {
-
-        MouseCamera();
-        if (!_controller.IsDead())
+        if (!_controller.UiInterface.gameObject.active)
         {
-            MovePlayer();
-            _controller.sun._gotoAngle += _gotoAngleVelocity * _controller.sun._maxRotateSpeed * Time.deltaTime;
+            MouseCamera();
+            if (!_controller.IsDead())
+            {
+                MovePlayer();
+                _controller.sun._gotoAngle += _gotoAngleVelocity * _controller.sun._maxRotateSpeed * Time.deltaTime;
+            }
         }
-
+        else
+        {
+            _controller.velocity = Vector3.zero;
+            _controller.cam.RotateMouse(Vector3.zero);
+            _controller.cam.Rotate(Vector3.zero);
+            
+        }
     }
 
     
@@ -94,7 +99,8 @@ public class Solo : AbstractInput
     private void MouseCamera()
     {
 
-        _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * 0.8f);
+        _controller.cam.RotateMouse(new Vector3(Input.GetAxis("Mouse X") * _controller.UiInterface.player1Settings.xAxisSensitivity, 
+                                        Input.GetAxis("Mouse Y") * _controller.UiInterface.player1Settings.yAxisSensitivity * ((_controller.UiInterface.player1Settings.invertVertical)?-1:1)) * 0.8f);
     }
 
     /// <summary>
@@ -103,7 +109,7 @@ public class Solo : AbstractInput
     /// <param name="readValue">valeur envoyé par InputSystem</param>
     public void Velocity(Vector2 readValue)
     {
-        _move = new Vector2(readValue.x, readValue.y);
+        _move = readValue;
     }
     
     /// <summary>
@@ -112,7 +118,7 @@ public class Solo : AbstractInput
     /// <param name="angle">valeur envoyé par InputSystem</param>
     public void RotateSun(float angle)
     {
-        _gotoAngleVelocity = angle;
+        _gotoAngleVelocity = angle * _controller.UiInterface.player2Settings.sunSensitivity * ((_controller.UiInterface.player2Settings.invertSun)?-1:1);
     }
     
     /// <summary>
@@ -121,7 +127,8 @@ public class Solo : AbstractInput
     /// <param name="velocity">valeur envoyé par InputSystem</param>
     public void VelocityCam(Vector2 velocity)
     {
-        _controller.cam.Rotate(velocity);
+        _controller.cam.Rotate(new Vector2(velocity.x * _controller.UiInterface.player1Settings.xAxisSensitivity, 
+            velocity.y  * _controller.UiInterface.player1Settings.yAxisSensitivity * ((_controller.UiInterface.player1Settings.invertVertical)?-1:1)));
     }
 
 }

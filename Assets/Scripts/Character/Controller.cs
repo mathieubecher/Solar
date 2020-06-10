@@ -13,7 +13,8 @@ public class Controller : MonoBehaviour
     public AbstractInput inputs;
     private PlayerInput _controls;
     protected Rigidbody _rigidbody;
-    
+
+    public UIInterface UiInterface;
     // External
     [HideInInspector] public CameraController cam;
 
@@ -36,30 +37,30 @@ public class Controller : MonoBehaviour
     public float DeadTimer = 2;
     [SerializeField]
     private float _deatTimer;
-    [SerializeField] bool activeDead = true;
+    [SerializeField] public bool activeDead = true;
     public Vector3 Target {  get => _target.gameObject.transform.position;}
 
-    
-    // Start is called before the first frame update
+
+
     void Awake()
     {
         // Active la mort quelque soit la valeur défini d'activeDead en dehors de l'editor.
-#if UNITY_EDITOR
-#else
+#if !UNITY_EDITOR
         activeDead = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 #endif
+        
         cam = FindObjectOfType<CameraController>();
         _target = FindObjectOfType<CameraTarget>();
         sun = GetComponent<ControllerSun>();
         puzzle = GetComponent<ControllerPuzzle>();
-    }
-
-    void Start()
-    {
+        
         FindObjectOfType<AnimEvent>().ResetBurn();
         _rigidbody = GetComponent<Rigidbody>();
         GameManager manager = FindObjectOfType<GameManager>();
-
+        UiInterface = manager.UiInterface;
+        
         // Met en place les différents gestionnaires d'input en fonction des paramètres choisis par le joueur
         inputs = new Solo(this);
         if (manager.gameType == GameManager.GameType.SOLO)
