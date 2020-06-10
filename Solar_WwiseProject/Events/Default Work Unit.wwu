@@ -560,16 +560,6 @@
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
-										<Action Name="" ID="{8B089A0D-734A-4276-BD41-D82BF09C4EE1}" ShortID="378076006">
-											<PropertyList>
-												<Property Name="FadeTime" Type="Real64" Value="1"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Amb_Lvl01" ID="{1C98A39B-366B-42AB-B0A8-04E7A062ED8D}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 										<Action Name="" ID="{DFC34E71-D451-4A78-8E95-F7B1CF84B43A}" ShortID="736373115">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="22"/>
@@ -587,6 +577,13 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{FC7F24AC-FB18-4CD5-B877-24653A1925DB}" ShortID="1056301181">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Amb" ID="{4D366EF1-8DB7-49AE-8D41-AF3BAC14D32D}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -664,6 +661,29 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Level 2" ID="{0A57AAC7-BFBB-4C70-90B1-5BAEE7470B53}" ShortID="1063403157">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="8"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Event Name="Amb_Ext_Lvl02_Place" ID="{F893E967-89FA-4BBD-8B7F-5EDFF4811FF6}">
+											<ChildrenList>
+												<Action Name="" ID="{75A871A2-FF76-4CDF-A6E9-BA38AB0FC46D}" ShortID="449911791">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="22"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Place_Lvl02" ID="{3ED1BA64-9956-41CD-89E8-AD284D09F7D3}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Amb_Ext_Lvl02_Entrance" ID="{6A71B6F9-92B3-43A8-AB54-008A866BA9C1}"/>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>

@@ -22,6 +22,10 @@
 							<ShortName>stones_rand-001.wav</ShortName>
 							<Path>SFX\stones_rand-001_10C4C929.wem</Path>
 						</File>
+						<File Id="325943792" Language="SFX">
+							<ShortName>amb_desert_lvl02_place.wav</ShortName>
+							<Path>SFX\amb_desert_lvl02_place_8366D9F2.wem</Path>
+						</File>
 						<File Id="693437066" Language="SFX">
 							<ShortName>amb_desert_beautifulview.wav</ShortName>
 							<Path>SFX\amb_desert_beautifulview_594C81D2.wem</Path>
@@ -33,10 +37,6 @@
 						<File Id="836332354" Language="SFX">
 							<ShortName>stones_rand-002.wav</ShortName>
 							<Path>SFX\stones_rand-002_10C4C929.wem</Path>
-						</File>
-						<File Id="881745992" Language="SFX">
-							<ShortName>amb_desert_02_calm2.wav</ShortName>
-							<Path>SFX\amb_desert_02_calm2_D9E87D3B.wem</Path>
 						</File>
 						<File Id="935140790" Language="SFX">
 							<ShortName>amb_desert_02_calm.wav</ShortName>
@@ -55,6 +55,8 @@
 				<Event Id="26480583" Name="Amb_Ext_Lvl01_Desert_Global" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_Global" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1449773595" Name="Amb_Ext_Lvl01_Desert_Kiosk" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_Kiosk" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3505954145" Name="Amb_Ext_Lvl01_Desert_View" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_View" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1324574823" Name="Amb_Ext_Lvl02_Entrance" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 2\Amb_Ext_Lvl02_Entrance" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2530427570" Name="Amb_Ext_Lvl02_Place" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 2\Amb_Ext_Lvl02_Place" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3602364923" Name="Amb_Int_Lvl01" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 1\Amb_Int_Lvl01" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3822072736" Name="Astro_Moving_Play" ObjectPath="\Events\Default Work Unit\ALL\Astro_Moving_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -641,6 +643,10 @@
 							<ShortName>lvl01_kiosk_95bpm4_4.wav</ShortName>
 							<Path>SFX\lvl01_kiosk_95bpm4_4_D79FB2B7.wem</Path>
 						</File>
+						<File Id="833305882" Language="SFX">
+							<ShortName>lvl02_menu_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_menu_100bpm4_4_D79FB2B7.wem</Path>
+						</File>
 						<File Id="859540222" Language="SFX">
 							<ShortName>cha_breath_hurt_expi-001.wav</ShortName>
 							<Path>SFX\cha_breath_hurt_expi-001_12238E9F.wem</Path>
@@ -731,6 +737,11 @@
 								<File Id="912615941"/>
 							</Media>
 						</SwitchContainer>
+						<SwitchContainer SwitchValue="{83F76498-EC2F-4A91-A240-477AB407EC12}">
+							<Media>
+								<File Id="833305882"/>
+							</Media>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 				<Event Id="3845266727" Name="Cha_Run" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Run" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -791,6 +802,10 @@
 							<ShortName>lvl01_kiosk_95bpm4_4.wav</ShortName>
 							<Path>SFX\lvl01_kiosk_95bpm4_4_D79FB2B7.wem</Path>
 						</File>
+						<File Id="833305882" Language="SFX">
+							<ShortName>lvl02_menu_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_menu_100bpm4_4_D79FB2B7.wem</Path>
+						</File>
 						<File Id="886504593" Language="SFX">
 							<ShortName>lvl01_temple_95bpm4_4.wav</ShortName>
 							<Path>SFX\lvl01_temple_95bpm4_4_D79FB2B7.wem</Path>
@@ -863,6 +878,11 @@
 						<SwitchContainer SwitchValue="{E831CF84-D453-4A17-9DFA-2A1E8EC3E4D5}">
 							<Media>
 								<File Id="912615941"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{83F76498-EC2F-4A91-A240-477AB407EC12}">
+							<Media>
+								<File Id="833305882"/>
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -897,6 +917,10 @@
 							<ShortName>lvl01_kiosk_95bpm4_4.wav</ShortName>
 							<Path>SFX\lvl01_kiosk_95bpm4_4_D79FB2B7.wem</Path>
 						</File>
+						<File Id="833305882" Language="SFX">
+							<ShortName>lvl02_menu_100bpm4_4.wav</ShortName>
+							<Path>SFX\lvl02_menu_100bpm4_4_D79FB2B7.wem</Path>
+						</File>
 						<File Id="886504593" Language="SFX">
 							<ShortName>lvl01_temple_95bpm4_4.wav</ShortName>
 							<Path>SFX\lvl01_temple_95bpm4_4_D79FB2B7.wem</Path>
@@ -971,6 +995,11 @@
 								<File Id="912615941"/>
 							</Media>
 						</SwitchContainer>
+						<SwitchContainer SwitchValue="{83F76498-EC2F-4A91-A240-477AB407EC12}">
+							<Media>
+								<File Id="833305882"/>
+							</Media>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 				<Event Id="1426984690" Name="Music_Stop_Fade" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Stop_Fade" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -996,7 +1025,6 @@
 				<GameParameter Id="748151351" Name="Breath_RTPC" ObjectPath="\Game Parameters\Default Work Unit\Breath_RTPC"/>
 				<GameParameter Id="1687410496" Name="RTPC_WindGain" ObjectPath="\Game Parameters\Default Work Unit\RTPC_WindGain"/>
 				<GameParameter Id="2257099397" Name="RTPC_Distance_Sun" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Distance_Sun"/>
-				<GameParameter Id="2682991203" Name="Amb_RTPC" ObjectPath="\Game Parameters\Default Work Unit\Amb_RTPC"/>
 				<GameParameter Id="2972377204" Name="RTPC_AstroSidechain" ObjectPath="\Game Parameters\Default Work Unit\RTPC_AstroSidechain"/>
 				<GameParameter Id="3829022635" Name="RTPC_Plateform_Velocity" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Plateform_Velocity"/>
 			</GameParameters>
