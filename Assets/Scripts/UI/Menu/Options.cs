@@ -54,6 +54,7 @@ public class OptionsMenu : Menu
         _canvas = GetComponent<CanvasGroup>();
         originPos = transform.position;
     }
+    
     public void Enable()
     {
         gameObject.SetActive(true);
