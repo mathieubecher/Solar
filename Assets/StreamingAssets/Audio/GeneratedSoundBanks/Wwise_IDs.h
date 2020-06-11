@@ -32,6 +32,7 @@ namespace AK
         static const AkUniqueID CHA_RESPAWN = 1215500860U;
         static const AkUniqueID CHA_RUN = 3845266727U;
         static const AkUniqueID CHA_WALK = 300025675U;
+        static const AkUniqueID CHECKPOINT_FOUND = 3822733366U;
         static const AkUniqueID LVL01_FLYING_SPHERE_BIG_PLAY = 1047307714U;
         static const AkUniqueID LVL01_FLYING_SPHERE_SMALL_PLAY = 3897898391U;
         static const AkUniqueID LVL02_PLATEFORM_PLACE = 213028944U;
@@ -46,6 +47,7 @@ namespace AK
         static const AkUniqueID MUSIC_PLAY_GLOBAL = 4260531187U;
         static const AkUniqueID MUSIC_STOP_FADE = 1426984690U;
         static const AkUniqueID SUN_FEEDBACK_PLAY = 2337456342U;
+        static const AkUniqueID UI_CLICKED = 3391821525U;
     } // namespace EVENTS
 
     namespace STATES

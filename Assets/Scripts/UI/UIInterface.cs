@@ -76,7 +76,7 @@ public class UIInterface : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 #endif
-        GoTo("Pause");
+        GoToInterfance("Pause");
         AkSoundEngine.SetState("Menu_State", "inGame");   //While inGame
     }
     
@@ -425,6 +425,13 @@ public class UIInterface : MonoBehaviour
     public void GoTo(string name)
     {
         AkSoundEngine.PostEvent("UI_Clicked", gameObject);
+        GoToInterfance(name);
+        
+    }
+    #endregion
+
+    public void GoToInterfance(string name)
+    {
         if (name == "Exit")
         {
 #if UNITY_EDITOR
@@ -447,10 +454,9 @@ public class UIInterface : MonoBehaviour
                 else m.gameObject.SetActive(false);
             }
         }
-        
     }
-    #endregion
 }
+
 
 public class Menu : MonoBehaviour
 {
@@ -460,7 +466,7 @@ public class Menu : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button9)) FindObjectOfType<UIInterface>().GoTo(exit);
+        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button9)) FindObjectOfType<UIInterface>().GoToInterfance(exit);
     }
 
     public void Bip()
