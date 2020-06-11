@@ -46,6 +46,7 @@ public class Controller : MonoBehaviour
     [SerializeField] private Image deadImg;
     public Vector3 Target {  get => _target.gameObject.transform.position;}
 
+    public GameObject outline;
 
 
     void Awake()

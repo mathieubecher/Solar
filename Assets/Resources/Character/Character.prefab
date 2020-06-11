@@ -971,8 +971,21 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   poncho: {fileID: 1490695464}
   DeadTimer: 5
-  _deatTimer: 0
+  _deadCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _respawnCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   activeDead: 0
+  deadImg: {fileID: 0}
+  outline: {fileID: 0}
 --- !u!114 &6147882352382934871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,7 +1068,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _fxUI: {fileID: 0}
+  fxUI: {fileID: 0}
   _speedHeal: 1
   ppeffect: {fileID: 0}
 --- !u!114 &608893813510402475
@@ -6164,6 +6177,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5689381113913954576}
     m_Modifications:
+    - target: {fileID: 686023265614217566, guid: 60b7f970b5ba85345819f59a1daf2b0b,
+        type: 3}
+      propertyPath: pointForce
+      value: 0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 4987310246886984343, guid: 60b7f970b5ba85345819f59a1daf2b0b,
         type: 3}
       propertyPath: m_Name
@@ -6318,6 +6336,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8395008856611277332}
     m_Modifications:
+    - target: {fileID: 686023265614217566, guid: 60b7f970b5ba85345819f59a1daf2b0b,
+        type: 3}
+      propertyPath: pointForce
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 4987310246886984343, guid: 60b7f970b5ba85345819f59a1daf2b0b,
         type: 3}
       propertyPath: m_Name
@@ -9797,7 +9820,7 @@ PrefabInstance:
     - target: {fileID: 686023265614217566, guid: 60b7f970b5ba85345819f59a1daf2b0b,
         type: 3}
       propertyPath: pointForce
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4987310246886984343, guid: 60b7f970b5ba85345819f59a1daf2b0b,
         type: 3}
@@ -9873,6 +9896,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4563872119193142069}
     m_Modifications:
+    - target: {fileID: 686023265614217566, guid: 60b7f970b5ba85345819f59a1daf2b0b,
+        type: 3}
+      propertyPath: pointForce
+      value: 0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 4987310246886984343, guid: 60b7f970b5ba85345819f59a1daf2b0b,
         type: 3}
       propertyPath: m_Name
@@ -9950,7 +9978,7 @@ PrefabInstance:
     - target: {fileID: 686023265614217566, guid: 60b7f970b5ba85345819f59a1daf2b0b,
         type: 3}
       propertyPath: pointForce
-      value: 0.1
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 4987310246886984343, guid: 60b7f970b5ba85345819f59a1daf2b0b,
         type: 3}
@@ -10026,6 +10054,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2999375538813836311}
     m_Modifications:
+    - target: {fileID: 686023265614217566, guid: 60b7f970b5ba85345819f59a1daf2b0b,
+        type: 3}
+      propertyPath: pointForce
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 4987310246886984343, guid: 60b7f970b5ba85345819f59a1daf2b0b,
         type: 3}
       propertyPath: m_Name
@@ -10109,7 +10142,7 @@ PrefabInstance:
     - target: {fileID: 686023265614217566, guid: 60b7f970b5ba85345819f59a1daf2b0b,
         type: 3}
       propertyPath: pointForce
-      value: 0.2
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4987310246886984343, guid: 60b7f970b5ba85345819f59a1daf2b0b,
         type: 3}

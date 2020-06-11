@@ -34,8 +34,7 @@ public class ControllerSun : MonoBehaviour
     [SerializeField] public Image fxUI;
     [SerializeField]  private float _speedHeal=1f;
     public PostProcessEffect ppeffect;
-    
-    
+
     private Controller _controller;
     private int _testPoint;
     

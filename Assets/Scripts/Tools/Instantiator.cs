@@ -40,7 +40,7 @@ public class Instantiator : MonoBehaviour
 
 
    
-    private bool active = false;
+    public bool active = false;
 
     public bool Active
     {
@@ -104,8 +104,8 @@ public class Instantiator : MonoBehaviour
         
         if (Event.current.keyCode == KeyCode.Escape) active = false;
         
-        _firstclick &= type == EventType.MouseDown && currentButton == 0;
-        if (active && !_firstclick)
+        //_firstclick &= type == EventType.MouseDown && currentButton == 0;
+        if (active) //&& !_firstclick)
         {
             //Reset if list change
             if (prefabs.Count == 0)
@@ -408,7 +408,7 @@ public class InstantiatorEditor: Editor
         if (GUILayout.Button((active) ? "Disable" : "Enable"))
         {
             active = !active;
-            ((Instantiator) base.target).Active = active;
+            ((Instantiator) target).Active = active;
         }
         base.OnInspectorGUI();
         
