@@ -58,6 +58,7 @@ namespace AK
 
             namespace STATE
             {
+                static const AkUniqueID ENTRANCE_LVL02 = 2445910262U;
                 static const AkUniqueID EXT_LVL01_DESERT_GLOBAL = 2890487870U;
                 static const AkUniqueID EXT_LVL01_DESERT_KIOSK = 3857277276U;
                 static const AkUniqueID EXT_LVL01_DESERT_VIEW = 3003725028U;
@@ -196,6 +197,7 @@ namespace AK
     namespace AUX_BUSSES
     {
         static const AkUniqueID INT_LVL01_FX = 2514557383U;
+        static const AkUniqueID INT_LVL02_ENTRANCE = 2582645766U;
         static const AkUniqueID SIDECHAIN_MUSIC = 1657183839U;
     } // namespace AUX_BUSSES
 
