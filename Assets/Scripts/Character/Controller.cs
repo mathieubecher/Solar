@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEngine;
 
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
@@ -35,11 +36,17 @@ public class Controller : MonoBehaviour
     [Header("Gestion Mort")]
     [Range(0,5)]
     public float DeadTimer = 2;
-    [SerializeField]
-    private float _deatTimer;
+    
+    private float _deadTimer;
+    private float _respawnTimer;
+    [SerializeField] private AnimationCurve _deadCurve;
+    [SerializeField] private AnimationCurve _respawnCurve;
+    
     [SerializeField] public bool activeDead = true;
+    [SerializeField] private Image deadImg;
     public Vector3 Target {  get => _target.gameObject.transform.position;}
 
+    public GameObject outline;
 
 
     void Awake()
@@ -80,7 +87,14 @@ public class Controller : MonoBehaviour
         inputs.InputUpdate();
 
         // Si le joueur n'est pas mort
-        if(_deatTimer <= 0){
+        if(_deadTimer <= 0)
+        {
+            if (_respawnTimer > 0)
+            {
+                _respawnTimer -= Time.deltaTime * 2;
+                deadImg.color = new Color(deadImg.color.r,deadImg.color.g,deadImg.color.b,_respawnCurve.Evaluate((_respawnTimer)));
+                
+            }
             // Retours visuels et sonores lié aux déplacements du personnage
             animator.SetFloat("velocity", velocity.magnitude);
             // RESPIRATION
@@ -99,8 +113,15 @@ public class Controller : MonoBehaviour
         else
         {
             // A la mort du personnage, laisse un temps défini avant le respawn
-            _deatTimer -= Time.deltaTime;
-            if (_deatTimer <= 0)
+            _deadTimer -= Time.deltaTime;
+            sun.ppeffect.Interpolate(Mathf.Max(0,_deadTimer - (DeadTimer-1)));
+            if (_deadTimer < 2)
+            {
+                deadImg.color = new Color(deadImg.color.r,deadImg.color.g,deadImg.color.b,_deadCurve.Evaluate((2 - _deadTimer)/2));
+            }
+            else deadImg.color = new Color(deadImg.color.r,deadImg.color.g,deadImg.color.b,0);
+
+            if (_deadTimer <= 0)
             {
                 Respawn();
             }
@@ -110,7 +131,7 @@ public class Controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_deatTimer <= 0)
+        if (_deadTimer <= 0)
         {
             inputs.InputFixed();
         }
@@ -132,7 +153,7 @@ public class Controller : MonoBehaviour
             animator.SetBool("die", true);
             
             //animator.SetFloat("velocity", 0);
-            _deatTimer = DeadTimer;
+            _deadTimer = DeadTimer;
             velocity = Vector3.zero;
             _rigidbody.velocity = velocity;
             
@@ -145,6 +166,7 @@ public class Controller : MonoBehaviour
     /// </summary>
     public void Respawn()
     {
+        _respawnTimer = 1;
         AkSoundEngine.PostEvent("Cha_Respawn", this.gameObject);
         animator.SetBool("die", false);
         puzzle.Respawn();
@@ -156,6 +178,6 @@ public class Controller : MonoBehaviour
     /// </summary>
     public bool IsDead()
     {
-        return _deatTimer > 0;   
+        return _deadTimer > 0;   
     }
 }

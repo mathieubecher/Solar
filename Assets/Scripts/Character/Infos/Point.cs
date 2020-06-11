@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using BeardedManStudios.Forge.Networking.Generated;
 using UnityEngine;
 
 public class Point : MonoBehaviour
@@ -9,15 +10,13 @@ public class Point : MonoBehaviour
     public bool Touch => _touch;
     private float _speedDamage = 0.5f;
 
-    private Material _parentMat;
     private float _damageValue = 0;
-    private float dist = 100;
+    private float dist = 165;
 
     [SerializeField] private float pointForce = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -35,7 +34,6 @@ public class Point : MonoBehaviour
     /// <returns></returns>
     public float TestLight(LightController sun)
     {
-        
         if (Physics.Raycast(origin: transform.position, direction: sun.transform.rotation * Vector3.back, hitInfo: out RaycastHit hit, maxDistance:dist, layerMask: GameManager.mask))
         {
             _touch = false;
