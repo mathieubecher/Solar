@@ -424,6 +424,7 @@ public class UIInterface : MonoBehaviour
     
     public void GoTo(string name)
     {
+        AkSoundEngine.PostEvent("UI_Clicked", gameObject);
         if (name == "Exit")
         {
 #if UNITY_EDITOR
@@ -460,5 +461,10 @@ public class Menu : MonoBehaviour
     {
         
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button9)) FindObjectOfType<UIInterface>().GoTo(exit);
+    }
+
+    public void Bip()
+    {
+        AkSoundEngine.PostEvent("UI_Clicked", gameObject);
     }
 }
