@@ -739,6 +739,36 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Event Name="UI_Clicked" ID="{EDE9271A-1AA6-4536-BECE-45047311C1DF}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="17"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{D7674C26-4D84-44EB-A94B-398A3E121FD5}" ShortID="820930989">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ui_selection" ID="{AF79515E-C296-46B0-8D81-C5E547246567}" WorkUnitID="{5A863387-8962-4C33-A094-9549DEBFBF3A}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Checkpoint_Found" ID="{268E852F-4621-4EDB-AAF0-76946C5F829F}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="21"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{74C259BB-4C91-4D05-A35D-F6C2E5A9A8A1}" ShortID="1004066598">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Builder_Game_Magic_Enchant_Bubble_B_3" ID="{FBD5D66D-B0D0-4CF1-93C0-29652DC331C6}" WorkUnitID="{5A863387-8962-4C33-A094-9549DEBFBF3A}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5A863387-8962-4C33-A094-9549DEBFBF3A}" SchemaVersion="97" RootDocumentID="{9F4217AA-E869-4F10-A183-355E7B460309}">
+	<AudioObjects>
+		<WorkUnit Name="UI" ID="{5A863387-8962-4C33-A094-9549DEBFBF3A}" OwnerID="{9F4217AA-E869-4F10-A183-355E7B460309}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="ui_selection" ID="{AF79515E-C296-46B0-8D81-C5E547246567}" ShortID="441689555">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ui_selection" ID="{BE030776-5CFB-4A9D-8A22-E79C2705A151}">
+							<Language>SFX</Language>
+							<AudioFile>ui_selection.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="589195181"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ui_selection" ID="{BE030776-5CFB-4A9D-8A22-E79C2705A151}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Builder_Game_Magic_Enchant_Bubble_B_3" ID="{FBD5D66D-B0D0-4CF1-93C0-29652DC331C6}" ShortID="265828613">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-15</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Builder_Game_Magic_Enchant_Bubble_B_3" ID="{A01E2955-B37A-4FC9-83E7-F1359CE1D40A}">
+							<Language>SFX</Language>
+							<AudioFile>Builder_Game_Magic_Enchant_Bubble_B_3.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="663249577"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Builder_Game_Magic_Enchant_Bubble_B_3" ID="{A01E2955-B37A-4FC9-83E7-F1359CE1D40A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
