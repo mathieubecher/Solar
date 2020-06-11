@@ -550,6 +550,20 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Music_Lvl02_City1" ID="{5FD1D1EA-B074-40B9-83B2-DF126DDCBFC2}">
+									<ChildrenList>
+										<Action Name="" ID="{DEA6CCDC-F64F-4C64-B945-09987D8B21E8}" ShortID="182582507">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Part06" ID="{BA8AFB1D-7197-48C4-8E46-D1AC1482CCBD}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Amb" ID="{A8C093E8-33F9-4A35-9D48-7D0C2A77EF4F}" ShortID="627350604">
@@ -560,16 +574,6 @@
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
-										<Action Name="" ID="{8B089A0D-734A-4276-BD41-D82BF09C4EE1}" ShortID="378076006">
-											<PropertyList>
-												<Property Name="FadeTime" Type="Real64" Value="1"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Amb_Lvl01" ID="{1C98A39B-366B-42AB-B0A8-04E7A062ED8D}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 										<Action Name="" ID="{DFC34E71-D451-4A78-8E95-F7B1CF84B43A}" ShortID="736373115">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="22"/>
@@ -587,6 +591,13 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Cha_Breath_Play" ID="{7FC27EBF-0C89-493B-B44E-1BCE9142B5D9}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{FC7F24AC-FB18-4CD5-B877-24653A1925DB}" ShortID="1056301181">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Amb" ID="{4D366EF1-8DB7-49AE-8D41-AF3BAC14D32D}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -666,25 +677,93 @@
 										</Event>
 									</ChildrenList>
 								</Folder>
+								<Folder Name="Level 2" ID="{0A57AAC7-BFBB-4C70-90B1-5BAEE7470B53}" ShortID="1063403157">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="8"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Event Name="Amb_Ext_Lvl02_Place" ID="{F893E967-89FA-4BBD-8B7F-5EDFF4811FF6}">
+											<ChildrenList>
+												<Action Name="" ID="{75A871A2-FF76-4CDF-A6E9-BA38AB0FC46D}" ShortID="449911791">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="22"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Place_Lvl02" ID="{3ED1BA64-9956-41CD-89E8-AD284D09F7D3}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Amb_Ext_Lvl02_Entrance" ID="{6A71B6F9-92B3-43A8-AB54-008A866BA9C1}"/>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
-						<Event Name="Lvl01_Flying_Sphere_Small_Play" ID="{456C704F-03A6-498D-94EC-FC0A4DEEA59E}">
+						<Folder Name="Obj" ID="{84F8B7E1-690E-41B4-8EA5-5AE539ACF812}" ShortID="402123455">
 							<ChildrenList>
-								<Action Name="" ID="{C6D84F39-A784-4B08-999C-287BCA642235}" ShortID="828565199">
+								<Event Name="Lvl01_Flying_Sphere_Big_Play" ID="{71B3DFB1-3D70-4589-9C8F-CEF3A5D0A655}">
+									<ChildrenList>
+										<Action Name="" ID="{7A702B1A-1F65-434C-8FF7-0012DBBC74C9}" ShortID="28360647">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Obj_Plateform_Moving_Big" ID="{2E717F99-B19C-45E1-9F06-1758C3B0DD6B}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Lvl01_Flying_Sphere_Small_Play" ID="{456C704F-03A6-498D-94EC-FC0A4DEEA59E}">
+									<ChildrenList>
+										<Action Name="" ID="{C6D84F39-A784-4B08-999C-287BCA642235}" ShortID="828565199">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Obj_Plateform_Moving_Small" ID="{6074D100-5BB1-4C5F-AB3E-3D5738B20953}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Lvl02_Plateform_Place" ID="{F1F4BD52-7205-49F2-BBAF-F187E33DA7D2}">
+									<ChildrenList>
+										<Action Name="" ID="{8358FAF3-803B-4408-83BA-48CC651398AF}" ShortID="737639095">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Obj_Plateform_Place" ID="{A2274BE8-D4B5-40F9-886C-8AFDB1588511}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Event Name="UI_Clicked" ID="{EDE9271A-1AA6-4536-BECE-45047311C1DF}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="17"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{D7674C26-4D84-44EB-A94B-398A3E121FD5}" ShortID="820930989">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Obj_Plateform_Moving_Small" ID="{6074D100-5BB1-4C5F-AB3E-3D5738B20953}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+											<ObjectRef Name="ui_selection" ID="{AF79515E-C296-46B0-8D81-C5E547246567}" WorkUnitID="{5A863387-8962-4C33-A094-9549DEBFBF3A}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Lvl01_Flying_Sphere_Big_Play" ID="{71B3DFB1-3D70-4589-9C8F-CEF3A5D0A655}">
+						<Event Name="Checkpoint_Found" ID="{268E852F-4621-4EDB-AAF0-76946C5F829F}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="21"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
-								<Action Name="" ID="{7A702B1A-1F65-434C-8FF7-0012DBBC74C9}" ShortID="28360647">
+								<Action Name="" ID="{74C259BB-4C91-4D05-A35D-F6C2E5A9A8A1}" ShortID="1004066598">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Obj_Plateform_Moving_Big" ID="{2E717F99-B19C-45E1-9F06-1758C3B0DD6B}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+											<ObjectRef Name="Builder_Game_Magic_Enchant_Bubble_B_3" ID="{FBD5D66D-B0D0-4CF1-93C0-29652DC331C6}" WorkUnitID="{5A863387-8962-4C33-A094-9549DEBFBF3A}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

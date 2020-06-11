@@ -16,6 +16,7 @@ public class Options : Menu
     public List<OptionsMenu> _menus;
     public void GoTo(string name)
     {
+        AkSoundEngine.PostEvent("UI_Clicked", gameObject);
         foreach (OptionsMenu m in _menus)
         {
             if(m.name == name) m.Enable();
@@ -38,7 +39,7 @@ public class Options : Menu
         }
         
     }
-
+    
 }
 
 public class OptionsMenu : Menu
@@ -53,6 +54,7 @@ public class OptionsMenu : Menu
         _canvas = GetComponent<CanvasGroup>();
         originPos = transform.position;
     }
+    
     public void Enable()
     {
         gameObject.SetActive(true);
