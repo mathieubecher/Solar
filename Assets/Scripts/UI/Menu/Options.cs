@@ -88,7 +88,7 @@ public class OptionsMenu : Menu
     private void EstimateRender()
     {
         _canvas.alpha = curve.Evaluate(timer);
-        transform.position = Vector3.Lerp(new Vector3(originPos.x + 500, originPos.y, originPos.z), originPos,curve.Evaluate(timer));
+        transform.position = Vector3.Lerp(new Vector3(originPos.x + 100, originPos.y, originPos.z), originPos,curve.Evaluate(timer));
     }
 
     public void Reset()

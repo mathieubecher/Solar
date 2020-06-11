@@ -347,9 +347,11 @@
         </e>
         <e p="Graph" t="Include">
           <e p="Shaders" t="Include">
-            <e p="Outline.shader" t="Include" />
-            <e p="Overlay.shader" t="Include" />
-            <e p="Selection.shader" t="Include" />
+            <e p="OutlinePostProcess" t="Include">
+              <e p="Outline.shader" t="Include" />
+              <e p="Overlay.shader" t="Include" />
+              <e p="Selection.shader" t="Include" />
+            </e>
             <e p="SunDeform.cs" t="Include" />
             <e p="SunDeform.shader" t="Include" />
           </e>
@@ -390,6 +392,7 @@
               <e p="CMTransition.cs" t="Include" />
               <e p="SphereController.cs" t="Include" />
             </e>
+            <e p="Door.cs" t="Include" />
             <e p="GizmosPoint.cs" t="Include" />
             <e p="LinearPlatform.cs" t="Include" />
             <e p="Platform.cs" t="Include" />
