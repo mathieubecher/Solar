@@ -17,6 +17,8 @@ namespace AK
         static const AkUniqueID AMB_EXT_LVL01_DESERT_GLOBAL = 26480583U;
         static const AkUniqueID AMB_EXT_LVL01_DESERT_KIOSK = 1449773595U;
         static const AkUniqueID AMB_EXT_LVL01_DESERT_VIEW = 3505954145U;
+        static const AkUniqueID AMB_EXT_LVL02_ENTRANCE = 1324574823U;
+        static const AkUniqueID AMB_EXT_LVL02_PLACE = 2530427570U;
         static const AkUniqueID AMB_INT_LVL01 = 3602364923U;
         static const AkUniqueID ASTRO_MOVING_PLAY = 3822072736U;
         static const AkUniqueID ASTRO_MOVING_STOP = 2165331746U;
@@ -32,11 +34,13 @@ namespace AK
         static const AkUniqueID CHA_WALK = 300025675U;
         static const AkUniqueID LVL01_FLYING_SPHERE_BIG_PLAY = 1047307714U;
         static const AkUniqueID LVL01_FLYING_SPHERE_SMALL_PLAY = 3897898391U;
+        static const AkUniqueID LVL02_PLATEFORM_PLACE = 213028944U;
         static const AkUniqueID MUSIC_LVL01_BRIDGE1 = 771829065U;
         static const AkUniqueID MUSIC_LVL01_KIOSK1 = 2884165201U;
         static const AkUniqueID MUSIC_LVL01_KIOSK2 = 2884165202U;
         static const AkUniqueID MUSIC_LVL01_KIOSK3 = 2884165203U;
         static const AkUniqueID MUSIC_LVL01_TEMPLE = 503471100U;
+        static const AkUniqueID MUSIC_LVL02_CITY1 = 3897915588U;
         static const AkUniqueID MUSIC_LVL02_SWITCH_EVENT = 3454836319U;
         static const AkUniqueID MUSIC_PLAY = 202194903U;
         static const AkUniqueID MUSIC_PLAY_GLOBAL = 4260531187U;
@@ -46,9 +50,9 @@ namespace AK
 
     namespace STATES
     {
-        namespace AMB_LVL01
+        namespace AMBS
         {
-            static const AkUniqueID GROUP = 416592333U;
+            static const AkUniqueID GROUP = 3537656742U;
 
             namespace STATE
             {
@@ -57,8 +61,9 @@ namespace AK
                 static const AkUniqueID EXT_LVL01_DESERT_VIEW = 3003725028U;
                 static const AkUniqueID INT_LVL01 = 3139526458U;
                 static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID PLACE_LVL02 = 1042178311U;
             } // namespace STATE
-        } // namespace AMB_LVL01
+        } // namespace AMBS
 
         namespace GENERALSTATES
         {
@@ -98,6 +103,8 @@ namespace AK
                 static const AkUniqueID PART03 = 2201513845U;
                 static const AkUniqueID PART04 = 2201513842U;
                 static const AkUniqueID PART05 = 2201513843U;
+                static const AkUniqueID PART06 = 2201513840U;
+                static const AkUniqueID PART07 = 2201513841U;
             } // namespace STATE
         } // namespace MUSIC_STATE
 
