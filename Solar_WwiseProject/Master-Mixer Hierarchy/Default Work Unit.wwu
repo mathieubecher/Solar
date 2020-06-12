@@ -360,7 +360,7 @@
 											<ObjectRef Name="System" ID="{ECC9FC8D-59CE-4A49-A46D-5680333299C8}" WorkUnitID="{463B918D-9BAF-4E3C-A8F5-DBF6564D2BF6}"/>
 										</Reference>
 										<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
-											<ObjectRef Name="Plate_Large" ID="{62CB7384-421D-4F9A-9CF1-E90F7336A07B}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+											<ObjectRef Name="Plate_Med" ID="{62CB7384-421D-4F9A-9CF1-E90F7336A07B}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
@@ -430,6 +430,13 @@
 											</CustomState>
 										</CustomStateList>
 									</StateInfo>
+								</AuxBus>
+								<AuxBus Name="Int_Lvl02_Entrance" ID="{531543E3-6DA8-4F80-A8B5-35B7C960242A}">
+									<ReferenceList>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Plate_Med" ID="{62CB7384-421D-4F9A-9CF1-E90F7336A07B}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+									</ReferenceList>
 								</AuxBus>
 							</ChildrenList>
 							<StateInfo>

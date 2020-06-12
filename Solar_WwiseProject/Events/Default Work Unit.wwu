@@ -697,7 +697,20 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Amb_Ext_Lvl02_Entrance" ID="{6A71B6F9-92B3-43A8-AB54-008A866BA9C1}"/>
+										<Event Name="Amb_Ext_Lvl02_Entrance" ID="{6A71B6F9-92B3-43A8-AB54-008A866BA9C1}">
+											<ChildrenList>
+												<Action Name="" ID="{0C6913CB-24FC-4A33-A1B3-106B08F9D511}" ShortID="257644521">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="22"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Entrance_Lvl02" ID="{37274993-5EB8-465D-982D-66CB774E8D58}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>
