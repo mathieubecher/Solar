@@ -1,11 +1,13 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using System.Collections;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using  System.Collections.Generic;
 using System.Runtime.InteropServices;
 using AK.Wwise;
-using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using Event = UnityEngine.Event;
 
@@ -398,7 +400,8 @@ public class Instantiator : MonoBehaviour
     }
 
 }
-
+#endif
+#if UNITY_EDITOR
 [CustomEditor(typeof(Instantiator))]
 public class InstantiatorEditor: Editor
 {
@@ -414,3 +417,4 @@ public class InstantiatorEditor: Editor
         
     }
 }
+#endif
