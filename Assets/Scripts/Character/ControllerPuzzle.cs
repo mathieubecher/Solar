@@ -72,6 +72,7 @@ public class ControllerPuzzle : MonoBehaviour
             _puzzle = other.gameObject.GetComponentInParent<Puzzle>();
             _puzzle.Enter(_controller.sun._gotoAngle);
             ChangeCam(new InfosTransition(_puzzle.cam, _puzzle.type, _puzzle.transitionTime));
+            AkSoundEngine.PostEvent("Checkpoint_Found", gameObject);
 
         }
         // Transition de camera

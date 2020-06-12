@@ -107,7 +107,7 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<BlendContainer Name="Amb_Lvl01" ID="{1C98A39B-366B-42AB-B0A8-04E7A062ED8D}" ShortID="376478863">
+						<BlendContainer Name="Amb_General" ID="{1C98A39B-366B-42AB-B0A8-04E7A062ED8D}" ShortID="376478863">
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
@@ -124,7 +124,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="Amb_Lvl01_Ext_Global" ID="{137E8615-C3E5-4E00-A9FB-72C2A2A6A6E7}" ShortID="123102016">
+								<Sound Name="Lvl01_Ext_Global" ID="{137E8615-C3E5-4E00-A9FB-72C2A2A6A6E7}" ShortID="123102016">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="1"/>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
@@ -177,7 +177,7 @@
 										</StatePropertyList>
 										<StateGroupList>
 											<StateGroupInfo>
-												<StateGroupRef Name="Amb_Lvl01" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
+												<StateGroupRef Name="Ambs" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
 											</StateGroupInfo>
 										</StateGroupList>
 										<CustomStateList>
@@ -187,6 +187,24 @@
 													<PropertyList>
 														<Property Name="UserAuxSendVolume0" Type="Real64" Value="-108"/>
 														<Property Name="Volume" Type="Real64" Value="-8"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Place_Lvl02" ID="{3ED1BA64-9956-41CD-89E8-AD284D09F7D3}"/>
+												<CustomState Name="" ID="{77E54F1A-89F5-40FD-92EA-4BDFDD8C412E}" ShortID="10333076">
+													<PropertyList>
+														<Property Name="UserAuxSendVolume0" Type="Real64" Value="-108"/>
+														<Property Name="Volume" Type="Real64" Value="-12"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Entrance_Lvl02" ID="{37274993-5EB8-465D-982D-66CB774E8D58}"/>
+												<CustomState Name="" ID="{CEAE086A-BEC1-403D-8698-C24032BF5793}" ShortID="894200423">
+													<PropertyList>
+														<Property Name="Lowpass" Type="int16" Value="30"/>
+														<Property Name="Volume" Type="Real64" Value="-18"/>
 													</PropertyList>
 												</CustomState>
 											</CustomState>
@@ -224,8 +242,13 @@
 										<ActiveSource Name="amb_desert_02" ID="{3D7821CA-F123-492C-830A-3FCD7668F218}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="amb_desert_02_calm2" ID="{0B484D07-92E0-4FEF-9D1D-5855BFD8F186}" ShortID="991648396">
+								<Sound Name="Lvl01_desert_02_calm2" ID="{0B484D07-92E0-4FEF-9D1D-5855BFD8F186}" ShortID="991648396">
 									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
@@ -268,7 +291,7 @@
 									<StateInfo>
 										<StateGroupList>
 											<StateGroupInfo>
-												<StateGroupRef Name="Amb_Lvl01" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
+												<StateGroupRef Name="Ambs" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
 											</StateGroupInfo>
 										</StateGroupList>
 										<CustomStateList>
@@ -279,6 +302,14 @@
 														<Property Name="Volume" Type="Real64" Value="-108"/>
 													</PropertyList>
 												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Place_Lvl02" ID="{3ED1BA64-9956-41CD-89E8-AD284D09F7D3}"/>
+												<CustomState Name="" ID="{E51A6793-14B3-4E2A-8ADD-50E1F9A21F97}" ShortID="6457725"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Entrance_Lvl02" ID="{37274993-5EB8-465D-982D-66CB774E8D58}"/>
+												<CustomState Name="" ID="{2FD4BD23-B5F0-412A-AE1D-53F5E37893E5}" ShortID="38669692"/>
 											</CustomState>
 											<CustomState>
 												<StateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
@@ -310,7 +341,7 @@
 										<ActiveSource Name="amb_desert_02_calm2" ID="{807EF654-C9E4-4335-8A41-25495504A04E}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<BlendContainer Name="Amb_Lvl01_Int_Temple" ID="{31027357-3124-40F0-98C2-90CCF9B3302A}" ShortID="114787963">
+								<BlendContainer Name="Lvl01_Int_Temple" ID="{31027357-3124-40F0-98C2-90CCF9B3302A}" ShortID="114787963">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
@@ -567,7 +598,7 @@
 									<StateInfo>
 										<StateGroupList>
 											<StateGroupInfo>
-												<StateGroupRef Name="Amb_Lvl01" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
+												<StateGroupRef Name="Ambs" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
 											</StateGroupInfo>
 										</StateGroupList>
 										<CustomStateList>
@@ -576,6 +607,22 @@
 												<CustomState Name="" ID="{4A8C7B61-5627-4844-B7A9-523F6FDAFDF5}" ShortID="252117105">
 													<PropertyList>
 														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Place_Lvl02" ID="{3ED1BA64-9956-41CD-89E8-AD284D09F7D3}"/>
+												<CustomState Name="" ID="{CF360B48-1B41-4019-A781-EAAA15AEDB10}" ShortID="596199481">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Entrance_Lvl02" ID="{37274993-5EB8-465D-982D-66CB774E8D58}"/>
+												<CustomState Name="" ID="{7BA4293B-955E-475E-BC0A-9A32179221A1}" ShortID="810659832">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-3"/>
 													</PropertyList>
 												</CustomState>
 											</CustomState>
@@ -606,7 +653,7 @@
 										</CustomStateList>
 									</StateInfo>
 								</BlendContainer>
-								<Sound Name="Amb_Ext_Desert_View" ID="{C5196A59-6F80-465A-9549-8711B56B38F4}" ShortID="1013779356">
+								<Sound Name="Lvl01_Ext_Desert_View" ID="{C5196A59-6F80-465A-9549-8711B56B38F4}" ShortID="1013779356">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 									</PropertyList>
@@ -636,13 +683,29 @@
 									<StateInfo>
 										<StateGroupList>
 											<StateGroupInfo>
-												<StateGroupRef Name="Amb_Lvl01" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
+												<StateGroupRef Name="Ambs" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
 											</StateGroupInfo>
 										</StateGroupList>
 										<CustomStateList>
 											<CustomState>
 												<StateRef Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}"/>
 												<CustomState Name="" ID="{E3504F7A-9FD2-4721-9528-C734E4C668B3}" ShortID="584172470">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Place_Lvl02" ID="{3ED1BA64-9956-41CD-89E8-AD284D09F7D3}"/>
+												<CustomState Name="" ID="{24028C3A-B26B-4015-849E-460A573F5789}" ShortID="553342288">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Entrance_Lvl02" ID="{37274993-5EB8-465D-982D-66CB774E8D58}"/>
+												<CustomState Name="" ID="{FEC8318F-74BF-4983-B57B-9E3FE056974C}" ShortID="989888687">
 													<PropertyList>
 														<Property Name="Volume" Type="Real64" Value="-108"/>
 													</PropertyList>
@@ -674,19 +737,111 @@
 										<ActiveSource Name="amb_desert_beautifulview" ID="{7983323C-1288-4BC1-B071-DF2B6B193FB1}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-							</ChildrenList>
-							<BlendTrackList>
-								<BlendTrack Name="Amb_Blend" ID="{594EC151-B4E0-41AD-816C-8C29F097E60C}" ShortID="863984996">
+								<Sound Name="Lvl02_Desert_Place" ID="{8EEEF9FA-7C08-4E89-8A4F-F2561247ABA6}" ShortID="2860848">
 									<PropertyList>
-										<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+										<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
-										<Reference Name="LayerCrossFadeControlInput">
-											<ObjectRef Name="Amb_RTPC" ID="{1409E784-E84A-45EE-B8F3-2E8112055082}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+										</Reference>
+										<Reference Name="Effect0">
+											<Custom>
+												<Effect Name="Wwise_Meter_(Custom)" ID="{F256BB9C-3C35-40A9-826E-F93266BA7038}" ShortID="498720185" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+													<PropertyList>
+														<Property Name="AttackTime" Type="Real32" Value="1"/>
+														<Property Name="Hold" Type="Real32" Value="0.5"/>
+														<Property Name="ReleaseTime" Type="Real32" Value="2"/>
+													</PropertyList>
+													<PluginData>
+	<GameParameter Name="RTPC_WindGain" ID="{C1A5BC66-B4DF-474B-9AEE-1068B3D47755}"/>
+</PluginData>
+												</Effect>
+											</Custom>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Ambiance_Bus" ID="{29FDE568-B384-4C81-B1B5-252B9099C7BB}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
 										</Reference>
 									</ReferenceList>
-								</BlendTrack>
-							</BlendTrackList>
+									<ChildrenList>
+										<AudioFileSource Name="amb_desert_lvl02_place" ID="{FC5928A2-3BFC-456A-B7C4-E9DD163CD2C2}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="7747.368"/>
+												<Property Name="LoopBegin" Type="Real64" Value="7.25642715886618"/>
+												<Property Name="LoopEnd" Type="Real64" Value="36.0290046143705"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>amb_desert_lvl02_place.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="325943792"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="Ambs" ID="{03749CAF-EF11-4C64-848E-9AB22E6B59A7}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}"/>
+												<CustomState Name="" ID="{688FCFAD-0D8F-4E25-984D-CFC51023EAAA}" ShortID="671831424">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Place_Lvl02" ID="{3ED1BA64-9956-41CD-89E8-AD284D09F7D3}"/>
+												<CustomState Name="" ID="{DF2A1C9A-C9DF-4EA1-907A-DDF0FAC46D23}" ShortID="1026415091"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Entrance_Lvl02" ID="{37274993-5EB8-465D-982D-66CB774E8D58}"/>
+												<CustomState Name="" ID="{1430DDB7-BAFE-4A42-896E-FE7AF82C980A}" ShortID="1027855386">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
+												<CustomState Name="" ID="{B248E624-4A3E-4A83-9237-F071431EDB40}" ShortID="718698427">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Ext_Lvl01_Desert_View" ID="{9B72EE0B-9760-4D2B-B9CE-1752501D274D}"/>
+												<CustomState Name="" ID="{84A9E945-0BCB-4BEA-98F7-632B812E7209}" ShortID="190982289">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Ext_Lvl01_Desert_Kiosk" ID="{FC399029-B1DF-4FF4-9006-8DF9F1A6A27F}"/>
+												<CustomState Name="" ID="{0AD9D04A-0B29-4E22-8C1E-31F22BA8E535}" ShortID="1072282179">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+									<ActiveSourceList>
+										<ActiveSource Name="amb_desert_lvl02_place" ID="{FC5928A2-3BFC-456A-B7C4-E9DD163CD2C2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 						</BlendContainer>
 					</ChildrenList>
 				</BlendContainer>

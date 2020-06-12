@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: cbb31e6cefe2e64c8308806bca5ec1fc
     GuidInternal: 
-    m_lastTime: -8586099086398008411
+    m_lastTime: -8586097246498851902
     List:
     - name: Ambiance_Bus
       guid: 68e5fd2984b3814cb1b5252b9099c7bb
@@ -98,6 +98,21 @@ MonoBehaviour:
       - ElementName: Int_Lvl01_Fx
         ObjectType: 1
       Path: Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx
+    - name: Int_Lvl02_Entrance
+      guid: e3431553a86d804fa8b535b7c960242a
+      id: 2582645766
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: FX
+        ObjectType: 2
+      - ElementName: Int_Lvl01_Acoustic
+        ObjectType: 2
+      - ElementName: Int_Lvl02_Entrance
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl02_Entrance
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -154,7 +169,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f62c9fea2fdc9049963bd5bc5510a430
     GuidInternal: 
-    m_lastTime: -8586098863684759251
+    m_lastTime: -8586097246499116474
     List:
     - name: ALL
       guid: feb41afcf094434080809b90df1849fe
@@ -253,6 +268,42 @@ MonoBehaviour:
       - ElementName: Amb_Ext_Lvl01_Desert_View
         ObjectType: 3
       Path: Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_View
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Amb_Ext_Lvl02_Entrance
+      guid: f9b6716ab392a843ab54008a866ba9c1
+      id: 1324574823
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Amb
+        ObjectType: 4
+      - ElementName: Level 2
+        ObjectType: 4
+      - ElementName: Amb_Ext_Lvl02_Entrance
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Amb\Level 2\Amb_Ext_Lvl02_Entrance
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Amb_Ext_Lvl02_Place
+      guid: 67e993f8fa89bd4b8b7f5edff4811ff6
+      id: 2530427570
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Amb
+        ObjectType: 4
+      - ElementName: Level 2
+        ObjectType: 4
+      - ElementName: Amb_Ext_Lvl02_Place
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Amb\Level 2\Amb_Ext_Lvl02_Place
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -512,6 +563,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Checkpoint_Found
+      guid: 2f858e262146db4eaaf076946c5f829f
+      id: 3822733366
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Checkpoint_Found
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Checkpoint_Found
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Footsteps
       guid: 339c4f590f0a0f47adff37fddb6e693e
       id: 2385628198
@@ -548,6 +613,24 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Level 2
+      guid: c7aa570abbbf704c90b15baee7470b53
+      id: 3420765919
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Amb
+        ObjectType: 4
+      - ElementName: Level 2
+        ObjectType: 4
+      - ElementName: Level 2
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Amb\Level 2\Level 2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Lvl01_Flying_Sphere_Big_Play
       guid: b1dfb371703d89459c8fcef3a5d0a655
       id: 1047307714
@@ -556,9 +639,11 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: ALL
         ObjectType: 4
+      - ElementName: Obj
+        ObjectType: 4
       - ElementName: Lvl01_Flying_Sphere_Big_Play
         ObjectType: 3
-      Path: Default Work Unit\ALL\Lvl01_Flying_Sphere_Big_Play
+      Path: Default Work Unit\ALL\Obj\Lvl01_Flying_Sphere_Big_Play
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -570,9 +655,27 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: ALL
         ObjectType: 4
+      - ElementName: Obj
+        ObjectType: 4
       - ElementName: Lvl01_Flying_Sphere_Small_Play
         ObjectType: 3
-      Path: Default Work Unit\ALL\Lvl01_Flying_Sphere_Small_Play
+      Path: Default Work Unit\ALL\Obj\Lvl01_Flying_Sphere_Small_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Lvl02_Plateform_Place
+      guid: 52bdf4f10572f249bbaff187e33da7d2
+      id: 213028944
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Obj
+        ObjectType: 4
+      - ElementName: Lvl02_Plateform_Place
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Obj\Lvl02_Plateform_Place
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -672,6 +775,22 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Music_Lvl02_City1
+      guid: ead1d15f74b0b94083b2df126ddcbfc2
+      id: 3897915588
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Music
+        ObjectType: 4
+      - ElementName: Music_Lvl02_City1
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Music\Music_Lvl02_City1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Music_Lvl02_Switch_Event
       guid: 419ceec10bd6bd448ffa225d82a35db2
       id: 3454836319
@@ -736,6 +855,22 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Obj
+      guid: e1b7f8840e69b4418ea55ae539acf812
+      id: 863601628
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: Obj
+        ObjectType: 4
+      - ElementName: Obj
+        ObjectType: 3
+      Path: Default Work Unit\ALL\Obj\Obj
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Sun_Feedback_Play
       guid: 3438ea43d4eea4409bcde7ad668d74f5
       id: 2337456342
@@ -747,6 +882,20 @@ MonoBehaviour:
       - ElementName: Sun_Feedback_Play
         ObjectType: 3
       Path: Default Work Unit\ALL\Sun_Feedback_Play
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_Clicked
+      guid: 1a27e9eda61a3645bece45047311c1df
+      id: 3391821525
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ALL
+        ObjectType: 4
+      - ElementName: UI_Clicked
+        ObjectType: 3
+      Path: Default Work Unit\ALL\UI_Clicked
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -869,7 +1018,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 8d677a4eefbf304cb66e086a1eaa1126
     GuidInternal: 
-    m_lastTime: -8586099100619497917
+    m_lastTime: -8586097246499066554
     List:
     - name: Ambiances
       guid: b5f994637803be4c96ff1e6db35df03b
@@ -1008,6 +1157,18 @@ MonoBehaviour:
         PathAndIcons:
         - ElementName: Part05
           ObjectType: 8
+      - name: Part06
+        guid: 1dfb8aba9771c4488e46d1ac1482ccbd
+        id: 2201513840
+        PathAndIcons:
+        - ElementName: Part06
+          ObjectType: 8
+      - name: Part07
+        guid: e2222085ef23724b9d0e3b8aa2b180bb
+        id: 2201513841
+        PathAndIcons:
+        - ElementName: Part07
+          ObjectType: 8
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -1143,5 +1304,6 @@ MonoBehaviour:
   - /Solar_WwiseProject/Events/Default Work Unit
   - /Solar_WwiseProject/Events/Default Work Unit/ALL
   - /Solar_WwiseProject/Events/Default Work Unit/ALL/Music
+  - /Solar_WwiseProject/Events/Default Work Unit/ALL/Obj
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
