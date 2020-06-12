@@ -297,8 +297,99 @@
 					<PropertyList>
 						<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 						<Property Name="Color" Type="int16" Value="23"/>
+						<Property Name="Lowpass" Type="int16">
+							<RTPCList>
+								<RTPC Name="" ID="{E5D24D8E-7C83-4F2F-8DA9-F8BDEFD793B3}" ShortID="448089978">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{014826CD-9172-4E53-904C-01C08C85E11D}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="65537"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>100</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 						<Property Name="Tempo" Type="Real64" Value="95"/>
+						<Property Name="Volume" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{A0056654-0C6A-46E3-81C5-7433539DBBF2}" ShortID="1047326891">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{5076E30C-6C11-4993-9710-382219C39078}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-12</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>80</XPos>
+												<YPos>-6</YPos>
+												<Flags>0</Flags>
+												<SegmentShape>SCurve</SegmentShape>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+								<RTPC Name="" ID="{08E39FCA-6300-4712-8F21-93DF95B96CE8}" ShortID="120883566">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="RTPC_AstroSidechain" ID="{0C5BD735-17E7-4FD0-B4A5-F2BF295BBA0F}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{ED4407EB-FBFE-461F-91E2-851AAF8FB460}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>-48</XPos>
+												<YPos>0</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>-9</XPos>
+												<YPos>-4</YPos>
+												<Flags>0</Flags>
+											</Point>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-6</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -321,67 +412,6 @@
 									<ValueList>
 										<Value>0.00773937541756684</Value>
 									</ValueList>
-									<RTPCList>
-										<RTPC Name="" ID="{1F2F8D0C-08FF-4F5B-A14D-3B3B7FAF9D42}" ShortID="465773693">
-											<ReferenceList>
-												<Reference Name="ControlInput">
-													<ObjectRef Name="RTPC_Distance_Sun" ID="{4EC9F491-5E64-4712-A197-06C225EEAAB1}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
-												</Reference>
-											</ReferenceList>
-											<Curve Name="" ID="{B1044D66-1701-4525-857B-6A8FD18B3F6F}">
-												<PropertyList>
-													<Property Name="Flags" Type="int32" Value="3"/>
-												</PropertyList>
-												<PointList>
-													<Point>
-														<XPos>0</XPos>
-														<YPos>-12</YPos>
-														<Flags>5</Flags>
-													</Point>
-													<Point>
-														<XPos>80</XPos>
-														<YPos>-6</YPos>
-														<Flags>0</Flags>
-														<SegmentShape>SCurve</SegmentShape>
-													</Point>
-													<Point>
-														<XPos>100</XPos>
-														<YPos>0</YPos>
-														<Flags>37</Flags>
-													</Point>
-												</PointList>
-											</Curve>
-										</RTPC>
-										<RTPC Name="" ID="{998F93BD-882F-43F8-91FE-B1FCCE1FB880}" ShortID="810001571">
-											<ReferenceList>
-												<Reference Name="ControlInput">
-													<ObjectRef Name="RTPC_AstroSidechain" ID="{0C5BD735-17E7-4FD0-B4A5-F2BF295BBA0F}" WorkUnitID="{AFAD51C3-09FA-4926-9D33-69B21999A571}"/>
-												</Reference>
-											</ReferenceList>
-											<Curve Name="" ID="{1FE1B283-A112-4D9D-9E1A-FE0A604BD593}">
-												<PropertyList>
-													<Property Name="Flags" Type="int32" Value="3"/>
-												</PropertyList>
-												<PointList>
-													<Point>
-														<XPos>-48</XPos>
-														<YPos>0</YPos>
-														<Flags>5</Flags>
-													</Point>
-													<Point>
-														<XPos>-9</XPos>
-														<YPos>-4</YPos>
-														<Flags>0</Flags>
-													</Point>
-													<Point>
-														<XPos>0</XPos>
-														<YPos>-6</YPos>
-														<Flags>37</Flags>
-													</Point>
-												</PointList>
-											</Curve>
-										</RTPC>
-									</RTPCList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>

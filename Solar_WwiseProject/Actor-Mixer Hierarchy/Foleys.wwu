@@ -1742,54 +1742,6 @@
 						</CustomStateList>
 					</StateInfo>
 				</BlendContainer>
-				<BlendContainer Name="Cha_Respawn" ID="{49758B4A-025C-48A0-9CFE-0482015B29A6}" ShortID="336678430">
-					<PropertyList>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-9</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Foleys_Bus" ID="{24383F11-053E-4433-8C86-F1951086C8E7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<Sound Name="cha_respawn" ID="{CC3E2259-632B-40F2-AE53-29B1B0656EB3}" ShortID="848318282">
-							<PropertyList>
-								<Property Name="Inclusion" Type="bool">
-									<ValueList>
-										<Value>False</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="cha_respawn" ID="{BAEF7098-DABB-4F56-825F-75A021E4DF3C}">
-									<Language>SFX</Language>
-									<AudioFile>cha_respawn.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="737927773"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="cha_respawn" ID="{BAEF7098-DABB-4F56-825F-75A021E4DF3C}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-					</ChildrenList>
-				</BlendContainer>
 				<Folder Name="Breath" ID="{302CCE18-5146-4EC7-B80E-329CBBBABFF0}" ShortID="1062684128">
 					<ChildrenList>
 						<RandomSequenceContainer Name="Cha_Hurt_Breath" ID="{EAC280A8-2AFA-4509-BDC7-51284DF00C88}" ShortID="886582021">
