@@ -214,11 +214,24 @@
 												<Property Name="ActionType" Type="int16" Value="12"/>
 												<Property Name="FadeInCurve" Type="int16" Value="5"/>
 												<Property Name="FadeTime" Type="Real64" Value="4"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
 												<Property Name="Volume" Type="Real64" Value="-96"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{FCF9ECAF-EDB0-4D09-AD6E-186A7A34AA54}" ShortID="497706743">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="0.5"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cha_Hurt_Breath" ID="{EAC280A8-2AFA-4509-BDC7-51284DF00C88}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -289,6 +302,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Sun_Feedback" ID="{7B3279BF-2B82-4069-921A-4A7EF62DBDEF}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{800C581C-6066-4398-A1B8-A35C8F1433C5}" ShortID="738477350">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cha_Hurt_Breath" ID="{EAC280A8-2AFA-4509-BDC7-51284DF00C88}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
