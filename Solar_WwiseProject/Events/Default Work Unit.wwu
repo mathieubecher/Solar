@@ -430,6 +430,17 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{224B83DC-5ED9-4E4D-8F9A-C896351BDB14}" ShortID="227663468">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Music_Menu_Switch" ID="{76C7FC8E-7B1D-4C4A-8682-9906FB8BD447}" WorkUnitID="{0BC5EC4D-8C71-4DB1-AFB0-24B129385A65}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 										<Action Name="" ID="{BCB726A9-2B94-49ED-B206-11C3BC8809C1}" ShortID="920080413">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="23"/>
@@ -702,7 +713,7 @@
 								<Action Name="" ID="{D7674C26-4D84-44EB-A94B-398A3E121FD5}" ShortID="820930989">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="ui_selection" ID="{AF79515E-C296-46B0-8D81-C5E547246567}" WorkUnitID="{5A863387-8962-4C33-A094-9549DEBFBF3A}"/>
+											<ObjectRef Name="ui_clicked" ID="{2D7C73E2-4AD1-4DB2-A2EB-ED19B498BBBD}" WorkUnitID="{5A863387-8962-4C33-A094-9549DEBFBF3A}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
