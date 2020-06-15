@@ -65,6 +65,7 @@ public class Solo : AbstractInput
             _controller.cam.Rotate(Vector3.zero);
             
         }
+        _controller.sun.vibrate = _controls.currentControlScheme.Equals("Gamepad");
     }
 
     
