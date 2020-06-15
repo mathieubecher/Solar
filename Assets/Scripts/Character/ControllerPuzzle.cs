@@ -136,7 +136,7 @@ public class ControllerPuzzle : MonoBehaviour
     public void DecideChangeCam(CMTransition transition, bool next=true)
     {
         //Debug.Log("define Cam");
-        _timer_CMnext = 1f;
+        _timer_CMnext = 1.1f;
         _infosTransition = new InfosTransition((next)?transition.next:transition.previous, transition.type, transition.transitionTime);
         //sphere.CMCam = cam.transform;
     }

@@ -18,7 +18,7 @@ public class CMCamera : MonoBehaviour
     void Awake()
     {
         
-        gameObject.SetActive(false);
+        gameObject.SetActive(true);
         foreach (Platform p in platforms)
         {
             p.enabled = false;
@@ -65,8 +65,8 @@ public class CMCamera : MonoBehaviour
     /// </summary>
     public void Disable()
     {
-        _active = false;
-        gameObject.SetActive(false);
+        //_active = false;
+        //gameObject.SetActive(false);
         virtualCamera.Priority = 0;
         
         foreach (Platform p in platforms)
