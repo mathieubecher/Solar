@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using BeardedManStudios.Forge.Networking;
 using BeardedManStudios.Forge.Networking.Generated;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class ControllerSun : MonoBehaviour
@@ -37,6 +38,8 @@ public class ControllerSun : MonoBehaviour
 
     private Controller _controller;
     private int _testPoint;
+
+    public bool vibrate;
     
     void Awake()
     {
@@ -71,7 +74,7 @@ public class ControllerSun : MonoBehaviour
 
         // Calcul la vie actuelle du personnage
         SetLife();
-
+        
     }
     
     /// <summary>
@@ -122,7 +125,7 @@ public class ControllerSun : MonoBehaviour
             }
             if(_life < 0) _life = 0;
         }
-        // Produit un son en fonction de la vie
+        
         AkSoundEngine.SetRTPCValue("RTPC_Distance_Sun", Mathf.Abs(_life * 100));
 
         // Feedback visuel
@@ -130,9 +133,15 @@ public class ControllerSun : MonoBehaviour
         fxUI.color = fx.Evaluate(1 - _life) * new Color(1, 1, 1, 0.8f + _pulsate.Evaluate(_time) * 0.2f);
         ppeffect.Interpolate(1-_life);
         
+        
         // Incrémente le point à vérifier à la prochaine frame
         ++_testPoint;
         if (_testPoint == _points.Count) _testPoint = 0;
+
+
+        if (_controller.UiInterface.player1Settings.vibration && vibrate && _life < 0.8f && _life > 0)
+            Gamepad.current.SetMotorSpeeds((1 - _life - 0.2f) * 1.25f *0.5f, (1 - _life - 0.2f) * 1.25f*0.5f);
+        else Gamepad.current.SetMotorSpeeds(0, 0);
     }
     
     

@@ -79,6 +79,7 @@ public class OnlineSun: AbstractInput
                 if (isManager) _manager.CallSetSunRotate(_controller.sun._gotoAngle);
             }
         }
+        _controller.sun.vibrate = _controls.currentControlScheme.Equals("Gamepad");
     }
 
     /// <summary>

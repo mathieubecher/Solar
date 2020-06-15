@@ -76,6 +76,7 @@ public class OnlinePlayer : AbstractInput
         }
 
         if(isManager) _controller.sun._gotoAngle = _manager.sunRotation;
+        _controller.sun.vibrate = _controls.currentControlScheme.Equals("Gamepad");
     }
 
 

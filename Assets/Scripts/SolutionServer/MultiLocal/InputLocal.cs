@@ -94,12 +94,14 @@ public class InputLocal : MonoBehaviour
             inputs.BindSun(UiInterface.player2Settings.sun);
             inputs.BindPlatform(UiInterface.player2Settings.platform);
         }
+        _controller.sun.vibrate |= _controls.currentControlScheme.Equals("Gamepad");
     }
 
     public void Update()
     {
         // Récupère la vélocité de la souris si l'Input est le clavier&souris
         if(_type == InputType.PLAYER && _controls.currentControlScheme.Equals("Keyboard and mouse")) MouseCamera();
+        
     }
     
     /// <summary>
