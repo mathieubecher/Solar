@@ -60,6 +60,7 @@ public class UIInterface : MonoBehaviour
         BindPlatform(player2.PlatformBinding.value);
         OnChangeSunSensitivity(player2.SunSensitivity.value);
         OnActiveOutline(player2.Outline.isOn);
+        
         controller = FindObjectOfType<Controller>();
     }
     
@@ -321,16 +322,14 @@ public class UIInterface : MonoBehaviour
         public float sunSensitivity;
         public float platformSensitivity;
         public bool invertSun;
-        public bool vibration;
 
-        public Player2Settings(float _sunSensitivity = 1, float _platformSensitivity = 1, bool _invertSun = false, bool _vibration = true)
+        public Player2Settings(float _sunSensitivity = 1, float _platformSensitivity = 1, bool _invertSun = false)
         {
             sun = Bind.L2R2;
             platform = Bind.L1R1;
             sunSensitivity = _sunSensitivity;
             platformSensitivity = _platformSensitivity;
             invertSun = _invertSun;
-            vibration = _vibration;
         }
     }
 
@@ -398,12 +397,7 @@ public class UIInterface : MonoBehaviour
         player2Settings.invertSun = value;
     }
 
-    public void Player2ActiveVibration(bool value)
-    {
-        player2.Vibration.isOn = value;
-        if (!inGame) return;
-        player2Settings.vibration = value;
-    }
+
 
     public void OnClickDefaultPlayer2()
     {
@@ -412,7 +406,6 @@ public class UIInterface : MonoBehaviour
         OnChangeSunSensitivity(1);
         OnChangePlatformSensitivity(1);
         InvertSunRotation(false);
-        Player2ActiveVibration(true);
         OnActiveOutline(true);
     }
     

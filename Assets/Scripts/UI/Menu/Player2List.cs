@@ -8,6 +8,5 @@ public class Player2List : Menu
     public Slider SunSensitivity;
     public Slider PlatformSensitivity;
     public Toggle InvertSunRotation;
-    public Toggle Vibration;
     public Toggle Outline;
 }

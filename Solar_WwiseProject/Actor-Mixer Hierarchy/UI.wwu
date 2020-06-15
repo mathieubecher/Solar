@@ -3,11 +3,45 @@
 	<AudioObjects>
 		<WorkUnit Name="UI" ID="{5A863387-8962-4C33-A094-9549DEBFBF3A}" OwnerID="{9F4217AA-E869-4F10-A183-355E7B460309}" PersistMode="Nested">
 			<ChildrenList>
-				<Sound Name="ui_selection" ID="{AF79515E-C296-46B0-8D81-C5E547246567}" ShortID="441689555">
+				<Sound Name="ui_checkpoint" ID="{6A68784C-E3D4-4DEC-A473-A23BD6128184}" ShortID="91854326">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ui_checkpoint" ID="{2B6D8260-B77A-4FEB-AA50-9266F1F57D5A}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.171345604546211"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="2.18492006658658"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="8.14415107986432"/>
+								<Property Name="TrimEnd" Type="Real64" Value="13.7400825893406"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>ui_checkpoint.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1073638996"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ui_checkpoint" ID="{2B6D8260-B77A-4FEB-AA50-9266F1F57D5A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="ui_clicked" ID="{2D7C73E2-4AD1-4DB2-A2EB-ED19B498BBBD}" ShortID="272797689">
 					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>30</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>3</Value>
+								<Value>-23</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -20,47 +54,96 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="ui_selection" ID="{BE030776-5CFB-4A9D-8A22-E79C2705A151}">
-							<Language>SFX</Language>
-							<AudioFile>ui_selection.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="589195181"/>
-							</MediaIDList>
-						</AudioFileSource>
+						<Sound Name="hang_ui_01" ID="{C451C21A-20DA-4A44-851A-6460FA847D34}" ShortID="889854154">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="hang_ui_01" ID="{0F1745E6-4ADF-40AA-ACA1-7F847E72E93C}">
+									<Language>SFX</Language>
+									<AudioFile>hang_ui_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="997834419"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="hang_ui_01" ID="{0F1745E6-4ADF-40AA-ACA1-7F847E72E93C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="hang_ui_02" ID="{1146E6DF-F5B1-4BBB-AB4B-B5F7CD91A19F}" ShortID="566015903">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="hang_ui_02" ID="{367E1440-E00C-4B81-98FC-5B55D014C021}">
+									<Language>SFX</Language>
+									<AudioFile>hang_ui_02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1010695981"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="hang_ui_02" ID="{367E1440-E00C-4B81-98FC-5B55D014C021}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="hang_ui_03" ID="{B31E79C5-41E4-45EB-B803-A58825B860E8}" ShortID="1030692428">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="hang_ui_03" ID="{F66F483B-D14A-450B-9E06-845832F48237}">
+									<Language>SFX</Language>
+									<AudioFile>hang_ui_03.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="402998437"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="hang_ui_03" ID="{F66F483B-D14A-450B-9E06-845832F48237}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="hang_ui_04" ID="{03EC2C31-42FD-454D-BE8C-F89C264B108A}" ShortID="178566137">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="hang_ui_04" ID="{54CBA237-F213-43A1-BE92-ACA9E902128B}">
+									<Language>SFX</Language>
+									<AudioFile>hang_ui_04.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="120299958"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="hang_ui_04" ID="{54CBA237-F213-43A1-BE92-ACA9E902128B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="ui_selection" ID="{BE030776-5CFB-4A9D-8A22-E79C2705A151}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Builder_Game_Magic_Enchant_Bubble_B_3" ID="{FBD5D66D-B0D0-4CF1-93C0-29652DC331C6}" ShortID="265828613">
-					<PropertyList>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-15</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Builder_Game_Magic_Enchant_Bubble_B_3" ID="{A01E2955-B37A-4FC9-83E7-F1359CE1D40A}">
-							<Language>SFX</Language>
-							<AudioFile>Builder_Game_Magic_Enchant_Bubble_B_3.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="663249577"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Builder_Game_Magic_Enchant_Bubble_B_3" ID="{A01E2955-B37A-4FC9-83E7-F1359CE1D40A}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
