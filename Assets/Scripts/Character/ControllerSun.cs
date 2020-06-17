@@ -138,10 +138,12 @@ public class ControllerSun : MonoBehaviour
         ++_testPoint;
         if (_testPoint == _points.Count) _testPoint = 0;
 
-
-        if (_controller.UiInterface.player1Settings.vibration && vibrate && _life < 0.8f && _life > 0)
-            Gamepad.current.SetMotorSpeeds((1 - _life - 0.2f) * 1.25f *0.5f, (1 - _life - 0.2f) * 1.25f*0.5f);
-        else Gamepad.current.SetMotorSpeeds(0, 0);
+        if (vibrate)
+        {
+            if (_controller.UiInterface.player1Settings.vibration && _life < 0.8f && _life > 0)
+                Gamepad.current.SetMotorSpeeds((1 - _life - 0.2f) * 1.25f *0.5f, (1 - _life - 0.2f) * 1.25f*0.5f);
+            else Gamepad.current.SetMotorSpeeds(0, 0);
+        }
     }
     
     

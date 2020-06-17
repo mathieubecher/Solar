@@ -7,8 +7,11 @@ public class Puzzle : MonoBehaviour
 {
     [SerializeField]
     private GameObject respawn;
-    
     public float beginRotate;
+
+    public bool isActiveFirst;
+    public GameObject clip;
+    public Puzzle unClip;
     
     [Header("Transition info")]
     [SerializeField] private CMCamera last;
@@ -16,7 +19,11 @@ public class Puzzle : MonoBehaviour
 
     public CinemachineBlendDefinition.Style type = CinemachineBlendDefinition.Style.EaseInOut;
     [Range(0,5)] public float transitionTime = 1;
-    
+
+    void Awake()
+    {
+        if(!isActiveFirst && clip != null) clip.SetActive(false);
+    }
     // Start is called before the first frame update
     public Vector3 GetRespawnPoint()
     {
@@ -32,6 +39,7 @@ public class Puzzle : MonoBehaviour
     {
         //TODO Nouveau spawn
         beginRotate = sunGotoAngle;
+        if(unClip!= null && unClip.clip != null) unClip.clip.SetActive(true);
     }
 
     #if UNITY_EDITOR

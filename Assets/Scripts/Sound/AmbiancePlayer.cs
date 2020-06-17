@@ -29,6 +29,12 @@ public class AmbiancePlayer : MonoBehaviour
                 case WwiseAbiance.TypeAmbiance.AMB_ENTRANCE:
                     AkSoundEngine.PostEvent("Amb_Ext_Lvl02_Entrance",gameObject);
                     break;
+                case WwiseAbiance.TypeAmbiance.AMB_TUNNEL:
+                    AkSoundEngine.PostEvent("Amb_Int_Tunnel_End", gameObject);
+                    break;
+                case WwiseAbiance.TypeAmbiance.AMB_TEMPLE_END:
+                    AkSoundEngine.PostEvent("Amb_Int_Temple_End", gameObject);
+                    break;
             }
         }
         else

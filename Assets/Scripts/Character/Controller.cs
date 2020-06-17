@@ -91,24 +91,28 @@ public class Controller : MonoBehaviour
         {
             if (_respawnTimer > 0)
             {
-                _respawnTimer -= Time.deltaTime * 2;
-                deadImg.color = new Color(deadImg.color.r,deadImg.color.g,deadImg.color.b,_respawnCurve.Evaluate((_respawnTimer)));
+                _respawnTimer -= Time.deltaTime;
+                if(_respawnTimer >= 1.5f) deadImg.color = new Color(deadImg.color.r,deadImg.color.g,deadImg.color.b,_respawnCurve.Evaluate(((_respawnTimer-1.5f)*2)));
                 
             }
-            // Retours visuels et sonores lié aux déplacements du personnage
-            animator.SetFloat("velocity", velocity.magnitude);
-            // RESPIRATION
+            else
+            { // Retours visuels et sonores lié aux déplacements du personnage
+                animator.SetFloat("velocity", velocity.magnitude);
+                // RESPIRATION
             
-            //if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
-            if(sun.Life >= 1){
-                if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
-                // else if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("Cha_Walk", this.gameObject);
-                else AkSoundEngine.PostEvent("Cha_IDLE", this.gameObject);
+                //if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
+                if(sun.Life >= 1){
+                    if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
+                    // else if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("Cha_Walk", this.gameObject);
+                    else AkSoundEngine.PostEvent("Cha_IDLE", this.gameObject);
+                }
+                else AkSoundEngine.PostEvent("Cha_Hurt", this.gameObject);
+            
+                velocity.y = _rigidbody.velocity.y;
+                _rigidbody.velocity = velocity;
+                
             }
-            else AkSoundEngine.PostEvent("Cha_Hurt", this.gameObject);
-            
-            velocity.y = _rigidbody.velocity.y;
-            _rigidbody.velocity = velocity;
+           
         }
         else
         {
@@ -166,7 +170,7 @@ public class Controller : MonoBehaviour
     /// </summary>
     public void Respawn()
     {
-        _respawnTimer = 1;
+        _respawnTimer = 2f;
         AkSoundEngine.PostEvent("Cha_Respawn", this.gameObject);
         animator.SetBool("die", false);
         puzzle.Respawn();
