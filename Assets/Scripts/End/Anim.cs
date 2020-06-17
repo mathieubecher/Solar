@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class Anim : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public bool active;
+    public Watcher watcher;
+    public Door door;
+    private bool open;
+    
+    void OnTriggerEnter(Collider other)
     {
-        
+        Debug.Log(other.gameObject.name);
+        active = true;
+        Debug.Log("begin");
+        watcher.SetActive();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenDoor()
     {
-        
+        if (!open)
+        {
+            door.Open();
+            open = true;
+            
+        }
     }
 }

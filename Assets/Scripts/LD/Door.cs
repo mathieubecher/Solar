@@ -23,8 +23,13 @@ public class Door : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("enter");
-        active = true;
+        Open();
+    }
+
+    public void Open()
+    {
         door.SetBool("active",true);
         AkSoundEngine.PostEvent("TempleDoor_Open", gameObject);
+        active = true;
     }
 }
