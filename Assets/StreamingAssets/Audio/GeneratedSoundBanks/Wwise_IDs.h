@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID AMB_EXT_LVL02_PLACE = 2530427570U;
         static const AkUniqueID AMB_INT_LVL01 = 3602364923U;
         static const AkUniqueID AMB_INT_TEMPLE_END = 4294699005U;
+        static const AkUniqueID AMB_INT_TUNNEL_END = 3181597140U;
         static const AkUniqueID ASTRO_MOVING_PLAY = 3822072736U;
         static const AkUniqueID ASTRO_MOVING_STOP = 2165331746U;
         static const AkUniqueID CHA_BREATH_EXPI = 186543767U;
@@ -66,6 +67,7 @@ namespace AK
                 static const AkUniqueID EXT_LVL01_DESERT_VIEW = 3003725028U;
                 static const AkUniqueID INT_LVL01 = 3139526458U;
                 static const AkUniqueID INT_TEMPLE_END = 3293789522U;
+                static const AkUniqueID INT_TUNNEL_END = 2033314023U;
                 static const AkUniqueID NONE = 748895195U;
                 static const AkUniqueID PLACE_LVL02 = 1042178311U;
             } // namespace STATE
