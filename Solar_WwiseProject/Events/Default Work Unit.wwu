@@ -686,6 +686,20 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="Amb_Int_Temple_End" ID="{74F4E34E-F766-46FD-8DEF-5573335E2559}">
+											<ChildrenList>
+												<Action Name="" ID="{203607EC-2295-40B9-8291-1C4ED47AA572}" ShortID="697838151">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="22"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Int_Temple_End" ID="{0741347E-E437-4ACF-96AA-7D969418ADC0}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>
@@ -752,6 +766,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="ui_checkpoint" ID="{6A68784C-E3D4-4DEC-A473-A23BD6128184}" WorkUnitID="{5A863387-8962-4C33-A094-9549DEBFBF3A}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="TempleDoor_Open" ID="{A41E4424-7C27-41C0-80B3-496C78876D93}">
+							<ChildrenList>
+								<Action Name="" ID="{A42E84E2-6399-4B87-9D3A-D0859EC355F1}" ShortID="213071501">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Temple_Door_Opening" ID="{8E915076-05CF-4923-B633-E44E56CE1817}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

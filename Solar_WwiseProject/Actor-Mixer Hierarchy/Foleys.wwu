@@ -339,6 +339,10 @@
 										<CustomState Name="" ID="{2CD5C47A-1A0C-4E38-8ABE-5AE15C2C9761}" ShortID="944535764"/>
 									</CustomState>
 									<CustomState>
+										<StateRef Name="Int_Temple_End" ID="{0741347E-E437-4ACF-96AA-7D969418ADC0}"/>
+										<CustomState Name="" ID="{CE6A6F4D-1370-471C-848F-07863F68E2B0}" ShortID="983920825"/>
+									</CustomState>
+									<CustomState>
 										<StateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
 										<CustomState Name="" ID="{D04D352F-87AA-4462-AD2F-9A0305CD5BFB}" ShortID="955620435"/>
 									</CustomState>
@@ -397,6 +401,15 @@
 									<PropertyList>
 										<Property Name="UserAuxSendVolume1" Type="Real64" Value="-108"/>
 										<Property Name="UserAuxSendVolume2" Type="Real64" Value="-6"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Int_Temple_End" ID="{0741347E-E437-4ACF-96AA-7D969418ADC0}"/>
+								<CustomState Name="" ID="{EE912D01-B796-4950-97F9-F4F4624E2004}" ShortID="712449833">
+									<PropertyList>
+										<Property Name="UserAuxSendVolume1" Type="Real64" Value="3"/>
+										<Property Name="UserAuxSendVolume2" Type="Real64" Value="-108"/>
 									</PropertyList>
 								</CustomState>
 							</CustomState>
@@ -1429,6 +1442,15 @@
 								</CustomState>
 							</CustomState>
 							<CustomState>
+								<StateRef Name="Int_Temple_End" ID="{0741347E-E437-4ACF-96AA-7D969418ADC0}"/>
+								<CustomState Name="" ID="{18CC25F7-F104-4BBC-81D2-665B703495BE}" ShortID="511533622">
+									<PropertyList>
+										<Property Name="UserAuxSendVolume0" Type="Real64" Value="3"/>
+										<Property Name="UserAuxSendVolume1" Type="Real64" Value="-108"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+							<CustomState>
 								<StateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
 								<CustomState Name="" ID="{C1F6530B-2A21-4189-AD24-8B572AFCD2CA}" ShortID="58712141">
 									<PropertyList>
@@ -1710,6 +1732,14 @@
 								<CustomState Name="" ID="{BE2A19D3-6C5F-4636-9ECA-872AC2689F67}" ShortID="911930219">
 									<PropertyList>
 										<Property Name="UserAuxSendVolume0" Type="Real64" Value="-108"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Int_Temple_End" ID="{0741347E-E437-4ACF-96AA-7D969418ADC0}"/>
+								<CustomState Name="" ID="{7DA4345F-4561-497A-8975-E959787E65B5}" ShortID="936781900">
+									<PropertyList>
+										<Property Name="UserAuxSendVolume1" Type="Real64" Value="-108"/>
 									</PropertyList>
 								</CustomState>
 							</CustomState>
@@ -2312,6 +2342,15 @@
 											<PropertyList>
 												<Property Name="UserAuxSendVolume0" Type="Real64" Value="-108"/>
 												<Property Name="UserAuxSendVolume1" Type="Real64" Value="-5"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="Int_Temple_End" ID="{0741347E-E437-4ACF-96AA-7D969418ADC0}"/>
+										<CustomState Name="" ID="{2BB506FF-77E7-411A-822E-74301123BDCA}" ShortID="1051194554">
+											<PropertyList>
+												<Property Name="UserAuxSendVolume0" Type="Real64" Value="3"/>
+												<Property Name="UserAuxSendVolume1" Type="Real64" Value="-108"/>
 											</PropertyList>
 										</CustomState>
 									</CustomState>
@@ -3549,6 +3588,10 @@
 												<CustomState Name="" ID="{EA7DD810-78D2-47E4-95ED-8F240757392D}" ShortID="79173371"/>
 											</CustomState>
 											<CustomState>
+												<StateRef Name="Int_Temple_End" ID="{0741347E-E437-4ACF-96AA-7D969418ADC0}"/>
+												<CustomState Name="" ID="{001C0B03-3744-45A2-BF06-9C83FEAEEA89}" ShortID="525259227"/>
+											</CustomState>
+											<CustomState>
 												<StateRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}"/>
 												<CustomState Name="" ID="{3693FAC7-E1BF-4E5D-889D-B5C57E6C71BB}" ShortID="800071422"/>
 											</CustomState>
@@ -3615,6 +3658,15 @@
 										<CustomState Name="" ID="{A5D9A08F-189F-4D6C-A31A-B626036FAC6C}" ShortID="513046910">
 											<PropertyList>
 												<Property Name="UserAuxSendVolume0" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="Int_Temple_End" ID="{0741347E-E437-4ACF-96AA-7D969418ADC0}"/>
+										<CustomState Name="" ID="{3B0DD7D5-1161-447C-9D6B-6D95DA4A8C96}" ShortID="322380065">
+											<PropertyList>
+												<Property Name="UserAuxSendVolume0" Type="Real64" Value="3"/>
+												<Property Name="UserAuxSendVolume1" Type="Real64" Value="-108"/>
 											</PropertyList>
 										</CustomState>
 									</CustomState>
@@ -4005,6 +4057,45 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
+				<BlendContainer Name="Temple_Door_Opening" ID="{8E915076-05CF-4923-B633-E44E56CE1817}" ShortID="645313993">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="temple_door_opening" ID="{5C59545C-7AD4-4F59-9EF8-AFBF71AEF92F}" ShortID="986180125">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="temple_door_opening" ID="{8A583692-6D40-45DE-A5A7-48BB54881648}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.21232876712329"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.88013698630137"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>temple_door_opening.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="483929809"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="temple_door_opening" ID="{8A583692-6D40-45DE-A5A7-48BB54881648}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</BlendContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

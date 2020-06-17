@@ -4,6 +4,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	186543767	Cha_Breath_Expi			\Default Work Unit\ALL\Character\Breath\Cha_Breath_Expi	
 	202194903	Music_Play			\Default Work Unit\ALL\Music\Music_Play	
 	213028944	Lvl02_Plateform_Place			\Default Work Unit\ALL\Obj\Lvl02_Plateform_Place	
+	289201289	TempleDoor_Open			\Default Work Unit\ALL\TempleDoor_Open	
 	300025675	Cha_Walk			\Default Work Unit\ALL\Character\Breath\Cha_Walk	
 	503471100	Music_Lvl01_Temple			\Default Work Unit\ALL\Music\Music_Lvl01_Temple	
 	771829065	Music_Lvl01_Bridge1			\Default Work Unit\ALL\Music\Music_Lvl01_Bridge1	
@@ -34,6 +35,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3897898391	Lvl01_Flying_Sphere_Small_Play			\Default Work Unit\ALL\Obj\Lvl01_Flying_Sphere_Small_Play	
 	3897915588	Music_Lvl02_City1			\Default Work Unit\ALL\Music\Music_Lvl02_City1	
 	4260531187	Music_Play_Global			\Default Work Unit\ALL\Music\Music_Play_Global	
+	4294699005	Amb_Int_Temple_End			\Default Work Unit\ALL\Amb\Level 2\Amb_Int_Temple_End	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	997064848	Footstep_Floor			\Default Work Unit\Footstep_Floor	
@@ -62,6 +64,7 @@ State	ID	Name	State Group			Notes
 	2890487870	Ext_Lvl01_Desert_Global	Ambs			
 	3003725028	Ext_Lvl01_Desert_View	Ambs			
 	3139526458	Int_Lvl01	Ambs			
+	3293789522	Int_Temple_End	Ambs			
 	3857277276	Ext_Lvl01_Desert_Kiosk	Ambs			
 	748895195	None	Music_State			
 	2201513840	Part06	Music_State			
@@ -78,6 +81,7 @@ State	ID	Name	State Group			Notes
 
 Custom State	ID	Name	State Group	Owner		Notes
 	10333076	Place_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Global		
+	33090574	Int_Temple_End	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Int_Temple		
 	58712141	Int_Lvl01	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch		
 	118305506	Ext_Lvl01_Desert_Global	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Global		
 	155558672	Ext_Lvl01_Desert_View	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Int_Temple		
@@ -85,31 +89,41 @@ Custom State	ID	Name	State Group	Owner		Notes
 	190982289	Ext_Lvl01_Desert_View	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl02_Desert_Place		
 	191079398	Place_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch		
 	212033869	Ext_Lvl01_Desert_Kiosk	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Int_Temple		
+	217413571	Int_Temple_End	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\LvlEnd_Temple		
 	252117105	Ext_Lvl01_Desert_Global	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Int_Temple		
 	287257823	Ext_Lvl01_Desert_View	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Hurt_Breath		
+	291427436	Int_Temple_End	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Global		
+	322380065	Int_Temple_End	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior		
 	335228161	Int_Lvl01	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Desert_View		
 	340348726	Int_Lvl01	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Death		
+	349609059	Int_Temple_End	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Desert_View		
 	350349921	Ext_Lvl01_Desert_Kiosk	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Desert_View		
+	377769951	Int_Lvl01	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\LvlEnd_Temple		
 	400356247	Ext_Lvl01_Desert_Kiosk	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Obj_Astrolabe_Moving		
 	415824375	Int_Lvl01	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Int_Temple		
 	476252861	Ext_Lvl01_Desert_Global	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch		
+	511533622	Int_Temple_End	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch		
 	513046910	Entrance_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior		
+	515852512	Place_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\LvlEnd_Temple		
 	516106536	Ext_Lvl01_Desert_Kiosk	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Global		
 	536617893	Int_Lvl01	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Hurt_Breath		
 	553342288	Place_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Desert_View		
 	558529458	Int_Lvl01	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Global		
 	560718448	Entrance_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Hurt_Breath		
 	584172470	Ext_Lvl01_Desert_Global	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Desert_View		
+	586524855	Ext_Lvl01_Desert_View	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\LvlEnd_Temple		
 	588468954	Ext_Lvl01_Desert_Global	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath		
 	588666944	Entrance_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Obj_Astrolabe_Moving		
 	596199481	Place_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Int_Temple		
 	618713052	Ext_Lvl01_Desert_Kiosk	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior		
 	643274149	Ext_Lvl01_Desert_Kiosk	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Death		
 	646126819	Int_Lvl01	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Obj_Astrolabe_Moving		
+	646751822	Ext_Lvl01_Desert_Kiosk	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\LvlEnd_Temple		
 	657787100	Ext_Lvl01_Desert_View	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Global		
 	671831424	Ext_Lvl01_Desert_Global	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl02_Desert_Place		
 	675537269	Place_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Hurt_Breath		
 	709715239	Place_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Death		
+	712449833	Int_Temple_End	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Obj_Astrolabe_Moving		
 	718698427	Int_Lvl01	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl02_Desert_Place		
 	724877742	Ext_Lvl01_Desert_Global	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Death		
 	764661368	Ext_Lvl01_Desert_View	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior		
@@ -126,12 +140,17 @@ Custom State	ID	Name	State Group	Owner		Notes
 	917028059	Ext_Lvl01_Desert_Kiosk	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch		
 	917110050	Ext_Lvl01_Desert_Global	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior		
 	925387683	inGame	Menu_State	\Interactive Music Hierarchy\Default Work Unit\Music_Menu_Switch		
+	936781900	Int_Temple_End	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Death		
 	943129350	Ext_Lvl01_Desert_Global	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Obj_Astrolabe_Moving		
+	951011781	Entrance_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\LvlEnd_Temple		
 	971006791	Ext_Lvl01_Desert_View	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch		
+	978818846	Ext_Lvl01_Desert_Global	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\LvlEnd_Temple		
 	989888687	Entrance_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Desert_View		
+	1018867443	Int_Temple_End	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl02_Desert_Place		
 	1027855386	Entrance_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl02_Desert_Place		
 	1031322242	Ext_Lvl01_Desert_Kiosk	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Hurt_Breath		
 	1047881822	Ext_Lvl01_Desert_Global	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Hurt_Breath		
+	1051194554	Int_Temple_End	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Hurt_Breath		
 	1067557308	Place_Lvl02	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior		
 	1072282179	Ext_Lvl01_Desert_Kiosk	Ambs	\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl02_Desert_Place		
 
@@ -161,9 +180,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	140851678	cha_footsteps_sand_04	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_footsteps_sand_04_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch\Cha_Footsteps_Sand\Cha_Footsteps_Sand_Blend\Cha_Footstep_Sand_03\cha_footsteps_sand_04		14333
 	149248493	cha_footsteps_sand_01	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_footsteps_sand_01_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch\Cha_Footsteps_Sand\Cha_Footsteps_Sand_Blend\Cha_Footstep_Sand_03\cha_footsteps_sand_01		14098
 	156434672	cha_breath_med_inspi-004	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_med_inspi-004_1B1AF912.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Inspi\Cha_Inspi_Med\cha_breath_med_inspi-004		12392
-	163120995	cha_breath_calm_inspi-001	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_inspi-001_43330906.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Inspi\Cha_Inspi_Slow\cha_breath_calm_inspi-001		24155
+	163120995	cha_breath_calm_inspi-001	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_inspi-001_0FB5847E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Inspi\Cha_Inspi_Slow\cha_breath_calm_inspi-001		24155
 	165196407	stone_footsteps_hard-003	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\stone_footsteps_hard-003_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch\Cha_Footsteps_Stone\Cha_Stone_Random\stone_footsteps_hard-003		5369
-	179068031	cha_breath_calm_expi-002	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_expi-002_FE3B8035.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Slow\cha_breath_calm_expi-002		30081
+	179068031	cha_breath_calm_expi-002	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_expi-002_45F03C3D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Slow\cha_breath_calm_expi-002		30081
 	191104729	sun_feedback_01	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\sun_feedback_46E53480.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Sun_Feedback\sun_feedback_01		439001
 	191374361	cha_footstep_sand_02-004	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_footstep_sand_02-004_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch\Cha_Footsteps_Sand\Cha_Footsteps_Sand_Blend\Cha_Footstep_Sand_02\cha_footstep_sand_02-004		5183
 	203312863	walk_expi_breath_05	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_run_expi-005_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Run\walk_expi_breath_05		17672
@@ -178,7 +197,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	325943792	Lvl02_Desert_Place	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\amb_desert_lvl02_place_059592CD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl02_Desert_Place		1023955
 	328126770	lvl01_transi2ndbridge_95bpm4_4	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\lvl01_transi2ndbridge_95bpm4_4_F2BF74AC.wem		\Interactive Music Hierarchy\Default Work Unit\Music_General_Switch\Music_Switch_Lvl01\Kiosk2_Playlist\lvl01_transi2ndbridge_95bpm4_4\lvl01_transi2ndbridge_95bpm4_4		278048
 	365867322	cha_breath_med_expi-003	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_med_expi-003_DA2E7DAB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Med\cha_breath_med_expi-003		15421
-	369014303	cha_breath_calm_expi-004	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_expi-004_76243AFD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Slow\cha_breath_calm_expi-004		38567
+	369014303	cha_breath_calm_expi-004	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_expi-004_5AC63CF1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Slow\cha_breath_calm_expi-004		38567
 	370427915	stone_footsteps_hard-002	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\stone_footsteps_hard-002_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch\Cha_Footsteps_Stone\Cha_Stone_Random\stone_footsteps_hard-002		6595
 	373063365	lvl02_preoutro_100bpm4_4	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\lvl02_preoutro_100bpm4_4_F2BF74AC.wem		\Interactive Music Hierarchy\Default Work Unit\Music_General_Switch\Music_Switch_Lvl02\Outro_Playlist\lvl02_preoutro_100bpm4_4\lvl02_preoutro_100bpm4_4		438973
 	381247970	cha_death_v2	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_death_v2_3FF69C27.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Death\cha_death_v2		93182
@@ -193,20 +212,21 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	468102529	hurt_breath_expi_04	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_hurt_expi-004_A668B388.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Hurt_Breath\Cha_Expi_Hurt\hurt_breath_expi_04		10215
 	469927625	cha_footstep_sand_01-006	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_footstep_sand_01-006_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch\Cha_Footsteps_Sand\Cha_Footsteps_Sand_Blend\Cha_Footstep_Sand_01\cha_footstep_sand_01-006		8129
 	481465852	walk_inspi_breath_02	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_run_inspi-002_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Inspi\Cha_Inspi_Run\walk_inspi_breath_02		11466
-	485297131	cha_breath_calm_inspi-004	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_inspi-004_2990D331.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Inspi\Cha_Inspi_Slow\cha_breath_calm_inspi-004		23182
-	494268128	cha_breath_calm_expi-001	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_expi-001_32618904.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Slow\cha_breath_calm_expi-001		32497
+	483929809	temple_door_opening	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\temple_door_opening_73616220.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Temple_Door_Opening\temple_door_opening		110051
+	485297131	cha_breath_calm_inspi-004	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_inspi-004_0149ACB0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Inspi\Cha_Inspi_Slow\cha_breath_calm_inspi-004		23182
+	494268128	cha_breath_calm_expi-001	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_expi-001_60B5A953.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Slow\cha_breath_calm_expi-001		32497
 	518561536	hurt_breath_inspi_01	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_hurt_inspi-001_8764844C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Hurt_Breath\Cha_Inspi_Hurt\hurt_breath_inspi_01		7985
 	533551184	cha_footsteps_sand_05	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_footsteps_sand_05_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch\Cha_Footsteps_Sand\Cha_Footsteps_Sand_Blend\Cha_Footstep_Sand_03\cha_footsteps_sand_05		15249
 	542990828	walk_expi_breath_02	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_run_expi-002_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Run\walk_expi_breath_02		16371
 	561642860	hurt_breath_inspi_03	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_hurt_inspi-003_A48C99AB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Hurt_Breath\Cha_Inspi_Hurt\hurt_breath_inspi_03		8591
 	561706961	lvl02_outro_100bpm4_4	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\lvl02_outro_100bpm4_4_F2BF74AC.wem		\Interactive Music Hierarchy\Default Work Unit\Music_General_Switch\Music_Switch_Lvl02\Outro_Playlist\lvl02_outro_100bpm4_4\lvl02_outro_100bpm4_4		501016
-	568735947	cha_breath_calm_inspi-002	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_inspi-002_58BB0A87.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Inspi\Cha_Inspi_Slow\cha_breath_calm_inspi-002		27587
+	568735947	cha_breath_calm_inspi-002	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_inspi-002_1F7103DE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Inspi\Cha_Inspi_Slow\cha_breath_calm_inspi-002		27587
 	586779925	lvl01_2ndbridge_95bpm4_4	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\lvl01_2ndbridge_95bpm4_4_F2BF74AC.wem		\Interactive Music Hierarchy\Default Work Unit\Music_General_Switch\Music_Switch_Lvl01\Kiosk2_Playlist\lvl01_2ndbridge_95bpm4_4\lvl01_2ndbridge_95bpm4_4		584359
 	592806699	stone_footsteps_hard-005	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\stone_footsteps_hard-005_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch\Cha_Footsteps_Stone\Cha_Stone_Random\stone_footsteps_hard-005		4798
 	603541945	hurt_breath_expi_05	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_hurt_expi-005_B5986433.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Hurt_Breath\Cha_Expi_Hurt\hurt_breath_expi_05		13473
 	607460593	cha_footstep_sand_02-005	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_footstep_sand_02-005_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch\Cha_Footsteps_Sand\Cha_Footsteps_Sand_Blend\Cha_Footstep_Sand_02\cha_footstep_sand_02-005		5183
 	610520740	walk_expi_breath_04	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_run_expi-004_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Run\walk_expi_breath_04		20099
-	614075340	cha_breath_calm_expi-003	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_expi-003_628A9CDD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Slow\cha_breath_calm_expi-003		37502
+	614075340	cha_breath_calm_expi-003	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_expi-003_466CE90D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Slow\cha_breath_calm_expi-003		37502
 	615280238	cha_footstep_sand_02-001	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_footstep_sand_02-001_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch\Cha_Footsteps_Sand\Cha_Footsteps_Sand_Blend\Cha_Footstep_Sand_02\cha_footstep_sand_02-001		6231
 	680652325	hurt_breath_expi_02	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_hurt_expi-002_9EF9ED7B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Hurt_Breath\Cha_Expi_Hurt\hurt_breath_expi_02		12863
 	693437066	Lvl01_Ext_Desert_View	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\amb_desert_beautifulview_4CFBF9D1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Ext_Desert_View		2045649
@@ -229,7 +249,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	957987553	cha_breath_med_inspi-001	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_med_inspi-001_200FEF54.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Inspi\Cha_Inspi_Med\cha_breath_med_inspi-001		15484
 	966275830	stones_rand-003	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\stones_rand-003_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Int_Temple\Amb_Lvl01_Int_Rand\stones_rand-003		17722
 	985600054	cha_breath_med_expi-004	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_med_expi-004_53467681.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Med\cha_breath_med_expi-004		16194
-	987586002	cha_breath_calm_inspi-003	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_inspi-003_891BCD65.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Inspi\Cha_Inspi_Slow\cha_breath_calm_inspi-003		26171
+	987586002	cha_breath_calm_inspi-003	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_calm_inspi-003_D9EF4734.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Inspi\Cha_Inspi_Slow\cha_breath_calm_inspi-003		26171
 	992967537	lvl02_postintro_100bpm4_4	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\lvl02_postintro_100bpm4_4_F2BF74AC.wem		\Interactive Music Hierarchy\Default Work Unit\Music_General_Switch\Music_Switch_Lvl02\PostIntro_Playlist\lvl02_postintro_100bpm4_4\lvl02_postintro_100bpm4_4		624194
 	995586389	cha_breath_med_expi-002	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_med_expi-002_45456374.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Med\cha_breath_med_expi-002		16652
 	997834419	hang_ui_01	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\hang_ui_01_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ui_clicked\hang_ui_01		57566
@@ -241,6 +261,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	1049193251	lvl02_predrop_100bpm4_4	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\lvl02_predrop_100bpm4_4_F2BF74AC.wem		\Interactive Music Hierarchy\Default Work Unit\Music_General_Switch\Music_Switch_Lvl02\Drop_Playlist\lvl02_predrop_100bpm4_4\lvl02_predrop_100bpm4_4		127786
 	1050526820	astrolabe	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\astrolabe_v3_9FA6DCE9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Obj_Astrolabe_Moving\astrolabe		190307
 	1052610083	walk_expi_breath_03	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_breath_run_expi-003_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Breath\Cha_Breath_Behavior\Cha_Breath\Cha_Breath_Expi\Cha_Expi_Run\walk_expi_breath_03		19383
+	1063392542	LvlEnd_Temple	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\amb_temple_198CC609.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\LvlEnd_Temple		889524
 	1064452481	cha_footstep_sand_01-001	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\cha_footstep_sand_01-001_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Foleys\Cha_Footsteps_Switch\Cha_Footsteps_Sand\Cha_Footsteps_Sand_Blend\Cha_Footstep_Sand_01\cha_footstep_sand_01-001		6581
 	1071624230	stones_rand-004	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\stones_rand-004_32513D82.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiances\Amb\Amb_General\Lvl01_Int_Temple\Amb_Lvl01_Int_Rand\stones_rand-004		30614
 	1073638996	ui_checkpoint	D:\Projet_M1\Solar\Git\Solar\Solar_WwiseProject\.cache\Windows\SFX\ui_checkpoint_26658EA9.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ui_checkpoint		128952
