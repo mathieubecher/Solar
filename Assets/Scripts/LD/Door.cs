@@ -25,5 +25,6 @@ public class Door : MonoBehaviour
         Debug.Log("enter");
         active = true;
         door.SetBool("active",true);
+        AkSoundEngine.PostEvent("TempleDoor_Open", gameObject);
     }
 }
