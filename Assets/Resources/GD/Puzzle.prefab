@@ -61,6 +61,7 @@ Transform:
   m_Children:
   - {fileID: 1250421293927895005}
   - {fileID: 8183711221511779677}
+  - {fileID: 5448669877450887901}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -77,8 +78,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawn: {fileID: 3451167077595565657}
-  cam: {fileID: 8071209190913442750}
   beginRotate: 0
+  isActiveFirst: 0
+  clip: {fileID: 6637963571383747982}
+  unClip: {fileID: 0}
+  last: {fileID: 0}
+  cam: {fileID: 8071209190913442750}
+  type: 1
+  transitionTime: 1
+  curve: {fileID: 0}
 --- !u!1 &3451167077595565657
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 0}
+  follow: 0
+  platforms: []
   id: 0
 --- !u!114 &8657625706422736315
 MonoBehaviour:
@@ -337,3 +347,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6637963571383747982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5448669877450887901}
+  m_Layer: 0
+  m_Name: Clip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5448669877450887901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6637963571383747982}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2206309627135337180}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

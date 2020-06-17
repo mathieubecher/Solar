@@ -25,6 +25,8 @@ public class ControllerPuzzle : MonoBehaviour
             this.style = _style;
         }
     }
+
+    private List<Puzzle> _logs;
     
     public CMCamera cmActual;
     public CinemachineBrain brain;
@@ -39,6 +41,8 @@ public class ControllerPuzzle : MonoBehaviour
     
     void Start()
     {
+        _logs = new List<Puzzle>();
+        _logs.Add(_puzzle);
         _controller = GetComponent<Controller>();
         //brain = FindObjectOfType<CinemachineBrain>();
         // Place le personnage au niveau du respawn du premier puzzle
@@ -71,8 +75,15 @@ public class ControllerPuzzle : MonoBehaviour
         {
             _puzzle = other.gameObject.GetComponentInParent<Puzzle>();
             _puzzle.Enter(_controller.sun._gotoAngle);
+            _logs.Add(_puzzle);
             ChangeCam(new InfosTransition(_puzzle.cam, _puzzle.type, _puzzle.transitionTime));
             AkSoundEngine.PostEvent("Checkpoint_Found", gameObject);
+
+            if (_logs.Count > 2)
+            {
+                if(_logs[0].clip != null) _logs[0].clip.SetActive(false);
+                _logs.RemoveAt(0);
+            }
 
         }
         // Transition de camera
