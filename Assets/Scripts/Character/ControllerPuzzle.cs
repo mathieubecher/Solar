@@ -79,7 +79,7 @@ public class ControllerPuzzle : MonoBehaviour
             ChangeCam(new InfosTransition(_puzzle.cam, _puzzle.type, _puzzle.transitionTime));
             AkSoundEngine.PostEvent("Checkpoint_Found", gameObject);
 
-            if (_logs.Count > 2)
+            if (_logs.Count > 3)
             {
                 if(_logs[0].clip != null) _logs[0].clip.SetActive(false);
                 _logs.RemoveAt(0);
