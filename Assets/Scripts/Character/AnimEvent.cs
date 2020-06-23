@@ -73,7 +73,7 @@ public class AnimEvent : MonoBehaviour
     public void BeginBurn()
     {
         isBurning = true;
-        Debug.Log("burn");
+        //Debug.Log("burn");
         particle.Play();
     }
 

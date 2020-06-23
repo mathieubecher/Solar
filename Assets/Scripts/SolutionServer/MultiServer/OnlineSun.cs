@@ -119,6 +119,7 @@ public class OnlineSun: AbstractInput
     private void ProgressPlatform(float readValue)
     {
         _controller.puzzle.cmActual.SetPlatformProgress(readValue * _controller.UiInterface.player2Settings.platformSensitivity);
+        Debug.Log("platform");
     }
     public override void Dead()
     {
@@ -223,6 +224,7 @@ public class OnlineSun: AbstractInput
     
     private void ResetBind(UIInterface.Bind last)
     {
+        
         if (last == UIInterface.Bind.L1R1)
         {
             _controls.currentActionMap["ProgressPlatform"].performed -= rotateSun;

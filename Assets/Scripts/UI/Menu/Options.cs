@@ -53,17 +53,20 @@ public class OptionsMenu : Menu
     {
         _canvas = GetComponent<CanvasGroup>();
         originPos = transform.position;
+        timer = 1;
     }
     
     public void Enable()
     {
         gameObject.SetActive(true);
         enable = true;
-        EstimateRender();
+        //EstimateRender();
+        timer = 1;
     }
 
     public void Disable()
     {
+        gameObject.SetActive(false);
         enable = false;
     }
 
@@ -95,9 +98,9 @@ public class OptionsMenu : Menu
 
     public void Reset()
     {
-        timer = 0;
+        timer = 1;
         enable = false;
-        EstimateRender();
+        //EstimateRender();
         gameObject.SetActive(false);
     }
 }

@@ -16,7 +16,7 @@ public class Watcher : MonoBehaviour
     {
         objectif = Goto.transform.position;
         _animator = GetComponent<Animator>();
-        Debug.Log((objectif - transform.position).magnitude);
+        //Debug.Log((objectif - transform.position).magnitude);
         
     }
 

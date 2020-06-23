@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         UiInterface.gameObject.SetActive(false);
         controller = FindObjectOfType<Controller>();
         gameType = StaticClass.gameType;
-        Debug.Log(gameType);
+        //Debug.Log(gameType);
         mask = LayerMask.GetMask("Sand")+LayerMask.GetMask("Default");
         
     }

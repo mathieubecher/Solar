@@ -20,7 +20,7 @@ public class SphereController : MonoBehaviour
         set
         {
             if (value == cmCam) return;
-            Debug.Log("Change cam sphere");
+            //Debug.Log("Change cam sphere");
             last = cmCam;
             cmCam = value;
             progress = 0;
