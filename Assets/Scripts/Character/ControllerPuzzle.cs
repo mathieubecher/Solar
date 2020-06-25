@@ -95,6 +95,10 @@ public class ControllerPuzzle : MonoBehaviour
             
             
         }
+        else if (other.gameObject.layer == 18)
+        {
+            _controller.end = true;
+        }
     }
     
     /// <summary>

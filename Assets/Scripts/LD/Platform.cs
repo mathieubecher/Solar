@@ -35,6 +35,7 @@ public class Platform : MonoBehaviour
     /// <param name="velocity"></param>
     public virtual void SetProgress(float velocity)
     {
+        Debug.Log(velocity);
         _velocity = velocity;
     }
     /// <summary>
@@ -50,6 +51,7 @@ public class Platform : MonoBehaviour
     protected virtual void Update()
     {
         InputVelocity();
+        Debug.Log("progress "+GetLocalProgress());
         transform.rotation = Quaternion.Euler(new Vector3(0,GetLocalProgress() * 360,0));
     }
 
