@@ -57,7 +57,7 @@ public class Anim : MonoBehaviour
     {
         if (!open)
         {
-            cmcam.Play();
+            //cmcam.Play();
             door.Open();
             open = true;
             uiTimer = 10;
