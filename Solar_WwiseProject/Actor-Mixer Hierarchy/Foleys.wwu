@@ -4158,19 +4158,9 @@
 				</BlendContainer>
 				<BlendContainer Name="Cha_LastWords" ID="{8BD9787F-A879-456D-83CA-634576BD4DF6}" ShortID="74483306">
 					<PropertyList>
-						<Property Name="OutputBusHighpass" Type="int16">
-							<ValueList>
-								<Value>25</Value>
-							</ValueList>
-						</Property>
-						<Property Name="OutputBusLowpass" Type="int16">
-							<ValueList>
-								<Value>20</Value>
-							</ValueList>
-						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-17</Value>
+								<Value>-3</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -4179,14 +4169,11 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Breathing_Bus" ID="{902E587E-5F52-4318-BBF4-84185BA1386D}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
-						</Reference>
-						<Reference Name="UserAuxSend0">
-							<ObjectRef Name="Int_Lvl02_Entrance" ID="{531543E3-6DA8-4F80-A8B5-35B7C960242A}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="cha_lastwords" ID="{69B865E1-3BCD-453A-9907-90E5240A6BDB}" ShortID="309637154">
+						<Sound Name="ending_timeline" ID="{75D32FA6-6575-4277-B40E-E6852FD1F76E}" ShortID="345162118">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CBCB865D-593E-47C5-9B8F-60E30CC2E8AF}"/>
@@ -4196,16 +4183,21 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="cha_lastwords" ID="{646AD5AD-7284-47E7-869A-7153CE730C8C}">
+								<AudioFileSource Name="ending_timeline" ID="{7910BFA9-78AF-48EE-A017-DB7788CCF5C8}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="1.35359589041096"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.35359589041096"/>
+									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>cha_lastwords.wav</AudioFile>
+									<AudioFile>ending_timeline.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="600971355"/>
+										<MediaID ID="126727242"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="cha_lastwords" ID="{646AD5AD-7284-47E7-869A-7153CE730C8C}" Platform="Linked"/>
+								<ActiveSource Name="ending_timeline" ID="{7910BFA9-78AF-48EE-A017-DB7788CCF5C8}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
