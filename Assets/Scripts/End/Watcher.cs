@@ -28,10 +28,12 @@ public class Watcher : MonoBehaviour
             if ((objectif - transform.position).magnitude < 25) global.OpenDoor();
             if((objectif - transform.position).magnitude > 1)
                 transform.position += new Vector3(objectif.x - transform.position.x,objectif.y - transform.position.y,objectif.z - transform.position.z).normalized * 5 * Time.deltaTime;
+            /*
             else
             {
                 _animator.SetBool("dead", true);
             }
+            */
         }
         
     }

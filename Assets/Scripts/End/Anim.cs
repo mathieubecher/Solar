@@ -23,25 +23,6 @@ public class Anim : MonoBehaviour
     {
         if (open)
         {
-            uiTimer -= Time.deltaTime;
-            if (uiTimer < 0) restart = 5;
-            if(uiTimer < 5 && uiTimer >= 2)
-            {
-                ui.alpha = uiCurve.Evaluate(1 - (uiTimer - 2) / 3);
-            }
-            else if (uiTimer < 2) background.alpha = 1;
-            
-            if (uiTimer < 3 && uiTimer >= 1)
-            {
-                background.alpha = 1 - (uiTimer - 1) / 2;
-            }
-            else if (uiTimer < 1)
-            {
-                background.alpha = 1;
-                ui.interactable = true;
-                ui.blocksRaycasts = true;
-            }
-
 
         }
     }
