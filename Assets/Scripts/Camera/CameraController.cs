@@ -39,9 +39,11 @@ public class CameraController : MonoBehaviour
     private float actualDistance;
     private Vector3 rotateFrame;
     private Vector3 rotateMouse;
+    [HideInInspector] public bool stop;
 
     private void Awake()
     {
+        stop = false;
         actualDistance = distance;
         float rotatex = transform.eulerAngles.x;
         transform.rotation = follow.transform.rotation;
@@ -50,9 +52,12 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        transform.eulerAngles += (Time.deltaTime) * _rotateSpeed * (rotateFrame+rotateMouse);
-        LimitCam();
-        SetPos();
+        if (!stop)
+        {
+            transform.eulerAngles += (Time.deltaTime) * _rotateSpeed * (rotateFrame+rotateMouse);
+            LimitCam();
+            SetPos();
+        }
     }
     private void OnDrawGizmos()
     {

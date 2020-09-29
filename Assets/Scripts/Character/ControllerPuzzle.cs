@@ -84,7 +84,6 @@ public class ControllerPuzzle : MonoBehaviour
                 if(_logs[0].clip != null) _logs[0].clip.SetActive(false);
                 _logs.RemoveAt(0);
             }
-
         }
         // Transition de camera
         else if (other.gameObject.layer == 14)
@@ -92,15 +91,14 @@ public class ControllerPuzzle : MonoBehaviour
             CMTransition transition = other.gameObject.GetComponent<CMTransition>();
             if (other == transition.nextCollider) DecideChangeCam(transition);
             else DecideChangeCam(transition,false);
-            
-            
         }
         else if (other.gameObject.layer == 18)
         {
-            _controller.end = true;
+            _controller.StopPlayer(true);
+            FindObjectOfType<MultiMonitor>().Cam2Only();
         }
     }
-    
+
     /// <summary>
     /// Réinitialise position rotation et camera du joueur en fonction du puzzle actif.
     /// </summary>
@@ -148,10 +146,10 @@ public class ControllerPuzzle : MonoBehaviour
         
     }
 
-    public void DecideChangeCam(CMTransition transition, bool next=true)
+    public void DecideChangeCam(CMTransition transition, bool next = true)
     {
         //Debug.Log("define Cam");
-        _timer_CMnext = 1.1f;
+        _timer_CMnext = (transition.direct)?0.01f:1.1f;
         _infosTransition = new InfosTransition((next)?transition.next:transition.previous, transition.type, transition.transitionTime);
         //sphere.CMCam = cam.transform;
     }
