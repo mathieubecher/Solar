@@ -317,6 +317,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Cha_LastWords_Play" ID="{F4E90FE5-0F12-4D22-A8C6-0032D163246F}">
+									<ChildrenList>
+										<Action Name="" ID="{8E98C460-170B-46F7-B8E3-327C015E0B1F}" ShortID="481234455">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cha_LastWords" ID="{8BD9787F-A879-456D-83CA-634576BD4DF6}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Music" ID="{4A30C09F-BD7D-481F-A2A8-662CF0AD138C}" ShortID="47314043">
@@ -589,6 +600,18 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{AF5DCD25-7B6D-4474-94A6-09A84A6ADD13}" ShortID="252507357">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Intro" ID="{3FDD3CB6-C2E4-46E8-BFB9-E723ADAD9F37}" WorkUnitID="{9F4217AA-E869-4F10-A183-355E7B460309}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Folder Name="Level 1" ID="{3DDBEC9B-271D-4F41-A2C2-0432218ADBB2}" ShortID="315778107">
@@ -818,6 +841,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Temple_Door_Opening" ID="{8E915076-05CF-4923-B633-E44E56CE1817}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Intro" ID="{6F8EEC90-397C-49F3-B897-69E7F8E00C25}">
+							<ChildrenList>
+								<Action Name="" ID="{5C8027BA-333C-4EAA-AE8F-54FA63315D6B}" ShortID="381833479">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Intro" ID="{3FDD3CB6-C2E4-46E8-BFB9-E723ADAD9F37}" WorkUnitID="{9F4217AA-E869-4F10-A183-355E7B460309}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

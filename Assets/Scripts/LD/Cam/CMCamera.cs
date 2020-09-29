@@ -33,6 +33,7 @@ public class CMCamera : MonoBehaviour
     /// <param name="velocity">Vélocité à appliquer</param>
     public void SetPlatformProgress(float velocity)
     {
+        Debug.Log(velocity);
         foreach (Platform p in platforms)
         {
             p.SetProgress(velocity);

@@ -21,6 +21,8 @@ public class CMTransition : MonoBehaviour
     [HideInInspector] public Collider nextCollider;
 
     private List<Vector3> bezier;
+
+    public bool direct = false;
     // Start is called before the first frame update
     void Start()
     {

@@ -38,7 +38,7 @@ public class Puzzle : MonoBehaviour
     public void Enter(float sunGotoAngle)
     {
         //TODO Nouveau spawn
-        beginRotate = sunGotoAngle;
+        //beginRotate = sunGotoAngle;
         if(unClip!= null && unClip.clip != null) unClip.clip.SetActive(true);
     }
 

@@ -48,7 +48,8 @@ public class Controller : MonoBehaviour
 
     public GameObject outline;
 
-
+    //[HideInInspector] 
+    public bool end;
     void Awake()
     {
         // Active la mort quelque soit la valeur défini d'activeDead en dehors de l'editor.
@@ -83,50 +84,63 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // Met à jour les variable par le gestionnaires d'input
         inputs.InputUpdate();
-
-        // Si le joueur n'est pas mort
-        if(_deadTimer <= 0)
+        
+        if (!end)
         {
-            if (_respawnTimer > 0)
+            // Si le joueur n'est pas mort
+            if(_deadTimer <= 0)
             {
-                _respawnTimer -= Time.deltaTime * 2;
-                deadImg.color = new Color(deadImg.color.r,deadImg.color.g,deadImg.color.b,_respawnCurve.Evaluate((_respawnTimer)));
+                if (_respawnTimer > 0)
+                {
+                    _respawnTimer -= Time.deltaTime;
+                    if(_respawnTimer >= 1.5f) deadImg.color = new Color(deadImg.color.r,deadImg.color.g,deadImg.color.b,_respawnCurve.Evaluate(((_respawnTimer-1.5f)*2)));
+                    
+                }
+                else
+                { // Retours visuels et sonores lié aux déplacements du personnage
+                    animator.SetFloat("velocity", velocity.magnitude);
+                    // RESPIRATION
                 
+                    //if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
+                    if(sun.Life >= 1){
+                        if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
+                        // else if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("Cha_Walk", this.gameObject);
+                        else AkSoundEngine.PostEvent("Cha_IDLE", this.gameObject);
+                    }
+                    else AkSoundEngine.PostEvent("Cha_Hurt", this.gameObject);
+                
+                    velocity.y = _rigidbody.velocity.y;
+                    _rigidbody.velocity = velocity;
+                    
+                }
             }
-            // Retours visuels et sonores lié aux déplacements du personnage
-            animator.SetFloat("velocity", velocity.magnitude);
-            // RESPIRATION
-            
-            //if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
-            if(sun.Life >= 1){
-                if (velocity.magnitude > 1f) AkSoundEngine.PostEvent("Cha_Run", this.gameObject); 
-                // else if(velocity.magnitude> 0.1f) AkSoundEngine.PostEvent("Cha_Walk", this.gameObject);
-                else AkSoundEngine.PostEvent("Cha_IDLE", this.gameObject);
+            else
+            {
+                // A la mort du personnage, laisse un temps défini avant le respawn
+                _deadTimer -= Time.deltaTime;
+                sun.ppeffect.Interpolate(Mathf.Max(0,_deadTimer - (DeadTimer-1)));
+                if (_deadTimer < 2)
+                {
+                    deadImg.color = new Color(deadImg.color.r,deadImg.color.g,deadImg.color.b,_deadCurve.Evaluate((2 - _deadTimer)/2));
+                }
+                else deadImg.color = new Color(deadImg.color.r,deadImg.color.g,deadImg.color.b,0);
+
+                if (_deadTimer <= 0)
+                {
+                    Respawn();
+                }
             }
-            else AkSoundEngine.PostEvent("Cha_Hurt", this.gameObject);
-            
-            velocity.y = _rigidbody.velocity.y;
-            _rigidbody.velocity = velocity;
         }
         else
         {
-            // A la mort du personnage, laisse un temps défini avant le respawn
-            _deadTimer -= Time.deltaTime;
-            sun.ppeffect.Interpolate(Mathf.Max(0,_deadTimer - (DeadTimer-1)));
-            if (_deadTimer < 2)
-            {
-                deadImg.color = new Color(deadImg.color.r,deadImg.color.g,deadImg.color.b,_deadCurve.Evaluate((2 - _deadTimer)/2));
-            }
-            else deadImg.color = new Color(deadImg.color.r,deadImg.color.g,deadImg.color.b,0);
-
-            if (_deadTimer <= 0)
-            {
-                Respawn();
-            }
+            //_deadTimer = 1;
+            //animator.SetFloat("velocity", 0);
+            //AkSoundEngine.PostEvent("Cha_IDLE", this.gameObject);
+            //_rigidbody.velocity = Vector3.zero;
         }
-        
     }
 
     void FixedUpdate()
@@ -137,7 +151,7 @@ public class Controller : MonoBehaviour
         }
     }
 
-
+    
     /// <summary>
     ///  Active la mort du joueur
     /// </summary>
@@ -160,13 +174,19 @@ public class Controller : MonoBehaviour
             //sun.ResetPoints();
         }
     }
+
+    public void EndDead()
+    {
+        GetComponentInChildren<AnimEvent>().dead = false;
+        animator.SetBool("die", true);
+    }
     
     /// <summary>
     ///  Active le respawn
     /// </summary>
     public void Respawn()
     {
-        _respawnTimer = 1;
+        _respawnTimer = 2f;
         AkSoundEngine.PostEvent("Cha_Respawn", this.gameObject);
         animator.SetBool("die", false);
         puzzle.Respawn();
@@ -180,4 +200,26 @@ public class Controller : MonoBehaviour
     {
         return _deadTimer > 0;   
     }
+    
+    
+    public void StopPlayer(bool stopCamera)
+    {
+        end = true;
+        cam.stop = stopCamera;
+
+    }
+
+    public void StartPlayer()
+    {
+        end = false;
+    }
+
+    public void Walk(float velocity)
+    {
+        
+        animator.SetFloat("velocity", velocity);
+    }
+    
+    
+
 }
