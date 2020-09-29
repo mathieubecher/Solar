@@ -23,25 +23,11 @@ public class Watcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (active && _animator.GetCurrentAnimatorStateInfo(0).IsName("run"))
-        {
-            if ((objectif - transform.position).magnitude < 25) global.OpenDoor();
-            if((objectif - transform.position).magnitude > 1)
-                transform.position += new Vector3(objectif.x - transform.position.x,objectif.y - transform.position.y,objectif.z - transform.position.z).normalized * 5 * Time.deltaTime;
-            /*
-            else
-            {
-                _animator.SetBool("dead", true);
-            }
-            */
-        }
-        
+
     }
 
     public void SetActive()
     {
-        active = true;
-        _animator.SetBool("active", true);
     }
     
     
@@ -51,4 +37,20 @@ public class Watcher : MonoBehaviour
         particle.Play();
     }
 
+    public void Rise()
+    {
+            _animator.SetBool("active",true);
+    }
+    
+    public void Walk()
+    {
+        _animator.SetBool("walk",true);
+    }
+    
+    public void Dead()
+    {
+        _animator.SetBool("dead",true);
+        LaunchParticle();
+    }
+    
 }
