@@ -45,9 +45,9 @@ public class LinearPlatform : Platform
     {
         // Récupere la valeur de progress en fonction du type de la partie
         InputVelocity();
-        Debug.Log("progress "+GetLocalProgress());
+        //Debug.Log("progress "+GetLocalProgress());
         
-        Debug.Log("pos "+progressPos());
+        //Debug.Log("pos "+progressPos());
         // Met à jour la position de la plateforme avec progress
         for (int i = 0; i < childs.Count; ++i)
         {
