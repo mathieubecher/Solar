@@ -40,6 +40,7 @@ public class Watcher : MonoBehaviour
     public void Rise()
     {
             _animator.SetBool("active",true);
+            AkSoundEngine.PostEvent("Cha_LastWords_Play",this.gameObject);
     }
     
     public void Walk()
