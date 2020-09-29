@@ -174,6 +174,12 @@ public class Controller : MonoBehaviour
             //sun.ResetPoints();
         }
     }
+
+    public void EndDead()
+    {
+        GetComponentInChildren<AnimEvent>().dead = false;
+        animator.SetBool("die", true);
+    }
     
     /// <summary>
     ///  Active le respawn
