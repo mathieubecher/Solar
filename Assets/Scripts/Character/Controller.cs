@@ -212,6 +212,7 @@ public class Controller : MonoBehaviour
     public void StartPlayer()
     {
         end = false;
+        cam.stop = false;
     }
 
     public void Walk(float velocity)
