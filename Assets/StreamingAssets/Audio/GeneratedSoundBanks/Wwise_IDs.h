@@ -31,6 +31,7 @@ namespace AK
         static const AkUniqueID CHA_FOOTSTEPS_PLAY = 1343142182U;
         static const AkUniqueID CHA_HURT = 1546453947U;
         static const AkUniqueID CHA_IDLE = 3135834134U;
+        static const AkUniqueID CHA_LASTWORDS_PLAY = 3774146388U;
         static const AkUniqueID CHA_RESPAWN = 1215500860U;
         static const AkUniqueID CHA_RUN = 3845266727U;
         static const AkUniqueID CHA_WALK = 300025675U;
