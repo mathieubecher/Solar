@@ -72,4 +72,9 @@ public class GameManager : MonoBehaviour
         
         Time.timeScale = timeScale;
     }
+
+    public void StartMusic()
+    {
+        AkSoundEngine.PostEvent("Play_Intro",gameObject);
+    }
 }
