@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="135">
 	<RootPaths>
-		<ProjectRoot>C:\Users\Admin\Desktop\ENJMIN\Projet_M1\Solar\Git\Solar2\Solar\Solar_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\Admin\Desktop\ENJMIN\Projet_M1\Solar\Git\Solar2\Solar\Solar_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\Admin\Desktop\ENJMIN\Projet_M1\Solar\Git\Solar2\Solar\Solar_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\guerr\Desktop\ENJMIN\Solar\Git\Solar2\Solar\Solar_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\guerr\Desktop\ENJMIN\Solar\Git\Solar2\Solar\Solar_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\guerr\Desktop\ENJMIN\Solar\Git\Solar2\Solar\Solar_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\Admin\Desktop\ENJMIN\Projet_M1\Solar\Git\Solar2\Solar\Solar_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\guerr\Desktop\ENJMIN\Solar\Git\Solar2\Solar\Solar_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -55,15 +55,50 @@
 							<Path>SFX\stones_rand-004_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
+					</AuxBusSends>
 				</Event>
-				<Event Id="26480583" Name="Amb_Ext_Lvl01_Desert_Global" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_Global" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1449773595" Name="Amb_Ext_Lvl01_Desert_Kiosk" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_Kiosk" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3505954145" Name="Amb_Ext_Lvl01_Desert_View" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_View" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1324574823" Name="Amb_Ext_Lvl02_Entrance" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 2\Amb_Ext_Lvl02_Entrance" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2530427570" Name="Amb_Ext_Lvl02_Place" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 2\Amb_Ext_Lvl02_Place" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3602364923" Name="Amb_Int_Lvl01" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 1\Amb_Int_Lvl01" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="4294699005" Name="Amb_Int_Temple_End" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 2\Amb_Int_Temple_End" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3181597140" Name="Amb_Int_Tunnel_End" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 2\Amb_Int_Tunnel_End" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="26480583" Name="Amb_Ext_Lvl01_Desert_Global" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_Global" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="2890487870" Name="Ext_Lvl01_Desert_Global" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Ext_Lvl01_Desert_Global"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1449773595" Name="Amb_Ext_Lvl01_Desert_Kiosk" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_Kiosk" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="3857277276" Name="Ext_Lvl01_Desert_Kiosk" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Ext_Lvl01_Desert_Kiosk"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3505954145" Name="Amb_Ext_Lvl01_Desert_View" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 1\Amb_Ext_Lvl01_Desert_View" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="3003725028" Name="Ext_Lvl01_Desert_View" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Ext_Lvl01_Desert_View"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1324574823" Name="Amb_Ext_Lvl02_Entrance" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 2\Amb_Ext_Lvl02_Entrance" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="2445910262" Name="Entrance_Lvl02" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Entrance_Lvl02"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2530427570" Name="Amb_Ext_Lvl02_Place" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 2\Amb_Ext_Lvl02_Place" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="1042178311" Name="Place_Lvl02" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Place_Lvl02"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3602364923" Name="Amb_Int_Lvl01" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 1\Amb_Int_Lvl01" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="3139526458" Name="Int_Lvl01" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Int_Lvl01"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="4294699005" Name="Amb_Int_Temple_End" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 2\Amb_Int_Temple_End" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="3293789522" Name="Int_Temple_End" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Int_Temple_End"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3181597140" Name="Amb_Int_Tunnel_End" ObjectPath="\Events\Default Work Unit\ALL\Amb\Level 2\Amb_Int_Tunnel_End" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="2033314023" Name="Int_Tunnel_End" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Int_Tunnel_End"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="3822072736" Name="Astro_Moving_Play" ObjectPath="\Events\Default Work Unit\ALL\Astro_Moving_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="895054583" Language="SFX">
@@ -75,6 +110,11 @@
 							<Path>SFX\astrolabe_v3_9FA6DCE9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="1657183839" Name="Sidechain_Music" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Sidechain_Music"/>
+						<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
+						<AuxBus Id="2582645766" Name="Int_Lvl02_Entrance" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl02_Entrance"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="2165331746" Name="Astro_Moving_Stop" ObjectPath="\Events\Default Work Unit\ALL\Astro_Moving_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="186543767" Name="Cha_Breath_Expi" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Expi" DurationType="OneShot" DurationMin="0.476558" DurationMax="2.998638">
@@ -180,6 +220,7 @@
 							<Path>SFX\cha_breath_run_expi-003_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}</DefaultSwitchValue>
 					<SwitchContainers>
 						<SwitchContainer SwitchValue="{4D569399-2A55-47D9-8C7C-4905FC01F586}">
 							<Media>
@@ -231,6 +272,10 @@
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
+					<AuxBusSends>
+						<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
+						<AuxBus Id="2582645766" Name="Int_Lvl02_Entrance" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl02_Entrance"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="1039592238" Name="Cha_Breath_Inspi" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Inspi" DurationType="OneShot" DurationMin="0.476558" DurationMax="2.998638">
 					<IncludedMemoryFiles>
@@ -335,6 +380,7 @@
 							<Path>SFX\cha_breath_run_expi-003_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}</DefaultSwitchValue>
 					<SwitchContainers>
 						<SwitchContainer SwitchValue="{4D569399-2A55-47D9-8C7C-4905FC01F586}">
 							<Media>
@@ -386,6 +432,10 @@
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
+					<AuxBusSends>
+						<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
+						<AuxBus Id="2582645766" Name="Int_Lvl02_Entrance" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl02_Entrance"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="182011575" Name="Cha_Breath_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Breath_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -426,6 +476,13 @@
 							<Path>SFX\cha_breath_hurt_inspi-004_741F83C8.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry Id="2139983939" Name="isIDLE" ObjectPath="\Switches\Default Work Unit\Breath_Switch\isIDLE"/>
+					</ActionSetSwitch>
+					<AuxBusSends>
+						<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
+						<AuxBus Id="2582645766" Name="Int_Lvl02_Entrance" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl02_Entrance"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="872937223" Name="Cha_Death_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Death_Play" DurationType="OneShot" DurationMin="4.872177" DurationMax="4.872177">
 					<IncludedMemoryFiles>
@@ -434,6 +491,10 @@
 							<Path>SFX\cha_death_v2_3FF69C27.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
+						<AuxBus Id="2582645766" Name="Int_Lvl02_Entrance" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl02_Entrance"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="1343142182" Name="Cha_Footsteps_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Footsteps\Cha_Footsteps_Play" DurationType="OneShot" DurationMin="1.055363" DurationMax="1.630726">
 					<IncludedMemoryFiles>
@@ -534,6 +595,7 @@
 							<Path>SFX\cha_footstep_sand_01-001_32513D82.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{7F448724-BC1B-4C15-90D8-2AF4C3E0833E}</DefaultSwitchValue>
 					<SwitchContainers>
 						<SwitchContainer SwitchValue="{569C2DF3-2300-48E3-A79C-55536C42AD41}">
 							<Media>
@@ -568,9 +630,28 @@
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
+					<AuxBusSends>
+						<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
+						<AuxBus Id="2582645766" Name="Int_Lvl02_Entrance" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl02_Entrance"/>
+					</AuxBusSends>
 				</Event>
-				<Event Id="1546453947" Name="Cha_Hurt" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Hurt" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1546453947" Name="Cha_Hurt" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Hurt" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry Id="1898407218" Name="isHurting" ObjectPath="\Switches\Default Work Unit\Breath_Switch\isHurting"/>
+					</ActionSetSwitch>
+				</Event>
 				<Event Id="3135834134" Name="Cha_IDLE" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_IDLE" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3774146388" Name="Cha_LastWords_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_LastWords_Play" DurationType="OneShot" DurationMin="4.000000" DurationMax="4.000000">
+					<IncludedMemoryFiles>
+						<File Id="600971355" Language="SFX">
+							<ShortName>cha_lastwords.wav</ShortName>
+							<Path>SFX\cha_lastwords_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="2582645766" Name="Int_Lvl02_Entrance" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl02_Entrance"/>
+					</AuxBusSends>
+				</Event>
 				<Event Id="1215500860" Name="Cha_Respawn" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Respawn" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="20225164" Language="SFX">
@@ -622,6 +703,10 @@
 							<Path>SFX\cha_breath_hurt_inspi-004_741F83C8.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
+						<AuxBus Id="2582645766" Name="Int_Lvl02_Entrance" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl02_Entrance"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="3845266727" Name="Cha_Run" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Run" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="300025675" Name="Cha_Walk" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_Walk" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
@@ -665,13 +750,44 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="771829065" Name="Music_Lvl01_Bridge1" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Bridge1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2884165201" Name="Music_Lvl01_Kiosk1" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Kiosk1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2884165202" Name="Music_Lvl01_Kiosk2" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Kiosk2" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2884165203" Name="Music_Lvl01_Kiosk3" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Kiosk3" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="503471100" Name="Music_Lvl01_Temple" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Temple" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3897915588" Name="Music_Lvl02_City1" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl02_City1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3454836319" Name="Music_Lvl02_Switch_Event" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl02_Switch_Event" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="771829065" Name="Music_Lvl01_Bridge1" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Bridge1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="2201513844" Name="Part02" ObjectPath="\States\Default Work Unit\Music_State\Part02"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2884165201" Name="Music_Lvl01_Kiosk1" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Kiosk1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="2201513845" Name="Part03" ObjectPath="\States\Default Work Unit\Music_State\Part03"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2884165202" Name="Music_Lvl01_Kiosk2" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Kiosk2" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="2201513842" Name="Part04" ObjectPath="\States\Default Work Unit\Music_State\Part04"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2884165203" Name="Music_Lvl01_Kiosk3" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Kiosk3" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="2201513843" Name="Part05" ObjectPath="\States\Default Work Unit\Music_State\Part05"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="503471100" Name="Music_Lvl01_Temple" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Temple" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="2201513847" Name="Part01" ObjectPath="\States\Default Work Unit\Music_State\Part01"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3897915588" Name="Music_Lvl02_City1" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl02_City1" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="2201513840" Name="Part06" ObjectPath="\States\Default Work Unit\Music_State\Part06"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3454836319" Name="Music_Lvl02_Switch_Event" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl02_Switch_Event" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="4260531187" Name="Music_Play_Global" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Play_Global"/>
+					</ActionPostEvent>
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry Id="1709218603" Name="Lvl02" ObjectPath="\Switches\Default Work Unit\General_Music_Switch\Lvl02"/>
+					</ActionSetSwitch>
+				</Event>
 				<Event Id="202194903" Name="Music_Play" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="33004912" Language="SFX">
@@ -818,6 +934,12 @@
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="503471100" Name="Music_Lvl01_Temple" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Temple"/>
+					</ActionPostEvent>
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry Id="1709218600" Name="Lvl01" ObjectPath="\Switches\Default Work Unit\General_Music_Switch\Lvl01"/>
+					</ActionSetSwitch>
 				</Event>
 				<Event Id="4260531187" Name="Music_Play_Global" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Play_Global" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -965,6 +1087,9 @@
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="503471100" Name="Music_Lvl01_Temple" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Lvl01_Temple"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="1426984690" Name="Music_Stop_Fade" ObjectPath="\Events\Default Work Unit\ALL\Music\Music_Stop_Fade" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3103472528" Name="Play_Intro" ObjectPath="\Events\Default Work Unit\ALL\Play_Intro" DurationType="OneShot" DurationMin="36.316666" DurationMax="36.316666">
@@ -1029,6 +1154,45 @@
 				<GameParameter Id="3829022635" Name="RTPC_Plateform_Velocity" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Plateform_Velocity"/>
 			</GameParameters>
 			<StateGroups>
+				<StateGroup Id="1042178311" Name="Place_Lvl02" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Place_Lvl02">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2033314023" Name="Int_Tunnel_End" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Int_Tunnel_End">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2201513840" Name="Part06" ObjectPath="\States\Default Work Unit\Music_State\Part06">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2201513842" Name="Part04" ObjectPath="\States\Default Work Unit\Music_State\Part04">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2201513843" Name="Part05" ObjectPath="\States\Default Work Unit\Music_State\Part05">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2201513844" Name="Part02" ObjectPath="\States\Default Work Unit\Music_State\Part02">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2201513845" Name="Part03" ObjectPath="\States\Default Work Unit\Music_State\Part03">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2201513847" Name="Part01" ObjectPath="\States\Default Work Unit\Music_State\Part01">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2445910262" Name="Entrance_Lvl02" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Entrance_Lvl02">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2890487870" Name="Ext_Lvl01_Desert_Global" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Ext_Lvl01_Desert_Global">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="3003725028" Name="Ext_Lvl01_Desert_View" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Ext_Lvl01_Desert_View">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="3139526458" Name="Int_Lvl01" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Int_Lvl01">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="3293789522" Name="Int_Temple_End" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Int_Temple_End">
+					<States/>
+				</StateGroup>
 				<StateGroup Id="3826569560" Name="Music_State" ObjectPath="\States\Default Work Unit\Music_State">
 					<States>
 						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Music_State\None"/>
@@ -1041,6 +1205,9 @@
 						<State Id="2201513840" Name="Part06" ObjectPath="\States\Default Work Unit\Music_State\Part06"/>
 						<State Id="2201513841" Name="Part07" ObjectPath="\States\Default Work Unit\Music_State\Part07"/>
 					</States>
+				</StateGroup>
+				<StateGroup Id="3857277276" Name="Ext_Lvl01_Desert_Kiosk" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Ext_Lvl01_Desert_Kiosk">
+					<States/>
 				</StateGroup>
 			</StateGroups>
 			<SwitchGroups>
@@ -1057,6 +1224,18 @@
 						<Switch Id="4119476486" Name="isRunning" ObjectPath="\Switches\Default Work Unit\Breath_Switch\isRunning"/>
 						<Switch Id="1898407218" Name="isHurting" ObjectPath="\Switches\Default Work Unit\Breath_Switch\isHurting"/>
 					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="1709218600" Name="Lvl01" ObjectPath="\Switches\Default Work Unit\General_Music_Switch\Lvl01">
+					<Switches/>
+				</SwitchGroup>
+				<SwitchGroup Id="1709218603" Name="Lvl02" ObjectPath="\Switches\Default Work Unit\General_Music_Switch\Lvl02">
+					<Switches/>
+				</SwitchGroup>
+				<SwitchGroup Id="1898407218" Name="isHurting" ObjectPath="\Switches\Default Work Unit\Breath_Switch\isHurting">
+					<Switches/>
+				</SwitchGroup>
+				<SwitchGroup Id="2139983939" Name="isIDLE" ObjectPath="\Switches\Default Work Unit\Breath_Switch\isIDLE">
+					<Switches/>
 				</SwitchGroup>
 				<SwitchGroup Id="2502520850" Name="General_Music_Switch" ObjectPath="\Switches\Default Work Unit\General_Music_Switch">
 					<Switches>
@@ -1080,6 +1259,15 @@
 				<GameParameter Id="1596647065" Name="RTPC_Music_Volume" ObjectPath="\Game Parameters\Default Work Unit\Menu\RTPC_Music_Volume"/>
 				<GameParameter Id="1856500933" Name="RTPC_Main_Volume" ObjectPath="\Game Parameters\Default Work Unit\Menu\RTPC_Main_Volume"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="3941853002" Name="Menu_State" ObjectPath="\States\Default Work Unit\Menu_State">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Menu_State\None"/>
+						<State Id="3374585465" Name="inMenu" ObjectPath="\States\Default Work Unit\Menu_State\inMenu"/>
+						<State Id="984691642" Name="inGame" ObjectPath="\States\Default Work Unit\Menu_State\inGame"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>
