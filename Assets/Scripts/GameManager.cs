@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using BeardedManStudios.Forge.Networking;
 using BeardedManStudios.Forge.Networking.Unity;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -62,19 +64,50 @@ public class GameManager : MonoBehaviour
             UiInterface.gameObject.SetActive(true);
 
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
         {
             debug = !debug;
         }
 
         
         if (Input.GetKeyDown(KeyCode.G)) controller.activeDead = !controller.activeDead;
+        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.V))
+        {
+            if (!speed)
+            {
+                speed = true;
+                controller.speed = 20;
+            }
+            else
+            {
+                speed = false;
+                controller.speed = 5;
+            }
+        }
         
         Time.timeScale = timeScale;
     }
 
+    private bool speed;
     public void StartMusic()
     {
         AkSoundEngine.PostEvent("Play_Intro",gameObject);
+    }
+
+    public void Restart()
+    {
+        Destroy(FindObjectOfType<UIWrapper>().gameObject);
+        try
+        {
+            NetWorker.EndSession();
+            NetworkManager.Instance.Disconnect();
+        }
+        catch (Exception e)
+        {
+            // ignored
+        }
+
+        //Destroy(FindObjectOfType<AkBank>().gameObject);
+        SceneManager.LoadScene(0);
     }
 }

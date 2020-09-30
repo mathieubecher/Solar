@@ -84,6 +84,7 @@ public class MultiMonitor : MonoBehaviour
     public void Cam2Only()
     {
         main.enabled = false;
+        player2.gameObject.SetActive(true);
         player2.enabled = true;
         player2.rect = new Rect(0,0,1,1);
     }
