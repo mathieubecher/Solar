@@ -330,6 +330,17 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{16066E6A-493F-410F-A7B2-8540C9175D8E}" ShortID="999846705">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+												<Property Name="Delay" Type="Real64" Value="10"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Ext_Lvl01_Desert_Global" ID="{D607E9BB-188B-40FF-923A-E9CC0641B2F4}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 										<Action Name="" ID="{6450F3F7-5823-4154-977E-6680E3EF979B}" ShortID="735274287">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="11"/>
@@ -399,6 +410,85 @@
 													<ObjectRef Name="FX" ID="{ACEC311C-361F-4BE9-B056-42B1F9986E37}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
 												</Reference>
 											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{E85AFC86-85B9-4C02-8C90-4C1A0A687C20}" ShortID="764209133">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="11"/>
+												<Property Name="Delay" Type="Real64" Value="40"/>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Ambiance_Bus" ID="{29FDE568-B384-4C81-B1B5-252B9099C7BB}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{110B3CC2-AEE5-4516-B77F-CA9CF149F961}" ShortID="182949274">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="11"/>
+												<Property Name="Delay" Type="Real64" Value="40"/>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Foleys_Bus" ID="{24383F11-053E-4433-8C86-F1951086C8E7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{0A52F66B-3592-44F3-9472-3C0F6D6EC752}" ShortID="285620620">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="11"/>
+												<Property Name="Delay" Type="Real64" Value="40"/>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Breathing_Bus" ID="{902E587E-5F52-4318-BBF4-84185BA1386D}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{2CF81986-1EB8-4CF4-8122-48829A49B0AA}" ShortID="847251704">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="11"/>
+												<Property Name="Delay" Type="Real64" Value="40"/>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FX" ID="{ACEC311C-361F-4BE9-B056-42B1F9986E37}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{37192B1B-82CF-4AF4-827E-66682F606548}" ShortID="862331432">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="11"/>
+												<Property Name="Delay" Type="Real64" Value="40"/>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="5"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Music_Bus" ID="{FE95FA85-D8C7-46AF-B639-4E9995364634}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{73815741-8BC7-400C-8BCE-450CD5E03A30}" ShortID="182810496">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="3"/>
+												<Property Name="Delay" Type="Real64" Value="52"/>
+												<Property Name="FadeTime" Type="Real64" Value="3"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList/>
 										</Action>
 									</ChildrenList>
 								</Event>
@@ -917,6 +1007,28 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{CCB20A07-6D87-4240-814A-72E037552589}" ShortID="172017917">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+										<Property Name="Delay" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Int_Lvl01" ID="{E71C162B-72F0-4CA9-8CF6-CC165A96F8D4}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{875BD1B4-D305-4D16-B6AF-59F68879160E}" ShortID="559738691">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb" ID="{4D366EF1-8DB7-49AE-8D41-AF3BAC14D32D}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{729269A0-FBA9-49DD-938F-C07EA6695237}" ShortID="534947727">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="11"/>
@@ -990,9 +1102,9 @@
 								<Action Name="" ID="{D7722F83-F2F7-4A84-935F-8C969700F7C5}" ShortID="860982893">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="11"/>
-										<Property Name="Delay" Type="Real64" Value="36"/>
+										<Property Name="Delay" Type="Real64" Value="26"/>
 										<Property Name="FadeInCurve" Type="int16" Value="5"/>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
@@ -1004,9 +1116,9 @@
 								<Action Name="" ID="{1D1FF28F-D3AE-45AF-A6B1-FAA1E49ABFBA}" ShortID="552146337">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="11"/>
-										<Property Name="Delay" Type="Real64" Value="36"/>
+										<Property Name="Delay" Type="Real64" Value="30"/>
 										<Property Name="FadeInCurve" Type="int16" Value="5"/>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
@@ -1018,9 +1130,9 @@
 								<Action Name="" ID="{3642DC16-6305-461B-B910-D89237D44C3B}" ShortID="761004323">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="11"/>
-										<Property Name="Delay" Type="Real64" Value="36"/>
+										<Property Name="Delay" Type="Real64" Value="26"/>
 										<Property Name="FadeInCurve" Type="int16" Value="5"/>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
@@ -1032,9 +1144,9 @@
 								<Action Name="" ID="{60AABE66-ABF1-411D-AC25-5410E28CEA12}" ShortID="81593515">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="11"/>
-										<Property Name="Delay" Type="Real64" Value="36"/>
+										<Property Name="Delay" Type="Real64" Value="26"/>
 										<Property Name="FadeInCurve" Type="int16" Value="5"/>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
@@ -1046,9 +1158,9 @@
 								<Action Name="" ID="{A1B9683D-2C1D-4CB9-9DBC-9CC3FA5070C2}" ShortID="731088406">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="11"/>
-										<Property Name="Delay" Type="Real64" Value="36"/>
+										<Property Name="Delay" Type="Real64" Value="26"/>
 										<Property Name="FadeInCurve" Type="int16" Value="5"/>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
@@ -1060,13 +1172,51 @@
 								<Action Name="" ID="{F7836251-2C99-4098-B884-C51781944B1E}" ShortID="752445285">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
-										<Property Name="Delay" Type="Real64" Value="36"/>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="Delay" Type="Real64" Value="26"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Intro" ID="{3FDD3CB6-C2E4-46E8-BFB9-E723ADAD9F37}" WorkUnitID="{9F4217AA-E869-4F10-A183-355E7B460309}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{6D371207-E7E8-45F8-8D1A-D8C899237127}" ShortID="34670063">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="41"/>
+										<Property Name="Delay" Type="Real64" Value="10"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb_Desert_Play" ID="{933F751A-5278-4F5E-B76B-3458652C59B3}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Menu" ID="{2CFCDFA1-CA29-45A9-B0A8-86EA8355A7C0}">
+							<ChildrenList>
+								<Action Name="" ID="{2267571A-DBB3-4B09-A8D3-6B9EB50E6CFB}" ShortID="47003391">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ext_Lvl01_Desert_View" ID="{9B72EE0B-9760-4D2B-B9CE-1752501D274D}" WorkUnitID="{4E7A678D-BFEF-4C30-B66E-086A1EAA1126}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{EB337959-7F4A-4642-8DCF-70BF14808F35}" ShortID="245301694">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb" ID="{4D366EF1-8DB7-49AE-8D41-AF3BAC14D32D}" WorkUnitID="{1E3C54EE-75B9-45FB-9A9C-33D9BB0CFAA1}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

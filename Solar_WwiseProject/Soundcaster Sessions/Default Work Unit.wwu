@@ -10,10 +10,6 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_Intro" ID="{6F8EEC90-397C-49F3-B897-69E7F8E00C25}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
-							<Position X="0" Y="1"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="Cha_Breath_Expi" ID="{355160FD-5BE4-4EB0-B23E-4B27143290F1}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 							<Position X="0" Y="2"/>
 						</Module>
@@ -46,12 +42,20 @@
 							<Position X="3" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_Intro" ID="{6F8EEC90-397C-49F3-B897-69E7F8E00C25}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Amb_Int_Temple_End" ID="{74F4E34E-F766-46FD-8DEF-5573335E2559}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 							<Position X="3" Y="2"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Amb_Ext_Lvl01_Desert_Global" ID="{E412B80B-96CA-4C46-8654-B3CA954BDC20}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
 							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Menu" ID="{2CFCDFA1-CA29-45A9-B0A8-86EA8355A7C0}" WorkUnitID="{EA9F2CF6-DC2F-4990-963B-D5BC5510A430}"/>
+							<Position X="4" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -98,9 +102,9 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Part05" ID="{17385033-E0F3-4F4B-8D00-99C647357501}"/>
-						<CurrentStateRef Name="None" ID="{EC546398-FFAA-4A6B-A2C8-7F0077B7FAE6}"/>
+						<CurrentStateRef Name="isIDLE" ID="{7154D711-F929-4A7E-9210-71EF86A477CC}"/>
 						<CurrentStateRef Name="inGame" ID="{5C50D9A6-4DF8-48DC-BE99-D9B6ED47DFC3}"/>
-						<CurrentStateRef Name="Int_Tunnel_End" ID="{161714BE-D9A3-4A63-9CB1-F43125A7EC79}"/>
+						<CurrentStateRef Name="Int_Temple_End" ID="{0741347E-E437-4ACF-96AA-7D969418ADC0}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="isIDLE" ID="{76787FA3-7EF1-4AC9-8FB7-D017D88B8C44}"/>

@@ -648,6 +648,9 @@
 							<Path>SFX\ending_timeline_3D1B55D9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="2890487870" Name="Ext_Lvl01_Desert_Global" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Ext_Lvl01_Desert_Global"/>
+					</ActionSetState>
 				</Event>
 				<Event Id="1215500860" Name="Cha_Respawn" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Respawn" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -1096,6 +1099,58 @@
 							<Path>SFX\intro_debut_C13AF626.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="2160078966" Name="Amb_Desert_Play" ObjectPath="\Events\Default Work Unit\ALL\Amb\Amb_Desert_Play"/>
+					</ActionPostEvent>
+					<ActionSetState>
+						<ActionSetStateEntry Id="3139526458" Name="Int_Lvl01" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Int_Lvl01"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1278378707" Name="Play_Menu" ObjectPath="\Events\Default Work Unit\ALL\Play_Menu" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="120543137" Language="SFX">
+							<ShortName>stones_rand-001.wav</ShortName>
+							<Path>SFX\stones_rand-001_32513D82.wem</Path>
+						</File>
+						<File Id="325943792" Language="SFX">
+							<ShortName>amb_desert_lvl02_place.wav</ShortName>
+							<Path>SFX\amb_desert_lvl02_place_059592CD.wem</Path>
+						</File>
+						<File Id="693437066" Language="SFX">
+							<ShortName>amb_desert_beautifulview.wav</ShortName>
+							<Path>SFX\amb_desert_beautifulview_4CFBF9D1.wem</Path>
+						</File>
+						<File Id="744231200" Language="SFX">
+							<ShortName>amb_desert_02.wav</ShortName>
+							<Path>SFX\amb_desert_02_75948609.wem</Path>
+						</File>
+						<File Id="836332354" Language="SFX">
+							<ShortName>stones_rand-002.wav</ShortName>
+							<Path>SFX\stones_rand-002_32513D82.wem</Path>
+						</File>
+						<File Id="935140790" Language="SFX">
+							<ShortName>amb_desert_02_calm.wav</ShortName>
+							<Path>SFX\amb_desert_02_calm_99A7434F.wem</Path>
+						</File>
+						<File Id="966275830" Language="SFX">
+							<ShortName>stones_rand-003.wav</ShortName>
+							<Path>SFX\stones_rand-003_32513D82.wem</Path>
+						</File>
+						<File Id="1063392542" Language="SFX">
+							<ShortName>amb_temple.wav</ShortName>
+							<Path>SFX\amb_temple_7E00880A.wem</Path>
+						</File>
+						<File Id="1071624230" Language="SFX">
+							<ShortName>stones_rand-004.wav</ShortName>
+							<Path>SFX\stones_rand-004_32513D82.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="3003725028" Name="Ext_Lvl01_Desert_View" ObjectPath="\States\Default Work Unit\Ambiances\Lvls\Ambs\Ext_Lvl01_Desert_View"/>
+					</ActionSetState>
+					<AuxBusSends>
+						<AuxBus Id="2514557383" Name="Int_Lvl01_Fx" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl01_Acoustic\Int_Lvl01_Fx"/>
+					</AuxBusSends>
 				</Event>
 				<Event Id="2337456342" Name="Sun_Feedback_Play" ObjectPath="\Events\Default Work Unit\ALL\Sun_Feedback_Play" DurationType="Infinite">
 					<IncludedMemoryFiles>
