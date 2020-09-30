@@ -50,6 +50,7 @@ namespace AK
         static const AkUniqueID MUSIC_PLAY_GLOBAL = 4260531187U;
         static const AkUniqueID MUSIC_STOP_FADE = 1426984690U;
         static const AkUniqueID PLAY_INTRO = 3103472528U;
+        static const AkUniqueID PLAY_MENU = 1278378707U;
         static const AkUniqueID SUN_FEEDBACK_PLAY = 2337456342U;
         static const AkUniqueID TEMPLEDOOR_OPEN = 289201289U;
         static const AkUniqueID UI_CLICKED = 3391821525U;
