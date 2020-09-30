@@ -34,6 +34,10 @@ public class UIInterface : MonoBehaviour
        
     }
 
+    public void LaunchWithFile()
+    {
+        
+    }
     public void ApplyAllChange()
     {
         inGame = true;

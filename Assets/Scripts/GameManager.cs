@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
         {
             // ignored
         }
+        AkBankManager.UnloadBank("ALL");
 
         //Destroy(FindObjectOfType<AkBank>().gameObject);
         SceneManager.LoadScene(0);
