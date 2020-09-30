@@ -641,16 +641,13 @@
 					</ActionSetSwitch>
 				</Event>
 				<Event Id="3135834134" Name="Cha_IDLE" ObjectPath="\Events\Default Work Unit\ALL\Character\Breath\Cha_IDLE" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3774146388" Name="Cha_LastWords_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_LastWords_Play" DurationType="OneShot" DurationMin="4.000000" DurationMax="4.000000">
+				<Event Id="3774146388" Name="Cha_LastWords_Play" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_LastWords_Play" DurationType="OneShot" DurationMin="45.146404" DurationMax="45.146404">
 					<IncludedMemoryFiles>
-						<File Id="600971355" Language="SFX">
-							<ShortName>cha_lastwords.wav</ShortName>
-							<Path>SFX\cha_lastwords_32513D82.wem</Path>
+						<File Id="126727242" Language="SFX">
+							<ShortName>ending_timeline.wav</ShortName>
+							<Path>SFX\ending_timeline_3D1B55D9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
-					<AuxBusSends>
-						<AuxBus Id="2582645766" Name="Int_Lvl02_Entrance" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\FX\Int_Lvl02_Entrance"/>
-					</AuxBusSends>
 				</Event>
 				<Event Id="1215500860" Name="Cha_Respawn" ObjectPath="\Events\Default Work Unit\ALL\Character\Cha_Respawn" DurationType="Infinite">
 					<IncludedMemoryFiles>

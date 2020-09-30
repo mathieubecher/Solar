@@ -95,7 +95,7 @@ public class ControllerPuzzle : MonoBehaviour
         else if (other.gameObject.layer == 18)
         {
             _controller.StopPlayer(true);
-            FindObjectOfType<MultiMonitor>().Cam2Only();
+            FindObjectOfType<MultiMonitor>().End();
         }
     }
 
