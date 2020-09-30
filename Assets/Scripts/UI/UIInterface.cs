@@ -22,7 +22,7 @@ public class UIInterface : MonoBehaviour
     public Player1List player1;
     public Player2List player2;
     public bool inGame = false;
-
+    public MultiplayerMenu multi;
     
     
     // Start is called before the first frame update
@@ -36,7 +36,9 @@ public class UIInterface : MonoBehaviour
 
     public void LaunchWithFile()
     {
-        
+        multi.Host();
+        multi.ipAddress.text = "192.0.0.1";
+        multi.Connect();
     }
     public void ApplyAllChange()
     {
