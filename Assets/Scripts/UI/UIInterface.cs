@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
@@ -36,9 +37,34 @@ public class UIInterface : MonoBehaviour
 
     public void LaunchWithFile()
     {
-        multi.Host();
-        multi.ipAddress.text = "192.0.0.1";
-        multi.Connect();
+        var fileName = "Launch.log"; 
+        
+        var sr = File.OpenText("Launch/" + fileName);
+        
+        string input = sr.ReadLine();
+        Debug.Log(input);
+        int type = 0;
+        
+        if (int.TryParse(input, out type))
+        {
+            
+            if (type == 1)
+            {
+                multi.ipAddress.text = "192.0.0.1";
+                multi.portNumber.text = "15937";
+                multi.Host();
+            }
+            else
+            {
+                multi.ipAddress.text = sr.ReadLine();
+                multi.portNumber.text = "15937";
+                multi.Connect();
+            }
+        }
+        else Debug.Log("Error");
+        
+        sr.Close();
+        
     }
     public void ApplyAllChange()
     {
