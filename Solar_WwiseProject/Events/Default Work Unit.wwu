@@ -317,6 +317,91 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Cha_LastWords_Play" ID="{F4E90FE5-0F12-4D22-A8C6-0032D163246F}">
+									<ChildrenList>
+										<Action Name="" ID="{8E98C460-170B-46F7-B8E3-327C015E0B1F}" ShortID="481234455">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Cha_LastWords" ID="{8BD9787F-A879-456D-83CA-634576BD4DF6}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{6450F3F7-5823-4154-977E-6680E3EF979B}" ShortID="735274287">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="11"/>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Ambiance_Bus" ID="{29FDE568-B384-4C81-B1B5-252B9099C7BB}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{8D5276DB-4F1D-487D-A3F5-0368E07B5549}" ShortID="401324700">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="11"/>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Breathing_Bus" ID="{902E587E-5F52-4318-BBF4-84185BA1386D}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{0E1F95B8-ACDE-4355-9BE8-681211A04705}" ShortID="523659149">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="11"/>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Foleys_Bus" ID="{24383F11-053E-4433-8C86-F1951086C8E7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{49B5ADB7-BF5F-4121-9201-F48B38CFC03B}" ShortID="21918836">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="11"/>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Music_Bus" ID="{FE95FA85-D8C7-46AF-B639-4E9995364634}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{23A2479C-8843-4330-8845-BA1376091955}" ShortID="542183832">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="11"/>
+												<Property Name="FadeInCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FX" ID="{ACEC311C-361F-4BE9-B056-42B1F9986E37}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Music" ID="{4A30C09F-BD7D-481F-A2A8-662CF0AD138C}" ShortID="47314043">
@@ -818,6 +903,170 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Temple_Door_Opening" ID="{8E915076-05CF-4923-B633-E44E56CE1817}" WorkUnitID="{576D8B81-D891-480C-9F6B-C9A35DBDDA22}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Intro" ID="{6F8EEC90-397C-49F3-B897-69E7F8E00C25}">
+							<ChildrenList>
+								<Action Name="" ID="{5C8027BA-333C-4EAA-AE8F-54FA63315D6B}" ShortID="381833479">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Intro" ID="{3FDD3CB6-C2E4-46E8-BFB9-E723ADAD9F37}" WorkUnitID="{9F4217AA-E869-4F10-A183-355E7B460309}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{729269A0-FBA9-49DD-938F-C07EA6695237}" ShortID="534947727">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="11"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Breathing_Bus" ID="{902E587E-5F52-4318-BBF4-84185BA1386D}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F8CEBC6D-A05B-4981-B32F-CED8B400454D}" ShortID="329075646">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="11"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Bus" ID="{FE95FA85-D8C7-46AF-B639-4E9995364634}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{3ABAEAC2-5CD6-462A-A12B-D0A86A987DF3}" ShortID="471767673">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="11"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FX" ID="{ACEC311C-361F-4BE9-B056-42B1F9986E37}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{C5085D6D-44B8-43CD-8F5C-193E6AE6CAFD}" ShortID="590455248">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="11"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Foleys_Bus" ID="{24383F11-053E-4433-8C86-F1951086C8E7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{ADE4302C-E74D-4D20-BA7A-C0126CF726D8}" ShortID="594299390">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="11"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ambiance_Bus" ID="{29FDE568-B384-4C81-B1B5-252B9099C7BB}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{D7722F83-F2F7-4A84-935F-8C969700F7C5}" ShortID="860982893">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="11"/>
+										<Property Name="Delay" Type="Real64" Value="36"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Breathing_Bus" ID="{902E587E-5F52-4318-BBF4-84185BA1386D}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{1D1FF28F-D3AE-45AF-A6B1-FAA1E49ABFBA}" ShortID="552146337">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="11"/>
+										<Property Name="Delay" Type="Real64" Value="36"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Bus" ID="{FE95FA85-D8C7-46AF-B639-4E9995364634}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{3642DC16-6305-461B-B910-D89237D44C3B}" ShortID="761004323">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="11"/>
+										<Property Name="Delay" Type="Real64" Value="36"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FX" ID="{ACEC311C-361F-4BE9-B056-42B1F9986E37}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{60AABE66-ABF1-411D-AC25-5410E28CEA12}" ShortID="81593515">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="11"/>
+										<Property Name="Delay" Type="Real64" Value="36"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Foleys_Bus" ID="{24383F11-053E-4433-8C86-F1951086C8E7}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A1B9683D-2C1D-4CB9-9DBC-9CC3FA5070C2}" ShortID="731088406">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="11"/>
+										<Property Name="Delay" Type="Real64" Value="36"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ambiance_Bus" ID="{29FDE568-B384-4C81-B1B5-252B9099C7BB}" WorkUnitID="{6C1EB3CB-E2EF-4CE6-8308-806BCA5EC1FC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F7836251-2C99-4098-B884-C51781944B1E}" ShortID="752445285">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Delay" Type="Real64" Value="36"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Intro" ID="{3FDD3CB6-C2E4-46E8-BFB9-E723ADAD9F37}" WorkUnitID="{9F4217AA-E869-4F10-A183-355E7B460309}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

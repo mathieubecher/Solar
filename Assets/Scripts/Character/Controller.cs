@@ -85,11 +85,11 @@ public class Controller : MonoBehaviour
     void Update()
     {
 
-            // Met à jour les variable par le gestionnaires d'input
-            inputs.InputUpdate();
-            
-            if (!end)
-            {
+        // Met à jour les variable par le gestionnaires d'input
+        inputs.InputUpdate();
+        
+        if (!end)
+        {
             // Si le joueur n'est pas mort
             if(_deadTimer <= 0)
             {
@@ -116,7 +116,6 @@ public class Controller : MonoBehaviour
                     _rigidbody.velocity = velocity;
                     
                 }
-               
             }
             else
             {
@@ -134,15 +133,13 @@ public class Controller : MonoBehaviour
                     Respawn();
                 }
             }
-            
-            
         }
         else
         {
-            _deadTimer = 1;
-            animator.SetFloat("velocity", 0);
-            AkSoundEngine.PostEvent("Cha_IDLE", this.gameObject);
-            _rigidbody.velocity = Vector3.zero;
+            //_deadTimer = 1;
+            //animator.SetFloat("velocity", 0);
+            //AkSoundEngine.PostEvent("Cha_IDLE", this.gameObject);
+            //_rigidbody.velocity = Vector3.zero;
         }
     }
 
@@ -177,6 +174,12 @@ public class Controller : MonoBehaviour
             //sun.ResetPoints();
         }
     }
+
+    public void EndDead()
+    {
+        GetComponentInChildren<AnimEvent>().dead = false;
+        animator.SetBool("die", true);
+    }
     
     /// <summary>
     ///  Active le respawn
@@ -197,4 +200,27 @@ public class Controller : MonoBehaviour
     {
         return _deadTimer > 0;   
     }
+    
+    
+    public void StopPlayer(bool stopCamera)
+    {
+        end = true;
+        cam.stop = stopCamera;
+
+    }
+
+    public void StartPlayer()
+    {
+        end = false;
+        cam.stop = false;
+    }
+
+    public void Walk(float velocity)
+    {
+        
+        animator.SetFloat("velocity", velocity);
+    }
+    
+    
+
 }

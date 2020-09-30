@@ -165,4 +165,9 @@ public class MultiMonitor : MonoBehaviour
             Screen.fullScreenMode = FullScreenMode.Windowed;
         }
     }
+
+    public void End()
+    {
+        Cam2Only();
+    }
 }

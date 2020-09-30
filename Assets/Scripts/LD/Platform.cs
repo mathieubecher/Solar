@@ -51,7 +51,7 @@ public class Platform : MonoBehaviour
     protected virtual void Update()
     {
         InputVelocity();
-        Debug.Log("progress "+GetLocalProgress());
+        //Debug.Log("progress "+GetLocalProgress());
         transform.rotation = Quaternion.Euler(new Vector3(0,GetLocalProgress() * 360,0));
     }
 

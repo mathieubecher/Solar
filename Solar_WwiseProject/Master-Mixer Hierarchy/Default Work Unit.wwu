@@ -39,6 +39,15 @@
 						<Reference Name="AudioDevice">
 							<ObjectRef Name="System" ID="{ECC9FC8D-59CE-4A49-A46D-5680333299C8}" WorkUnitID="{463B918D-9BAF-4E3C-A8F5-DBF6564D2BF6}"/>
 						</Reference>
+						<Reference Name="Effect0">
+							<Custom>
+								<Effect Name="Wwise_Recorder_(Custom)" ID="{980FC39D-29CA-4DF0-937A-14BF2A5B3FFC}" ShortID="152565439" PluginName="Wwise Recorder" CompanyID="0" PluginID="132" PluginType="3">
+									<PropertyList>
+										<Property Name="AuthoringFilename" Type="string" Value="footsteps.wav"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
+						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<Bus Name="Ambiance_Bus" ID="{29FDE568-B384-4C81-B1B5-252B9099C7BB}">

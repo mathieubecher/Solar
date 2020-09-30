@@ -31,6 +31,7 @@ namespace AK
         static const AkUniqueID CHA_FOOTSTEPS_PLAY = 1343142182U;
         static const AkUniqueID CHA_HURT = 1546453947U;
         static const AkUniqueID CHA_IDLE = 3135834134U;
+        static const AkUniqueID CHA_LASTWORDS_PLAY = 3774146388U;
         static const AkUniqueID CHA_RESPAWN = 1215500860U;
         static const AkUniqueID CHA_RUN = 3845266727U;
         static const AkUniqueID CHA_WALK = 300025675U;
@@ -48,6 +49,7 @@ namespace AK
         static const AkUniqueID MUSIC_PLAY = 202194903U;
         static const AkUniqueID MUSIC_PLAY_GLOBAL = 4260531187U;
         static const AkUniqueID MUSIC_STOP_FADE = 1426984690U;
+        static const AkUniqueID PLAY_INTRO = 3103472528U;
         static const AkUniqueID SUN_FEEDBACK_PLAY = 2337456342U;
         static const AkUniqueID TEMPLEDOOR_OPEN = 289201289U;
         static const AkUniqueID UI_CLICKED = 3391821525U;

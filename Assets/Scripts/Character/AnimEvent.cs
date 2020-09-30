@@ -15,6 +15,7 @@ public class AnimEvent : MonoBehaviour
 
     private bool isBurning;
     private float burnTimer;
+    public bool dead = true;
     void Start()
     {
     }
@@ -72,9 +73,13 @@ public class AnimEvent : MonoBehaviour
 
     public void BeginBurn()
     {
-        isBurning = true;
-        //Debug.Log("burn");
-        particle.Play();
+        if (dead)
+        {
+            
+            isBurning = true;
+            //Debug.Log("burn");
+            particle.Play();
+        }
     }
 
     public void ResetBurn()
