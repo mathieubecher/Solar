@@ -54,11 +54,19 @@ public class UIInterface : MonoBehaviour
                 multi.portNumber.text = "15937";
                 multi.Host();
             }
-            else
+            else if(type == 2)
             {
                 multi.ipAddress.text = sr.ReadLine();
                 multi.portNumber.text = "15937";
                 multi.Connect();
+            }
+            else if (type == 0)
+            {
+                multi.Solo();
+            }
+            else
+            {
+                GoTo("GameChoice");
             }
         }
         else Debug.Log("Error");
@@ -459,11 +467,19 @@ public class UIInterface : MonoBehaviour
     {
         if (name == "Exit")
         {
+            GameManager manager = FindObjectOfType<GameManager>();
+            
+            if(manager == null){
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #else
             Application.Quit();
 #endif
+            }
+            else
+            {
+                manager.Restart();
+            }
         }
         else if (name == "Resume")
         {

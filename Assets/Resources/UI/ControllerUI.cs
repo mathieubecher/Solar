@@ -6,7 +6,7 @@ public class ControllerUI : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 19 && (FindObjectOfType<GameManager>().gameType == GameManager.GameType.SOLO || StaticClass.serverType == StaticClass.ServerType.SUN))
+        if (other.gameObject.layer == 19 && (FindObjectOfType<GameManager>().gameType == GameManager.GameType.SOLO || FindObjectOfType<GameManager>().gameType == GameManager.GameType.CLIENT))
         {
             Debug.Log("Open TUTO");
             UITuto tuto = other.gameObject.GetComponent<UITuto>();
